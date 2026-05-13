@@ -181,7 +181,7 @@ with open(dst_path, 'w') as f:
                     vals.append(repr(v))
                 else:
                     vals.append(str(v))
-            f.write(f'INSERT INTO entities({col_str}) VALUES({','.join(vals)});\n')
+            f.write('INSERT INTO entities(' + col_str + ') VALUES(' + ','.join(vals) + ');\n')
         f.write('\n')
 
     # 4. fact_entities
@@ -255,8 +255,17 @@ if [[ -d "$SRC_DATA" ]]; then
         --exclude='*.backup' \
         --exclude='cache' \
         --exclude='node_modules' \
+        --exclude='*.key' \
+        --exclude='*.pem' \
+        --exclude='secrets/' \
         "$SRC_DATA/" "$DST/hermes_data/"
     echo "    hermes_data/ ✓"
+
+    # 安全检查：确保密钥文件未被复制到备份目录
+    if find "$DST/hermes_data" -name "*.key" -o -name "*.pem" | grep -q .; then
+        echo "    [!!] 警告：备份中检测到密钥文件，正在删除..."
+        find "$DST/hermes_data" \( -name "*.key" -o -name "*.pem" \) -delete
+    fi
 else
     echo "[!] 未找到 $SRC_DATA，跳过"
 fi

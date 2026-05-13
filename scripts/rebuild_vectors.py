@@ -6,7 +6,7 @@
 说明：
   - 该脚本不依赖 Hermes Agent 的包导入机制
   - 通过临时复制 store.py / holographic.py 到无连字符路径，绕开 Python 包名限制
-  - 需要 numpy（可选但推荐安装）
+  - 需要 numpy（Hermes venv 通常已包含）
 """
 
 import os
@@ -14,10 +14,52 @@ import sys
 import shutil
 import tempfile
 import importlib.util
+import subprocess
 
 HERMES_HOME = os.path.expanduser("~/.hermes")
 DB_PATH = os.path.join(HERMES_HOME, "memory_store.db")
 SRC_DIR = os.path.join(HERMES_HOME, "hermes-agent", "plugins", "memory", "holographic")
+
+# 优先使用 Hermes venv 的 Python（如果存在）
+HERMES_VENV_PYTHON = os.path.join(HERMES_HOME, "hermes-agent", "venv", "bin", "python")
+
+
+def _ensure_numpy() -> bool:
+    """确保 numpy 可用，尝试使用 Hermes venv 或当前环境"""
+    try:
+        import numpy  # noqa: F401
+        return True
+    except ImportError:
+        pass
+
+    # 尝试用 Hermes venv 的 python 运行自身
+    if os.path.exists(HERMES_VENV_PYTHON):
+        try:
+            result = subprocess.run(
+                [HERMES_VENV_PYTHON, "-c", "import numpy; print('ok')"],
+                capture_output=True, text=True, timeout=10
+            )
+            if result.returncode == 0 and "ok" in result.stdout:
+                print(f"[*] 检测到 Hermes venv 含 numpy，切换到: {HERMES_VENV_PYTHON}")
+                os.execv(HERMES_VENV_PYTHON, [HERMES_VENV_PYTHON] + sys.argv)
+        except Exception:
+            pass
+
+    # 尝试安装 numpy
+    print("[!] 未检测到 numpy，正在尝试安装...")
+    for pip_cmd in [f"{sys.executable} -m pip", "pip3", "pip"]:
+        rc = os.system(f"{pip_cmd} install numpy -q 2>/dev/null")
+        if rc == 0:
+            try:
+                import importlib
+                importlib.invalidate_caches()
+                import numpy  # noqa: F401
+                return True
+            except ImportError:
+                continue
+
+    print("[!] numpy 安装失败，请手动安装: pip install numpy")
+    return False
 
 
 def load_module_from_path(name: str, path: str):
@@ -44,15 +86,9 @@ def main() -> int:
         print("    请先安装 Hermes Agent，再运行此脚本。")
         return 1
 
-    # 检查 numpy
-    try:
-        import numpy  # noqa: F401
-    except ImportError:
-        print("[!] 未安装 numpy，正在尝试安装...")
-        rc = os.system(f"{sys.executable} -m pip install numpy -q")
-        if rc != 0:
-            print("[!] numpy 安装失败，请手动安装: pip install numpy")
-            return 1
+    # 确保 numpy
+    if not _ensure_numpy():
+        return 1
 
     # 创建临时目录，复制 store.py 和 holographic.py
     with tempfile.TemporaryDirectory() as tmpdir:

@@ -10,6 +10,6 @@ User prefers automated data collection for real-time analysis. Interested in usi
 §
 工作原则：在分析用户提出的观点、数据或前提之前，先验证事实的正确性。具体步骤：1) 先核实用户陈述的事实是否准确；2) 识别并指出错误的假设；3) 在确保事实正确的基础上再进行分析和建议；4) 当发现错误时，解释原因并提供正确的信息。这个原则适用于所有后续的对话和分析。
 §
-用户偏好：系统化投资分析，使用卢麒元框架进行宏观经济数据分析。关注中东、经济金融、政策相关资讯。需要定期采集宏观经济数据（CPI、M2、GDP、LPR、房价、股市）进行真实通胀率和实质利率计算。偏好使用AKShare进行数据采集，数据保存在 /home/coordinate35/ 目录。用户明确要求将卢麒元PDF原文全部导入holographic memory，而不仅仅是核心总结，以便随时引用原文细节。
+用户偏好：系统化投资分析，使用卢麒元框架（CPI/M2/GDP/LPR/房价/股市）。关注中东、经济金融、政策。偏好AKShare采集，数据存于 /home/coordinate35/。卢麒元PDF原文（约1030万字符，9个txt文件）已全部导入holographic memory，便于引用原文细节。
 §
-用户要求将卢麒元PDF原文全部导入holographic memory，而不仅仅是核心总结。原文总量约1030万字符(10.3MB)，分布在9个txt文件中。用户偏好系统化、完整的原文存储以便随时引用原文细节。
+用户已建立加密记账系统。涉及"支出/花费/记账/记一笔/花了多少/账单/消费/开销"等请求时，必须立即加载 skill 'accounting'，绝不询问数据在哪、绝不建议用CSV/Excel/记账App。数据加密存于 ~/hermes_data/accounting/。

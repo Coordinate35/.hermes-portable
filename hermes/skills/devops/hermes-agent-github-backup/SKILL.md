@@ -173,107 +173,108 @@ conn.close()
 #!/usr/bin/env bash
 set -euo pipefail
 
-SRC="$HOME/.hermes"
+SRC_HERMES="$HOME/.hermes"
+SRC_DATA="$HOME/hermes_data"
 DST="$HOME/.hermes-portable"
 
 echo "=== Hermes Portable Export ==="
 
 # 1. 复制文本配置
-cp "$SRC/SOUL.md" "$DST/"
-rsync -a --delete "$SRC/memories/" "$DST/memories/"
-rsync -a --delete "$SRC/skills/" "$DST/skills/"
-mkdir -p "$DST/cron"
-cp "$SRC/cron/jobs.json" "$DST/cron/"
-rsync -a --delete --exclude='__pycache__' "$SRC/scripts/" "$DST/scripts/"
+cp "$SRC_HERMES/SOUL.md" "$DST/hermes/"
+rsync -a --delete "$SRC_HERMES/memories/" "$DST/hermes/memories/"
+rsync -a --delete --exclude='__pycache__' "$SRC_HERMES/skills/" "$DST/hermes/skills/"
+mkdir -p "$DST/hermes/cron"
+cp "$SRC_HERMES/cron/jobs.json" "$DST/hermes/cron/"
+rsync -a --delete --exclude='__pycache__' "$SRC_HERMES/scripts/" "$DST/hermes/scripts/"
 
 # 2. 脱敏 config.yaml
 python3 -c "
 import re
-with open('$SRC/config.yaml') as f: raw = f.read()
+with open('$SRC_HERMES/config.yaml') as f: raw = f.read()
 redacted = re.sub(r'^(\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', raw, flags=re.MULTILINE)
 redacted = re.sub(r'^(-\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', redacted, flags=re.MULTILINE)
-with open('$DST/config.yaml', 'w') as f:
+redacted = re.sub(r'^(\s*api_secret:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_SECRET__', redacted, flags=re.MULTILINE)
+redacted = re.sub(r'^(\s*token:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_TOKEN__', redacted, flags=re.MULTILINE)
+with open('$DST/hermes/config.yaml', 'w') as f:
     f.write('# WARNING: Secrets redacted. Fill placeholders before use.\n')
     f.write(redacted)
 "
 
-# 3. 导出全息记忆（排除 hrr_vector / memory_banks.vector BLOB 列）
-echo "[*] Exporting memory store (text-only, ~17MB)..."
+# 3. 导出全息记忆（使用 Python sqlite3，不依赖 sqlite3 CLI）
+echo "[*] Exporting memory store (text-only)..."
 python3 -c "
-import sqlite3, os
+import sqlite3, os, sys, datetime
 
-db = os.path.expanduser('$SRC/memory_store.db')
+db = os.path.expanduser('$SRC_HERMES/memory_store.db')
+dst = os.path.expanduser('$DST/hermes/memory_store_core.sql')
+if not os.path.exists(db):
+    print('[!] memory_store.db not found'); sys.exit(0)
+
 conn = sqlite3.connect(db)
 cursor = conn.cursor()
+cursor.execute('SELECT COUNT(*) FROM facts')
+fact_count = cursor.fetchone()[0]
 
 skip_tables = {'facts_fts', 'facts_fts_config', 'facts_fts_data',
                'facts_fts_docsize', 'facts_fts_idx', 'sqlite_sequence'}
 
-with open(os.path.expanduser('$DST/memory_store_core.sql'), 'w') as f:
-    # Schema
+with open(dst, 'w') as f:
+    f.write('-- Hermes Holographic Memory Export (text-only)\n')
+    f.write(f'-- Facts count: {fact_count}\n')
+    f.write(f'-- Exported: {datetime.datetime.now().isoformat()}\n')
+    f.write('BEGIN TRANSACTION;\n\n')
+
     for name, sql in cursor.execute(\"SELECT name, sql FROM sqlite_master WHERE type='table' ORDER BY name\"):
-        if name in skip_tables:
-            continue
-        if sql:
-            f.write(f'{sql};\n')
-    
-    # facts (no hrr_vector)
-    cursor.execute('''
-        SELECT fact_id, content, category, tags, trust_score,
+        if name in skip_tables or not sql: continue
+        f.write(f'{sql};\n')
+
+    cursor.execute('''SELECT fact_id, content, category, tags, trust_score,
                retrieval_count, helpful_count, created_at, updated_at
-        FROM facts ORDER BY fact_id
-    ''')
+        FROM facts ORDER BY fact_id''')
     for row in cursor.fetchall():
-        vals = []
-        for v in row:
-            if v is None: vals.append('NULL')
-            elif isinstance(v, str): vals.append(repr(v))
-            else: vals.append(str(v))
-        f.write('INSERT INTO facts(fact_id, content, category, tags, trust_score, ' +
-                'retrieval_count, helpful_count, created_at, updated_at) ' +
+        vals = ['NULL' if v is None else repr(v) if isinstance(v, str) else str(v) for v in row]
+        f.write('INSERT INTO facts(fact_id, content, category, tags, trust_score, '
+                'retrieval_count, helpful_count, created_at, updated_at) '
                 'VALUES(' + ','.join(vals) + ');\n')
-    
-    # entities
+
     for row in cursor.execute('SELECT * FROM entities ORDER BY entity_id'):
-        vals = []
-        for v in row:
-            if v is None: vals.append('NULL')
-            elif isinstance(v, str): vals.append(repr(v))
-            else: vals.append(str(v))
+        vals = ['NULL' if v is None else repr(v) if isinstance(v, str) else str(v) for v in row]
         f.write('INSERT INTO entities VALUES(' + ','.join(vals) + ');\n')
-    
-    # fact_entities
+
     for row in cursor.execute('SELECT * FROM fact_entities ORDER BY rowid'):
-        vals = []
-        for v in row:
-            if v is None: vals.append('NULL')
-            elif isinstance(v, str): vals.append(repr(v))
-            else: vals.append(str(v))
+        vals = ['NULL' if v is None else repr(v) if isinstance(v, str) else str(v) for v in row]
         f.write('INSERT INTO fact_entities VALUES(' + ','.join(vals) + ');\n')
-    
-    # memory_banks (no vector BLOB)
+
     for row in cursor.execute(
-        'SELECT bank_id, bank_name, dim, fact_count, updated_at FROM memory_banks ORDER BY bank_id'
-    ):
-        vals = []
-        for v in row:
-            if v is None: vals.append('NULL')
-            elif isinstance(v, str): vals.append(repr(v))
-            else: vals.append(str(v))
-        f.write('INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) ' +
+        'SELECT bank_id, bank_name, dim, fact_count, updated_at FROM memory_banks ORDER BY bank_id'):
+        vals = ['NULL' if v is None else repr(v) if isinstance(v, str) else str(v) for v in row]
+        f.write('INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) '
                 'VALUES(' + ','.join(vals) + ');\n')
-    
-    # indexes
+
     for (sql,) in cursor.execute(\"SELECT sql FROM sqlite_master WHERE type='index' ORDER BY name\"):
         if sql and not any(s in sql for s in skip_tables):
             f.write(f'{sql};\n')
-    
     f.write('\nCOMMIT;\n')
-
 conn.close()
+print(f'[+] memory_store_core.sql ({fact_count} facts)')
 "
 
-# 4. Git 提交
+# 4. 备份 hermes_data（用户工作目录）
+if [[ -d "$SRC_DATA" ]]; then
+    mkdir -p "$DST/hermes_data"
+    rsync -a --delete \
+        --exclude='venv' --exclude='.venv' --exclude='env' \
+        --exclude='__pycache__' --exclude='*.pyc' --exclude='*.pyo' \
+        --exclude='logs' --exclude='*.log' \
+        --exclude='*.db' --exclude='*.db-wal' --exclude='*.db-shm' \
+        --exclude='.DS_Store' --exclude='*.tmp' --exclude='*.temp' \
+        --exclude='*.bak' --exclude='*.backup' \
+        --exclude='cache' --exclude='node_modules' \
+        "$SRC_DATA/" "$DST/hermes_data/"
+    echo "[+] hermes_data/ backed up"
+fi
+
+# 5. Git 提交
 cd "$DST"
 git add -A
 git commit -m "sync: $(date +%Y-%m-%d-%H:%M)" || true
@@ -289,50 +290,119 @@ echo "=== Export done ==="
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DST="${1:-$HOME/.hermes}"
+DST_HERMES="${1:-$HOME/.hermes}"
+DST_DATA="${2:-$HOME/hermes_data}"
 
 echo "=== Hermes Portable Import ==="
 
-mkdir -p "$DST"
+# 1. 恢复 ~/.hermes 配置
+mkdir -p "$DST_HERMES"
+cp "$SCRIPT_DIR/hermes/SOUL.md" "$DST_HERMES/"
+rsync -a --delete "$SCRIPT_DIR/hermes/memories/" "$DST_HERMES/memories/"
+rsync -a --delete "$SCRIPT_DIR/hermes/skills/" "$DST_HERMES/skills/"
+mkdir -p "$DST_HERMES/cron"
+cp "$SCRIPT_DIR/hermes/cron/jobs.json" "$DST_HERMES/cron/"
+rsync -a --delete --exclude='__pycache__' "$SCRIPT_DIR/hermes/scripts/" "$DST_HERMES/scripts/"
+cp "$SCRIPT_DIR/hermes/config.yaml" "$DST_HERMES/config.yaml"
+echo "[!] 请编辑 $DST_HERMES/config.yaml 填入你的 API Key"
 
-# 1. 恢复文本配置
-cp "$SCRIPT_DIR/SOUL.md" "$DST/"
-rsync -a --delete "$SCRIPT_DIR/memories/" "$DST/memories/"
-rsync -a --delete "$SCRIPT_DIR/skills/" "$DST/skills/"
-mkdir -p "$DST/cron"
-cp "$SCRIPT_DIR/cron/jobs.json" "$DST/cron/"
-rsync -a --delete --exclude='__pycache__' "$SCRIPT_DIR/scripts/" "$DST/scripts/"
-
-# 2. 恢复配置（需要手动填入 API Key）
-cp "$SCRIPT_DIR/config.yaml" "$DST/config.yaml"
-echo "[!] 请编辑 $DST/config.yaml 填入你的 API Key"
-
-# 3. 恢复全息记忆
-if [[ -f "$SCRIPT_DIR/memory_store_core.sql" ]]; then
-    rm -f "$DST/memory_store.db"
-    sqlite3 "$DST/memory_store.db" < "$SCRIPT_DIR/memory_store_core.sql"
-    echo "[+] 全息记忆文本数据导入完成"
-    
-    # 显式重建 hrr_vector 和 memory_banks.vector
-    echo "[*] 正在重建 HRR 向量（约几秒到几十秒）..."
+# 2. 恢复全息记忆（使用 Python，不依赖 sqlite3 CLI）
+SQL_FILE="$SCRIPT_DIR/hermes/memory_store_core.sql"
+if [[ -f "$SQL_FILE" ]]; then
+    rm -f "$DST_HERMES/memory_store.db"
     python3 -c "
-import sys, os
-sys.path.insert(0, os.path.expanduser('~/.hermes/hermes-agent'))
-from hermes-agent.plugins.memory.holographic.store import MemoryStore
-
-store = MemoryStore(db_path=os.path.expanduser('$DST/memory_store.db'))
-count = store.rebuild_all_vectors()
-print(f'[+] Rebuilt HRR vectors for {count} facts')
-store.close()
+import sqlite3
+with open('$SQL_FILE', 'r') as f: sql = f.read()
+conn = sqlite3.connect('$DST_HERMES/memory_store.db')
+conn.executescript(sql)
+conn.commit(); conn.close()
 "
-    echo "[+] HRR 向量重建完成"
+    echo "[+] 全息记忆文本数据导入完成"
+
+    # 3. 重建 HRR 向量（优先使用 Hermes venv 的 Python）
+    echo "[*] 正在重建 HRR 向量..."
+    if [[ -f "$SCRIPT_DIR/scripts/rebuild_vectors.py" ]]; then
+        HERMES_PYTHON="$DST_HERMES/hermes-agent/venv/bin/python"
+        if [[ -f "$HERMES_PYTHON" ]]; then
+            "$HERMES_PYTHON" "$SCRIPT_DIR/scripts/rebuild_vectors.py"
+        else
+            python3 "$SCRIPT_DIR/scripts/rebuild_vectors.py"
+        fi
+    else
+        echo "[!] 未找到 rebuild_vectors.py，跳过向量重建"
+    fi
 fi
 
-# 4. state.db 不复原——会话历史从头开始
-echo "[i] state.db 不复原（会话历史从头开始）"
+# 4. 恢复 ~/hermes_data
+if [[ -d "$SCRIPT_DIR/hermes_data" ]]; then
+    mkdir -p "$DST_DATA"
+    rsync -a --delete "$SCRIPT_DIR/hermes_data/" "$DST_DATA/"
+    echo "[+] hermes_data/ 恢复完成"
+fi
 
+# 5. state.db 不复原
+
+echo "[i] state.db 不复原（会话历史从头开始）"
 echo "=== 导入完成 ==="
-echo "请安装 Hermes Agent 本体，填入 API Key 后启动。"
+```
+
+### `~/.hermes-portable/scripts/rebuild_vectors.py`
+
+单独维护的重建脚本，绕开 Python 包名限制，自动检测 Hermes venv：
+
+```python
+#!/usr/bin/env python3
+import os, sys, shutil, tempfile, importlib.util, subprocess
+
+HERMES_HOME = os.path.expanduser("~/.hermes")
+DB_PATH = os.path.join(HERMES_HOME, "memory_store.db")
+SRC_DIR = os.path.join(HERMES_HOME, "hermes-agent", "plugins", "memory", "holographic")
+HERMES_VENV_PYTHON = os.path.join(HERMES_HOME, "hermes-agent", "venv", "bin", "python")
+
+def _ensure_numpy() -> bool:
+    try:
+        import numpy  # noqa: F401
+        return True
+    except ImportError:
+        pass
+    if os.path.exists(HERMES_VENV_PYTHON):
+        result = subprocess.run(
+            [HERMES_VENV_PYTHON, "-c", "import numpy; print('ok')"],
+            capture_output=True, text=True, timeout=10
+        )
+        if result.returncode == 0 and "ok" in result.stdout:
+            os.execv(HERMES_VENV_PYTHON, [HERMES_VENV_PYTHON] + sys.argv)
+    # 尝试安装 numpy 作为最后手段
+    for pip_cmd in [f"{sys.executable} -m pip", "pip3", "pip"]:
+        if os.system(f"{pip_cmd} install numpy -q 2>/dev/null") == 0:
+            import importlib; importlib.invalidate_caches()
+            try: import numpy; return True  # noqa: F401
+            except ImportError: continue
+    return False
+
+def load_module_from_path(name: str, path: str):
+    spec = importlib.util.spec_from_file_location(name, path)
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[name] = mod; spec.loader.exec_module(mod)
+    return mod
+
+def main() -> int:
+    if not _ensure_numpy(): return 1
+    with tempfile.TemporaryDirectory() as tmpdir:
+        pkg_dir = os.path.join(tmpdir, "holo_rebuild")
+        os.makedirs(pkg_dir, exist_ok=True)
+        for fname in ["store.py", "holographic.py"]:
+            shutil.copy2(os.path.join(SRC_DIR, fname), pkg_dir)
+        hrr_mod = load_module_from_path("holo_hrr", os.path.join(pkg_dir, "holographic.py"))
+        sys.modules["holographic"] = hrr_mod
+        store_mod = load_module_from_path("holo_store", os.path.join(pkg_dir, "store.py"))
+        store = store_mod.MemoryStore(db_path=DB_PATH)
+        count = store.rebuild_all_vectors()
+        store.close()
+        print(f"[+] Rebuilt {count} HRR vectors")
+    return 0
+
+if __name__ == "__main__": sys.exit(main())
 ```
 
 ## .gitignore 模板
@@ -342,6 +412,7 @@ echo "请安装 Hermes Agent 本体，填入 API Key 后启动。"
 .env
 *.key
 *.pem
+.env.real
 
 # OS / Editor
 .DS_Store
@@ -352,22 +423,47 @@ echo "请安装 Hermes Agent 本体，填入 API Key 后启动。"
 # Python
 __pycache__/
 *.pyc
+*.pyo
 
-# 所有 SQLite 二进制文件（不应直接入库）
+# SQLite binaries（使用 SQL dump 代替）
 *.db
 *.db-wal
 *.db-shm
+*.db-journal
 
-# 旧版 V1 残留：二进制 gzip 分卷（不再使用，Git delta 失效）
+# 旧版 V1 二进制备份
 *.db.gz
 *.db.gz.part-*
 
-# state.db 不备份（会话历史，新机器重新开始）
-state.db*
+# 虚拟环境（可重建）
+venv/
+.venv/
+env/
 
-# 临时 SQL dump
-*.sql.tmp
+# 日志与缓存
+logs/
+*.log
+cache/
+image_cache/
+audio_cache/
+*.cache
+node_modules/
+
+# 会话状态（不移植）
+state.db*
+sessions/
+checkpoints/
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+*.backup
 ```
+
+## 实际部署参考
+
+具体环境可能遇到的问题（sqlite3 CLI 缺失、numpy 仅在 venv 中等）及解决方案，见 `references/environment-adaptations.md`。
 
 ## 快速启用流程
 
@@ -408,6 +504,7 @@ cd ~/.hermes-portable && ./import.sh
 7. **恢复后必须显式重建 hrr_vector** — `import.sh` 中已包含 `rebuild_all_vectors()` 调用，不要跳过
 8. **memory_banks.vector 也需要重建** — `rebuild_all_vectors()` 会自动处理
 9. **V1 旧版残留清理** — 如果 `~/.hermes-portable/` 下有 `memory_store.db.gz.part-*` 等旧版二进制分卷文件，这是已废弃的 V1 方案残留，可安全删除以释放空间
+10. **环境适配** — 不同系统可能存在 `sqlite3` CLI 缺失、`numpy` 仅装在 Hermes venv 中等差异，详见 `references/environment-adaptations.md`
 
 ```bash
 # 删除 V1 旧版二进制分卷备份（已废弃，新版使用文本 SQL）

@@ -105,7 +105,13 @@ print(f'    导入完成: {db_path}')
     # -----------------------------------------------------------------------
     echo "[*] 正在重建 HRR 向量..."
     if [[ -f "$SCRIPT_DIR/scripts/rebuild_vectors.py" ]]; then
-        python3 "$SCRIPT_DIR/scripts/rebuild_vectors.py"
+        # 优先使用 Hermes venv 的 Python
+        HERMES_PYTHON="$DST_HERMES/hermes-agent/venv/bin/python"
+        if [[ -f "$HERMES_PYTHON" ]]; then
+            "$HERMES_PYTHON" "$SCRIPT_DIR/scripts/rebuild_vectors.py"
+        else
+            python3 "$SCRIPT_DIR/scripts/rebuild_vectors.py"
+        fi
     else
         echo "    [!] 未找到 rebuild_vectors.py，跳过向量重建"
         echo "        警告：全息记忆将无法正常工作！"

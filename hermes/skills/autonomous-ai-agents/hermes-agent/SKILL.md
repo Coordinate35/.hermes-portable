@@ -329,6 +329,23 @@ The registry of record is `hermes_cli/commands.py` — every consumer
 
 ---
 
+## CLI Input Shortcuts (TUI)
+
+Hermes CLI uses **prompt_toolkit** for its interactive input area. These keybindings are hardcoded in `cli.py` and are **not configurable** via `config.yaml`.
+
+| Shortcut | Action |
+|----------|--------|
+| `Enter` | Submit the current input |
+| `Alt + Enter` | Insert a newline (multiline input) |
+| `Ctrl + Enter` | Insert a newline (most terminals send this as `c-j`) |
+| `Ctrl + G` | Open current draft in external `$EDITOR` |
+| `Alt + G` | Same as Ctrl+G (fallback for VSCode/Cursor embedded terminal) |
+| `Tab` | Accept completion, ghost suggestion, or open completion menu |
+
+**Note:** If you want to write a very long message, `Ctrl+G` (or `Alt+G`) opens the draft in your default editor — much easier than inserting newlines manually.
+
+---
+
 ## Key Paths & Config
 
 ```

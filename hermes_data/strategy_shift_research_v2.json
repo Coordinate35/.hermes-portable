@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "generated_at": "2026-05-09 19:32:54",
+    "purpose": "分析短股长金到金转油的推导逻辑与结束信号"
+  },
+  "china_macro": {
+    "CPI": {
+      "latest_date": "2026-03",
+      "latest_yoy": 1.0,
+      "2022_avg": 1.96,
+      "2023_avg": 0.24,
+      "2024_avg": 0.22
+    },
+    "M2": {
+      "latest_date": "2026年03月份",
+      "latest_yoy": 8.5
+    },
+    "GDP": {
+      "latest_quarter": "2026年第1季度",
+      "latest_yoy": 5.0
+    },
+    "LPR": {
+      "latest_date": "2026-04-20",
+      "5_year": 3.5,
+      "1_year": 3.0
+    },
+    "house_price": {
+      "latest_date": "2011-01-01",
+      "yoy": 101.8
+    }
+  },
+  "global_markets": {
+    "crude_oil_shanghai": {
+      "latest_price": null,
+      "unit": "元/桶"
+    }
+  },
+  "us_fiscal": {
+    "total_debt": {
+      "trillion_usd": 38.93,
+      "date": "2026-05-07"
+    },
+    "daily_growth_billion": 8.25
+  },
+  "analysis": {
+    "luqiyuan_framework": {
+      "inputs": {
+        "CPI": 1.0,
+        "M2": 8.5,
+        "GDP": 5.0,
+        "LPR_5y": 4.85,
+        "house_yoy": 100.8
+      },
+      "real_inflation_m2": 4.5,
+      "real_inflation_asset": 21.16,
+      "real_rate_m2": 0.35,
+      "real_rate_asset": -16.31,
+      "cycle_state": "高低",
+      "growth_label": "高增长",
+      "inflation_label": "低通胀",
+      "recommended_asset": "📈股票/实体经济",
+      "description": "高增长+低通胀，股市和实体受益"
+    },
+    "luqiyuan_framework_v2": {
+      "inputs": {
+        "CPI": 1.0,
+        "M2": 8.5,
+        "GDP": 5.0,
+        "LPR_5y": 3.5,
+        "house_yoy": 101.8
+      },
+      "real_inflation_m2": 4.5,
+      "real_inflation_asset": 21.36,
+      "real_rate_m2": -1.0,
+      "real_rate_asset": -17.86,
+      "cycle_state": "高低",
+      "growth_label": "高增长",
+      "inflation_label": "低通胀",
+      "recommended_asset": "📈股票/实体",
+      "description": "高增长+低通胀",
+      "note": "真实通胀率4.5%接近低高边界，且实质利率接近0，处于转折区间"
+    }
+  }
+}

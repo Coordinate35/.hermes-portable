@@ -1,0 +1,64 @@
+# Secrets
+.env
+*.key
+*.pem
+.env.real
+
+# OS / Editor
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite binaries (we use SQL dumps instead)
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Old V1 binary backups (deprecated)
+*.db.gz
+*.db.gz.part-*
+
+# Virtual environments (rebuildable)
+venv/
+.venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# Session state (not portable)
+state.db*
+sessions/
+checkpoints/
+
+# Cache
+cache/
+image_cache/
+audio_cache/
+*.cache
+
+# Node modules
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Large generated artifacts that can be regenerated
+# (keep commented out by default; user can enable if needed)
+# *.png
+# *.jpg
+# *.jpeg
+
+# Ignore the portable repo's own logs if any
+scripts/*.log

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-04-21 00:24:22",
+  "source": "AKShare",
+  "data": {
+    "CPI同比": 1.0,
+    "M2同比增速": 8.5,
+    "GDP同比增速": 5.0,
+    "5年期LPR": 4.85,
+    "房价同比涨幅": 100.8,
+    "股市涨幅": 2.1
+  },
+  "analysis": {
+    "real_inflation_m2": 4.5,
+    "real_inflation_asset": 1.18,
+    "real_rate_m2": 0.35,
+    "real_rate_asset": 3.67,
+    "cycle_state": "高低",
+    "growth": "高增长",
+    "inflation": "低通胀",
+    "investment": "📈股票/实体经济",
+    "strategy": "高增长+低通胀，利好股市和实体",
+    "stop_loss": {
+      "negative_rate": -0.35,
+      "risk_level": "低风险 (可接受区间)",
+      "action": "✅ 保持适度纸币配置，关注市场变化"
+    }
+  }
+}

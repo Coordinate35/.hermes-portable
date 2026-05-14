@@ -133,7 +133,7 @@ with open(os.path.expanduser('~/.hermes-portable/memory_store_core.sql'), 'w') a
             if v is None: vals.append('NULL')
             elif isinstance(v, str): vals.append(repr(v))
             else: vals.append(str(v))
-        f.write(f'INSERT INTO entities VALUES({','.join(vals)});\\n')
+        f.write('INSERT INTO entities VALUES(' + ','.join(vals) + ');\\n')  # avoid nested same-quote f-string (Py<3.12)
     
     # 4. fact_entities
     for row in cursor.execute('SELECT * FROM fact_entities ORDER BY rowid'):

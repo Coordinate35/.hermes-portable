@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 5791
+        "completed": 6078
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-05-14T03:05:00+08:00",
-      "last_run_at": "2026-05-14T03:01:10.204956+08:00",
+      "next_run_at": "2026-05-15T03:05:00+08:00",
+      "last_run_at": "2026-05-15T03:00:52.309776+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -56,17 +56,17 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 7
+        "completed": 8
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-05-14T09:00:00+08:00",
-      "last_run_at": "2026-05-13T09:01:34.562551+08:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-05-15T09:00:00+08:00",
+      "last_run_at": "2026-05-14T09:01:01.521796+08:00",
+      "last_status": "error",
+      "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "last_delivery_error": null,
       "deliver": "weixin",
       "origin": {
@@ -96,16 +96,16 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 0
+        "completed": 1
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-05-15T03:00:00+08:00",
-      "last_run_at": null,
-      "last_status": null,
+      "next_run_at": "2026-05-16T03:00:00+08:00",
+      "last_run_at": "2026-05-14T03:02:26.164027+08:00",
+      "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
       "deliver": "local",
@@ -114,5 +114,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-05-14T03:01:10.207066+08:00"
+  "updated_at": "2026-05-15T03:00:52.312057+08:00"
 }

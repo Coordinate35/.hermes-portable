@@ -257,6 +257,7 @@ if [[ -d "$SRC_DATA" ]]; then
         --exclude='node_modules' \
         --exclude='*.key' \
         --exclude='*.pem' \
+        --exclude='*.onnx' \
         --exclude='secrets/' \
         "$SRC_DATA/" "$DST/hermes_data/"
     echo "    hermes_data/ ✓"

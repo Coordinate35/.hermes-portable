@@ -62,3 +62,4 @@ node_modules/
 
 # Ignore the portable repo's own logs if any
 scripts/*.log
+*.onnx

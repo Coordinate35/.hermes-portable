@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7863
--- Exported: 2026-05-15T03:01:04.383646
+-- Facts count: 7868
+-- Exported: 2026-05-16T03:00:19.315625
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7899,6 +7899,11 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7924,'User environment hardware: VirtualBox VM (Linux guest) on Windows 10 host with NVIDIA RTX 4060 Ti 8GB. VM uses NAT networking (host reachable at 10.0.2.2). ChatTTS host-side API service deployed via shared folder on port 5000; Piper available as CPU fallback inside VM.','tool','environment,virtualbox,gpu,tts,chattts,piper',0.5,0,0,'2026-05-14 17:43:33','2026-05-14 17:43:33');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7925,'用户偏好 Piper TTS 默认使用小雅（zh_CN-xiao_ya-medium）音色。位于 ~/hermes_data/piper/models/','user_pref','',0.5,0,0,'2026-05-14 18:23:34','2026-05-14 18:23:34');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7926,'用户要求：发语音消息时，优先使用本地 Piper TTS（默认小雅 zh_CN-xiao_ya-medium 音色）。部署在 ~/hermes_data/piper/。','user_pref','tts,piper,voice,preference',0.5,0,0,'2026-05-14 18:25:23','2026-05-14 18:25:23');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7927,'User prefers Piper (local ONNX TTS) for Chinese text-to-speech over Edge TTS or other cloud providers. Edge TTS with English voice (en-US-AriaNeural) silently fails on Chinese text, producing ~1-2s truncated audio. When user asks for Chinese voice synthesis, default to Piper deployment rather than trying cloud TTS fallbacks.','user_pref','',0.5,0,0,'2026-05-15 03:43:01','2026-05-15 03:43:01');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7928,'用户对 TTS 语音质量有明确要求，特别关注 `断句` 和 `韵律` 自然度。Piper 中文模型的机械断句被用户认为"挺奇怪的"。偏好 MeloTTS 或 Edge TTS 中文语音（XiaoxiaoNeural）。','user_pref','',0.5,0,0,'2026-05-15 04:42:34','2026-05-15 04:42:34');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7929,'用户默认使用 MeloTTS 作为语音合成引擎，而非 Hermes 内置的 Edge TTS。MeloTTS wrapper 脚本位于 ~/hermes_data/melotts/melo_tts.sh，纯离线运行，CPU 推理。当用户要求"念给我听"时，直接调用该脚本而非 text_to_speech 工具。Hermes 的 Edge TTS fallback 已配置为 zh-CN-XiaoxiaoNeural。','user_pref','',0.5,0,0,'2026-05-15 04:45:55','2026-05-15 04:45:55');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7930,'在 QQ 平台对话时，用户偏好默认优先使用语音（TTS）回复，尤其是在播报微博、朗读文章或长文本等场景下。微信和 CLI 平台保持文字回复为主。','user_pref','',0.5,0,0,'2026-05-15 10:09:31','2026-05-15 10:09:31');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7931,'用户具备技术背景，了解无头浏览器、反爬机制等概念。在遇到问题时会主动提出具体技术方案（如建议"用无头浏览器访问"）。未来遇到访问限制时，可直接尝试用户建议的技术路径，不需要反复解释基础概念。','user_pref','',0.5,0,0,'2026-05-15 15:12:06','2026-05-15 15:12:06');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9061,6 +9066,9 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1158,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1159,'支出/花费/记账/记一笔/花了多少/账单','unknown','','2026-05-13 17:37:02');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1160,'accounting','unknown','','2026-05-13 17:37:02');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1161,'支出/花费/记账/记一笔/花了多少/账单/消费/开销','unknown','','2026-05-13 17:37:22');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1162,'挺奇怪的','unknown','','2026-05-15 04:42:34');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1163,'念给我听','unknown','','2026-05-15 04:45:55');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1164,'用无头浏览器访问','unknown','','2026-05-15 15:12:06');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10383,13 +10391,16 @@ INSERT INTO fact_entities VALUES(7921,1159);
 INSERT INTO fact_entities VALUES(7921,1160);
 INSERT INTO fact_entities VALUES(7922,1161);
 INSERT INTO fact_entities VALUES(7922,1160);
+INSERT INTO fact_entities VALUES(7928,1162);
+INSERT INTO fact_entities VALUES(7929,1163);
+INSERT INTO fact_entities VALUES(7931,1164);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2802,'cat:daodejing',4096,213,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2807,'cat:software_arch',4096,924,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2815,'cat:test',4096,6,'2026-04-28 21:05:35');
-INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,5,'2026-05-14 18:25:23');
+INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,10,'2026-05-15 15:12:06');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2824,'cat:general',1024,424,'2026-05-10 16:22:59');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2827,'cat:tool',4096,1,'2026-05-14 17:43:33');
 

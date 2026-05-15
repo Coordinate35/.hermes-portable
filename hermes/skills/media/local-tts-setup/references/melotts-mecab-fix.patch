@@ -1,0 +1,22 @@
+--- a/melo/text/japanese.py
++++ b/melo/text/japanese.py
+@@ -364,7 +364,13 @@
+ 
+ _SYMBOL_TOKENS = set(list("・、。？！"))
+ _NO_YOMI_TOKENS = set(list("「」『』―（）［］[]"))
+-_TAGGER = MeCab.Tagger()
++_TAGGER = None
++
++def _get_tagger():
++    global _TAGGER
++    if _TAGGER is None:
++        _TAGGER = MeCab.Tagger()
++    return _TAGGER
+ 
+ 
+ def text2kata(text: str) -> str:
+-    parsed = _TAGGER.parse(text)
++    parsed = _get_tagger().parse(text)
+     res = []
+     for line in parsed.split("\n"):
+         if line == "EOS":

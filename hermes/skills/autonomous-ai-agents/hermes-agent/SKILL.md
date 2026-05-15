@@ -517,7 +517,9 @@ To keep the model away from network or media tools entirely, open `hermes tools`
 
 Voice messages from messaging platforms are auto-transcribed.
 
-Provider priority (auto-detected):
+**⚠️ QQ Bot uses its own STT path** — independent of global `stt` config. See `references/qqbot-stt-config.md` for full details. QQ Bot first tries Tencent's built-in ASR; only if that returns empty does it fall back to an external STT API configured via `channels.qqbot.stt` or `QQ_STT_API_KEY`. Changing `stt.local.model` does NOT affect QQ Bot voice recognition.
+
+Provider priority (auto-detected) for non-QQ platforms and QQ fallback:
 1. **Local faster-whisper** — free, no API key: `pip install faster-whisper`
 2. **Groq Whisper** — free tier: set `GROQ_API_KEY`
 3. **OpenAI Whisper** — paid: set `VOICE_TOOLS_OPENAI_KEY`
@@ -721,8 +723,30 @@ User docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban
 
 ### Voice not working
 1. Check `stt.enabled: true` in config.yaml
-2. Verify provider: `pip install faster-whisper` or set API key
-3. In gateway: `/restart`. In CLI: exit and relaunch.
+2. For **QQ Bot voice issues**, check `references/qqbot-stt-config.md` — QQ Bot uses its own STT path (`channels.qqbot.stt` / `QQ_STT_API_KEY`), not global `stt.local.model`.
+3. Verify provider: `pip install faster-whisper` or set API key
+4. In gateway: `/restart`. In CLI: exit and relaunch.
+
+### TTS fails with AssertionError (MeloTTS)
+**Symptom**: MeloTTS crashes with `AssertionError` in `chinese.py` or `chinese_mix.py`.
+**Root cause**: MeloTTS does not handle Arabic numerals (`2026`, `5.1%`), `%`, `.`, or certain punctuation well in Chinese mode. It expects pure CJK text.
+**Fix**: For text containing numbers, percentages, or special punctuation, use **Edge TTS** instead of MeloTTS. MeloTTS is best for short, purely Chinese sentences without numeric data.
+```bash
+# Force Edge TTS for the current reply (if using tts tool)
+# Or set provider fallback:
+hermes config set tts.provider edge
+```
+
+### faster-whisper model download fails in China
+**Symptom**: `ConnectError: [Errno 101] Network is unreachable` when downloading whisper models.
+**Fix**: Use the HuggingFace mirror:
+```bash
+HF_ENDPOINT=https://hf-mirror.com python -c "
+from faster_whisper import WhisperModel
+model = WhisperModel('medium', device='cpu', compute_type='int8')
+"
+```
+Models are cached at `~/.cache/huggingface/hub/models--Systran--faster-whisper-<size>/`.
 
 ### Tool not available
 1. `hermes tools` — check if toolset is enabled for your platform

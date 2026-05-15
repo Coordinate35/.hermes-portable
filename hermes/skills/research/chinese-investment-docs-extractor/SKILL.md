@@ -27,6 +27,15 @@ This skill extracts structured investment analysis frameworks from Chinese finan
 - PDF files located at user-specified path (typically `/home/coordinate35/virtualbox_share/luqiyuan/docs/`)
 - System has `pdftotext` available (preferred over PyMuPDF - user denied installation)
 
+## Pre-Extraction: Document Access
+
+If the user references a Chinese government policy document or whitepaper (白皮书) but does not have the PDF yet, consult `references/chinese-policy-document-access.md` for layered strategies to locate it. Key points:
+
+- Direct access to `scio.gov.cn` usually fails (JS cookie challenges, anti-bot)
+- E-commerce book search (当当, 京东) reveals ISBN, publisher, publication date reliably
+- Sogou WeChat search finds public-account summaries with full text
+- English versions may exist on `english.www.gov.cn/archive/whitepaper/`
+
 ## Extraction Process
 
 ### Phase 1: Initial Extraction

@@ -270,6 +270,8 @@ if [[ -d "$SRC_DATA" ]]; then
         --exclude='.DS_Store' --exclude='*.tmp' --exclude='*.temp' \
         --exclude='*.bak' --exclude='*.backup' \
         --exclude='cache' --exclude='node_modules' \
+        --exclude='*.onnx' --exclude='*.bin' \
+        --exclude='*.pt' --exclude='*.pth' --exclude='*.safetensors' \
         "$SRC_DATA/" "$DST/hermes_data/"
     echo "[+] hermes_data/ backed up"
 fi
@@ -459,6 +461,13 @@ checkpoints/
 *.temp
 *.bak
 *.backup
+
+# ML 模型权重（可重新下载，常超 100MB GitHub 限制）
+*.onnx
+*.bin
+*.pt
+*.pth
+*.safetensors
 ```
 
 ## 实际部署参考
@@ -505,6 +514,7 @@ cd ~/.hermes-portable && ./import.sh
 8. **memory_banks.vector 也需要重建** — `rebuild_all_vectors()` 会自动处理
 9. **V1 旧版残留清理** — 如果 `~/.hermes-portable/` 下有 `memory_store.db.gz.part-*` 等旧版二进制分卷文件，这是已废弃的 V1 方案残留，可安全删除以释放空间
 10. **环境适配** — 不同系统可能存在 `sqlite3` CLI 缺失、`numpy` 仅装在 Hermes venv 中等差异，详见 `references/environment-adaptations.md`
+11. **ML 模型文件勿入库** — `.onnx` / `.bin` / `.pt` / `.pth` / `.safetensors` 等机器学习模型权重常超过 GitHub 100MB 单文件限制，会导致 `pre-receive hook declined` 推送失败。export.sh 已默认排除这些格式，模型需在新机器上重新下载。若历史中已污染大文件，用 `git filter-branch --index-filter 'git rm --cached --ignore-unmatch <path>' --prune-empty -- --all` 清理后再推送。
 
 ```bash
 # 删除 V1 旧版二进制分卷备份（已废弃，新版使用文本 SQL）

@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-13T17:36:52.842654+00:00",
-    "last_used_at": "2026-05-16T07:39:45.321920+00:00",
-    "last_viewed_at": "2026-05-16T07:39:45.320486+00:00",
+    "last_used_at": "2026-05-17T06:24:46.416329+00:00",
+    "last_viewed_at": "2026-05-17T06:24:46.414820+00:00",
     "patch_count": 1,
     "pinned": false,
     "state": "active",
-    "use_count": 2,
-    "view_count": 2
+    "use_count": 3,
+    "view_count": 3
   },
   "chinese-investment-docs-extractor": {
     "archived_at": null,
@@ -64,18 +64,31 @@
     "use_count": 1,
     "view_count": 1
   },
+  "japan-mof-intervention-monitor": {
+    "archived_at": null,
+    "created_at": "2026-05-17T01:00:23.036651+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-05-17T01:00:23.038550+00:00",
+    "last_viewed_at": "2026-05-17T01:00:23.036674+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "local-tts-setup": {
     "archived_at": null,
     "created_at": "2026-05-15T03:37:28.980569+00:00",
     "created_by": null,
-    "last_patched_at": "2026-05-15T04:42:48.348347+00:00",
-    "last_used_at": "2026-05-15T04:39:19.233325+00:00",
-    "last_viewed_at": "2026-05-15T04:39:19.232489+00:00",
-    "patch_count": 13,
+    "last_patched_at": "2026-05-17T15:08:26.106398+00:00",
+    "last_used_at": "2026-05-17T15:07:19.046352+00:00",
+    "last_viewed_at": "2026-05-17T15:07:19.044662+00:00",
+    "patch_count": 18,
     "pinned": false,
     "state": "active",
-    "use_count": 3,
-    "view_count": 3
+    "use_count": 5,
+    "view_count": 5
   },
   "weibo-account-monitor": {
     "archived_at": null,

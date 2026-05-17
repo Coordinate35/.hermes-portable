@@ -17,11 +17,12 @@ trigger: |
 
 ```
 是否需要极致自然度 / 情感表达 / 声音克隆？
-┌──────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────┐
 │  是 → ChatTTS / Sherpa-ONNX                   │
-│  需要 6GB+ GPU 显存                        │
-│  虚拟机不可用 → 参考 virtualbox-gpu-bridge   │
-└───────────────────────────────────────────────────────────────┘
+│  推理需要 6GB+ 显存 / 内存，纯 CPU 可跑推理   │
+│  Zero-shot 克隆不需要训练，Windows 可用      │
+│  训练则需要 GPU，虚拟机不可用 → 参考 virtualbox-gpu-bridge   │
+└────────────────────────────────────────────────────────┘
             │ 否
             ▼
     是否需要中文且对韵律/断句有要求？
@@ -56,9 +57,10 @@ trigger: |
 
 > 💡 **选型建议**：
 > - 中文、离线、对韵律有要求 → **MeloTTS** 
-> - 中文、离线、只要能听懂就行 → **Piper**
-> - 中文、有网、追求最佳效果 → **Edge TTS** (`zh-CN-XiaoxiaoNeural`)
-> - 英文、离线 → **Piper** 或 **MeloTTS**
+- 中文、离线、对韵律有要求 → **MeloTTS**
+- 中文、有网、追求最佳效果 → **Edge TTS** (`zh-CN-XiaoxiaoNeural`)
+- 中文、离线、需要对话感 / 声音克隆 → **ChatTTS**（见下方 ChatTTS 专节，Windows 可跑 zero-shot 克隆）
+- 英文、离线 → **Piper** 或 **MeloTTS**
 
 > ⚠️ **关键决策**：如果当前 TTS provider 是 Edge TTS 且配置的 voice 是英文（如 `en-US-AriaNeural`），**中文文本会直接失败或产生 1-2 秒的截断音频**。此时不要试图调试 Edge TTS，直接切换到 Piper。
 
@@ -520,6 +522,79 @@ patch -p2 < /path/to/melotts-mecab-fix.patch
 2. 添加 `_get_tagger()` 懒加载函数
 3. 将 `parsed = _TAGGER.parse(text)` 改为 `parsed = _get_tagger().parse(text)`
 
+### Q14: MeloTTS 导入时报错 `RuntimeError: Failed initializing MeCab`
+
+MeloTTS 的日语处理模块在导入时就初始化 MeCab Tagger，若 unidic 词典未就绪则抛出 RuntimeError。
+
+**解决**：应用懒加载修复补丁（见本 Skill 的 `references/melotts-mecab-fix.patch`）：
+```bash
+cd ~/hermes_data/melotts/.venv/lib/python3.11/site-packages
+patch -p2 < /path/to/melotts-mecab-fix.patch
+```
+
+或手动修改 `melo/text/japanese.py`：
+1. 将 `_TAGGER = MeCab.Tagger()` 改为 `_TAGGER = None`
+2. 添加 `_get_tagger()` 懒加载函数
+3. 将 `parsed = _TAGGER.parse(text)` 改为 `parsed = _get_tagger().parse(text)`
+
+---
+
+## ChatTTS 专节：对话级 TTS + Zero-shot 声音克隆
+
+> 完整技术细节见：`references/chattts-zero-shot-cloning.md`
+
+ChatTTS 是 2noise 开源的对话场景 TTS 模型（39.2k+ stars），支持 zero-shot 声音克隆。
+
+### 安装
+```bash
+pip install ChatTTS
+# 或
+pip install git+https://github.com/2noise/ChatTTS
+```
+
+### Zero-shot 声音克隆（Windows 可用）
+
+ChatTTS 支持从参考音频提取声线特征并复用，无需训练，纯 PyTorch 推理，Windows 可直接运行：
+
+```python
+import ChatTTS
+import torchaudio
+
+chat = ChatTTS.Chat()
+chat.load(compile=False)
+
+# 从参考音频提取声线
+wav, sr = torchaudio.load("reference.wav")
+spk_prompt = chat.sample_audio_speaker(wav.squeeze().numpy())
+
+# 用该声线生成语音
+params = ChatTTS.Chat.InferCodeParams(spk_smp=spk_prompt)
+wavs = chat.infer(["这是一段测试文本"], params_infer_code=params)
+```
+
+### Windows 兼容性
+
+| 功能 | Windows |
+|:---|:---:|
+| 推理 / Zero-shot 克隆 | ✅ 支持 |
+| vLLM 加速 | ❌ 仅 Linux |
+| TransformerEngine | ❌ 仅 Linux |
+| FlashAttention-2 | ⚠️ 官方建议不要安装 |
+| 训练 / Fine-tune | ❌ 官方未开源 |
+
+### 关键参数
+
+- `spk_emb` — 从高斯分布采样的随机说话人嵌入（可保存重用）
+- `spk_smp` — 从参考音频提取的说话人 prompt（用于 zero-shot 克隆）
+- `txt_smp` — 配对的文本样本（很少用）
+
+### 注意事项
+
+1. **噪声**：40k 小时预训练模型带有高频噪声 + MP3 压缩痕迹（反滥用措施）
+2. **精度**：Zero-shot 只能抓住"大致音色"，细节不如 GPT-SoVITS 等训练方案
+3. **参考音频**：建议 3~10 秒清晰人声，有背景音/音乐会降低质量
+4. **模型大小**：约 3~4GB，显存需求 6GB+
+
 ## 高级用法
 
 ### 切换音色
@@ -552,5 +627,7 @@ done < input.txt
 - Piper 语音模型库: https://huggingface.co/rhasspy/piper-voices
 - HuggingFace 国内镜像: https://hf-mirror.com
 - ONNX Runtime 文档: https://onnxruntime.ai/
+- ChatTTS GitHub: https://github.com/2noise/ChatTTS
 - 本 Skill 附录：`references/post-processing.md` — 音频后处理命令（WAV转MP3等）
 - 本 Skill 附录：`references/melotts-mecab-fix.patch` — MeloTTS 日语模块 MeCab 懒加载修复补丁
+- 本 Skill 附录：`references/chattts-zero-shot-cloning.md` — ChatTTS zero-shot 声音克隆技术细节（Windows 兼容性、代码示例、工作原理）

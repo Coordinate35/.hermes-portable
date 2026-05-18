@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7868
--- Exported: 2026-05-18T03:01:02.385371
+-- Facts count: 7869
+-- Exported: 2026-05-19T03:00:12.607959
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7904,6 +7904,7 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7929,'用户默认使用 MeloTTS 作为语音合成引擎，而非 Hermes 内置的 Edge TTS。MeloTTS wrapper 脚本位于 ~/hermes_data/melotts/melo_tts.sh，纯离线运行，CPU 推理。当用户要求"念给我听"时，直接调用该脚本而非 text_to_speech 工具。Hermes 的 Edge TTS fallback 已配置为 zh-CN-XiaoxiaoNeural。','user_pref','',0.5,0,0,'2026-05-15 04:45:55','2026-05-15 04:45:55');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7930,'在 QQ 平台对话时，用户偏好默认优先使用语音（TTS）回复，尤其是在播报微博、朗读文章或长文本等场景下。微信和 CLI 平台保持文字回复为主。','user_pref','',0.5,0,0,'2026-05-15 10:09:31','2026-05-15 10:09:31');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7931,'用户具备技术背景，了解无头浏览器、反爬机制等概念。在遇到问题时会主动提出具体技术方案（如建议"用无头浏览器访问"）。未来遇到访问限制时，可直接尝试用户建议的技术路径，不需要反复解释基础概念。','user_pref','',0.5,0,0,'2026-05-15 15:12:06','2026-05-15 15:12:06');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7932,'User is actively evaluating TTS/voice cloning models (ChatTTS, resemble-ai/chatterbox) for zero-shot speaker cloning. Runs Windows host + Linux VirtualBox VM, seeks GPU-accelerated TTS solutions that work across this setup. Interested in audio processing workflows (MP3 trimming, reference audio extraction).','user_pref','',0.5,0,0,'2026-05-17 19:16:40','2026-05-17 19:16:40');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9069,6 +9070,7 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1161,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1162,'挺奇怪的','unknown','','2026-05-15 04:42:34');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1163,'念给我听','unknown','','2026-05-15 04:45:55');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1164,'用无头浏览器访问','unknown','','2026-05-15 15:12:06');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1165,'Runs Windows','unknown','','2026-05-17 19:16:40');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10394,13 +10396,14 @@ INSERT INTO fact_entities VALUES(7922,1160);
 INSERT INTO fact_entities VALUES(7928,1162);
 INSERT INTO fact_entities VALUES(7929,1163);
 INSERT INTO fact_entities VALUES(7931,1164);
+INSERT INTO fact_entities VALUES(7932,1165);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2802,'cat:daodejing',4096,213,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2807,'cat:software_arch',4096,924,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2815,'cat:test',4096,6,'2026-04-28 21:05:35');
-INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,10,'2026-05-15 15:12:06');
+INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,11,'2026-05-17 19:16:40');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2824,'cat:general',1024,424,'2026-05-10 16:22:59');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2827,'cat:tool',4096,1,'2026-05-14 17:43:33');
 

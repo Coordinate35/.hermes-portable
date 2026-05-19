@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7869
--- Exported: 2026-05-19T03:00:12.607959
+-- Facts count: 7872
+-- Exported: 2026-05-20T03:00:08.860858
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7905,6 +7905,9 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7930,'在 QQ 平台对话时，用户偏好默认优先使用语音（TTS）回复，尤其是在播报微博、朗读文章或长文本等场景下。微信和 CLI 平台保持文字回复为主。','user_pref','',0.5,0,0,'2026-05-15 10:09:31','2026-05-15 10:09:31');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7931,'用户具备技术背景，了解无头浏览器、反爬机制等概念。在遇到问题时会主动提出具体技术方案（如建议"用无头浏览器访问"）。未来遇到访问限制时，可直接尝试用户建议的技术路径，不需要反复解释基础概念。','user_pref','',0.5,0,0,'2026-05-15 15:12:06','2026-05-15 15:12:06');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7932,'User is actively evaluating TTS/voice cloning models (ChatTTS, resemble-ai/chatterbox) for zero-shot speaker cloning. Runs Windows host + Linux VirtualBox VM, seeks GPU-accelerated TTS solutions that work across this setup. Interested in audio processing workflows (MP3 trimming, reference audio extraction).','user_pref','',0.5,0,0,'2026-05-17 19:16:40','2026-05-17 19:16:40');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7933,'User is actively working with ChatTTS (voice cloning / text-to-speech) on Windows. Current project at D:\\Documents\\ChatTTS, using Python 3.12, uv for environment management, winget for ffmpeg, and Audacity for audio editing. Interested in speaker embedding extraction, audio preprocessing, and fine-tuning Temperature/Top P/Top K for voice cloning fidelity.','user_pref','',0.5,0,0,'2026-05-18 19:51:17','2026-05-18 19:51:17');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7934,'User asked about vivo X300 + China Mobile BeiDou satellite messaging in Thailand, suggesting possible upcoming Thailand travel and an interest in satellite-based emergency communication while abroad.','user_pref','',0.5,0,0,'2026-05-18 19:51:18','2026-05-18 19:51:18');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7935,'User may have upcoming Thailand travel plans. Asked about vivo X300 + China Mobile BeiDou satellite messaging availability in Thailand, suggesting interest in satellite-based emergency communication while traveling abroad.','user_pref','',0.5,0,0,'2026-05-18 19:51:32','2026-05-18 19:51:32');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9071,6 +9074,7 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1162,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1163,'念给我听','unknown','','2026-05-15 04:45:55');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1164,'用无头浏览器访问','unknown','','2026-05-15 15:12:06');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1165,'Runs Windows','unknown','','2026-05-17 19:16:40');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1166,'China Mobile','unknown','','2026-05-18 19:51:18');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10397,13 +10401,15 @@ INSERT INTO fact_entities VALUES(7928,1162);
 INSERT INTO fact_entities VALUES(7929,1163);
 INSERT INTO fact_entities VALUES(7931,1164);
 INSERT INTO fact_entities VALUES(7932,1165);
+INSERT INTO fact_entities VALUES(7934,1166);
+INSERT INTO fact_entities VALUES(7935,1166);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2802,'cat:daodejing',4096,213,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2807,'cat:software_arch',4096,924,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2815,'cat:test',4096,6,'2026-04-28 21:05:35');
-INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,11,'2026-05-17 19:16:40');
+INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,14,'2026-05-18 19:51:32');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2824,'cat:general',1024,424,'2026-05-10 16:22:59');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2827,'cat:tool',4096,1,'2026-05-14 17:43:33');
 

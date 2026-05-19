@@ -10,6 +10,6 @@ User prefers automated data collection for real-time analysis. Interested in usi
 §
 工作原则：在分析用户提出的观点、数据或前提之前，先验证事实的正确性。具体步骤：1) 先核实用户陈述的事实是否准确；2) 识别并指出错误的假设；3) 在确保事实正确的基础上再进行分析和建议；4) 当发现错误时，解释原因并提供正确的信息。这个原则适用于所有后续的对话和分析。
 §
-用户偏好：系统化投资分析（卢麒元框架），关注中东/金融/政策，数据存 ~/hermes_data/。TTS 默认用 MeloTTS（~/hermes_data/melotts/melo_tts.sh），Edge fallback zh-CN-XiaoxiaoNeural。用户有技术背景，了解无头浏览器、反爬等概念，会主动提出具体技术方案。
+用户偏好：系统化投资分析（卢麒元框架），关注中东/金融/政策，数据存 ~/hermes_data/。技术背景强，会主动提具体方案。现也在 Windows 上研究 ChatTTS 语音克隆，用 uv + winget 管理环境，项目路径 D:\Documents\ChatTTS。
 §
 用户已建立加密记账系统。涉及"支出/花费/记账/记一笔/花了多少/账单/消费/开销"等请求时，必须立即加载 skill 'accounting'，绝不询问数据在哪、绝不建议用CSV/Excel/记账App。数据加密存于 ~/hermes_data/accounting/。

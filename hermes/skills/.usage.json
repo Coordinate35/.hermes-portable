@@ -4,13 +4,26 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-13T17:36:52.842654+00:00",
-    "last_used_at": "2026-05-19T04:17:56.173510+00:00",
-    "last_viewed_at": "2026-05-19T04:17:56.171662+00:00",
+    "last_used_at": "2026-05-20T13:42:09.985866+00:00",
+    "last_viewed_at": "2026-05-20T13:42:09.983929+00:00",
     "patch_count": 1,
     "pinned": false,
     "state": "active",
-    "use_count": 7,
-    "view_count": 7
+    "use_count": 8,
+    "view_count": 8
+  },
+  "ai-gateway-landscape": {
+    "archived_at": null,
+    "created_at": "2026-05-20T09:08:58.248247+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-05-20T09:09:41.860762+00:00",
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 2,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
   },
   "chinese-investment-docs-extractor": {
     "archived_at": null,
@@ -90,6 +103,32 @@
     "use_count": 5,
     "view_count": 5
   },
+  "luqiyuan-macro-analysis": {
+    "archived_at": null,
+    "created_at": "2026-05-20T16:17:01.242996+00:00",
+    "created_by": null,
+    "last_patched_at": "2026-05-20T16:22:05.075587+00:00",
+    "last_used_at": "2026-05-20T16:17:01.244217+00:00",
+    "last_viewed_at": "2026-05-20T16:17:01.243012+00:00",
+    "patch_count": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
+  "macroeconomic-system-modeling": {
+    "archived_at": null,
+    "created_at": "2026-05-20T16:17:54.104031+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-05-20T16:21:33.656830+00:00",
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
+  },
   "virtualbox-gpu-bridge": {
     "archived_at": null,
     "created_at": "2026-05-17T19:16:19.382610+00:00",
@@ -107,14 +146,14 @@
     "archived_at": null,
     "created_at": "2026-05-18T03:13:56.570512+00:00",
     "created_by": null,
-    "last_patched_at": null,
-    "last_used_at": "2026-05-19T03:02:42.520577+00:00",
-    "last_viewed_at": "2026-05-19T03:02:42.518801+00:00",
-    "patch_count": 0,
+    "last_patched_at": "2026-05-20T09:35:09.924440+00:00",
+    "last_used_at": "2026-05-20T09:34:21.665170+00:00",
+    "last_viewed_at": "2026-05-20T09:34:21.659582+00:00",
+    "patch_count": 2,
     "pinned": false,
     "state": "active",
-    "use_count": 2,
-    "view_count": 2
+    "use_count": 4,
+    "view_count": 4
   },
   "weibo-account-monitor": {
     "archived_at": null,

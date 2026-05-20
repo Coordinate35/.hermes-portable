@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7872
--- Exported: 2026-05-20T03:00:08.860858
+-- Facts count: 7875
+-- Exported: 2026-05-21T03:00:29.534461
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7908,6 +7908,9 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7933,'User is actively working with ChatTTS (voice cloning / text-to-speech) on Windows. Current project at D:\\Documents\\ChatTTS, using Python 3.12, uv for environment management, winget for ffmpeg, and Audacity for audio editing. Interested in speaker embedding extraction, audio preprocessing, and fine-tuning Temperature/Top P/Top K for voice cloning fidelity.','user_pref','',0.5,0,0,'2026-05-18 19:51:17','2026-05-18 19:51:17');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7934,'User asked about vivo X300 + China Mobile BeiDou satellite messaging in Thailand, suggesting possible upcoming Thailand travel and an interest in satellite-based emergency communication while abroad.','user_pref','',0.5,0,0,'2026-05-18 19:51:18','2026-05-18 19:51:18');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7935,'User may have upcoming Thailand travel plans. Asked about vivo X300 + China Mobile BeiDou satellite messaging availability in Thailand, suggesting interest in satellite-based emergency communication while traveling abroad.','user_pref','',0.5,0,0,'2026-05-18 19:51:32','2026-05-18 19:51:32');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7936,'当用户质疑 GitHub 搜索结果不全面时，应立即尝试搜索引擎（英文 Bing / Google）补充。英文搜索对国际技术公司/产品效果显著好于中文。此外，GitHub Issues 搜索也是发现相关项目的有效路径（如本次通过 issues 搜索发现了 agentgateway/agentgateway）。','general','',0.5,0,0,'2026-05-20 09:35:20','2026-05-20 09:35:20');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7937,'User is actively building a Global Multi-Economy Wealth Conservation Model combining Stock-Flow Consistent (SFC) framework with a physical Numéraire (standard commodity basket Ω). Key design principles they insist on: (1) strict separation of physical/entity layer from financial/monetary layer, (2) wealth cannot be created out of thin air — global net wealth equals global physical capital + inventory, financial claims net to zero, (3) use replacement cost method for physical capital valuation immune to currency devaluation, (4) exchange rates derived endogenously from purchasing power parity of the basket. User prefers rigorous mathematical formalization, clearly defined concepts, layered architecture diagrams, and systematic documentation. Currently discussing observation of price-to-value deviation signals using Ω-based metrics. This is a long-term intellectual project, not a one-off task.','general','',0.5,0,0,'2026-05-20 16:10:11','2026-05-20 16:10:11');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7938,'User is building a Global Multi-Economy Wealth Conservation Model as a long-term intellectual project. Combines Stock-Flow Consistent (SFC) framework with a physical Numéraire (Ω = standard commodity basket) to measure wealth in undilutable terms. Core axioms: (1) global net wealth equals global physical capital only — financial claims net to zero, (2) replacement cost valuation makes physical capital immune to currency devaluation, (3) exchange rates derived endogenously from PPP of the basket. Preference for rigorous mathematical formalization, layered architecture, clearly defined concepts, and systematic documentation. Followed up with price-to-value deviation detection using Ω-based signals. Current deliverable: architecture draft V0.1 saved at /home/coordinate35/hermes_data/global_economy_model_architecture.md. Still debating MVP scope, production function choice, and currency module design.','general','',0.5,0,0,'2026-05-20 16:10:43','2026-05-20 16:10:43');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9075,6 +9078,10 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1163,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1164,'用无头浏览器访问','unknown','','2026-05-15 15:12:06');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1165,'Runs Windows','unknown','','2026-05-17 19:16:40');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1166,'China Mobile','unknown','','2026-05-18 19:51:18');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1167,'Global Multi','unknown','','2026-05-20 16:10:11');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1168,'Economy Wealth Conservation Model','unknown','','2026-05-20 16:10:11');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1169,'Flow Consistent','unknown','','2026-05-20 16:10:11');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1170,'Combines Stock','unknown','','2026-05-20 16:10:43');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10403,6 +10410,13 @@ INSERT INTO fact_entities VALUES(7931,1164);
 INSERT INTO fact_entities VALUES(7932,1165);
 INSERT INTO fact_entities VALUES(7934,1166);
 INSERT INTO fact_entities VALUES(7935,1166);
+INSERT INTO fact_entities VALUES(7937,1167);
+INSERT INTO fact_entities VALUES(7937,1168);
+INSERT INTO fact_entities VALUES(7937,1169);
+INSERT INTO fact_entities VALUES(7938,1167);
+INSERT INTO fact_entities VALUES(7938,1168);
+INSERT INTO fact_entities VALUES(7938,1170);
+INSERT INTO fact_entities VALUES(7938,1169);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');

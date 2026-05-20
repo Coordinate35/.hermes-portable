@@ -34,18 +34,34 @@ GET https://api-one-wscn.awtmt.com/apiv1/search/article?query={关键词}&limit=
 
 ## 数据解析
 
-### 文章字段
+### API 响应结构
+
+**重要**：头条/carousel API 的文章字段嵌套在 `item → resource` 下，不是顶层。
+
 ```json
 {
-  "title": "标题",
-  "uri": "链接",
-  "content_short": "摘要",
-  "display_time": "时间戳",
-  "author": {
-    "display_name": "作者名"
+  "data": {
+    "items": [
+      {
+        "resource_type": "article",
+        "resource": {
+          "title": "标题",
+          "uri": "链接",
+          "content_short": "摘要",
+          "display_time": 0,
+          "author": {
+            "display_name": "作者名"
+          }
+        }
+      }
+    ]
   }
 }
 ```
+
+**常见坑**：
+- `display_time` 是 Unix 时间戳（秒），不是字符串
+- `content_short` 可能包含全角省略号 `…`，在 Python f-string 中需转义或避免直接嵌入
 
 ## 使用示例
 
@@ -58,6 +74,13 @@ curl "https://api-one-wscn.awtmt.com/apiv1/content/information-flow?channel=glob
 ```bash
 curl "https://api-one-wscn.awtmt.com/apiv1/search/article?query=中国石油&limit=10"
 ```
+
+### 一键解析头条（推荐）
+使用内置脚本直接获取格式化输出：
+```bash
+python3 ~/.hermes/skills/wallstreetcn-news/scripts/parse-headlines.py
+```
+支持 `--limit N` 参数控制条数，默认 10 条。
 
 ## 输出格式
 

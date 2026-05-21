@@ -89,11 +89,75 @@ if created_at > last_time and weibo_id not in pushed_ids:
 - LLM/Cron job 收到 `[SILENT]` 后**不得发送任何消息**给用户
 - 禁止输出"脚本运行正常""本次无新内容"等废话
 
+## 语音播报集成（Auto-TTS）
+
+监控脚本可自动生成语音播报，推送到 QQ/微信时附带语音文件。
+
+### 实现模式
+
+在 `weibo_monitor.py` 检测到新微博后、输出前，调用本地 TTS 服务生成音频：
+
+```python
+import subprocess
+import json
+
+# 收集待播报文本
+voice_texts = []
+for w in new_weibos:
+    voice_texts.append(f"{w['user']}发布新微博：{w['text']}")
+
+# 生成语音文件
+try:
+    voice_text = '。'.join(voice_texts)
+    voice_path = f"/tmp/weibo_voice_{datetime.now().strftime('%Y%m%d_%H%M%S')}.wav"
+    payload = json.dumps({"text": voice_text, "text_language": "zh"}, ensure_ascii=False)
+    subprocess.run(
+        ['curl', '-s', '-X', 'POST', 'http://<tts-host>:<port>',
+         '-H', 'Content-Type: application/json',
+         '-d', payload, '-o', voice_path, '--connect-timeout', '10'],
+        capture_output=True, text=True, timeout=20
+    )
+    if os.path.exists(voice_path) and os.path.getsize(voice_path) > 1000:
+        result += f"\nMEDIA:{voice_path}"
+except Exception:
+    pass  # 语音失败则静默降级为纯文字
+```
+
+### MEDIA: 标记处理
+
+Cron job 的 prompt **必须**指示 agent 原样保留 `MEDIA:/path/to/file` 标记：
+
+```
+如果输出中包含 "MEDIA:/path/to/file.wav" 标记，
+必须原样保留在你的回复中，不能删除或修改。
+MEDIA: 标记是语音文件路径，用于平台原生发送语音消息。
+```
+
+如果 agent 删除或改写了 `MEDIA:` 行，语音将不会被发送。
+
+### 推送目标切换
+
+```bash
+# 切换到 QQ 推送
+hermes cronjob update <job_id> --deliver qqbot
+
+# 切换到微信推送
+hermes cronjob update <job_id> --deliver weixin
+```
+
+注意：QQ 和微信对语音文件的支持格式不同，TTS 输出格式需与目标平台兼容。
+
+### 参考实现
+
+详细代码补丁和 cronjob prompt 模板见：
+`references/auto-tts-integration.md`
+
 ## 维护注意事项
 
 1. **状态文件损坏时**：手动填入已知的微博ID到 `pushed_ids`
 2. **Cookie过期**：更新 `weibo_monitor.py` 中的 `WEIBO_COOKIE`
 3. **脚本路径变更**：更新定时任务配置中的 `script` 字段
+4. **TTS 服务变更**：更新脚本中的 TTS endpoint 和超时参数
 
 ## 从Cron输出中检索原始微博内容
 

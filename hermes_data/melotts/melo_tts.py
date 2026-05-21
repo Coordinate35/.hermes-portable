@@ -7,10 +7,9 @@ import sys
 import os
 import time
 
-# 自动检测并激活虚拟环境
-VENV_PYTHON = os.path.expanduser("~/hermes_data/melotts/.venv/bin/python3")
-if sys.executable != VENV_PYTHON and os.path.exists(VENV_PYTHON):
-    os.execv(VENV_PYTHON, [VENV_PYTHON] + sys.argv)
+# 在 import transformers 之前设置环境变量，确保走国内镜像且离线优先
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"  # 模型已缓存，强制离线运行
 
 from melo.api import TTS
 
@@ -21,9 +20,6 @@ def main():
 
     text = sys.argv[1]
     output_path = sys.argv[2]
-
-    # HuggingFace 国内镜像
-    os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
 
     model = TTS(language="ZH", device="cpu")
     speaker_id = model.hps.data.spk2id["ZH"]

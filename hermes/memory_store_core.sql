@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7875
--- Exported: 2026-05-21T03:00:29.534461
+-- Facts count: 7881
+-- Exported: 2026-05-22T03:00:15.781471
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7911,6 +7911,12 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7936,'当用户质疑 GitHub 搜索结果不全面时，应立即尝试搜索引擎（英文 Bing / Google）补充。英文搜索对国际技术公司/产品效果显著好于中文。此外，GitHub Issues 搜索也是发现相关项目的有效路径（如本次通过 issues 搜索发现了 agentgateway/agentgateway）。','general','',0.5,0,0,'2026-05-20 09:35:20','2026-05-20 09:35:20');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7937,'User is actively building a Global Multi-Economy Wealth Conservation Model combining Stock-Flow Consistent (SFC) framework with a physical Numéraire (standard commodity basket Ω). Key design principles they insist on: (1) strict separation of physical/entity layer from financial/monetary layer, (2) wealth cannot be created out of thin air — global net wealth equals global physical capital + inventory, financial claims net to zero, (3) use replacement cost method for physical capital valuation immune to currency devaluation, (4) exchange rates derived endogenously from purchasing power parity of the basket. User prefers rigorous mathematical formalization, clearly defined concepts, layered architecture diagrams, and systematic documentation. Currently discussing observation of price-to-value deviation signals using Ω-based metrics. This is a long-term intellectual project, not a one-off task.','general','',0.5,0,0,'2026-05-20 16:10:11','2026-05-20 16:10:11');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7938,'User is building a Global Multi-Economy Wealth Conservation Model as a long-term intellectual project. Combines Stock-Flow Consistent (SFC) framework with a physical Numéraire (Ω = standard commodity basket) to measure wealth in undilutable terms. Core axioms: (1) global net wealth equals global physical capital only — financial claims net to zero, (2) replacement cost valuation makes physical capital immune to currency devaluation, (3) exchange rates derived endogenously from PPP of the basket. Preference for rigorous mathematical formalization, layered architecture, clearly defined concepts, and systematic documentation. Followed up with price-to-value deviation detection using Ω-based signals. Current deliverable: architecture draft V0.1 saved at /home/coordinate35/hermes_data/global_economy_model_architecture.md. Still debating MVP scope, production function choice, and currency module design.','general','',0.5,0,0,'2026-05-20 16:10:43','2026-05-20 16:10:43');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7939,'Collaborating with user on building a multi-economy wealth conservation model. Core innovations: (1) uses a fixed commodity basket (Ω) as numéraire to make cross-economy wealth additive and inflation-proof; (2) strict separation of Layer 1 (physical/entity) and Layer 2 (financial/monetary); (3) global net wealth strictly equals sum of real capital + inventory, financial claims net to zero; (4) exchange rates are endogenous from PPP (B_i/B_j); (5) deviation detection framework with RPI (Regression Priority Index) based on constraint hardness. User values mathematical rigor, layered architecture docs, and connecting theory to the 卢麒元 investment framework. Working docs stored in ~/hermes_data/.','general','',0.5,0,0,'2026-05-20 19:51:44','2026-05-20 19:51:44');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7940,'用户优先语音方案：本地 TTS 服务 `http://192.168.56.1:9880`，POST JSON `{"text":"内容","text_language":"zh"}` 生成 WAV。失败时降级为 meloTTS。','general','',0.5,0,0,'2026-05-20 20:08:40','2026-05-20 20:08:40');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7941,'来源为 QQ Bot 的对话，短句且无复杂结构（无列表/代码/多层次信息）的回复，优先使用语音消息。长文/复杂内容先文字汇总再语音播报。','general','',0.5,0,0,'2026-05-20 20:27:22','2026-05-20 20:27:22');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7942,'架构分层原则：监控/数据采集脚本只做单一职责（如 weibo_monitor.py 只输出文字），不要在脚本里耦合下游处理逻辑（如 TTS 生成）。降级策略、消息格式化、推送渠道等应在 agent 层（cronjob prompt）处理，保持脚本的可复用性和降级灵活性。','general','',0.5,0,0,'2026-05-21 08:50:05','2026-05-21 08:50:05');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7943,'语音消息强制路由：用户说"念一下/播报/语音说/读一下"任意一种，或 QQ Bot 短句回复，必须先 skill_view(\'voice-message-delivery\')，禁止直接 text_to_speech。Skill 第一步是 curl 测 192.168.56.1:9880。','general','',0.5,0,0,'2026-05-21 14:19:16','2026-05-21 14:19:16');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7944,'语音/TTS 全部细节见 skill voice-message-delivery（已在 description 标注「必加载」）。QQ Bot 渠道短句默认语音、长文先文字摘要再语音。','general','',0.5,0,0,'2026-05-21 14:57:18','2026-05-21 14:57:18');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9082,6 +9088,13 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1167,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1168,'Economy Wealth Conservation Model','unknown','','2026-05-20 16:10:11');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1169,'Flow Consistent','unknown','','2026-05-20 16:10:11');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1170,'Combines Stock','unknown','','2026-05-20 16:10:43');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1171,'Regression Priority Index','unknown','','2026-05-20 19:51:44');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1172,'text','unknown','','2026-05-20 20:08:40');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1173,'内容','unknown','','2026-05-20 20:08:40');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1174,'text_language','unknown','','2026-05-20 20:08:40');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1175,'zh','unknown','','2026-05-20 20:08:40');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1176,'念一下/播报/语音说/读一下','unknown','','2026-05-21 14:19:16');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1177,'voice-message-delivery','unknown','','2026-05-21 14:19:16');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10417,6 +10430,13 @@ INSERT INTO fact_entities VALUES(7938,1167);
 INSERT INTO fact_entities VALUES(7938,1168);
 INSERT INTO fact_entities VALUES(7938,1170);
 INSERT INTO fact_entities VALUES(7938,1169);
+INSERT INTO fact_entities VALUES(7939,1171);
+INSERT INTO fact_entities VALUES(7940,1172);
+INSERT INTO fact_entities VALUES(7940,1173);
+INSERT INTO fact_entities VALUES(7940,1174);
+INSERT INTO fact_entities VALUES(7940,1175);
+INSERT INTO fact_entities VALUES(7943,1176);
+INSERT INTO fact_entities VALUES(7943,1177);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');

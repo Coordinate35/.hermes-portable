@@ -156,3 +156,25 @@ ffmpeg -y -f concat -safe 0 -i /tmp/concat.txt -acodec copy /tmp/final.wav
 4. 按平台规则交付：QQ 直接发语音；其他平台先文字摘要再补语音
 
 **架构分层原则**：监控/采集脚本只产出文字（单一职责），TTS 合成和降级策略在 agent 层处理，保持脚本可复用、降级灵活。
+
+## 音频文件清理
+
+TTS 合成会在以下位置留下音频文件，长期累积会占用磁盘空间：
+
+- `/tmp/*.wav` / `/tmp/*.mp3` — Windows/MeloTTS 合成产物
+- `~/.hermes/audio_cache/*.mp3` — Edge TTS 缓存
+
+**建议**：设置定时清理，保留最近 7 天的音频即可。已验证的清理脚本：
+
+```bash
+#!/bin/bash
+# TTS 音频清理：删除 7 天前的临时音频
+find /tmp -maxdepth 1 -type f \( -name "*.wav" -o -name "*.mp3" \) -mtime +7 -delete
+find ~/.hermes/audio_cache -maxdepth 1 -type f -name "*.mp3" -mtime +7 -delete
+```
+
+搭配 cronjob 每天凌晨执行（参考 cronjob 工具）：
+- schedule: `0 3 * * *`
+- no_agent: true（纯脚本执行，无需 LLM 介入）
+
+> 用户偏好：不需要统一规范化音频存放目录，直接按现有分散路径定时清理即可。

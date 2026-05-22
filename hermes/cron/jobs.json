@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 8093
+        "completed": 8381
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-05-22T03:05:00+08:00",
-      "last_run_at": "2026-05-22T02:56:09.957471+08:00",
+      "next_run_at": "2026-05-23T03:05:00+08:00",
+      "last_run_at": "2026-05-23T02:55:34.042582+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -56,15 +56,15 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 15
+        "completed": 16
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-05-22T09:00:00+08:00",
-      "last_run_at": "2026-05-21T09:00:21.402832+08:00",
+      "next_run_at": "2026-05-23T09:00:00+08:00",
+      "last_run_at": "2026-05-22T09:00:15.574472+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -96,15 +96,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 8
+        "completed": 9
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-05-23T03:00:00+08:00",
-      "last_run_at": "2026-05-21T03:00:39.754241+08:00",
+      "next_run_at": "2026-05-24T03:00:00+08:00",
+      "last_run_at": "2026-05-22T03:00:31.094618+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -112,7 +112,49 @@
       "origin": null,
       "enabled_toolsets": null,
       "workdir": null
+    },
+    {
+      "id": "6853f2d89079",
+      "name": "tts-audio-cleanup",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "tts_audio_cleanup.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "display": "0 3 * * *"
+      },
+      "schedule_display": "0 3 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 1
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-22T20:39:58.023143+08:00",
+      "next_run_at": "2026-05-24T03:00:00+08:00",
+      "last_run_at": "2026-05-23T03:00:35.437814+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "qqbot",
+        "chat_id": "4E42EA828928C02FC47FEB6334392F69",
+        "chat_name": null,
+        "thread_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null
     }
   ],
-  "updated_at": "2026-05-22T03:00:10.004313+08:00"
+  "updated_at": "2026-05-23T03:00:35.438116+08:00"
 }

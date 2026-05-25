@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7881
--- Exported: 2026-05-25T03:00:11.943996
+-- Facts count: 7883
+-- Exported: 2026-05-26T03:00:18.116427
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7917,6 +7917,8 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7942,'架构分层原则：监控/数据采集脚本只做单一职责（如 weibo_monitor.py 只输出文字），不要在脚本里耦合下游处理逻辑（如 TTS 生成）。降级策略、消息格式化、推送渠道等应在 agent 层（cronjob prompt）处理，保持脚本的可复用性和降级灵活性。','general','',0.5,0,0,'2026-05-21 08:50:05','2026-05-21 08:50:05');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7943,'语音消息强制路由：用户说"念一下/播报/语音说/读一下"任意一种，或 QQ Bot 短句回复，必须先 skill_view(\'voice-message-delivery\')，禁止直接 text_to_speech。Skill 第一步是 curl 测 192.168.56.1:9880。','general','',0.5,0,0,'2026-05-21 14:19:16','2026-05-21 14:19:16');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7944,'语音/TTS 全部细节见 skill voice-message-delivery（已在 description 标注「必加载」）。QQ Bot 渠道短句默认语音、长文先文字摘要再语音。','general','',0.5,0,0,'2026-05-21 14:57:18','2026-05-21 14:57:18');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7945,'用户女朋友在西安，会定期乘高铁往返探望（单程约1155元）。涉及"去西安/回西安/探亲/异地"等场景时可结合此背景理解。','user_pref','',0.5,0,0,'2026-05-25 14:43:15','2026-05-25 14:43:15');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7946,'用户居住成本：季度付房租约 12728.94 元（月均约 4243 元）。记账时偏好"一次性记入"而非按月摊销，需在月度复盘时主动提醒结构性失真。','user_pref','',0.5,0,0,'2026-05-25 14:43:16','2026-05-25 14:43:16');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9095,6 +9097,8 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1174,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1175,'zh','unknown','','2026-05-20 20:08:40');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1176,'念一下/播报/语音说/读一下','unknown','','2026-05-21 14:19:16');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1177,'voice-message-delivery','unknown','','2026-05-21 14:19:16');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1178,'去西安/回西安/探亲/异地','unknown','','2026-05-25 14:43:15');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1179,'一次性记入','unknown','','2026-05-25 14:43:16');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10437,13 +10441,15 @@ INSERT INTO fact_entities VALUES(7940,1174);
 INSERT INTO fact_entities VALUES(7940,1175);
 INSERT INTO fact_entities VALUES(7943,1176);
 INSERT INTO fact_entities VALUES(7943,1177);
+INSERT INTO fact_entities VALUES(7945,1178);
+INSERT INTO fact_entities VALUES(7946,1179);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2802,'cat:daodejing',4096,213,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2807,'cat:software_arch',4096,924,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2815,'cat:test',4096,6,'2026-04-28 21:05:35');
-INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,14,'2026-05-18 19:51:32');
+INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,16,'2026-05-25 14:43:16');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2824,'cat:general',1024,424,'2026-05-10 16:22:59');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2827,'cat:tool',4096,1,'2026-05-14 17:43:33');
 

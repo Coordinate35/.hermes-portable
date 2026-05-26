@@ -18,3 +18,5 @@ User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC 
 架构分层原则：监控/数据采集脚本只做单一职责（如 weibo_monitor.py 只输出文字），不要在脚本里耦合下游处理逻辑（如 TTS 生成）。降级策略、消息格式化、推送渠道等应在 agent 层（cronjob prompt）处理，保持脚本的可复用性和降级灵活性。
 §
 语音/TTS 全部细节见 skill voice-message-delivery（已在 description 标注「必加载」）。QQ Bot 渠道短句默认语音、长文先文字摘要再语音。
+§
+自报告准确性要求：用户会核验我口头汇报的工作内容（如"我加进 skill 的那段"）。回答"我做了什么/记了什么"时，必须先实际读取文件/状态确认全貌，不能只描述本次新增动作而忽略已有上下文。否则容易把"新增了一段"误述为"加进的全部内容"，与文件实际状态不符，被用户当场抓出。

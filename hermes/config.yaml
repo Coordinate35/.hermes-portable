@@ -2,9 +2,9 @@
 model:
   api_key: __REPLACE_WITH_YOUR_KEY__
   base_url: https://ark.cn-beijing.volces.com/api/coding/v1
-  default: kimi-k2.6
+  default: deepseek-v4-pro
   provider: custom
-  context_length: 256000
+  context_length: 1024000
 providers: {}
 fallback_providers: []
 credential_pool_strategies: {}

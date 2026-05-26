@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7883
--- Exported: 2026-05-26T03:00:18.116427
+-- Facts count: 7884
+-- Exported: 2026-05-27T03:00:26.921988
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7919,6 +7919,7 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7944,'语音/TTS 全部细节见 skill voice-message-delivery（已在 description 标注「必加载」）。QQ Bot 渠道短句默认语音、长文先文字摘要再语音。','general','',0.5,0,0,'2026-05-21 14:57:18','2026-05-21 14:57:18');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7945,'用户女朋友在西安，会定期乘高铁往返探望（单程约1155元）。涉及"去西安/回西安/探亲/异地"等场景时可结合此背景理解。','user_pref','',0.5,0,0,'2026-05-25 14:43:15','2026-05-25 14:43:15');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7946,'用户居住成本：季度付房租约 12728.94 元（月均约 4243 元）。记账时偏好"一次性记入"而非按月摊销，需在月度复盘时主动提醒结构性失真。','user_pref','',0.5,0,0,'2026-05-25 14:43:16','2026-05-25 14:43:16');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7947,'自报告准确性要求：用户会核验我口头汇报的工作内容（如"我加进 skill 的那段"）。回答"我做了什么/记了什么"时，必须先实际读取文件/状态确认全貌，不能只描述本次新增动作而忽略已有上下文。否则容易把"新增了一段"误述为"加进的全部内容"，与文件实际状态不符，被用户当场抓出。','general','',0.5,0,0,'2026-05-26 10:15:09','2026-05-26 10:15:09');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9099,6 +9100,10 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1176,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1177,'voice-message-delivery','unknown','','2026-05-21 14:19:16');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1178,'去西安/回西安/探亲/异地','unknown','','2026-05-25 14:43:15');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1179,'一次性记入','unknown','','2026-05-25 14:43:16');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1180,'我加进 skill 的那段','unknown','','2026-05-26 10:15:09');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1181,'我做了什么/记了什么','unknown','','2026-05-26 10:15:09');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1182,'新增了一段','unknown','','2026-05-26 10:15:09');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1183,'加进的全部内容','unknown','','2026-05-26 10:15:09');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10443,6 +10448,10 @@ INSERT INTO fact_entities VALUES(7943,1176);
 INSERT INTO fact_entities VALUES(7943,1177);
 INSERT INTO fact_entities VALUES(7945,1178);
 INSERT INTO fact_entities VALUES(7946,1179);
+INSERT INTO fact_entities VALUES(7947,1180);
+INSERT INTO fact_entities VALUES(7947,1181);
+INSERT INTO fact_entities VALUES(7947,1182);
+INSERT INTO fact_entities VALUES(7947,1183);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');

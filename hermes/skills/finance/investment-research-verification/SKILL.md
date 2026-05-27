@@ -350,6 +350,19 @@ This workflow is particularly important for:
 - "实质负利率分析" - Verify data before calculating
 - "政策驱动投资" - Verify policy implementation, not just announcements
 
+## Data Source Obsolescence Patterns
+
+Official government data URLs can silently stop updating while remaining accessible:
+
+| Data | Old URL (STALE) | New URL (CURRENT) | Last Updated |
+|:---|:---|:---|:---|
+| US TIC foreign holders | `ticdata.treasury.gov/Publish/mfh.txt` | `ticdata.treasury.gov/.../slt_table5.txt` | mfh.txt stuck at 2023-01 |
+| US TIC foreign holders (HTML) | — | `.../slt_table5.html` | Check `<td>2026-03</td>` |
+
+**Detection pattern:** If data appears current (site responds) but the latest date in the file is >1 year old, search for an alternative file in the same directory tree. Government sites often create new files rather than updating old ones when formats change.
+
+Also note: mfh.txt was fixed-width format; slt_table5.txt is **tab-separated (TSV)**. Same data, different parsing.
+
 ## Final Note
 
 This skill is about **intellectual honesty in investment research**. The goal is not to have all the answers, but to:

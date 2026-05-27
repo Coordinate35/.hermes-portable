@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-13T17:36:52.842654+00:00",
-    "last_used_at": "2026-05-26T03:38:36.401439+00:00",
-    "last_viewed_at": "2026-05-26T03:38:36.399514+00:00",
+    "last_used_at": "2026-05-27T05:53:17.155296+00:00",
+    "last_viewed_at": "2026-05-27T05:53:17.153577+00:00",
     "patch_count": 1,
     "pinned": false,
     "state": "active",
-    "use_count": 18,
-    "view_count": 18
+    "use_count": 19,
+    "view_count": 19
   },
   "ai-gateway-landscape": {
     "archived_at": null,
@@ -51,18 +51,31 @@
     "use_count": 0,
     "view_count": 1
   },
+  "financial-market-data-retrieval": {
+    "archived_at": null,
+    "created_at": "2026-05-27T18:15:14.699580+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-05-27T18:15:14.702344+00:00",
+    "last_viewed_at": "2026-05-27T18:15:14.699605+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "hermes-agent-github-backup": {
     "archived_at": null,
     "created_at": "2026-05-13T13:01:29.968406+00:00",
     "created_by": null,
-    "last_patched_at": "2026-05-15T19:04:06.787206+00:00",
-    "last_used_at": "2026-05-24T19:00:08.785495+00:00",
-    "last_viewed_at": "2026-05-24T19:00:08.783693+00:00",
-    "patch_count": 8,
+    "last_patched_at": "2026-05-27T17:44:49.306311+00:00",
+    "last_used_at": "2026-05-27T17:44:37.866032+00:00",
+    "last_viewed_at": "2026-05-27T17:44:37.864202+00:00",
+    "patch_count": 10,
     "pinned": false,
     "state": "active",
-    "use_count": 8,
-    "view_count": 8
+    "use_count": 10,
+    "view_count": 10
   },
   "holographic-memory-batch-import": {
     "archived_at": null,
@@ -77,18 +90,31 @@
     "use_count": 1,
     "view_count": 1
   },
+  "investment-research-verification": {
+    "archived_at": null,
+    "created_at": "2026-05-27T18:15:14.704763+00:00",
+    "created_by": null,
+    "last_patched_at": "2026-05-27T18:42:49.721854+00:00",
+    "last_used_at": "2026-05-27T18:15:14.705709+00:00",
+    "last_viewed_at": "2026-05-27T18:15:14.704774+00:00",
+    "patch_count": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "japan-mof-intervention-monitor": {
     "archived_at": null,
     "created_at": "2026-05-17T01:00:23.036651+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-05-25T01:00:41.993511+00:00",
-    "last_viewed_at": "2026-05-25T01:00:41.991667+00:00",
+    "last_used_at": "2026-05-27T01:00:27.505792+00:00",
+    "last_viewed_at": "2026-05-27T01:00:27.504330+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 4,
-    "view_count": 4
+    "use_count": 5,
+    "view_count": 5
   },
   "local-tts-setup": {
     "archived_at": null,
@@ -107,27 +133,40 @@
     "archived_at": null,
     "created_at": "2026-05-20T16:17:01.242996+00:00",
     "created_by": null,
-    "last_patched_at": "2026-05-20T16:22:05.075587+00:00",
-    "last_used_at": "2026-05-20T16:17:01.244217+00:00",
-    "last_viewed_at": "2026-05-20T16:17:01.243012+00:00",
-    "patch_count": 1,
+    "last_patched_at": "2026-05-27T18:43:14.079453+00:00",
+    "last_used_at": "2026-05-27T18:42:57.590768+00:00",
+    "last_viewed_at": "2026-05-27T18:42:57.588942+00:00",
+    "patch_count": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 1,
-    "view_count": 1
+    "use_count": 3,
+    "view_count": 3
   },
   "macroeconomic-system-modeling": {
     "archived_at": null,
     "created_at": "2026-05-20T16:17:54.104031+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-05-20T16:21:33.656830+00:00",
-    "last_used_at": "2026-05-24T17:48:11.066371+00:00",
-    "last_viewed_at": "2026-05-24T17:48:11.065481+00:00",
+    "last_used_at": "2026-05-27T18:26:49.957216+00:00",
+    "last_viewed_at": "2026-05-27T18:26:49.956324+00:00",
     "patch_count": 1,
     "pinned": false,
     "state": "active",
-    "use_count": 1,
-    "view_count": 1
+    "use_count": 2,
+    "view_count": 2
+  },
+  "us-macro-data-retrieval": {
+    "archived_at": null,
+    "created_at": "2026-05-27T18:42:38.374881+00:00",
+    "created_by": "agent",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
   },
   "virtualbox-gpu-bridge": {
     "archived_at": null,
@@ -146,40 +185,40 @@
     "archived_at": null,
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-05-26T03:37:26.293144+00:00",
-    "last_used_at": "2026-05-26T17:51:45.015869+00:00",
-    "last_viewed_at": "2026-05-26T17:51:45.015102+00:00",
-    "patch_count": 8,
+    "last_patched_at": "2026-05-27T15:31:58.136942+00:00",
+    "last_used_at": "2026-05-27T18:40:48.610007+00:00",
+    "last_viewed_at": "2026-05-27T18:40:48.608833+00:00",
+    "patch_count": 13,
     "pinned": false,
     "state": "active",
-    "use_count": 181,
-    "view_count": 181
+    "use_count": 192,
+    "view_count": 192
   },
   "wallstreetcn-news": {
     "archived_at": null,
     "created_at": "2026-05-18T03:13:56.570512+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-21T04:20:51.846220+00:00",
-    "last_used_at": "2026-05-26T17:51:45.012511+00:00",
-    "last_viewed_at": "2026-05-26T17:51:45.011313+00:00",
+    "last_used_at": "2026-05-27T05:23:46.235379+00:00",
+    "last_viewed_at": "2026-05-27T05:23:46.231750+00:00",
     "patch_count": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 13,
-    "view_count": 13
+    "use_count": 14,
+    "view_count": 14
   },
   "weibo-account-monitor": {
     "archived_at": null,
     "created_at": "2026-05-15T04:42:07.553882+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-05-25T06:11:32.840046+00:00",
-    "last_viewed_at": "2026-05-25T06:11:32.838356+00:00",
+    "last_used_at": "2026-05-27T13:05:38.183166+00:00",
+    "last_viewed_at": "2026-05-27T13:05:38.181396+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 86,
-    "view_count": 86
+    "use_count": 87,
+    "view_count": 87
   },
   "weibo-content-alternative-access": {
     "archived_at": null,
@@ -199,13 +238,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-21T04:38:08.286433+00:00",
-    "last_used_at": "2026-05-25T06:06:37.139399+00:00",
-    "last_viewed_at": "2026-05-25T06:06:37.137693+00:00",
+    "last_used_at": "2026-05-27T18:40:48.613131+00:00",
+    "last_viewed_at": "2026-05-27T18:40:48.612364+00:00",
     "patch_count": 2,
     "pinned": false,
     "state": "active",
-    "use_count": 368,
-    "view_count": 368
+    "use_count": 374,
+    "view_count": 374
   },
   "weibo-monitoring-debugging": {
     "archived_at": null,

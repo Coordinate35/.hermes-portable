@@ -64,7 +64,7 @@ import re
 
 # 替换 config.yaml 中所有 api_key 字段
 redacted = re.sub(r'^(\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', raw, flags=re.MULTILINE)
-redacted = re.sub(r'^(-\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', redacted, flags=re.MULTILINE)
+redacted = re.sub(r'^(\s*-\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', redacted, flags=re.MULTILINE)
 ```
 
 `.env` 文件仅导出键名模板，值替换为占位符。
@@ -192,7 +192,7 @@ python3 -c "
 import re
 with open('$SRC_HERMES/config.yaml') as f: raw = f.read()
 redacted = re.sub(r'^(\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', raw, flags=re.MULTILINE)
-redacted = re.sub(r'^(-\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', redacted, flags=re.MULTILINE)
+redacted = re.sub(r'^(\s*-\s*api_key:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_KEY__', redacted, flags=re.MULTILINE)
 redacted = re.sub(r'^(\s*api_secret:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_SECRET__', redacted, flags=re.MULTILINE)
 redacted = re.sub(r'^(\s*token:\s*)(\S+)$', r'\1__REPLACE_WITH_YOUR_TOKEN__', redacted, flags=re.MULTILINE)
 with open('$DST/hermes/config.yaml', 'w') as f:
@@ -514,7 +514,8 @@ cd ~/.hermes-portable && ./import.sh
 8. **memory_banks.vector 也需要重建** — `rebuild_all_vectors()` 会自动处理
 9. **V1 旧版残留清理** — 如果 `~/.hermes-portable/` 下有 `memory_store.db.gz.part-*` 等旧版二进制分卷文件，这是已废弃的 V1 方案残留，可安全删除以释放空间
 10. **环境适配** — 不同系统可能存在 `sqlite3` CLI 缺失、`numpy` 仅装在 Hermes venv 中等差异，详见 `references/environment-adaptations.md`
-11. **ML 模型文件勿入库** — `.onnx` / `.bin` / `.pt` / `.pth` / `.safetensors` 等机器学习模型权重常超过 GitHub 100MB 单文件限制，会导致 `pre-receive hook declined` 推送失败。export.sh 已默认排除这些格式，模型需在新机器上重新下载。若历史中已污染大文件，用 `git filter-branch --index-filter 'git rm --cached --ignore-unmatch <path>' --prune-empty -- --all` 清理后再推送。
+11. **脱敏正则必须覆盖缩进的 list item** — YAML 中 `custom_providers` 下的 `api_key` 有缩进（`  - api_key: xxx`），正则 `^(\s*-\s*api_key:\s*)` 才能匹配，不是 `^(-\s*api_key:\s*)`（后者要求 `-` 在行首，会漏掉缩进的）。验证方法：`grep -n 'api_key:' config.yaml` 确认所有行都被替换为 `__REPLACE_WITH_YOUR_KEY__`。
+12. **ML 模型文件勿入库** — `.onnx` / `.bin` / `.pt` / `.pth` / `.safetensors` 等机器学习模型权重常超过 GitHub 100MB 单文件限制，会导致 `pre-receive hook declined` 推送失败。export.sh 已默认排除这些格式，模型需在新机器上重新下载。若历史中已污染大文件，用 `git filter-branch --index-filter 'git rm --cached --ignore-unmatch <path>' --prune-empty -- --all` 清理后再推送。
 
 ```bash
 # 删除 V1 旧版二进制分卷备份（已废弃，新版使用文本 SQL）

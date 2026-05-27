@@ -1,4 +1,4 @@
-用户关注微博热搜，希望获取实时热点信息。用于投资分析中的情绪面/消息面参考。
+QQ Bot 对话中，短句确认/澄清类回复（如"是记错了还是另外一笔"）直接用语音，不要发文字。
 §
 User focuses on investment analysis using the 卢麒元 (Lu Qiyuan) investment analysis framework. Has built a comprehensive 4-matrix decision framework combining macroeconomic data (CPI, M2, GDP, LPR, housing prices) to determine asset allocation.
 §

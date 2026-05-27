@@ -1,10 +1,6 @@
 User operates within the 卢麒元 (Lu Qiyuan) investment analysis framework: real inflation = CPI + (M2 - GDP), real interest rate = nominal - real inflation. Four-matrix decision grid by growth/inflation quadrant. "Short stocks, long gold" strategy. CPI considered structurally understated. Core tool for macro allocation. See fact_store for full framework details.
 §
-User has large collection of investment/finance documents at /home/coordinate35/virtualbox_share/luqiyuan/docs - prefers extracting and analyzing content systematically. Previously analyzed 100+ docx files to build investment framework.
-§
-用户有投资分析框架，关注政策对投资的影响，特别是能源板块
-§
-用户偏好系统化分析，需要政策+基本面+技术面的完整投资逻辑
+User has large investment doc collection at ~/virtualbox_share/luqiyuan/docs. Prefers systematic extraction + policy+fundamental+technical analysis. Focus on energy sector.
 §
 工作目录约定：
 1. 所有新内容 → /home/coordinate35/hermes_data/
@@ -17,6 +13,8 @@ User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC 
 §
 架构分层原则：监控/数据采集脚本只做单一职责（如 weibo_monitor.py 只输出文字），不要在脚本里耦合下游处理逻辑（如 TTS 生成）。降级策略、消息格式化、推送渠道等应在 agent 层（cronjob prompt）处理，保持脚本的可复用性和降级灵活性。
 §
-语音/TTS 全部细节见 skill voice-message-delivery（已在 description 标注「必加载」）。QQ Bot 渠道短句默认语音、长文先文字摘要再语音。
+语音/TTS 全部细节见 skill voice-message-delivery。QQ Bot 渠道：短句语音是默认输出方式，文字是例外（仅长文/复杂结构时用）。认知翻转：不是"要不要加语音"，而是"要不要加文字"。每条回复先判断是否 QQ Bot 短句，是则默认走语音，文字只做补充。
 §
 自报告准确性要求：用户会核验我口头汇报的工作内容（如"我加进 skill 的那段"）。回答"我做了什么/记了什么"时，必须先实际读取文件/状态确认全貌，不能只描述本次新增动作而忽略已有上下文。否则容易把"新增了一段"误述为"加进的全部内容"，与文件实际状态不符，被用户当场抓出。
+§
+规则执行铁律：SOUL.md 和所有 skill 中的触发条件一律平等，不存在"可选/强制"区分。曾犯错误——把"QQ Bot 短句用语音"主观降级为可选项导致不执行。纠正：触发条件命中即执行，禁止自行排优先级或区分"必做/可做"。每次回复前检查来源是否为 QQ Bot，是则按 skill 走语音。

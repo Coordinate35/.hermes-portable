@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7884
--- Exported: 2026-05-27T03:00:26.921988
+-- Facts count: 7887
+-- Exported: 2026-05-28T03:00:40.274139
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7920,6 +7920,9 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7945,'用户女朋友在西安，会定期乘高铁往返探望（单程约1155元）。涉及"去西安/回西安/探亲/异地"等场景时可结合此背景理解。','user_pref','',0.5,0,0,'2026-05-25 14:43:15','2026-05-25 14:43:15');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7946,'用户居住成本：季度付房租约 12728.94 元（月均约 4243 元）。记账时偏好"一次性记入"而非按月摊销，需在月度复盘时主动提醒结构性失真。','user_pref','',0.5,0,0,'2026-05-25 14:43:16','2026-05-25 14:43:16');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7947,'自报告准确性要求：用户会核验我口头汇报的工作内容（如"我加进 skill 的那段"）。回答"我做了什么/记了什么"时，必须先实际读取文件/状态确认全貌，不能只描述本次新增动作而忽略已有上下文。否则容易把"新增了一段"误述为"加进的全部内容"，与文件实际状态不符，被用户当场抓出。','general','',0.5,0,0,'2026-05-26 10:15:09','2026-05-26 10:15:09');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7948,'QQ Bot 对话中，短句确认/澄清类回复（如"是记错了还是另外一笔"）直接用语音回复，不要发文字。','user_pref','',0.5,0,0,'2026-05-27 12:06:52','2026-05-27 12:06:52');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7949,'SOUL.md 和 skill 中的触发条件全部为强制项，不存在"可选"与"强制"的区分。曾经犯过错误：把 skill 触发条件中的"QQ Bot 来源且短句用语音"主观降级为可选项，导致不执行。纠正：所有触发条件地位平等，命中即执行，不允许自行排序优先级或区分"必做/可做"。','general','',0.5,0,0,'2026-05-27 14:34:32','2026-05-27 14:34:32');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7950,'规则执行铁律：SOUL.md 和所有 skill 中的触发条件一律平等，不存在"可选/强制"区分。曾犯错误——把"QQ Bot 短句用语音"主观降级为可选项导致不执行。纠正：触发条件命中即执行，禁止自行排优先级或区分"必做/可做"。每次回复前检查来源是否为 QQ Bot，是则按 skill 走语音。','general','',0.5,0,0,'2026-05-27 14:34:59','2026-05-27 14:34:59');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9104,6 +9107,13 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1180,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1181,'我做了什么/记了什么','unknown','','2026-05-26 10:15:09');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1182,'新增了一段','unknown','','2026-05-26 10:15:09');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1183,'加进的全部内容','unknown','','2026-05-26 10:15:09');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1184,'是记错了还是另外一笔','unknown','','2026-05-27 12:06:52');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1185,'可选','unknown','','2026-05-27 14:34:32');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1186,'强制','unknown','','2026-05-27 14:34:32');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1187,'QQ Bot 来源且短句用语音','unknown','','2026-05-27 14:34:32');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1188,'必做/可做','unknown','','2026-05-27 14:34:32');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1189,'可选/强制','unknown','','2026-05-27 14:34:59');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1190,'QQ Bot 短句用语音','unknown','','2026-05-27 14:34:59');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10452,13 +10462,21 @@ INSERT INTO fact_entities VALUES(7947,1180);
 INSERT INTO fact_entities VALUES(7947,1181);
 INSERT INTO fact_entities VALUES(7947,1182);
 INSERT INTO fact_entities VALUES(7947,1183);
+INSERT INTO fact_entities VALUES(7948,1184);
+INSERT INTO fact_entities VALUES(7949,1185);
+INSERT INTO fact_entities VALUES(7949,1186);
+INSERT INTO fact_entities VALUES(7949,1187);
+INSERT INTO fact_entities VALUES(7949,1188);
+INSERT INTO fact_entities VALUES(7950,1189);
+INSERT INTO fact_entities VALUES(7950,1190);
+INSERT INTO fact_entities VALUES(7950,1188);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2802,'cat:daodejing',4096,213,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2807,'cat:software_arch',4096,924,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2815,'cat:test',4096,6,'2026-04-28 21:05:35');
-INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,16,'2026-05-25 14:43:16');
+INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,17,'2026-05-27 12:06:52');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2824,'cat:general',1024,424,'2026-05-10 16:22:59');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2827,'cat:tool',4096,1,'2026-05-14 17:43:33');
 

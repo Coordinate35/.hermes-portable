@@ -179,27 +179,96 @@ print(json.dumps(result, ensure_ascii=False, indent=2))
 3. 若需要跨国比较或精细偏离量化，切换至 `macroeconomic-system-modeling`
 4. 利用 RPI 判断多个偏离点中哪个最先回归，指导操作时机
 
-## 七、美债数据补充
+## 七、美债数据采集（2026年5月验证）
 
-当分析美元贬值趋势时，需采集美债总额：
+**详细方法已独立为 `us-macro-data-retrieval` skill**，包含美债总量、TIC 海外持有人、美联储持仓、FRED 宏观指标的全套采集代码。本节保留精简版供快速参考。
+
+### 7.1 美债总额（Treasury FiscalData API）
 
 ```python
-import requests, re
+import urllib.request, json
 
-url = "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/debt-to-the-penny"
-resp = requests.get(url, timeout=10)
-# 提取最新美债总额，计算日均增量
+url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page[size]=3"
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req) as f:
+    data = json.loads(f.read().decode('utf-8'))
+
+for d in data['data'][:3]:
+    total = float(d['tot_pub_debt_out_amt'])
+    print(f"{d['record_date']}: ${total/1e12:.2f} trillion")
 ```
 
-或使用已知的 treasury API 直接获取最新数据。
+### 7.2 海外持有人结构（TIC SLT Table 5）
 
-## 七、输出格式
+⚠️ **旧数据源已过期**：`https://ticdata.treasury.gov/Publish/mfh.txt` 仅到 2023年1月。
+**当前数据源**：`https://ticdata.treasury.gov/resource-center/data-chart-center/tic/Documents/slt_table5.txt`（TSV格式）
+
+```python
+import urllib.request
+
+url = "https://ticdata.treasury.gov/resource-center/data-chart-center/tic/Documents/slt_table5.txt"
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req) as f:
+    raw = f.read().decode('utf-8')
+
+# TSV格式，Header行包含 Country + 日期列（如 2026-03, 2026-02...）
+lines = raw.strip().split('\n')
+# 找到含日期和"Country"的行作为header
+for i, line in enumerate(lines):
+    if 'Country' in line and '202' in line:
+        headers = line.split('\t')
+        break
+
+# 解析数据行，提取指定国家的持仓趋势
+countries = {}
+for line in lines[i+1:]:
+    parts = line.split('\t')
+    name = parts[0].strip()
+    if not name or name.startswith(('Link:', 'Table', 'Holdings')):
+        continue
+    values = {}
+    for j, v in enumerate(parts[1:]):
+        try:
+            values[headers[j+1]] = float(v)
+        except:
+            pass
+    countries[name] = values
+
+# 获取中国持仓趋势
+china = countries.get('China, Mainland', {})
+```
+
+### 7.3 美联储持仓（H.4.1 周报）
+
+```python
+import urllib.request, re
+
+url = "https://www.federalreserve.gov/releases/h41/current/"
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req) as f:
+    html = f.read().decode('utf-8')
+
+# 查找 "U.S. Treasury securities" 后的数值（单位：百万美元）
+m = re.search(r'U\.S\. Treasury securities.*?>([\d,]+)<', html, re.DOTALL)
+if m:
+    fed_holdings_m = float(m.group(1).replace(',', ''))  # 百万美元
+    fed_holdings_b = fed_holdings_m / 1000  # 十亿美元
+```
+
+### 7.4 计算美联储占比
+
+```python
+fed_pct = fed_holdings_b / (total_debt_b) * 100
+# 典型值（2026年5月）：Fed ~$4,453B / Total ~$39,112B = 11.4%
+```
+
+## 八、输出格式
 
 将分析结果保存为JSON + Markdown报告：
 - 数据文件：`/home/coordinate35/hermes_data/macro_YYYYMMDD.json`
 - 报告文件：`/home/coordinate35/hermes_data/macro_report_YYYYMMDD.md`
 
-## 八、注意事项
+## 九、注意事项
 
 1. **房价数据**：`macro_china_new_house_price()` 首行可能为非数据行（如"70个大中城市..."），需 `df.iloc[1:]` 去除
 2. **LPR数据**：返回的是历史数据表，最新值在最后一行

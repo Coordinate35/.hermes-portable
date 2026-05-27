@@ -471,7 +471,7 @@ lsp:
   servers: {}
 _config_version: 19
 custom_providers:
-  - api_key: a58da1e7-94f3-49c9-b39e-1f80ce0c701d
+  - api_key: __REPLACE_WITH_YOUR_KEY__
     base_url: https://ark.cn-beijing.volces.com/api/coding/v1
     model: kimi-k2.6
     name: Ark.cn-beijing.volces.com

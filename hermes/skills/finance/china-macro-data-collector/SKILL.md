@@ -1480,3 +1480,4 @@ plot_four_matrix_trajectory(gdp_data, inflation_data, years)
 - [AKShare文档](https://www.akshare.xyz/)
 - [卢麒元投资分析框架](https://www.luqiyuan.com/)
 - [微博热搜](https://s.weibo.com/top/summary?cate=realtimehot)
+- [人民币实际汇率计算](references/real-exchange-rate-calculation.md) — 名义汇率 + 中美CPI → 实际汇率，含已验证实例

@@ -254,6 +254,7 @@ if [[ -d "$SRC_DATA" ]]; then
         --exclude='*.bak' \
         --exclude='*.backup' \
         --exclude='cache' \
+        --exclude='audio_cache' \
         --exclude='node_modules' \
         --exclude='*.key' \
         --exclude='*.pem' \

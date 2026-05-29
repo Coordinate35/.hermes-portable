@@ -6,8 +6,6 @@ User has large collection of investment/finance documents at /home/coordinate35/
 §
 User prefers automated data collection for real-time analysis. Interested in using tools like AKShare for financial data APIs. Comfortable with Python, web scraping, and systematic data processing workflows.
 §
-用户需要AKShare采集宏观经济数据。当前在 `/home/coordinate35/macro_env` 用 uv 创建了虚拟环境，已安装 akshare 和 pandas。用户希望用 AKShare 自动采集 CPI、M2、LPR、GDP、房价、股市数据用于卢麒元投资分析框架。
-§
 工作原则：在分析用户提出的观点、数据或前提之前，先验证事实的正确性。具体步骤：1) 先核实用户陈述的事实是否准确；2) 识别并指出错误的假设；3) 在确保事实正确的基础上再进行分析和建议；4) 当发现错误时，解释原因并提供正确的信息。这个原则适用于所有后续的对话和分析。
 §
 用户偏好：系统化投资分析（卢麒元框架），关注中东/金融/政策，数据存 ~/hermes_data/。技术背景强，会主动提具体方案。现也在 Windows 上研究 ChatTTS 语音克隆，用 uv + winget 管理环境，项目路径 D:\Documents\ChatTTS。
@@ -15,3 +13,5 @@ User prefers automated data collection for real-time analysis. Interested in usi
 用户已建立加密记账系统。涉及"支出/花费/记账/记一笔/花了多少/账单/消费/开销"等请求时，必须立即加载 skill 'accounting'，绝不询问数据在哪、绝不建议用CSV/Excel/记账App。数据加密存于 ~/hermes_data/accounting/。
 §
 用户女朋友在西安，会定期乘高铁往返探望（单程约1155元）。涉及"去西安/回西安/探亲/异地"等场景时可结合此背景理解。
+§
+用户明确拒绝"房地产蓄水池"理论，坚持"货是货，币是币"的物币二元论——货币印出来就是印出来，不会因房价下跌而消失。追问货币真正去向，认同"货币沉默"的根源是流通速度崩溃而非物理消失。关注降息与恶性通胀的逻辑链条，分析货币问题时注重持有主体结构和信心变量。

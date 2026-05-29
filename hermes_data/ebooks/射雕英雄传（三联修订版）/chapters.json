@@ -1,0 +1,303 @@
+[
+  {
+    "id": 1,
+    "title": "第一回　风雪惊变",
+    "paragraph_count": 225,
+    "char_count": 26901,
+    "file": "chapters/001.txt"
+  },
+  {
+    "id": 2,
+    "title": "第二回　江南七怪",
+    "paragraph_count": 211,
+    "char_count": 25975,
+    "file": "chapters/002.txt"
+  },
+  {
+    "id": 3,
+    "title": "第三回　大漠风沙",
+    "paragraph_count": 197,
+    "char_count": 22292,
+    "file": "chapters/003.txt"
+  },
+  {
+    "id": 4,
+    "title": "第四回　黑风双煞",
+    "paragraph_count": 201,
+    "char_count": 23659,
+    "file": "chapters/004.txt"
+  },
+  {
+    "id": 5,
+    "title": "第五回　弯弓射雕",
+    "paragraph_count": 181,
+    "char_count": 21463,
+    "file": "chapters/005.txt"
+  },
+  {
+    "id": 6,
+    "title": "第六回　崖顶疑阵",
+    "paragraph_count": 226,
+    "char_count": 26565,
+    "file": "chapters/006.txt"
+  },
+  {
+    "id": 7,
+    "title": "第七回　比武招亲",
+    "paragraph_count": 210,
+    "char_count": 26227,
+    "file": "chapters/007.txt"
+  },
+  {
+    "id": 8,
+    "title": "第八回　各显神通",
+    "paragraph_count": 133,
+    "char_count": 15883,
+    "file": "chapters/008.txt"
+  },
+  {
+    "id": 9,
+    "title": "第九回　铁枪破犁",
+    "paragraph_count": 206,
+    "char_count": 24157,
+    "file": "chapters/009.txt"
+  },
+  {
+    "id": 10,
+    "title": "第十回　冤家聚头",
+    "paragraph_count": 137,
+    "char_count": 16819,
+    "file": "chapters/010.txt"
+  },
+  {
+    "id": 11,
+    "title": "第十一回　长春服输",
+    "paragraph_count": 219,
+    "char_count": 27881,
+    "file": "chapters/011.txt"
+  },
+  {
+    "id": 12,
+    "title": "第十二回　亢龙有悔",
+    "paragraph_count": 239,
+    "char_count": 30529,
+    "file": "chapters/012.txt"
+  },
+  {
+    "id": 13,
+    "title": "第十三回　五湖废人",
+    "paragraph_count": 234,
+    "char_count": 30625,
+    "file": "chapters/013.txt"
+  },
+  {
+    "id": 14,
+    "title": "第十四回　桃花岛主",
+    "paragraph_count": 189,
+    "char_count": 22681,
+    "file": "chapters/014.txt"
+  },
+  {
+    "id": 15,
+    "title": "第十五回　神龙摆尾",
+    "paragraph_count": 143,
+    "char_count": 18346,
+    "file": "chapters/015.txt"
+  },
+  {
+    "id": 16,
+    "title": "第十六回　九阴真经",
+    "paragraph_count": 176,
+    "char_count": 23555,
+    "file": "chapters/016.txt"
+  },
+  {
+    "id": 17,
+    "title": "第十七回　双手互搏",
+    "paragraph_count": 121,
+    "char_count": 18520,
+    "file": "chapters/017.txt"
+  },
+  {
+    "id": 18,
+    "title": "第十八回　三道试题",
+    "paragraph_count": 197,
+    "char_count": 24423,
+    "file": "chapters/018.txt"
+  },
+  {
+    "id": 19,
+    "title": "第十九回　洪涛群鲨",
+    "paragraph_count": 169,
+    "char_count": 21354,
+    "file": "chapters/019.txt"
+  },
+  {
+    "id": 20,
+    "title": "第二十回　窜改经文",
+    "paragraph_count": 93,
+    "char_count": 13452,
+    "file": "chapters/020.txt"
+  },
+  {
+    "id": 21,
+    "title": "第二十一回　千钧巨岩",
+    "paragraph_count": 219,
+    "char_count": 29392,
+    "file": "chapters/021.txt"
+  },
+  {
+    "id": 22,
+    "title": "第二十二回　骑鲨遨游",
+    "paragraph_count": 205,
+    "char_count": 26634,
+    "file": "chapters/022.txt"
+  },
+  {
+    "id": 23,
+    "title": "第二十三回　大闹禁宫",
+    "paragraph_count": 173,
+    "char_count": 22074,
+    "file": "chapters/023.txt"
+  },
+  {
+    "id": 24,
+    "title": "第二十四回　密室疗伤",
+    "paragraph_count": 174,
+    "char_count": 21288,
+    "file": "chapters/024.txt"
+  },
+  {
+    "id": 25,
+    "title": "第二十五回　荒村野店",
+    "paragraph_count": 235,
+    "char_count": 28832,
+    "file": "chapters/025.txt"
+  },
+  {
+    "id": 26,
+    "title": "第二十六回　新盟旧约",
+    "paragraph_count": 148,
+    "char_count": 18981,
+    "file": "chapters/026.txt"
+  },
+  {
+    "id": 27,
+    "title": "第二十七回　轩辕台前",
+    "paragraph_count": 131,
+    "char_count": 18779,
+    "file": "chapters/027.txt"
+  },
+  {
+    "id": 28,
+    "title": "第二十八回　铁掌峰顶",
+    "paragraph_count": 155,
+    "char_count": 20697,
+    "file": "chapters/028.txt"
+  },
+  {
+    "id": 29,
+    "title": "第二十九回　黑沼隐女",
+    "paragraph_count": 170,
+    "char_count": 20916,
+    "file": "chapters/029.txt"
+  },
+  {
+    "id": 30,
+    "title": "第三十回　一灯大师",
+    "paragraph_count": 153,
+    "char_count": 20758,
+    "file": "chapters/030.txt"
+  },
+  {
+    "id": 31,
+    "title": "第三十一回　鸯鸳锦帕",
+    "paragraph_count": 180,
+    "char_count": 25426,
+    "file": "chapters/031.txt"
+  },
+  {
+    "id": 32,
+    "title": "第三十二回　湍江险滩",
+    "paragraph_count": 153,
+    "char_count": 19068,
+    "file": "chapters/032.txt"
+  },
+  {
+    "id": 33,
+    "title": "第三十三回　来日大难",
+    "paragraph_count": 80,
+    "char_count": 10768,
+    "file": "chapters/033.txt"
+  },
+  {
+    "id": 34,
+    "title": "第三十四回　岛上巨变",
+    "paragraph_count": 193,
+    "char_count": 23898,
+    "file": "chapters/034.txt"
+  },
+  {
+    "id": 35,
+    "title": "第三十五回　铁枪庙中",
+    "paragraph_count": 169,
+    "char_count": 21028,
+    "file": "chapters/035.txt"
+  },
+  {
+    "id": 36,
+    "title": "第三十六回　大军西征",
+    "paragraph_count": 180,
+    "char_count": 21186,
+    "file": "chapters/036.txt"
+  },
+  {
+    "id": 37,
+    "title": "第三十七回　从天而降",
+    "paragraph_count": 189,
+    "char_count": 22334,
+    "file": "chapters/037.txt"
+  },
+  {
+    "id": 38,
+    "title": "第三十八回　锦囊密令",
+    "paragraph_count": 143,
+    "char_count": 17971,
+    "file": "chapters/038.txt"
+  },
+  {
+    "id": 39,
+    "title": "第三十九回　是非善恶",
+    "paragraph_count": 145,
+    "char_count": 17860,
+    "file": "chapters/039.txt"
+  },
+  {
+    "id": 40,
+    "title": "第四十回　华山论剑",
+    "paragraph_count": 178,
+    "char_count": 21913,
+    "file": "chapters/040.txt"
+  },
+  {
+    "id": 41,
+    "title": "后记",
+    "paragraph_count": 17,
+    "char_count": 2824,
+    "file": "chapters/041.txt"
+  },
+  {
+    "id": 42,
+    "title": "附录一 成吉思汗家族",
+    "paragraph_count": 158,
+    "char_count": 18703,
+    "file": "chapters/042.txt"
+  },
+  {
+    "id": 43,
+    "title": "附录二 关于“全真教”",
+    "paragraph_count": 38,
+    "char_count": 5496,
+    "file": "chapters/043.txt"
+  }
+]

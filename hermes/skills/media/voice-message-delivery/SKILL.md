@@ -1,6 +1,6 @@
 ---
 name: voice-message-delivery
-description: 【语音消息·必加载】用户有自建 TTS 降级链（Windows GPT-SoVITS → MeloTTS → edge）。涉及"念/读/播报/语音说/朗读/口播"等请求，或 QQ Bot 回复，或任何要调用 text_to_speech 工具的场景，或抓取到微博推送场景，必须先加载本 skill，禁止直接调 text_to_speech 跳过本地服务。
+description: 【语音消息·必加载】用户有自建 TTS 降级链（Windows GPT-SoVITS → MeloTTS → edge-tts CLI）。涉及"念/读/播报/语音说/朗读/口播"等请求，或 QQ Bot 回复，或抓取到微博推送等任何需要生成语音的场景，必须先加载本 skill。tts 工具集已禁用，所有 TTS 必须走 terminal 三级降级链。
 author: coordinate35
 category: media
 ---
@@ -16,11 +16,13 @@ category: media
 - 用户说："语音说..." / "播报..." / "念一下..." / "读一下..." / "朗读..." / "口播..."
 - **QQ Bot 来源且短句（见下文"平台规则"）** ← 这是强制项，不是"顺便做一下"
 - 需要将文本内容转换为语音文件发送
-- 任何包含 `text_to_speech` 工具调用意图的场景
+- 任何需要生成语音文件的场景
 
-**自检问题**：「我接下来会不会调用 text_to_speech？」
+**自检问题**：「我接下来要不要生成语音？」
 - 是 → 必须先加载本 skill，再走 Windows → MeloTTS → edge 降级链
 - 否 → 忽略
+
+> ⚠️ `tts` 工具集已禁用，`text_to_speech` 工具不可用。所有 TTS 必须通过 terminal 调三级降级链的脚本/CLI。
 
 ### 🧠 认知翻转（曾被违反多次）
 
@@ -34,12 +36,12 @@ category: media
 
 **反例**（曾犯）：解释 TPP、纠正名称、自我介绍——全部是 QQ Bot 短句，全部发了文字没发语音。根因就是把语音当成了"可选项"。
 
-## ⚠️ 强制规则（曾被违反）
+## ⚠️ 强制规则
 
-**任何时候要生成语音，禁止直接调用 `text_to_speech` 工具。**
+**任何时候要生成语音，必须走三级降级链：Windows → MeloTTS → edge。**
 
-- `text_to_speech` 工具默认走 edge，等于跳过优先级 1 和 2，违反用户既定 TTS 降级策略。
-- 即使是即时短句回复，也必须按 Windows → MeloTTS → edge 顺序逐级尝试。
+- `tts` 工具集已禁用，`text_to_speech` 工具不可用。
+- 所有 TTS 调用统一通过 terminal 执行脚本/CLI。
 
 ### curl 写入空文件的坑
 
@@ -52,7 +54,7 @@ category: media
 |:---:|:---|:---|:---|:---:|
 | 1 | Windows 宿主机 TTS | `http://192.168.56.1:9880` | POST JSON `→` WAV | 主力 |
 | 2 | Linux 本地 MeloTTS | `~/hermes_data/melotts/melo_tts.py` | CLI `→` WAV | 备用 |
-| 3 | Edge 在线 TTS | 微软服务器 | `text_to_speech` 工具 | 最终降级 |
+| 3 | Edge 在线 TTS | 微软服务器 | `edge-tts` CLI（见下方命令） | 最终降级 |
 
 ### 1. Windows 宿主机本地服务（GPT-SoVITS V2）
 
@@ -147,8 +149,17 @@ from melo.api import TTS  # import 之后不再设置上述环境变量
 
 ### 3. Edge 在线 TTS（最终降级）
 
-使用 Hermes 内置 `text_to_speech` 工具，provider: `edge`。
-当本地两个服务都不可用时自动降级到此。
+当本地两个服务都不可用时自动降级到此。使用 `edge-tts` CLI：
+
+```bash
+edge-tts --text "播报内容" --voice zh-CN-XiaoxiaoNeural --write-media /tmp/output.mp3
+```
+
+输出为 MP3 格式，QQ Bot 同样支持 MEDIA 内联投递。如需 WAV 格式可加 `ffmpeg` 转码：
+```bash
+edge-tts --text "播报内容" --voice zh-CN-XiaoxiaoNeural --write-media /tmp/output.mp3
+ffmpeg -y -i /tmp/output.mp3 /tmp/output.wav
+```
 
 ## 平台感知消息规则（QQ Bot）
 
@@ -218,11 +229,43 @@ curl -s -o /dev/null -w "%{http_code}" --connect-timeout 5 \
 - ❌ 不要在 import 之后设置 `HF_ENDPOINT`（对 transformers 无效）
 - ❌ 不要用全文直接发语音（超长文本可能被截断或质量下降）
 - ❌ 不要在复杂内容场景下忽略文字汇总
-- ❌ 不要混淆 TTS 后端：默认 `text_to_speech` 走在线 edge，不等同于本地服务，两者不能混用
+- ❌ 不要跳过三级降级链直接调 edge-tts——必须先试 Windows，再试 MeloTTS，最后才 edge
 
-## 长文本分段处理
+## 多片段 → 单条音频：优先"拼接文本一次合成"（默认）
 
-TTS 服务通常对单次输入长度有限制（GPT-SoVITS、MeloTTS、edge 各有阈值）。超过限制时按以下流程：
+**适用场景**：你手上有 N 个文本片段（如听书 5 段、新闻 N 条、长摘要分段），要交付给用户一条完整音频。
+
+**用户明确偏好（2026-05 会话确认）**：N 段文本要合并成**一条**音频发出，不要发 N 条 MEDIA 让用户点 N 次。
+
+### 决策树（按顺序选）
+
+| 拼接后总字数 | 做法 | 理由 |
+|---|---|---|
+| **≤ 2500 字** | **拼接所有片段为一个字符串**（段间 `\n\n` 分隔保留自然停顿），**一次性**送 TTS，得到一个 wav | 语调连贯无 prosody 断点；只调 1 次 TTS 速度快；不用 ffmpeg |
+| **> 2500 字** | 走下文「长文本分段处理」：按句号切→分别合成→ffmpeg concat | 单次合成超 GPT-SoVITS V2 上限会截断或失败 |
+
+### 为什么不是"每段单独合成再分发"
+
+❌ **弃用方案**：N 段 → N 次 TTS → N 个 wav → 发 N 条 MEDIA
+
+| 问题 | 影响 |
+|---|---|
+| 用户要点 N 次播放按钮 | 体验割裂 |
+| 每次 TTS 调用都重置 prosody | 段间能听出明显断点，不像连续朗读 |
+| 调用次数 ×N，慢 | 5 段就是 5 倍时间 |
+| QQ Bot MEDIA 必须独占一条回复 | N 段就是 N 条消息，刷屏 |
+
+**铁律**：除非超 2500 字阈值，**绝不**回到"分段分发多条 MEDIA"的做法。
+
+### 实现要点
+
+- 输出文件名约定示例：`combined_<context>_<start>-<end>.wav`，便于缓存复用
+- 拼接前检查目标 wav 是否已存在且 size > 10KB → 直接复用
+- 走完整 TTS 降级链（Windows → MeloTTS → edge），任一级成功即返回
+
+## 长文本分段处理（拼接后 > 2500 字时才走这里）
+
+TTS 服务通常对单次输入长度有限制（GPT-SoVITS V2 实测约 2500-3000 字、MeloTTS、edge 各有阈值）。超过限制时按以下流程：
 
 1. **切分**：按 `。！？\n` 优先切，回退到 `，；`，每段 ≤ 500 字符
 2. **逐段合成**：每段调用 TTS，输出到 `/tmp/tts_seg_001.wav`, `/tmp/tts_seg_002.wav`...

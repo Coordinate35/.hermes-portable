@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7887
--- Exported: 2026-05-29T03:00:52.539190
+-- Facts count: 7893
+-- Exported: 2026-05-30T03:00:47.568978
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7923,6 +7923,12 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7948,'QQ Bot 对话中，短句确认/澄清类回复（如"是记错了还是另外一笔"）直接用语音回复，不要发文字。','user_pref','',0.5,0,0,'2026-05-27 12:06:52','2026-05-27 12:06:52');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7949,'SOUL.md 和 skill 中的触发条件全部为强制项，不存在"可选"与"强制"的区分。曾经犯过错误：把 skill 触发条件中的"QQ Bot 来源且短句用语音"主观降级为可选项，导致不执行。纠正：所有触发条件地位平等，命中即执行，不允许自行排序优先级或区分"必做/可做"。','general','',0.5,0,0,'2026-05-27 14:34:32','2026-05-27 14:34:32');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7950,'规则执行铁律：SOUL.md 和所有 skill 中的触发条件一律平等，不存在"可选/强制"区分。曾犯错误——把"QQ Bot 短句用语音"主观降级为可选项导致不执行。纠正：触发条件命中即执行，禁止自行排优先级或区分"必做/可做"。每次回复前检查来源是否为 QQ Bot，是则按 skill 走语音。','general','',0.5,0,0,'2026-05-27 14:34:59','2026-05-27 14:34:59');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7951,'用户对"能力封装为 skill"有强偏好：当一类任务可能重复出现（如听书、记账、监控类），用户会明确要求把全部相关操作（查/增/删/改/状态）封装到一个 skill 里，并主动指出触发条件覆盖不全的地方要求补强。新增 skill 时默认把同一类任务的所有自然口语触发说法（包括"现在/当前/我的/上次"等代词变体）枚举完整，而不是只列几个核心关键词。','general','',0.5,0,0,'2026-05-29 11:02:11','2026-05-29 11:02:11');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7952,'TTS 多段合成偏好：当一次需要朗读多段文本（如听书 5 段、新闻多条），用户要求把所有文本拼接成一个字符串、一次 TTS 调用、生成一条音频文件、一条 MEDIA 回复发送。绝不要"分段分别合成多个音频、连发多条 MEDIA"。理由：用户体验上点一次听完、TTS 全段语调连贯。安全阈值 2500 字，超过才 fallback 到分批+ffmpeg concat。此规则已写入 audiobook-reader skill v2，但适用于所有 TTS 场景。','user_pref','',0.5,0,0,'2026-05-29 11:50:06','2026-05-29 11:50:06');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7953,'用户明确拒绝"房地产蓄水池"理论，认为"货是货，币是币"——货币印出来就是印出来，不会因房价下跌而消失。分析货币问题时坚持物币二元论，追问货币真正去哪了（而非被什么"吸收"）。关注降息与恶性通胀的逻辑链条，认同"货币沉默"的根源是流通速度崩溃而非物理消失。','user_pref','',0.5,0,0,'2026-05-29 15:01:17','2026-05-29 15:01:17');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7954,'用户明确拒绝"房地产蓄水池"理论，坚持"货是货，币是币"的物币二元论——货币印出来就是印出来，不会因房价下跌而消失。追问货币真正去向，认同"货币沉默"的根源是流通速度崩溃而非物理消失。关注降息与恶性通胀的逻辑链条，分析货币问题时注重持有主体结构和信心变量。','user_pref','',0.5,0,0,'2026-05-29 15:01:34','2026-05-29 15:01:34');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7955,'tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不再可用。所有 TTS 必须通过 terminal 走三级降级链：win_tts.sh → MeloTTS → edge-tts CLI。voice-message-delivery skill 已相应更新。','general','',0.5,0,0,'2026-05-29 15:58:38','2026-05-29 15:58:38');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7956,'tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不可用。所有 TTS 走 terminal 三级降级链：win_tts.sh → MeloTTS → edge-tts CLI。voice-message-delivery skill 已同步更新。','general','',0.5,0,0,'2026-05-29 15:59:11','2026-05-29 15:59:11');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9114,6 +9120,13 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1187,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1188,'必做/可做','unknown','','2026-05-27 14:34:32');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1189,'可选/强制','unknown','','2026-05-27 14:34:59');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1190,'QQ Bot 短句用语音','unknown','','2026-05-27 14:34:59');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1191,'能力封装为 skill','unknown','','2026-05-29 11:02:11');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1192,'现在/当前/我的/上次','unknown','','2026-05-29 11:02:11');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1193,'分段分别合成多个音频、连发多条 MEDIA','unknown','','2026-05-29 11:50:06');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1194,'房地产蓄水池','unknown','','2026-05-29 15:01:17');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1195,'货是货，币是币','unknown','','2026-05-29 15:01:17');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1196,'吸收','unknown','','2026-05-29 15:01:17');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1197,'货币沉默','unknown','','2026-05-29 15:01:17');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10470,13 +10483,23 @@ INSERT INTO fact_entities VALUES(7949,1188);
 INSERT INTO fact_entities VALUES(7950,1189);
 INSERT INTO fact_entities VALUES(7950,1190);
 INSERT INTO fact_entities VALUES(7950,1188);
+INSERT INTO fact_entities VALUES(7951,1191);
+INSERT INTO fact_entities VALUES(7951,1192);
+INSERT INTO fact_entities VALUES(7952,1193);
+INSERT INTO fact_entities VALUES(7953,1194);
+INSERT INTO fact_entities VALUES(7953,1195);
+INSERT INTO fact_entities VALUES(7953,1196);
+INSERT INTO fact_entities VALUES(7953,1197);
+INSERT INTO fact_entities VALUES(7954,1194);
+INSERT INTO fact_entities VALUES(7954,1195);
+INSERT INTO fact_entities VALUES(7954,1197);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2802,'cat:daodejing',4096,213,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2807,'cat:software_arch',4096,924,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2815,'cat:test',4096,6,'2026-04-28 21:05:35');
-INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,17,'2026-05-27 12:06:52');
+INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2821,'cat:user_pref',4096,20,'2026-05-29 15:01:34');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2824,'cat:general',1024,424,'2026-05-10 16:22:59');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2827,'cat:tool',4096,1,'2026-05-14 17:43:33');
 

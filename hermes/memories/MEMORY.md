@@ -15,6 +15,6 @@ User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC 
 §
 语音/TTS 全部细节见 skill voice-message-delivery。QQ Bot 渠道：短句语音是默认输出方式，文字是例外（仅长文/复杂结构时用）。认知翻转：不是"要不要加语音"，而是"要不要加文字"。每条回复先判断是否 QQ Bot 短句，是则默认走语音，文字只做补充。
 §
-自报告准确性要求：用户会核验我口头汇报的工作内容（如"我加进 skill 的那段"）。回答"我做了什么/记了什么"时，必须先实际读取文件/状态确认全貌，不能只描述本次新增动作而忽略已有上下文。否则容易把"新增了一段"误述为"加进的全部内容"，与文件实际状态不符，被用户当场抓出。
+交付铁律：(1) 自报告前先读文件确认全貌，不可只描述新增。(2) 重复任务须封装成 skill，触发条件枚举完整自然口语变体。(3) SOUL.md 和所有 skill 触发条件一律平等，命中即执行，禁止自行排优先级或区分"必做/可做"。QQ Bot 短句默认走语音（见 voice-message-delivery skill），文字仅补充。
 §
-规则执行铁律：SOUL.md 和所有 skill 中的触发条件一律平等，不存在"可选/强制"区分。曾犯错误——把"QQ Bot 短句用语音"主观降级为可选项导致不执行。纠正：触发条件命中即执行，禁止自行排优先级或区分"必做/可做"。每次回复前检查来源是否为 QQ Bot，是则按 skill 走语音。
+tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不可用。所有 TTS 走 terminal 三级降级链：win_tts.sh → MeloTTS → edge-tts CLI。voice-message-delivery skill 已同步更新。

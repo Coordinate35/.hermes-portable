@@ -84,7 +84,24 @@ if created_at > last_time and weibo_id not in pushed_ids:
 - 旧版 `format_weibo` 曾用 `text[:300]` 截断长微博，**已修复**
 - 必须输出微博的完整 `text` 字段，不做长度限制
 
-### 3. 无新微博严格静默
+### 3. 转发/长文微博必须补抓全文
+
+当脚本输出的微博 `text` 在去 HTML 后只剩表情或 <10 字符（如 `[祈祷]`），
+**几乎肯定是转发或长文**，必须调以下脚本补抓原文，再附上完整原作者内容：
+
+```bash
+cd ~/.hermes/scripts && PYTHONPATH=. python3 \
+  ~/.hermes/skills/data-collection/weibo-monitoring/scripts/fetch_mblog_full.py \
+  <uid> <weibo_id>
+```
+
+返回 JSON 含 `retweet.{user,text,long_text,pic_urls}` 和顶层 `long_text`。
+详细字段说明、API 端点、不要踩的坑见
+`references/retweet-and-longtext-extraction.md`。
+
+**禁止**只把表情符号原样发给用户 — 信息量为零。
+
+### 4. 无新微博严格静默
 - 没有新微博时，脚本输出 `[SILENT]`
 - LLM/Cron job 收到 `[SILENT]` 后**不得发送任何消息**给用户
 - 禁止输出"脚本运行正常""本次无新内容"等废话

@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7893
--- Exported: 2026-05-31T03:00:51.095190
+-- Facts count: 7895
+-- Exported: 2026-06-01T03:00:18.716516
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7929,6 +7929,8 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7954,'用户明确拒绝"房地产蓄水池"理论，坚持"货是货，币是币"的物币二元论——货币印出来就是印出来，不会因房价下跌而消失。追问货币真正去向，认同"货币沉默"的根源是流通速度崩溃而非物理消失。关注降息与恶性通胀的逻辑链条，分析货币问题时注重持有主体结构和信心变量。','user_pref','',0.5,0,0,'2026-05-29 15:01:34','2026-05-29 15:01:34');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7955,'tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不再可用。所有 TTS 必须通过 terminal 走三级降级链：win_tts.sh → MeloTTS → edge-tts CLI。voice-message-delivery skill 已相应更新。','general','',0.5,0,0,'2026-05-29 15:58:38','2026-05-29 15:58:38');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7956,'tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不可用。所有 TTS 走 terminal 三级降级链：win_tts.sh → MeloTTS → edge-tts CLI。voice-message-delivery skill 已同步更新。','general','',0.5,0,0,'2026-05-29 15:59:11','2026-05-29 15:59:11');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7957,'听书音频发送格式：发 MEDIA 音频时不要在同一条消息里混入文字描述，否则音频可能不会作为独立消息投递。用户指出第一回末段就是因此没收到音频。正确做法：MEDIA 独占一条回复，文字标注（如章节进度）要么省略，要么单独再发一条。','general','',0.5,0,0,'2026-05-31 07:49:06','2026-05-31 07:49:06');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7958,'听书音频交付格式：发 MEDIA: 音频文件时，不要在同一条消息里混入文字描述/剧情点评。用户明确指出"文字和语音消息混在一起了"是错误做法。听书场景只发纯音频，文字概要/回目信息省略或极简附在音频前即可，不可喧宾夺主。','general','',0.5,0,0,'2026-05-31 10:03:32','2026-05-31 10:03:32');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9127,6 +9129,7 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1194,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1195,'货是货，币是币','unknown','','2026-05-29 15:01:17');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1196,'吸收','unknown','','2026-05-29 15:01:17');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1197,'货币沉默','unknown','','2026-05-29 15:01:17');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1198,'文字和语音消息混在一起了','unknown','','2026-05-31 10:03:32');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10493,6 +10496,7 @@ INSERT INTO fact_entities VALUES(7953,1197);
 INSERT INTO fact_entities VALUES(7954,1194);
 INSERT INTO fact_entities VALUES(7954,1195);
 INSERT INTO fact_entities VALUES(7954,1197);
+INSERT INTO fact_entities VALUES(7958,1198);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');

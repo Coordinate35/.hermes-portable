@@ -176,6 +176,54 @@ read.py 只产出**文本片段**，不直接合成语音。Agent 必须：
 5. 按平台规则交付：QQ Bot 用 `MEDIA:<path>` 独占一条回复，**整批 5 段就发 1 条**
 6. read.py 已自动更新 progress.json，不需要 agent 再写
 
+### ⚠️ QQ Bot 听书交付的铁律（统一规范，覆盖之前所有"半放行"版本）
+
+**这条回复必须是有且仅有 `MEDIA:<绝对路径>` 一行，前后上下不能有任何字符。**
+
+不允许的"加一点点文字"包括（但不限于）：
+
+- 章节标题（如"第一回 风雪惊变"）
+- 进度百分比（如"段220-224，进度3.09%"）
+- 剧情概括（如"—— 包惜弱半推半就入秀水客栈"）
+- 章节末庆祝 emoji（如"🎉 第一回完结"）
+- 下一回预告（"下一回是「江南七怪」"）
+- 已知 bug 提示（如"末尾可能有'金庸'两字残留"）
+- 任何 emoji、标点装饰
+
+**唯一例外**：用户**主动问**了具体信息（"听到哪了"、"这一回讲什么"、"刚刚那段什么意思"），那条回复整条就是纯文字回答、**完全不带 MEDIA**——即先停下播放，回答完再等用户说"继续"。
+
+**根因**：QQ Bot 渠道下，`MEDIA:` 与同条文字共存时，渠道渲染器可能把整条当文字处理、吞掉音频附件，用户只看到文字、收不到音频。这是用户在 2026-05 射雕会话**当场指出**的——"你刚刚把文字和语音消息混在一起了，第一回最后一段语音消息没发过来"。
+
+**read.py 返回的 chapter / chapter_title / paragraph_range / total_progress_pct 字段**是给 agent 自己用的（构造缓存文件名、判断章节末尾、决定预合成位置），**不是给用户的播报字幕**。看到这些字段不要顺手往用户回复里塞。
+
+**正确格式（唯一）**：
+
+```
+MEDIA:/home/coordinate35/hermes_data/ebooks/<书名>/audio_cache/combined_ch001_p220-p224.wav
+```
+
+**全部错误格式**（任意一种都会让 QQ Bot 丢音频）：
+
+```
+❌ 一行标签 + MEDIA：
+第一回 风雪惊变（段220-224，进度3.09%）
+MEDIA:/path/to/x.wav
+
+❌ 章节末 emoji + 总结 + MEDIA：
+🎉 第一回 风雪惊变 完结（进度3.09%）—— 包惜弱入秀水客栈
+MEDIA:/path/to/x.wav
+
+❌ 多段叙述 + 提示 + MEDIA：
+第一回 风雪惊变完结。下一回是江南七怪。提示：末尾有"金庸"残留。
+MEDIA:/path/to/x.wav
+```
+
+**自检（每次发 MEDIA 前问自己）**：这条 assistant 回复里 `MEDIA:` 行之外**还有任何一个字符**吗？有 → 删掉、或拆成下一条回复发。
+
+**真的有必要告诉用户的事**（如三联版章末"金庸"噪音、章节切换、版本问题）→ 起**下一条独立文字回复**发，不要塞同一条。听书是沉浸式连续接收，文字注解是例外。
+
+详细的 MEDIA 投递规则、其它平台行为、为什么 QQ Bot 会吞 MEDIA，见 `voice-message-delivery` skill 的「平台感知消息规则（QQ Bot）」章节。
+
 ### 为什么"整批拼接一次合成"是默认（v2 升级，2026-05）
 
 | 方案 | 用户体验 | 语调连贯 | TTS 次数 | 选择 |
@@ -262,6 +310,141 @@ T3: agent 启动后台预合成下一批
 
 **反例（本会话犯过）**：第一次给"继续"功能用 `--peek-offset 1` 预合成了 p10-14，结果用户说"继续"时实际要的是 p5-9（progress 当时还在 p5），缓存未命中。改成 `--peek-offset 0` 后正常。
 
+**反例 2（第二次又犯过）**：把"先 continue 推进 → 再发 MEDIA → 再 precompose offset=0"这条流程的**第一步和第三步顺序搞反**了——在还没调 `read.py continue` 之前就启动了 `precompose --peek-offset 0`，结果预合成的是"用户本批要听的内容"（因为 progress 还没推进），等用户说"继续"后 `read.py continue` 把 progress 推到下下批，预合成的那个文件名匹配不上，缓存未命中。
+
+⚠️ **铁律重申**：每次"继续"的完整顺序：
+
+```
+1. read.py --mode continue --count 5         # 先推进 progress（不可省、不可移到后面）
+2. ls 检查 combined_chXXX_pYYY-pZZZ.wav      # 上一轮的预合成应已就绪
+3. 启动 precompose --peek-offset 0 后台      # 为下一次"继续"准备
+4. 发 MEDIA: 行（独占一条回复）
+```
+
+第 3 步和第 4 步顺序无所谓，但 **绝不能** 把 `precompose` 放到 `read.py continue` 之前——progress 没动时 offset=0 就是"用户本批"，做完是白做工。
+
+### 跨章节边界的章末"金庸"噪音段处理
+
+三联版每回末尾有一个孤立"金庸"段（站方版权署名残留，详见上文「导入后必做」章节）。这段在 progress 里**正常占一个段位**，会造成两类边界场景：
+
+**场景 A：continue 刚好把"金庸"段塞进本批**（少见，需要 count 偏大或起点近章末）：
+拼接文本里会有孤立的"金庸"二字，TTS 念出来。用户听到末尾突然冒出"金庸"。
+
+**场景 B：continue 在"金庸"段之前一段结束**：
+read.py 算出 `end_idx == len(paragraphs) - 1`，仍认为本章未结束，**下次 continue 会单独读出"金庸"那一段**——拼接出来就是一条只念"金庸"两字的 2 秒短音频。
+
+**agent 层规避（强制）**：
+- 跨章边界的补播 / 单段播放前，**先 peek 这段内容**，strip 后若 ≤ 5 个汉字且无标点（命中"金庸/古龙/梁羽生"等署名模式），**直接 skip + 把 progress 推进过去，不发 MEDIA**。
+- 章末 progress 自动跳到下一章（`next_chapter` +1，`next_paragraph=0`）时，**不要假设"漏了一段要补"**。先确认上一章的 `paragraph_count` 与最后一次 continue 的起点关系，多半是正常章末跳转。
+
+**反例（本会话踩过）**：发现 progress 从第二回跳到第三回 p0，直觉判断"漏了第二回 p210 没念"，手动 locate 取出来才发现是孤立"金庸"署名段，险些当作正文音频补播给用户。
+
+### 章末跳转 vs 真 bug 的快速判断
+
+看到 `next_chapter` 突然 +1、`next_paragraph=0` 时按这个序排查，不要瞎补播：
+
+```bash
+python3 -c "
+import json
+ch = json.load(open('/home/coordinate35/hermes_data/ebooks/<书名>/chapters.json'))
+print('上一章段数:', ch[<chapter-1>-1]['paragraph_count'])
+"
+# 若 last_continue_start + count >= 上一章段数 → 正常章末跳转，无需补播
+# 否则 → 真的漏段，去查 progress.json 历史
+```
+
+#### ⚠️ 启动预合成必须是独立后台进程，绝不能与 read.py 串联
+
+**禁止**这种写法：
+
+```bash
+# ❌ 错的：read.py 在 background 里先跑，把 progress 推到 p120，然后 precompose 合成 p120-124
+# 但用户当前要听的是 p115-119，下次"继续"时缓存未命中
+background: read.py continue --count 5 > out.json && precompose --peek-offset 0
+```
+
+**正确顺序**（每次"继续"的标准动作）：
+
+1. **前台**调 `read.py --mode continue --count 5` 推进 progress（同步等返回，拿到当前批的 paragraph_range）
+2. **前台**检查/合成当前批 wav（命中缓存直接用，否则现场合成）
+3. **独立后台**进程跑 `precompose.py --peek-offset 0`（此时 progress 已是下一批起点，所以 offset 0 = 用户下次"继续"要的那批）
+4. 发 MEDIA
+
+把 read.py 放到 background 里和 precompose 串联，会让"progress 推进"和"预合成"在同一时间窗里发生，逻辑上等价于 `--peek-offset 1`，必然每次都未命中。
+
+**根因**：`--peek-offset 0` 的"0"是相对**调用 precompose 时刻**的 progress 值。read.py 先跑就会把这个基准向前推一格，offset 0 就变成"再下一批"了。
+
+**反例 2（2026-05 射雕会话踩坑）**：图方便把 `read.py continue` 和 `precompose --peek-offset 0` 串在**同一条 background 命令**里（`read.py ... && precompose ...`）。结果 read.py 先把 progress 从 p105 推到 p110，紧接着 precompose 算的"当前批"变成 p110-114——而用户此刻还没听 p105-109（agent 还得另外发那一批）。等于跳过了一批，缓存彻底错位。
+
+**铁律**：`read.py continue` 必须**前台同步**执行（agent 需要它的返回值来构造 MEDIA 文件名）；`precompose --peek-offset 0` 才放到 background。两者**不能 `&&` 串联**，因为串联后 precompose 算 offset 时 progress 已经被 read 推进过了。正确顺序是：
+
+```
+1. terminal (foreground): python3 read.py --mode continue --count 5
+   → 拿到 paragraph_range [N, N+5)，progress 已被推进到 N+5
+2. agent: 发 MEDIA:.../combined_chXXX_pN-p(N+4).wav
+3. terminal (background=true): python3 precompose.py --peek-offset 0 --count 5
+   → 此时 progress=N+5，预合成 p(N+5)-p(N+9)，正确
+```
+
+#### ⚠️ 状态错位时的恢复（progress 跑到了用户耳朵前面）
+
+如果由于**任何原因**（手工补发上一批漏掉的音频、用户切章 locate、agent 误调用了 read.py 多推进了一次）导致**当前正在播放的批次 < progress 指针**，那么继续按 `--peek-offset 0` 启动预合成会**跳过用户的下一批**，下次"继续"必然现合成。
+
+**症状**：用户说"继续"，agent 检查预期文件名 → 不存在 → 临时合成（5-10 秒等待）。
+
+**诊断**：发完上一批 MEDIA 后看一眼最近的预合成日志里 `paragraph_range` 是不是和"用户接下来该听的范围"对得上。
+
+**修复路径**（按场景选）：
+
+1. **补发场景**（agent 自己把进度往前推过头了）：直接现合成那一批（`win_tts.sh` + 拼接文本），progress 不动；下一轮"继续"自然会和 progress 对齐，预合成链恢复。
+2. **切章/locate 场景**：locate 之后**重新启动**预合成，且 offset 仍是 0（locate 会把 progress 设到目标位置，"下一批"就是 progress 当前位置）。
+3. **未来防呆**：每次发完 MEDIA、起预合成前，agent 心里默念一遍——"我刚刚发的 wav 文件名里的段号区间，是不是 = read.py 上次返回的 paragraph_range？" 若不是，说明状态错位，先修复对齐再起预合成。
+
+**铁律补强**：`read.py continue` → 发 MEDIA → `precompose --peek-offset 0` 这三步是**原子的**，中间**不要**插入任何额外的 read.py 调用或 locate 调用。任何打断顺序的操作（包括"我先看一眼下一段是什么"）都会让 progress 偏离用户耳朵的位置。
+
+#### ⚠️ 用户连续"继续"时的时序竞争（2026-05 实战教训）
+
+正常节奏（预合成跑得过用户）：
+
+```
+T0  progress=p100  用户: 继续
+T1  read.py → 推进到 p105，发 p100-104 wav
+T2  后台 precompose 启动，目标 p105-109
+T3  预合成 ~60s 完成 p105-109.wav  ← 用户在此之前说"继续"会出问题
+T4  用户: 继续 → 命中 p105-109 缓存 ✅
+```
+
+竞争场景（用户在预合成完成前就追"继续"）：
+
+```
+T0  progress=p100  用户: 继续
+T1  read.py → 推进到 p105，发 p100-104 wav
+T2  后台 precompose 启动，目标 p105-109（还在跑）
+T3  用户: 继续  ← 来早了！
+T4  agent 找 p105-109 缓存 → 不存在
+T5  agent 现合成 p105-109 → 还顺手又 read.py 推进到 p110，启动 precompose 目标 p110-114
+T6  ⚠️ p105-109 的那次旧预合成此时跑完了——但它的目标是 progress=p105 时的"下一批"= p105-109，
+     现在已经被现合成覆盖，浪费了一次 TTS
+T7  用户: 继续 → 找 p110-114 缓存
+T8  如果 T5 启动的 precompose 还没跑完，又是缓存未命中 → 再次现合成 → 再次 read.py 推进到 p115
+T9  ⚠️ 此时旧的 precompose 已跑完 p115-119（基于当时 progress=p110 → offset=0 → p110-114）
+     但 read.py 已经推进过 p115，下次"继续"需要的是 p120-124，p110-114 浪费
+```
+
+**问题本质**：read.py 推进进度时不知道"上一次后台预合成的目标是什么"，多次现合成 + 多次 precompose 会让目标错位。
+
+**正确处理**（用户连续"继续"且预合成可能未完成时）：
+
+1. **首选：检查并等待上一次后台预合成进程**。如果 `process(action="poll", session_id=<上次的>)` 显示 still running 且 uptime < 90s，先 wait 它，命中缓存比现合成快。
+2. **次选：现合成 + 跳过本轮 precompose**。如果决定不等，直接现合成 p105-109，**不要再调 read.py continue 推进 progress**——progress 已经是 p105 不动，现合成填的就是 p105-109 这一批。然后才发 MEDIA。
+3. **发完 MEDIA 后才**：调一次 `read.py --mode locate --chapter X --paragraph 110` 把 progress 推进到 p110（已发完的下一段），再启动 precompose 目标 p110-114。
+
+**关键不变式**：每次发出一个 MEDIA wav 之前，progress.json 的 `current_paragraph` 必须等于"该 wav 末段 + 1"。read.py 的 continue 模式会自动满足，但**现合成路径必须手动 locate** 来对齐，否则就出现本会话的错位。
+
+**反例（本会话 2026-05 当场犯）**：发完 p100-104 后用户立刻"继续"。我先调 read.py continue（progress p105→p110），然后发现 p105-109 没缓存，转去现合成 p110-114（因为 read.py 已经推到 p110 了），实际用户想听的是 p105-109，导致跳读。补救：用 locate 模式 + 手动构造文本现合成。
+
+**侦测信号**：如果发现"刚发的 wav 文件名末段 + 1 ≠ progress 当前值"，说明 read.py 推过头了，必须现合成回补、用 locate 修正 progress。
+
 #### 命中缓存
 
 下次用户说"继续"时：
@@ -286,6 +469,82 @@ T3: agent 启动后台预合成下一批
 - **跨章节**：peek 模式自动处理（offset 累计走过章节末尾时跳到下一章）
 - **磁盘**：每批 ~15MB，最多领先 1 批 = 30MB 上限，可控
 - **失败容错**：后台合成失败不影响当前会话，下次现合成兜底
+
+### 🔥 跨章批次处理铁律（2026-05 实战补丁）
+
+**问题**：预合成 peek 算出的批次范围（如 `p205-p209`，5 段）可能**和真正 `continue` 取的范围不同**（如真实拿到 `p205-p210`，6 段，因 read.py 会一直取到 `end_idx = min(start+count, len(paragraphs))`）。文件名按 peek 命名时**少最后一段**，发 MEDIA 时用户会少听 1 段。
+
+更糟糕的反例（射雕第二回末"金庸"署名噪音）：
+- 真实 ch2 共 211 段（p0-p210），最后 p210 是孤立"金庸"两字
+- `continue --count 5` 起点 p205 时：end_idx=min(210,211)=210，取 p205-p209（5段），next=ch2 p210
+- 但**下一次** `continue --count 5` 起点 p210 时：end_idx=min(215,211)=211，取 p210 这 1 段，next=ch3 p0
+- 这一段就是"金庸"，被独自合成 + 念给用户 = 突兀的孤立两字噪音
+
+#### 正确做法（三条铁律，命中即用）
+
+**铁律 1：发 MEDIA 前，先用 read.py 实际返回的 `paragraph_range` 构造文件名，不要用预合成 peek 时的名字。**
+
+- continue 完拿到 `paragraph_range: [start, end_exclusive]`
+- 文件名 = `combined_ch{NNN:03d}_p{start:03d}-p{end_exclusive-1:03d}.wav`
+- 如果该文件**不存在**（说明 peek 算出的范围和真实不同），现合成兜底，不要发错文件名
+- 文件名不一致是高频 bug，**不要相信预合成留下的文件名**
+
+**铁律 2：是否跨章看 `is_chapter_end` 字段，不要靠 `next_paragraph` 推断。**
+
+- `is_chapter_end == true` → 本批是当前章最后一批，下次"继续"会进入新章
+- 跨章前后预合成可能失效（peek 不一定算对新章首批），下次"继续"时检查文件存在 → 不存在就现合成
+
+**铁律 3：章末单字/短段（< 10 字）= 噪音残留，跳过不念。**
+
+- 已知三联版每章末有孤立"金庸"两字
+- read.py 取到的 `selected[-1].text.strip()` 如果长度 < 10 字且是常见署名词（金庸/作者名/版权号），**从拼接文本中删除该段，但 progress 正常推进**
+- 实现位置：agent 层拼接时过滤，**不要**改 read.py（read.py 是通用的，过滤是版本特定噪音）
+- 过滤后如果拼接文本为空（全是噪音），不要合成，直接跳过这批，再调一次 continue
+
+#### 实战代码模板
+
+```python
+import json, subprocess
+r = subprocess.run(['python3', '.../read.py', '--book', BOOK, '--mode', 'continue', '--count', '5'],
+                   capture_output=True, text=True)
+data = json.loads(r.stdout)
+p_start, p_end = data['paragraph_range']  # [start, end_exclusive]
+chapter = data['chapter']
+
+# 噪音过滤
+NOISE_PATTERNS = {'金庸'}  # 三联版章末署名
+paras = [p for p in data['paragraphs']
+         if not (len(p['text'].strip()) < 10 and p['text'].strip() in NOISE_PATTERNS)]
+
+if not paras:
+    # 全是噪音，再走一次 continue（极少发生）
+    ...
+else:
+    text = '\n\n'.join(p['text'] for p in paras)
+    # 用真实最后一段的 index 命名文件
+    last_idx = paras[-1]['index']
+    first_idx = paras[0]['index']
+    out_name = f'combined_ch{chapter:03d}_p{first_idx:03d}-p{last_idx:03d}.wav'
+    # 检查缓存命中 → 否则现合成
+```
+
+#### 长期修复方向（未做，待用户决策）
+
+- `read.py` 可加 `--skip-noise` 参数，把过滤内化进脚本，agent 层不用每次处理
+- `precompose.py` 应跟着同步，保证预合成的文件名和 continue 真实范围一致
+- 暂未实现，因为：(1) 噪音过滤是版本特定的（新修版可能不同），(2) read.py 通用性更重要
+
+#### 缓存未命中的现合成兜底（`scripts/synth_batch.py`）
+
+当 precompose 用错 offset / 还没跑完 / 失败，而用户已经说"继续"时，用兜底脚本**按指定段范围**直接合成：
+
+```bash
+source ~/hermes_data/ebooks/.venv/bin/activate && \
+python3 ~/.hermes/skills/media/audiobook-reader/scripts/synth_batch.py \
+  --book "<书名>" --chapter N --start P --count 5
+```
+
+⚠️ 内部用 `read.py --mode locate` 取段，会把 progress 写到 `[P, P+C)`。多数兜底场景下 progress 已经 ≥ P+C（read.py 已先推进过），调用 synth_batch 等于"回滚再前进"，最终落点不变；但若 progress < P 会造成跳跃，使用前自查。文件名按 `combined_ch{NNN}_p{P}-p{P+C-1}.wav` 闭区间规则写。
 
 ## 章节切分规则（txt 格式）
 
@@ -365,6 +624,7 @@ ebooklib 的 `book.spine` 给的是 idref，需要用 `book.get_item_with_id()` 
 - ❌ 不要忘记更新 progress.json
 - ❌ 不要假设 epub 章节顺序等于文件顺序
 - ❌ 不要用 cat/echo 写大段文本，用 write_file 工具
+- ❌ **不要在同一条回复里把 MEDIA 音频和任何文字（章节标题/进度/剧情提示/emoji/标点装饰）混在一起**。混合发送会让 QQ Bot 丢弃 MEDIA 附件，用户只看到文字、收不到音频。详细规则与正反例见上文「⚠️ QQ Bot 听书交付的铁律」章节。
 
 ## 依赖
 

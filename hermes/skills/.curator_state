@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260524-174802",
-  "last_run_at": "2026-05-24T17:48:02.185215+00:00",
-  "last_run_duration_seconds": 20.27619,
-  "last_run_summary": "auto: no changes; llm: Processed the full agent-created candidate set provided (3 skills):\n\n- `ai-gateway-landscape`\n- `macroeconomic-system-modeling`\n- `voice-message-delivery`\n\nI loaded and inspected all three SKILL.md bodies. There are no 2+ member prefix/doma…",
+  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260531-180851",
+  "last_run_at": "2026-05-31T18:08:51.860827+00:00",
+  "last_run_duration_seconds": 221.663552,
+  "last_run_summary": "auto: no changes; llm: The consolidation pass is complete. Here's the analysis:\n\n## Summary\n\n**Candidate pool**: 5 agent-created skills.\n\n**Cluster identified**: `us-macro-data-retrieval` is a narrow data-source HOW-TO that naturally belongs under the `macroecono…\narchived 1 skill(s):\n  • us-macro-data-retrieval → macroeconomic-system-modeling\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin macroeconomic-system-modeling",
   "last_run_summary_shown_at": null,
   "paused": false,
-  "run_count": 2
+  "run_count": 3
 }

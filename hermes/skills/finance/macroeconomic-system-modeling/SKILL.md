@@ -193,3 +193,4 @@ $RPI$ 越高，越可能率先回归。
 相关技能：
 - `luqiyuan-macro-analysis`：卢麒元框架的具体数据采集与策略应用
 - `china-macro-data-collector`：中国宏观数据的自动化采集
+- `us-macro-data-retrieval`：已并入本技能 → `references/us-macro-data-sources.md`（美国国债/TIC/FRED/H.4.1 数据源）

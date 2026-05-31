@@ -1,12 +1,7 @@
----
-name: us-macro-data-retrieval
-description: >
-  采集美国宏观经济数据：国债总量与持有人结构（TIC）、FRED 宏观指标（GDP/通胀/就业）、
-  美联储资产负债表（H.4.1）。数据源均为官方一手，无需 API Key。
-tags: [finance, us-macro, treasury, tic, fred, gdp, inflation, fed]
----
+# 美国宏观数据采集参考
 
-# 美国宏观数据采集
+> 原为独立 skill `us-macro-data-retrieval`，已并入 `macroeconomic-system-modeling` 作为参考附录。
+> 为 Layer 1-3 建模提供美国侧数据源。
 
 ## 触发条件
 - 用户询问美国国债、美债持有人、TIC 数据

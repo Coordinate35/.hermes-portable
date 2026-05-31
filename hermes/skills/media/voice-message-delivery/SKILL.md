@@ -178,22 +178,39 @@ ffmpeg -y -i /tmp/output.mp3 /tmp/output.wav
 
 **QQ Bot**：直接在回复内容中嵌入 `MEDIA:/path/to/file.wav`。不要用 `send_message` 工具发 MEDIA——QQ Bot 不支持 `send_message` 的 MEDIA 模式，会报 "media attachments only" 错误。QQ Bot 的 MEDIA 通过回复内联路径投递。
 
-**⚠️ 强制规则：MEDIA 独占一行，不与文字混排**
+**⚠️ 强制规则：MEDIA 独占整条回复，不与任何文字共存**
 
-QQ Bot 回复中，`MEDIA:/path/to/file.wav` **必须独占整条回复**，不得与任何文字混在同一回复中。原因：MEDIA 和文字混排时 QQ Bot 可能只渲染文字而丢弃音频。
+QQ Bot 回复中，`MEDIA:/path/to/file.wav` **必须是这条回复的全部内容**，前面、后面、同行都不能有任何其他文字（标题、进度、彩蛋说明、剧透提示一律不能加）。原因：MEDIA 和文字共存时 QQ Bot 可能只渲染文字而丢弃音频。
 
 正确做法：
 ```
-回复 1（纯语音）：MEDIA:/tmp/voice.wav
+回复 1（纯 MEDIA，只有这一行）：MEDIA:/tmp/voice.wav
 回复 2（纯文字，仅必要时）：补充的文字说明
 ```
 
-错误做法：
+错误做法（同一回复内文字 + MEDIA 都有就是错）：
 ```
-❌ MEDIA:/tmp/voice.wav  这段文字和语音混在一起了
+❌ 同行混排：MEDIA:/tmp/voice.wav  这段文字和语音混在一起了
+❌ 多行混排：
+   🎉 第一回完结（进度 3.09%）—— xxx
+   下一回是 yyy，提示 zzz
+   MEDIA:/tmp/voice.wav
+   ↑ 前面塞了三行文字，MEDIA 在末尾——这同样算混排，用户收不到音频
 ```
 
-**判断流程**：需要发语音 → 先发一条纯 MEDIA 回复 → 如果需要补充文字（代码、链接等），再单独发一条文字回复。
+**听书等连续播放场景的标准回复格式**：
+
+只发 MEDIA，**什么文字都不要加**。不要写"第 N 回 段 X-Y 进度 N%"，不要剧透下一段，不要加 emoji 标题。书的章节信息要看的话用户会问，连续接收只看到音频就够了。
+
+```
+✅ 正确：MEDIA:/path/to/ch001_p005-p009.wav
+❌ 错误：第一回 风雪惊变（段5-9，进度1.23%）
+        MEDIA:/path/to/ch001_p005-p009.wav
+```
+
+**反例（2026-05 射雕英雄传朗读会话连续犯了 40+ 次，跨多次 session 反复重犯）**：每发一段音频都在 MEDIA 前面塞章节标题 + 进度 + 剧情概括，结果用户多次明确指出"语音消息没发过来"、"你刚刚把文字和语音消息混在一起了"。根因：误读了"MEDIA 独占一行"规则，以为只要 MEDIA 在自己一行就行——错。是"独占整条回复"，整条只有 MEDIA: 那一行。**反复违反说明仅在 SKILL 里加一行警告不够，听书场景已在 `audiobook-reader` skill 里加了强化版禁令（章节信息、进度、emoji、剧透一律不准与 MEDIA 同条），优先看那里。**
+
+**判断流程**：需要发语音 → 这条回复**有且仅有** `MEDIA:<path>` → 如果真的必须补充文字（用户问了具体信息、要发链接/代码），再单独发**下一条**纯文字回复。
 
 **其他平台（Telegram/Discord/微信等）**：可使用 `send_message` 工具带 `MEDIA:` 路径。
 

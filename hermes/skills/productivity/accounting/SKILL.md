@@ -32,13 +32,16 @@ description: 【个人记账·必加载】用户的个人记账系统已建立�
 ## 操作命令
 
 ### 1. 添加支出
+
+**重要：始终使用 `/usr/bin/python3` 绝对路径**，因为用户的 `python3` 可能指向某个项目 venv（如 ebooks venv），那些 venv 通常没装 cryptography 会报 ModuleNotFoundError。系统 python3 已装好依赖。
+
 ```bash
 # 当下记一笔（默认时间 = now）
-python3 /home/coordinate35/hermes_data/accounting/accounting.py add \
+/usr/bin/python3 /home/coordinate35/hermes_data/accounting/accounting.py add \
   --amount 35.5 --desc "午餐麦当劳" --cat 刚性 --sub 食 --note "可选备注"
 
 # 补记历史支出（--when 可选，支持下列灵活格式）
-python3 /home/coordinate35/hermes_data/accounting/accounting.py add \
+/usr/bin/python3 /home/coordinate35/hermes_data/accounting/accounting.py add \
   --amount 35.5 --desc "午餐" --cat 刚性 --sub 食 --when "昨天中午"
 ```
 
@@ -58,8 +61,8 @@ python3 /home/coordinate35/hermes_data/accounting/accounting.py add \
 
 ### 2. 查找最近记录（用于删除前定位 id）
 ```bash
-python3 /home/coordinate35/hermes_data/accounting/accounting.py find --n 5
-python3 /home/coordinate35/hermes_data/accounting/accounting.py find --query "麦当劳"
+/usr/bin/python3 /home/coordinate35/hermes_data/accounting/accounting.py find --n 5
+/usr/bin/python3 /home/coordinate35/hermes_data/accounting/accounting.py find --query "麦当劳"
 ```
 
 ### 3. 删除支出（必须二次确认）
@@ -68,19 +71,19 @@ python3 /home/coordinate35/hermes_data/accounting/accounting.py find --query "�
 2. 询问用户："确认删除这笔记录吗？(y/n)"
 3. 用户确认后才执行：
 ```bash
-python3 /home/coordinate35/hermes_data/accounting/accounting.py delete --id <id>
+/usr/bin/python3 /home/coordinate35/hermes_data/accounting/accounting.py delete --id <id>
 ```
 4. 删除后**自动跑一次本月汇总**告知用户当前余额状况
 
 ### 4. 汇总
 ```bash
 # 本月
-python3 /home/coordinate35/hermes_data/accounting/accounting.py summary \
+/usr/bin/python3 /home/coordinate35/hermes_data/accounting/accounting.py summary \
   --start 2026-05-01 --end 2026-06-01
 
 # 本周（自行计算 ISO 周一到下周一）
 # 今天
-python3 /home/coordinate35/hermes_data/accounting/accounting.py summary \
+/usr/bin/python3 /home/coordinate35/hermes_data/accounting/accounting.py summary \
   --start 2026-05-14 --end 2026-05-15
 ```
 

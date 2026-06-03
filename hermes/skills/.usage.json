@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-31T07:22:31.716184+00:00",
-    "last_used_at": "2026-06-02T14:22:58.278004+00:00",
-    "last_viewed_at": "2026-06-02T14:22:58.276002+00:00",
+    "last_used_at": "2026-06-03T13:39:17.231881+00:00",
+    "last_viewed_at": "2026-06-03T13:39:17.230043+00:00",
     "patch_count": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 27,
-    "view_count": 27
+    "use_count": 29,
+    "view_count": 29
   },
   "ai-gateway-landscape": {
     "archived_at": null,
@@ -30,13 +30,13 @@
     "created_at": "2026-05-29T10:39:06.704332+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-01T14:09:35.306274+00:00",
-    "last_used_at": "2026-06-01T13:48:45.579374+00:00",
-    "last_viewed_at": "2026-06-01T13:48:45.577620+00:00",
+    "last_used_at": "2026-06-03T13:40:27.267128+00:00",
+    "last_viewed_at": "2026-06-03T13:40:27.265812+00:00",
     "patch_count": 39,
     "pinned": false,
     "state": "active",
-    "use_count": 26,
-    "view_count": 26
+    "use_count": 27,
+    "view_count": 27
   },
   "china-macro-data-collector": {
     "archived_at": null,
@@ -134,13 +134,13 @@
     "created_at": "2026-05-17T01:00:23.036651+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-06-01T01:01:00.257352+00:00",
-    "last_viewed_at": "2026-06-01T01:01:00.256257+00:00",
+    "last_used_at": "2026-06-03T01:00:31.708105+00:00",
+    "last_viewed_at": "2026-06-03T01:00:31.706283+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 9,
-    "view_count": 9
+    "use_count": 10,
+    "view_count": 10
   },
   "local-tts-setup": {
     "archived_at": null,
@@ -212,39 +212,39 @@
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-05-31T09:29:52.013785+00:00",
-    "last_used_at": "2026-06-02T18:56:36.822996+00:00",
-    "last_viewed_at": "2026-06-02T18:56:36.819614+00:00",
+    "last_used_at": "2026-06-03T06:50:32.742542+00:00",
+    "last_viewed_at": "2026-06-03T06:50:32.741253+00:00",
     "patch_count": 22,
     "pinned": false,
     "state": "active",
-    "use_count": 264,
-    "view_count": 264
+    "use_count": 282,
+    "view_count": 282
   },
   "wallstreetcn-news": {
     "archived_at": null,
     "created_at": "2026-05-18T03:13:56.570512+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-28T10:48:53.185113+00:00",
-    "last_used_at": "2026-05-29T03:14:17.088643+00:00",
-    "last_viewed_at": "2026-05-29T03:14:17.086790+00:00",
+    "last_used_at": "2026-06-03T03:14:09.097405+00:00",
+    "last_viewed_at": "2026-06-03T03:14:09.096569+00:00",
     "patch_count": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 16,
-    "view_count": 16
+    "use_count": 17,
+    "view_count": 17
   },
   "weibo-account-monitor": {
     "archived_at": null,
     "created_at": "2026-05-15T04:42:07.553882+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-06-02T18:56:36.826912+00:00",
-    "last_viewed_at": "2026-06-02T18:56:36.825926+00:00",
+    "last_used_at": "2026-06-02T22:35:56.562740+00:00",
+    "last_viewed_at": "2026-06-02T22:35:56.560955+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 105,
-    "view_count": 105
+    "use_count": 108,
+    "view_count": 108
   },
   "weibo-content-alternative-access": {
     "archived_at": null,
@@ -264,13 +264,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-30T02:23:54.935318+00:00",
-    "last_used_at": "2026-06-02T18:45:26.542766+00:00",
-    "last_viewed_at": "2026-06-02T18:45:26.541516+00:00",
+    "last_used_at": "2026-06-03T06:50:32.746077+00:00",
+    "last_viewed_at": "2026-06-03T06:50:32.745103+00:00",
     "patch_count": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 482,
-    "view_count": 482
+    "use_count": 522,
+    "view_count": 522
   },
   "weibo-monitoring-debugging": {
     "archived_at": null,

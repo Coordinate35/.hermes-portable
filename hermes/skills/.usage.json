@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-31T07:22:31.716184+00:00",
-    "last_used_at": "2026-06-04T15:47:58.326883+00:00",
-    "last_viewed_at": "2026-06-04T15:47:58.325914+00:00",
+    "last_used_at": "2026-06-05T11:44:44.484271+00:00",
+    "last_viewed_at": "2026-06-05T11:44:44.482575+00:00",
     "patch_count": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 30,
-    "view_count": 30
+    "use_count": 31,
+    "view_count": 31
   },
   "ai-gateway-landscape": {
     "archived_at": null,
@@ -89,6 +89,19 @@
     "state": "active",
     "use_count": 2,
     "view_count": 2
+  },
+  "hermes-agent": {
+    "archived_at": null,
+    "created_at": "2026-06-05T12:36:18.164132+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-05T12:36:18.165673+00:00",
+    "last_viewed_at": "2026-06-05T12:36:18.164152+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "hermes-agent-github-backup": {
     "archived_at": null,
@@ -212,39 +225,39 @@
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-05-31T09:29:52.013785+00:00",
-    "last_used_at": "2026-06-04T13:00:45.657913+00:00",
-    "last_viewed_at": "2026-06-04T13:00:45.656874+00:00",
+    "last_used_at": "2026-06-05T15:56:06.356701+00:00",
+    "last_viewed_at": "2026-06-05T15:56:06.355093+00:00",
     "patch_count": 22,
     "pinned": false,
     "state": "active",
-    "use_count": 284,
-    "view_count": 284
+    "use_count": 295,
+    "view_count": 295
   },
   "wallstreetcn-news": {
     "archived_at": null,
     "created_at": "2026-05-18T03:13:56.570512+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-28T10:48:53.185113+00:00",
-    "last_used_at": "2026-06-04T03:08:27.215607+00:00",
-    "last_viewed_at": "2026-06-04T03:08:27.209024+00:00",
+    "last_used_at": "2026-06-05T03:14:41.627819+00:00",
+    "last_viewed_at": "2026-06-05T03:14:41.625878+00:00",
     "patch_count": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 18,
-    "view_count": 18
+    "use_count": 20,
+    "view_count": 20
   },
   "weibo-account-monitor": {
     "archived_at": null,
     "created_at": "2026-05-15T04:42:07.553882+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-06-02T22:35:56.562740+00:00",
-    "last_viewed_at": "2026-06-02T22:35:56.560955+00:00",
+    "last_used_at": "2026-06-05T14:26:48.418104+00:00",
+    "last_viewed_at": "2026-06-05T14:26:48.417228+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 108,
-    "view_count": 108
+    "use_count": 110,
+    "view_count": 110
   },
   "weibo-content-alternative-access": {
     "archived_at": null,
@@ -264,13 +277,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-30T02:23:54.935318+00:00",
-    "last_used_at": "2026-06-04T13:00:45.654238+00:00",
-    "last_viewed_at": "2026-06-04T13:00:45.652003+00:00",
+    "last_used_at": "2026-06-05T15:56:03.197103+00:00",
+    "last_viewed_at": "2026-06-05T15:56:03.196123+00:00",
     "patch_count": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 523,
-    "view_count": 523
+    "use_count": 542,
+    "view_count": 542
   },
   "weibo-monitoring-debugging": {
     "archived_at": null,

@@ -3,7 +3,7 @@
   "last_run_at": "2026-05-31T18:08:51.860827+00:00",
   "last_run_duration_seconds": 221.663552,
   "last_run_summary": "auto: no changes; llm: The consolidation pass is complete. Here's the analysis:\n\n## Summary\n\n**Candidate pool**: 5 agent-created skills.\n\n**Cluster identified**: `us-macro-data-retrieval` is a narrow data-source HOW-TO that naturally belongs under the `macroecono…\narchived 1 skill(s):\n  • us-macro-data-retrieval → macroeconomic-system-modeling\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin macroeconomic-system-modeling",
-  "last_run_summary_shown_at": null,
+  "last_run_summary_shown_at": "2026-05-31T18:08:51.860827+00:00",
   "paused": false,
   "run_count": 3
 }

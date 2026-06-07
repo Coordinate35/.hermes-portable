@@ -235,3 +235,14 @@ hermes task list | grep 微博监控
 # 手动执行测试
 cd ~/.hermes/scripts && python3 weibo_monitor.py
 ```
+
+## 相关参考文档
+
+本技能吸收了以下专项知识的精华。每个文档保留了原始session的完整细节：
+
+- `references/alternative-access.md` — 微博被封时的替代访问方案（知乎/B站/公众号等第三方平台）
+- `references/hotsearch-scraper.md` — 微博热搜数据获取方法（浏览器工具/AKShare/聚合站）
+- `references/debugging.md` — 监控脚本调试：重复推送根因、状态管理、静默机制、多副本陷阱
+- `references/account-monitor.md` — 多账号监控配置、通知策略、随机延迟、Cookie管理
+- `references/retweet-and-longtext-extraction.md` — 转发/长文微博的全文补抓方法
+- `references/auto-tts-integration.md` — 语音播报集成方案

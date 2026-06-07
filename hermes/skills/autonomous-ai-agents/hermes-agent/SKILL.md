@@ -809,6 +809,12 @@ hermes config set auxiliary.vision.model <model_name>
 | Cron jobs | `hermes cron list` or [Cron docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron) |
 | Memory | `hermes memory status` or [Memory docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory) |
 | **Memory internals** (where files live, what's auto-injected, frozen-snapshot rules) | `references/memory-architecture.md` — read this BEFORE answering "where is my memory stored?" |
+| **Skill authoring** (in-repo SKILL.md format, frontmatter, validator, structure) | `references/skill-authoring.md` — read this when creating or editing skills for the hermes-agent repo |
+| **GitHub backup** (complete config + holographic memory backup to GitHub, cross-machine sync) | `references/github-backup.md` — read this when setting up backup/restore of Hermes config |
+| **HRR diagnostic** (diagnose holographic HRR memory issues, schema compatibility, vector coverage) | `references/hrr-diagnostic.md` — read this when HRR memory seems broken |
+| **Weixin timeout bug** (cross-event-loop timeout error in Weixin push) | `references/weixin-timeout-bug.md` — read this when Weixin send fails with timeout error |
+| **TUI commands debugging** (slash command architecture, Python/Ink layers, autocomplete) | `references/tui-commands-debugging.md` — read this when TUI slash commands misbehave |
+| **Holographic batch import** (bulk text import, HRR vector rebuild, dimension mixing) | `references/holographic-batch-import.md` — read this when importing large doc sets into memory |
 | Env variables | `hermes config env-path` or [Env vars reference](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) |
 | CLI commands | `hermes --help` or [CLI reference](https://hermes-agent.nousresearch.com/docs/reference/cli-commands) |
 | Gateway logs | `~/.hermes/logs/gateway.log` |

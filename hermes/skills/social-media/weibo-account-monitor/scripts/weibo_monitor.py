@@ -1,1 +1,0 @@
-/home/coordinate35/.hermes/scripts/weibo_monitor.py

@@ -1481,3 +1481,5 @@ plot_four_matrix_trajectory(gdp_data, inflation_data, years)
 - [卢麒元投资分析框架](https://www.luqiyuan.com/)
 - [微博热搜](https://s.weibo.com/top/summary?cate=realtimehot)
 - [人民币实际汇率计算](references/real-exchange-rate-calculation.md) — 名义汇率 + 中美CPI → 实际汇率，含已验证实例
+- [卢麒元宏观分析框架详解](references/luqiyuan-framework.md) — 真实通胀率双算法、四矩阵定位、金转油策略、美债数据采集
+- [卢麒元PDF文库索引](references/luqiyuan-pdf-library.md) — 投资学2019-2021、资本论、通论、韩昌黎文集等系列目录与文件位置

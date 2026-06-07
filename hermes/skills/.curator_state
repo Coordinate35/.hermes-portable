@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260531-180851",
-  "last_run_at": "2026-05-31T18:08:51.860827+00:00",
-  "last_run_duration_seconds": 221.663552,
-  "last_run_summary": "auto: no changes; llm: The consolidation pass is complete. Here's the analysis:\n\n## Summary\n\n**Candidate pool**: 5 agent-created skills.\n\n**Cluster identified**: `us-macro-data-retrieval` is a narrow data-source HOW-TO that naturally belongs under the `macroecono…\narchived 1 skill(s):\n  • us-macro-data-retrieval → macroeconomic-system-modeling\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin macroeconomic-system-modeling",
+  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260607-183257",
+  "last_run_at": "2026-06-07T18:32:57.428301+00:00",
+  "last_run_duration_seconds": 818.62348,
+  "last_run_summary": "auto: no changes; llm: Now let me write the final summary.\n\n---\n\n## Curator Consolidation Pass — Summary\n\nProcessed 79 agent-created skills across 5 clusters. **18 skills archived** (13 consolidated, 5 pruned).\n\n### Clusters processed:\n\n**1. `plan` / `writing-pla…\narchived 6 skill(s):\n  • hermes-agent-skill-authoring → hermes-agent\n  • apple-notes — pruned (stale)\n  • apple-reminders — pruned (stale)\n  • findmy — pruned (stale)\n  • imessage — pruned (stale)\n  • macos-computer-use — pruned (stale)\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin hermes-agent",
   "last_run_summary_shown_at": "2026-05-31T18:08:51.860827+00:00",
   "paused": false,
-  "run_count": 3
+  "run_count": 4
 }

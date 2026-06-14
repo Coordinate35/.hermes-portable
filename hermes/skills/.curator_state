@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260607-183257",
-  "last_run_at": "2026-06-07T18:32:57.428301+00:00",
-  "last_run_duration_seconds": 818.62348,
-  "last_run_summary": "auto: no changes; llm: Now let me write the final summary.\n\n---\n\n## Curator Consolidation Pass — Summary\n\nProcessed 79 agent-created skills across 5 clusters. **18 skills archived** (13 consolidated, 5 pruned).\n\n### Clusters processed:\n\n**1. `plan` / `writing-pla…\narchived 6 skill(s):\n  • hermes-agent-skill-authoring → hermes-agent\n  • apple-notes — pruned (stale)\n  • apple-reminders — pruned (stale)\n  • findmy — pruned (stale)\n  • imessage — pruned (stale)\n  • macos-computer-use — pruned (stale)\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin hermes-agent",
+  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260614-184119",
+  "last_run_at": "2026-06-14T18:41:19.606283+00:00",
+  "last_run_duration_seconds": 734.00742,
+  "last_run_summary": "auto: no changes; llm: Now I have a complete picture. Let me write the final summary.\n\n---\n\n## Human Summary\n\nI scanned all 73 agent-created skills and identified prefix/domain clusters. After thorough content analysis of every cluster:\n\n**The only clear consolid…",
   "last_run_summary_shown_at": "2026-05-31T18:08:51.860827+00:00",
   "paused": false,
-  "run_count": 4
+  "run_count": 5
 }

@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 15727
+        "completed": 16008
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-06-18T03:05:00+08:00",
-      "last_run_at": "2026-06-18T02:56:00.264419+08:00",
+      "next_run_at": "2026-06-19T03:05:00+08:00",
+      "last_run_at": "2026-06-19T02:57:29.258041+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -56,17 +56,17 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 42
+        "completed": 43
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-06-18T09:00:00+08:00",
-      "last_run_at": "2026-06-17T09:01:13.198665+08:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-06-19T09:00:00+08:00",
+      "last_run_at": "2026-06-18T09:04:01.774742+08:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 429: The service is currently unable to handle additional requests due to server overload. Please retry later. Request id: 02178174458115083b8bf492ee477f1caf0673edb7dbd43195d2f",
       "last_delivery_error": null,
       "deliver": "weixin",
       "origin": {
@@ -96,15 +96,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 35
+        "completed": 36
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-06-19T03:00:00+08:00",
-      "last_run_at": "2026-06-17T03:01:08.273246+08:00",
+      "next_run_at": "2026-06-20T03:00:00+08:00",
+      "last_run_at": "2026-06-18T03:01:30.537154+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -133,15 +133,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 27
+        "completed": 28
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-06-19T03:00:00+08:00",
-      "last_run_at": "2026-06-18T03:00:50.038316+08:00",
+      "next_run_at": "2026-06-20T03:00:00+08:00",
+      "last_run_at": "2026-06-19T03:00:59.165355+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -156,5 +156,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-06-18T03:00:50.039406+08:00"
+  "updated_at": "2026-06-19T03:00:59.166937+08:00"
 }

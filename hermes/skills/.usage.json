@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-31T07:22:31.716184+00:00",
-    "last_used_at": "2026-06-19T04:31:29.321021+00:00",
-    "last_viewed_at": "2026-06-19T04:31:29.318136+00:00",
+    "last_used_at": "2026-06-20T03:04:07.061136+00:00",
+    "last_viewed_at": "2026-06-20T03:04:07.058274+00:00",
     "patch_count": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 48,
-    "view_count": 48
+    "use_count": 49,
+    "view_count": 49
   },
   "ai-gateway-landscape": {
     "archived_at": null,
@@ -1057,13 +1057,13 @@
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-05-31T09:29:52.013785+00:00",
-    "last_used_at": "2026-06-18T13:36:20.226160+00:00",
-    "last_viewed_at": "2026-06-18T13:36:20.222854+00:00",
+    "last_used_at": "2026-06-20T05:36:15.345749+00:00",
+    "last_viewed_at": "2026-06-20T05:36:15.343580+00:00",
     "patch_count": 22,
     "pinned": false,
     "state": "active",
-    "use_count": 305,
-    "view_count": 305
+    "use_count": 306,
+    "view_count": 306
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1096,13 +1096,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-07T18:40:39.322147+00:00",
-    "last_used_at": "2026-06-19T02:10:27.363676+00:00",
-    "last_viewed_at": "2026-06-19T02:10:27.360579+00:00",
+    "last_used_at": "2026-06-20T06:03:22.106261+00:00",
+    "last_viewed_at": "2026-06-20T06:03:22.103596+00:00",
     "patch_count": 6,
     "pinned": false,
     "state": "active",
-    "use_count": 552,
-    "view_count": 552
+    "use_count": 556,
+    "view_count": 556
   },
   "weights-and-biases": {
     "archived_at": null,
@@ -1116,6 +1116,19 @@
     "state": "active",
     "use_count": 0,
     "view_count": 0
+  },
+  "weixin-article-archiver": {
+    "archived_at": null,
+    "created_at": "2026-06-20T06:04:45.266290+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-20T06:04:45.269728+00:00",
+    "last_viewed_at": "2026-06-20T06:04:45.266321+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "xurl": {
     "archived_at": null,

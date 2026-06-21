@@ -1483,3 +1483,11 @@ plot_four_matrix_trajectory(gdp_data, inflation_data, years)
 - [人民币实际汇率计算](references/real-exchange-rate-calculation.md) — 名义汇率 + 中美CPI → 实际汇率，含已验证实例
 - [卢麒元宏观分析框架详解](references/luqiyuan-framework.md) — 真实通胀率双算法、四矩阵定位、金转油策略、美债数据采集
 - [卢麒元PDF文库索引](references/luqiyuan-pdf-library.md) — 投资学2019-2021、资本论、通论、韩昌黎文集等系列目录与文件位置
+
+## 子技能参考
+
+本技能已吸收以下专项知识，保留为参考文档：
+
+- `references/financial-market-data-retrieval.md` — 实时股票行情、市场指数、商品价格获取（东方财富/新浪财经浏览器采集）
+- `references/japan-mof-intervention-monitor.md` — 日本财务省外汇干预数据监控（MOF官方CSV采集、和历转换、AI幻觉验证）
+- `references/investment-research-verification.md` — 投资研究验证方法论（一手来源验证、认知谦逊、策略转换分析）

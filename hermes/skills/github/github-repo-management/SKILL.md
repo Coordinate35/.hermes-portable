@@ -501,6 +501,16 @@ for g in json.load(sys.stdin):
     print(f\"  {g['id']}  {g['description'] or '(no desc)':40}  {files}\")"
 ```
 
+## Codebase Inspection (LOC, Languages, Ratios)
+
+For analyzing repository code composition — lines of code, language breakdown, file counts, and code-vs-comment ratios — see `references/codebase-inspection.md`. Uses `pygount` for fast, accurate analysis. Quick start:
+
+```bash
+pip install --break-system-packages pygount
+cd /path/to/repo
+pygount --format=summary --folders-to-skip=".git,node_modules,venv,.venv,__pycache__,dist,build" .
+```
+
 ## Quick Reference Table
 
 | Action | gh | git + curl |

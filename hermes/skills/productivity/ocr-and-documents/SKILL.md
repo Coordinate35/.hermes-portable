@@ -170,3 +170,8 @@ No extra dependencies needed — pymupdf covers split, merge, search, and text e
 - marker-pdf downloads ~2.5GB of models to `~/.cache/huggingface/` on first use
 - For Word docs: `pip install python-docx` (better than OCR — parses actual structure)
 - For PowerPoint: see the `powerpoint` skill (uses python-pptx)
+
+## Related Document Skills
+
+- `references/extract-docx-content.md` — DOCX text extraction with python-docx (parses document structure, tables, headers)
+- `references/nano-pdf.md` — PDF text editing (typo fixes, title changes) via nano-pdf CLI with natural language prompts

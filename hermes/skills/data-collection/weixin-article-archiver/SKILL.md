@@ -150,3 +150,7 @@ for i, img in enumerate(imgs):
 - `requests`、`BeautifulSoup` 用于爬取
 - `vision_analyze` 用于图片内容识别
 - 文件保存到 `/home/coordinate35/hermes_data/`
+
+## 微信长消息处理
+
+向用户发送长文时需注意微信消息长度限制（单条不超过1500字符）。详见 `references/weixin-long-message-handling.md` — 分段策略、序号标注、收尾确认等完整流程。

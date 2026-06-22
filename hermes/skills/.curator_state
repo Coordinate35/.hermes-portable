@@ -1,8 +1,8 @@
 {
-  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260614-184119",
+  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260621-184226",
   "last_run_at": "2026-06-21T18:42:26.186882+00:00",
-  "last_run_duration_seconds": 734.00742,
-  "last_run_summary": "auto: no changes",
+  "last_run_duration_seconds": 1299.29215,
+  "last_run_summary": "auto: no changes; llm: Now let me finalize with the structured summary.\n\n## Human Summary\n\nProcessed 8 consolidations across 4 clusters:\n\n**GitHub cluster (1 merge):**\n- `codebase-inspection` → `github-repo-management` — pygount LOC analysis is a repo management …\narchived 2 skill(s):\n  • codebase-inspection → github-repo-management\n  • nano-pdf → ocr-and-documents\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin github-repo-management",
   "last_run_summary_shown_at": "2026-05-31T18:08:51.860827+00:00",
   "paused": false,
   "run_count": 6

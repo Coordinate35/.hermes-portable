@@ -184,7 +184,9 @@ $RPI$ 越高，越可能率先回归。
 
 - EXIOBASE：全球多区域投入产出表
 - World Bank Commodity Price Data
-- IMF IFS / BOP / CPIS
+- IMF IFS / BOP / CPIS（API 从本机网络不可达，见 `references/gold-reserves-data-sources.md`）
+- WGC Goldhub：黄金储备数据（浏览器提取方法见 `references/gold-reserves-data-sources.md`）
+- **瑞士海关黄金贸易数据**：Swiss Impex 旧系统已下线，新系统需 eIAM 联邦认证，UN Comtrade API 预览端点对瑞士 HS 7108 返回空数据。当前从本机网络环境无法自动化获取。详见 `references/gold-reserves-data-sources.md` 第四节。
 - Penn World Table 10.0
 - Godley & Lavoie 《Monetary Economics》：SFC 理论圣经
 

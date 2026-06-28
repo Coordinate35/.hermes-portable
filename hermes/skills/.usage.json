@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-05-31T07:22:31.716184+00:00",
-    "last_used_at": "2026-06-26T11:26:14.671245+00:00",
-    "last_viewed_at": "2026-06-26T11:26:14.669612+00:00",
+    "last_used_at": "2026-06-28T09:05:48.689710+00:00",
+    "last_viewed_at": "2026-06-28T09:05:48.687260+00:00",
     "patch_count": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 55,
-    "view_count": 55
+    "use_count": 56,
+    "view_count": 56
   },
   "ai-gateway-landscape": {
     "archived_at": null,
@@ -95,13 +95,13 @@
     "created_at": "2026-05-29T10:39:06.704332+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-01T14:09:35.306274+00:00",
-    "last_used_at": "2026-06-21T13:18:44.604266+00:00",
-    "last_viewed_at": "2026-06-21T13:18:44.602653+00:00",
+    "last_used_at": "2026-06-28T09:03:18.950683+00:00",
+    "last_viewed_at": "2026-06-28T09:03:18.947935+00:00",
     "patch_count": 39,
     "pinned": false,
     "state": "active",
-    "use_count": 33,
-    "view_count": 33
+    "use_count": 34,
+    "view_count": 34
   },
   "audiocraft-audio-generation": {
     "archived_at": null,
@@ -1005,13 +1005,13 @@
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-05-31T09:29:52.013785+00:00",
-    "last_used_at": "2026-06-27T05:25:51.930329+00:00",
-    "last_viewed_at": "2026-06-27T05:25:51.928437+00:00",
+    "last_used_at": "2026-06-28T12:46:18.719903+00:00",
+    "last_viewed_at": "2026-06-28T12:46:18.718391+00:00",
     "patch_count": 22,
     "pinned": false,
     "state": "active",
-    "use_count": 312,
-    "view_count": 312
+    "use_count": 314,
+    "view_count": 314
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1044,13 +1044,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-07T18:40:39.322147+00:00",
-    "last_used_at": "2026-06-27T11:23:00.768504+00:00",
-    "last_viewed_at": "2026-06-27T11:23:00.766759+00:00",
+    "last_used_at": "2026-06-28T12:46:18.714676+00:00",
+    "last_viewed_at": "2026-06-28T12:46:18.713048+00:00",
     "patch_count": 6,
     "pinned": false,
     "state": "active",
-    "use_count": 569,
-    "view_count": 569
+    "use_count": 570,
+    "view_count": 570
   },
   "weights-and-biases": {
     "archived_at": null,

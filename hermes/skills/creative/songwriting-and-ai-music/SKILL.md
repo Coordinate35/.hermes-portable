@@ -285,3 +285,82 @@ Style can drift in extensions — restate genre/mood when extending.
 - Don't be precious about rules. If a line breaks meter but hits
   harder, keep it. The feeling is what matters. Craft serves art,
   not the other way around.
+
+## 10. HeartMuLa — Open-Source Music Generation (from archived `heartmula` skill)
+
+HeartMuLa is a family of open-source music foundation models (Apache-2.0) that generates music conditioned on lyrics and tags. Comparable to Suno for open-source.
+
+### Hardware Requirements
+- **Minimum**: 8GB VRAM with `--lazy_load true`
+- **Recommended**: 16GB+ VRAM
+- **Multi-GPU**: `--mula_device cuda:0 --codec_device cuda:1`
+
+### Installation
+```bash
+git clone https://github.com/HeartMuLa/heartlib.git
+cd heartlib
+uv venv --python 3.10 .venv && . .venv/bin/activate
+uv pip install -e .
+uv pip install --upgrade datasets transformers
+```
+
+### Required Source Patches
+1. **RoPE cache fix** in `src/heartlib/heartmula/modeling_heartmula.py` — add RoPE reinitialization after `reset_caches` in `setup_caches`
+2. **HeartCodec loading fix** in `src/heartlib/pipelines/music_generation.py` — add `ignore_mismatched_sizes=True` to all `HeartCodec.from_pretrained()` calls
+
+### Download Models
+```bash
+hf download --local-dir './ckpt' 'HeartMuLa/HeartMuLaGen'
+hf download --local-dir './ckpt/HeartMuLa-oss-3B' 'HeartMuLa/HeartMuLa-oss-3B-happy-new-year'
+hf download --local-dir './ckpt/HeartCodec-oss' 'HeartMuLa/HeartCodec-oss-20260123'
+```
+
+### Basic Generation
+```bash
+python ./examples/run_music_generation.py \
+  --model_path=./ckpt --version="3B" \
+  --lyrics="./assets/lyrics.txt" --tags="./assets/tags.txt" \
+  --save_path="./assets/output.mp3" --lazy_load true
+```
+
+**Tags** (comma-separated): `piano,happy,wedding,synthesizer,romantic`
+**Lyrics**: Use bracketed structural tags `[Intro]`, `[Verse]`, `[Chorus]`, `[Bridge]`, `[Outro]`
+
+### Key Parameters
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `--max_audio_length_ms` | 240000 | Max length in ms (240s = 4 min) |
+| `--topk` | 50 | Top-k sampling |
+| `--temperature` | 1.0 | Sampling temperature |
+| `--cfg_scale` | 1.5 | Classifier-free guidance scale |
+| `--lazy_load` | false | Load/unload models on demand (saves VRAM) |
+| `--mula_dtype` | bfloat16 | Dtype for HeartMuLa (bf16 recommended) |
+| `--codec_dtype` | float32 | Dtype for HeartCodec (fp32 for quality) |
+
+### Pitfalls
+1. **Do NOT use bf16 for HeartCodec** — degrades audio quality. Use fp32.
+2. **Tags may be ignored** — known issue. Lyrics tend to dominate.
+3. **Triton not available on macOS** — Linux/CUDA only.
+4. **RTX 5080 incompatibility** reported in upstream issues.
+5. **No GPU?** CPU mode works but is extremely slow (30-60+ min per song).
+
+### Links
+- Repo: https://github.com/HeartMuLa/heartlib
+- Models: https://huggingface.co/HeartMuLa
+- Paper: https://arxiv.org/abs/2601.10547
+
+- Describing the dynamic ARC in the style field matters way more
+  than just listing genres. "Whisper to roar to whisper" gives
+  Suno a performance map.
+- Keeping some original lines intact in a parody adds recognizability
+  and emotional weight — the audience feels the ghost of the original.
+- The bridge slot in a song is where you can transform imagery.
+  Swap the original's specific references for your theme's metaphors
+  while keeping the emotional function (reflection, shift, revelation).
+- Monosyllabic word swaps in hooks/tags are the cleanest way to
+  maintain rhythm while changing meaning.
+- A strong vocal persona description in the style field makes a
+  bigger difference than any single metatag.
+- Don't be precious about rules. If a line breaks meter but hits
+  harder, keep it. The feeling is what matters. Craft serves art,
+  not the other way around.

@@ -3,7 +3,7 @@
     {
       "id": "a27ae1b5f602",
       "name": "\u5fae\u535a\u76d1\u63a7-\u5362\u9e92\u5143\u53ca\u6b63\u5fc3\u4ee5\u4e2d",
-      "prompt": "\u8fd0\u884c\u5fae\u535a\u76d1\u63a7\u811a\u672c\uff1a\n```\ncd /home/coordinate35/.hermes/scripts && python3 weibo_monitor_wrapper.py\n```\n\n**\u6838\u5fc3\u89c4\u5219\uff1a**\n1. \u811a\u672c\u8f93\u51fa\u4e3a\u7a7a\u6216 [SILENT] \u2192 \u65e0\u65b0\u5fae\u535a\uff0c**\u4ec0\u4e48\u90fd\u4e0d\u8981\u56de\u590d\uff0c\u76f4\u63a5\u7ed3\u675f**\uff08\u4fdd\u6301\u5b8c\u5168\u6c89\u9ed8\uff09\n2. \u811a\u672c\u8f93\u51fa\u5305\u542b \"\ud83d\ude80 \u5fae\u535a\u76d1\u63a7\" \u2192 \u6709\u65b0\u5fae\u535a\uff0c\u7ee7\u7eed\u5904\u7406\n3. \u5bf9\u65b0\u5fae\u535a\u5185\u5bb9\u505a\u7b80\u77ed\u603b\u7ed3\uff0c\u4f46\u5fc5\u987b\u9644\u4e0a\u5b8c\u6574\u539f\u6587\n\n**\u8bed\u97f3\u64ad\u62a5\u964d\u7ea7\u7b56\u7565\uff08\u4e09\u7ea7\uff0c\u5fc5\u987b\u6309\u987a\u5e8f\u5c1d\u8bd5\uff09\uff1a**\n\n**\u7b2c1\u7ea7\u3010\u5fc5\u987b\u5148\u8bd5\u3011**\uff1aWindows\u5bbf\u4e3b\u673a\u670d\u52a1 `192.168.56.1:9880`\n```bash\ncurl -X POST \"http://192.168.56.1:9880\" -H \"Content-Type: application/json\" \\\n  -d '{\"text\":\"\u5fae\u535a\u5185\u5bb9\",\"text_language\":\"zh\"}' \\\n  --output /tmp/weibo_voice.wav --connect-timeout 10 -w \"HTTP:%{http_code} SIZE:%{size_download}\\n\"\n```\n**\u6210\u529f\u5224\u5b9a**\uff1aHTTP=200 \u4e14 SIZE>10000\uff08\u5c0f\u4e8e10KB\u89c6\u4e3a\u5931\u8d25\uff09\n\n**\u7b2c2\u7ea7\u3010\u4ec5\u5f53\u7b2c1\u7ea7\u5931\u8d25\u624d\u7528\u3011**\uff1aLinux\u672c\u5730meloTTS\n```bash\ncd /home/coordinate35/hermes_data/melotts && bash melo_tts.sh \"\u5fae\u535a\u5185\u5bb9\" /tmp/weibo_voice.wav\n```\n\n**\u7b2c3\u7ea7\u3010\u4ec5\u5f53\u524d\u4e24\u7ea7\u90fd\u5931\u8d25\u3011**\uff1aHermes text_to_speech \u5de5\u5177\n\n**\u5fc5\u987b\u9075\u5b88\uff1a**\n- \u4e0d\u8981\u8df3\u8fc7\u7b2c1\u7ea7\u76f4\u63a5\u7528\u5176\u4ed6\u65b9\u5f0f\n- \u6bcf\u6b21\u5fc5\u987b\u4ece\u7b2c1\u7ea7\u5f00\u59cb\u5c1d\u8bd5\n- \u5728\u56de\u590d\u4e2d**\u660e\u786e\u5199\u660e\u5b9e\u9645\u4f7f\u7528\u4e86\u54ea\u4e00\u7ea7 TTS**\uff0c\u683c\u5f0f\u5982\uff1a\n  - `\ud83c\udf99\ufe0f \u8bed\u97f3\u7531 Windows TTS \u751f\u6210\uff08\u7b2c1\u7ea7\uff09`\n  - `\ud83c\udf99\ufe0f \u8bed\u97f3\u7531 MeloTTS \u751f\u6210\uff08\u7b2c2\u7ea7\u964d\u7ea7\uff09`\n  - `\ud83c\udf99\ufe0f \u8bed\u97f3\u7531 edge TTS \u751f\u6210\uff08\u7b2c3\u7ea7\u964d\u7ea7\uff09`\n- \u8bed\u97f3\u6587\u4ef6\u8def\u5f84\u9644\u5728\u56de\u590d\u672b\u5c3e\uff1a`MEDIA:/tmp/weibo_voice.wav`\n- MEDIA: \u6807\u8bb0\u5fc5\u987b\u539f\u6837\u4fdd\u7559\n- \u8bed\u97f3\u5168\u90e8\u5931\u8d25\u5219\u53ea\u53d1\u6587\u5b57\uff0c\u6807\u6ce8\"\u26a0\ufe0f \u8bed\u97f3\u751f\u6210\u5931\u8d25\"",
+      "prompt": "\u8fd0\u884c\u5fae\u535a\u76d1\u63a7\u811a\u672c\uff1a\n```\ncd /home/coordinate35/.hermes/scripts && python3 weibo_monitor_wrapper.py\n```\n\n**\u6838\u5fc3\u89c4\u5219\uff1a**\n1. \u811a\u672c\u8f93\u51fa\u4e3a\u7a7a\u6216 [SILENT] \u2192 \u65e0\u65b0\u5fae\u535a\uff0c**\u4ec0\u4e48\u90fd\u4e0d\u8981\u56de\u590d\uff0c\u76f4\u63a5\u7ed3\u675f**\uff08\u4fdd\u6301\u5b8c\u5168\u6c89\u9ed8\uff09\n2. \u811a\u672c\u8f93\u51fa\u5305\u542b \"\ud83d\ude80 \u5fae\u535a\u76d1\u63a7\" \u2192 \u6709\u65b0\u5fae\u535a\uff0c\u7ee7\u7eed\u5904\u7406\n3. \u5bf9\u65b0\u5fae\u535a\u5185\u5bb9\u505a\u7b80\u77ed\u603b\u7ed3\uff0c\u4f46\u5fc5\u987b\u9644\u4e0a\u5b8c\u6574\u539f\u6587\n\n**\u8bed\u97f3\u64ad\u62a5\u964d\u7ea7\u7b56\u7565\uff08\u4e09\u7ea7\uff0c\u5fc5\u987b\u6309\u987a\u5e8f\u5c1d\u8bd5\uff09\uff1a**\n\n**\u7b2c1\u7ea7\u3010\u5fc5\u987b\u5148\u8bd5\u3011**\uff1aWindows \u5bbf\u4e3b\u673a TTS\uff08GPT-SoVITS\uff09\n```bash\nbash /home/coordinate35/.hermes/scripts/win_tts.sh \"\u5fae\u535a\u5185\u5bb9\" /tmp/weibo_voice.wav\n```\n**\u6210\u529f\u5224\u5b9a**\uff1a\u547d\u4ee4 exit code = 0\uff08\u811a\u672c\u5185\u90e8\u5df2\u6821\u9a8c HTTP=200 \u4e14\u6587\u4ef6 >10KB\uff0c\u65e0\u9700\u624b\u52a8\u5224\u65ad\uff09\n**\u5931\u8d25\u5904\u7406**\uff1aexit code \u2260 0 \u65f6\u964d\u7ea7\u5230\u7b2c 2 \u7ea7\u3002\u811a\u672c\u4f1a\u628a\u5931\u8d25\u539f\u56e0\u6253\u5230 stderr\uff0c\u53ef\u8bfb\u53d6\u53c2\u8003\u4f46\u4e0d\u8981\u7ee7\u7eed\u91cd\u8bd5\u7b2c 1 \u7ea7\u3002\n\n**\u7b2c2\u7ea7\u3010\u4ec5\u5f53\u7b2c1\u7ea7\u5931\u8d25\u624d\u7528\u3011**\uff1aLinux \u672c\u5730 MeloTTS\n```bash\ncd /home/coordinate35/hermes_data/melotts && bash melo_tts.sh \"\u5fae\u535a\u5185\u5bb9\" /tmp/weibo_voice.wav\n```\n\n**\u7b2c3\u7ea7\u3010\u4ec5\u5f53\u524d\u4e24\u7ea7\u90fd\u5931\u8d25\u3011**\uff1aHermes text_to_speech \u5de5\u5177\n\n**\u5fc5\u987b\u9075\u5b88\uff1a**\n- \u4e0d\u8981\u8df3\u8fc7\u7b2c1\u7ea7\u76f4\u63a5\u7528\u5176\u4ed6\u65b9\u5f0f\n- \u6bcf\u6b21\u5fc5\u987b\u4ece\u7b2c1\u7ea7\u5f00\u59cb\u5c1d\u8bd5\n- \u4e0d\u8981\u7528 curl \u6216\u4efb\u4f55\u76f4\u63a5\u8bbf\u95ee 192.168.56.1 \u7684\u547d\u4ee4\uff08\u4f1a\u88ab\u5b89\u5168\u626b\u63cf\u62e6\u622a\uff09\uff0c\u53ea\u80fd\u901a\u8fc7\u4e0a\u9762\u7684\u811a\u672c\u5c01\u88c5\n- \u5728\u56de\u590d\u4e2d**\u660e\u786e\u5199\u660e\u5b9e\u9645\u4f7f\u7528\u4e86\u54ea\u4e00\u7ea7 TTS**\uff0c\u683c\u5f0f\u5982\uff1a\n  - `\ud83c\udf99\ufe0f \u8bed\u97f3\u7531 Windows TTS \u751f\u6210\uff08\u7b2c1\u7ea7\uff09`\n  - `\ud83c\udf99\ufe0f \u8bed\u97f3\u7531 MeloTTS \u751f\u6210\uff08\u7b2c2\u7ea7\u964d\u7ea7\uff09`\n  - `\ud83c\udf99\ufe0f \u8bed\u97f3\u7531 edge TTS \u751f\u6210\uff08\u7b2c3\u7ea7\u964d\u7ea7\uff09`\n- \u8bed\u97f3\u6587\u4ef6\u8def\u5f84\u9644\u5728\u56de\u590d\u672b\u5c3e\uff1a`MEDIA:/tmp/weibo_voice.wav`\n- MEDIA: \u6807\u8bb0\u5fc5\u987b\u539f\u6837\u4fdd\u7559\n- \u8bed\u97f3\u5168\u90e8\u5931\u8d25\u5219\u53ea\u53d1\u6587\u5b57\uff0c\u6807\u6ce8\"\u26a0\ufe0f \u8bed\u97f3\u751f\u6210\u5931\u8d25\"",
       "skills": [],
       "skill": null,
       "model": null,
@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 8942
+        "completed": 18888
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-05-25T01:50:00+08:00",
-      "last_run_at": "2026-05-25T01:46:02.162496+08:00",
+      "next_run_at": "2026-06-29T03:35:00+08:00",
+      "last_run_at": "2026-06-29T03:25:33.934357+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -56,18 +56,18 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 18
+        "completed": 53
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-05-25T09:00:00+08:00",
-      "last_run_at": "2026-05-24T09:01:35.692740+08:00",
+      "next_run_at": "2026-06-29T09:00:00+08:00",
+      "last_run_at": "2026-06-28T09:01:01.425412+08:00",
       "last_status": "ok",
       "last_error": null,
-      "last_delivery_error": "delivery error: Weixin send failed: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited",
+      "last_delivery_error": null,
       "deliver": "weixin",
       "origin": {
         "platform": "weixin",
@@ -96,15 +96,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 11
+        "completed": 47
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-05-25T03:00:00+08:00",
-      "last_run_at": "2026-05-24T03:00:40.779158+08:00",
+      "next_run_at": "2026-06-30T03:00:00+08:00",
+      "last_run_at": "2026-06-29T03:01:27.326219+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -133,15 +133,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 2
+        "completed": 38
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-05-25T03:00:00+08:00",
-      "last_run_at": "2026-05-24T03:00:25.327840+08:00",
+      "next_run_at": "2026-06-30T03:00:00+08:00",
+      "last_run_at": "2026-06-29T03:00:21.272848+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -156,5 +156,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-05-25T01:46:02.163166+08:00"
+  "updated_at": "2026-06-29T03:30:21.456652+08:00"
 }

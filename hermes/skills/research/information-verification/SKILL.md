@@ -36,10 +36,45 @@ tags: [research, fact-checking, source-selection, verification]
 
 6. **When you find a lead on a secondary platform, follow it to the primary source.** E.g., seeing "虎牙不朽杯" in a Bilibili video title should trigger: "Go to huya.com now." Don't treat the video title as the answer — treat it as a signpost pointing to where the answer lives.
 
-## Workflow
+## Tech/Policy Claims Analysis (from archived `tech-policy-claims-analysis`)
 
-1. Identify the entity you're researching (who runs this? who owns this?)
-2. Go to that entity's own platform first
-3. If not found there, expand to search engines with site-specific queries
-4. If still not found, use secondary sources (Bilibili, forums) as leads, not answers
-5. State your confidence level explicitly: "confirmed on official site" vs "inferred from video titles"
+When analyzing technology or industrial-policy claims, apply a four-layer framework to peel back marketing narratives:
+
+### Layer 1: Technical Capability — Three Tiers
+- **Physical layer limits**: What the standard physically enables
+- **Commercial deployment reality**: What's at scale vs. lab/demo
+- **Marketing claims**: What's said but not delivered
+
+Key question: "Physical impossibility for the old tech, or just 'not deployed yet'?"
+
+### Layer 2: Replacement Logic — What Does It Actually Replace?
+- "替代什么" matters more than "能做什么"
+- Wired almost always more reliable; wireless wins only for mobility/flexibility
+
+### Layer 3: Policy/Industrial Drivers — Ranked by Real Importance
+
+| Driver | Identify By |
+|--------|-------------|
+| Standards/patents leverage | Do domestic firms hold key SEP? |
+| Supply chain security | Chokepoint risk in this sector? |
+| Keynesian investment | Growth slowdown? SOE can absorb cost? |
+| Technical merit | Marginal improvement large enough alone? |
+
+Key test: "If purely a technical decision, would other countries deploy at the same speed?" If no → real drivers are non-technical.
+
+### Layer 4: Geopolitical Context
+- Who benefits from the narrative?
+- What happens if the country does NOT invest?
+- Counter-examples: other countries opting out → ROI alone doesn't justify
+
+### Workflow
+1. **Initial Answer with Explicit Uncertainty** — tag each claim: [标准事实] / [行业共识] / [待验证] / [分析判断]
+2. **Expect User Challenge** — don't get defensive; the challenge often points to a deeper structural question
+3. **Peel Back to Structural Drivers** — shift from "what can it do" to "why is it being pushed"
+4. **Honest Conclusion** — "X is primarily driven by [policy/strategic reason], not [technical reason]"
+
+### Data Access Failure Protocol
+When government/industry reports blocked by anti-crawling/Cloudflare:
+1. Admit explicitly: "未能现场访问X，以下基于行业公开认知"
+2. Tag confidence: distinguish "know" from "believe based on patterns"
+3. Do NOT fabricate numbers, no "approximately X" from memory

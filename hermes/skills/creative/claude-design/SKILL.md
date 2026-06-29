@@ -344,6 +344,35 @@ Do not create variations that are merely color swaps unless color is the actual 
 
 When the user picks a direction, consolidate. Do not leave the project as a pile of options forever.
 
+### Quick Sketch Workflow (from archived `sketch` skill)
+
+When the user wants to compare design directions before committing, use this lightweight variant-exploration workflow:
+
+**Intake (skip if the user already gave enough):**
+1. **Feel.** "What should this feel like? Adjectives, emotions, a vibe."
+2. **References.** "What apps, sites, or products capture the feel?"
+3. **Core action.** "What's the single most important thing a user does on this screen?"
+
+**Produce 2-3 variants** in one go, each as a standalone HTML file. Each variant should take a different design stance:
+- **Density:** compact / airy / ultra-dense
+- **Emphasis:** content-first / action-first / tool-first
+- **Aesthetic:** editorial / utilitarian / playful
+- **Layout:** single-column / sidebar / split-pane
+
+**Variant naming:** describe the stance, not the number. Create `sketches/NNN-stance-name/index.html` + `README.md` per variant.
+
+**Make them real HTML:**
+- Single self-contained HTML file with inline `<style>`
+- System fonts or one Google Font via `<link>`
+- Realistic fake content — actual sentences, not "Lorem ipsum"
+- Interactive: links clickable, hovers real, at least one state transition
+
+**Head-to-head comparison** after all variants are built — present a table comparing density, primary action visibility, scan-ability, and feel. Opinionate: which variant is strongest and why.
+
+**Interactivity bar:** click a primary action → visible state change, one meaningful state transition (filter, toggle, open/close), hover recognizable affordances.
+
+**Output:** `sketches/` directory in repo root, one subdir per variant. Keep variants disposable — promote winners into real project code.
+
 ## Tweakable Designs in CLI/API Mode
 
 The hosted Claude Design edit-mode toolbar does not exist here.

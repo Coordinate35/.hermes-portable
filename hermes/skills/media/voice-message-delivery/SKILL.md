@@ -348,3 +348,68 @@ find ~/.hermes/audio_cache -maxdepth 1 -type f -name "*.mp3" -mtime +7 -delete
 - no_agent: true（纯脚本执行，无需 LLM 介入）
 
 > 用户偏好：不需要统一规范化音频存放目录，直接按现有分散路径定时清理即可。
+
+## 本地 TTS 引擎部署指南（Piper / MeloTTS / ChatTTS）
+
+> 本节内容来自已归档的 `local-tts-setup` skill。当降级链中的引擎未安装或需要重新部署时，参考以下详细指南。
+
+### 快速决策树
+
+- 中文、离线、对韵律有要求 → **MeloTTS**（纯 CPU，中文韵律明显优于 Piper）
+- 中文、有网、追求最佳效果 → **Edge TTS** (`zh-CN-XiaoxiaoNeural`)
+- 中文、离线、需要对话感 / 声音克隆 → **ChatTTS**（需 6GB+ 显存/内存）
+- 英文、离线 → **Piper** 或 **MeloTTS**
+- 最简单机械音 → `espeak-ng`
+
+### Piper 安装（纯 CPU 实时推理）
+
+```bash
+mkdir -p ~/hermes_data/piper && cd ~/hermes_data/piper
+uv venv && source .venv/bin/activate
+uv pip install piper-tts
+```
+
+下载中文模型（huayan，推荐，无额外依赖）：
+```bash
+mkdir -p ~/hermes_data/piper/models && cd ~/hermes_data/piper/models
+wget https://hf-mirror.com/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx
+wget https://hf-mirror.com/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx.json
+```
+
+测试：
+```bash
+echo "你好，这是 Piper 语音合成测试。" | piper --model models/zh_CN-huayan-medium.onnx --output_file test.wav
+```
+
+### MeloTTS 安装（纯 CPU，中文韵律优于 Piper）
+
+```bash
+mkdir -p ~/hermes_data/melotts && cd ~/hermes_data/melotts
+uv venv && source .venv/bin/activate
+uv pip install git+https://github.com/myshell-ai/MeloTTS.git
+# 修复 CPU 环境 torchaudio CUDA 依赖：
+uv pip install torchaudio --index-url https://download.pytorch.org/whl/cpu --force-reinstall
+export HF_ENDPOINT=https://hf-mirror.com
+```
+
+MeCab 懒加载修复补丁见 `references/melotts-mecab-fix.patch`。
+
+### ChatTTS（对话级 TTS + Zero-shot 声音克隆）
+
+```bash
+pip install ChatTTS
+```
+
+完整技术细节见 `references/chattts-zero-shot-cloning.md`。
+
+### 常见问题
+
+- **HuggingFace 不可达**：所有 URL 将 `huggingface.co` 替换为 `hf-mirror.com`
+- **Edge TTS 中文只有 1-2 秒**：voice 不匹配，需配置 `zh-CN-XiaoxiaoNeural`
+- **MeloTTS 安装报错 `requirements.txt` 缺失**：必须从 GitHub 源码安装，PyPI 包有缺陷
+- **MeloTTS `libcudart.so.13` 错误**：torchaudio 装了 CUDA 版本，需强制重装 CPU 版
+- **Piper `espeak-ng not found`**：Python 包通常自带 phonemize，可忽略；若报错再装系统包
+
+### 音频后处理
+
+WAV 转 MP3 等命令见 `references/tts-post-processing.md`。

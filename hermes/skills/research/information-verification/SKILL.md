@@ -36,6 +36,8 @@ tags: [research, fact-checking, source-selection, verification]
 
 6. **When you find a lead on a secondary platform, follow it to the primary source.** E.g., seeing "虎牙不朽杯" in a Bilibili video title should trigger: "Go to huya.com now." Don't treat the video title as the answer — treat it as a signpost pointing to where the answer lives.
 
+7. **Disambiguate ambiguous event references before answering.** When a user mentions an event that could refer to multiple timeframes or instances (e.g., "美伊战争", "the Fed rate cut", "the election"), do NOT assume which one they mean. List the possible interpretations and ask them to clarify which specific event/timeframe they're asking about. Answering about 2024 when they meant 2026 March wastes the entire response and erodes trust. This is especially critical for geopolitical/economic events where the same parties may have had multiple conflicts or interactions over time.
+
 ## Tech/Policy Claims Analysis (from archived `tech-policy-claims-analysis`)
 
 When analyzing technology or industrial-policy claims, apply a four-layer framework to peel back marketing narratives:

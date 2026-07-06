@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260628-193021",
-  "last_run_at": "2026-06-28T19:30:21.473567+00:00",
-  "last_run_duration_seconds": 1345.796882,
-  "last_run_summary": "auto: no changes; llm: All four consolidations are verified. Let me now write the final summary.\n\n---\n\n## Human Summary\n\n**Consolidation pass complete.** 4 skills absorbed into 4 class-level umbrellas. 71 → 67 agent-created skills.\n\n### Clusters processed\n\n1. **T…\narchived 3 skill(s):\n  • heartmula → songwriting-and-ai-music\n  • sketch → claude-design\n  • tech-policy-claims-analysis → information-verification\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin claude-design",
+  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260705-193121",
+  "last_run_at": "2026-07-05T19:31:21.848962+00:00",
+  "last_run_duration_seconds": 389.910852,
+  "last_run_summary": "auto: 1 marked stale; llm: The library is now at 92 skills (7 archived). Here's my summary.\n\n## Curator Pass Summary\n\n### What I found\n\nAfter exhaustively reviewing all 67 agent-created skills and many bundled ones, the library is already well-organized with **class-…\narchived 7 skill(s):\n  • ai-gateway-landscape — pruned (stale)\n  • computer-use — pruned (stale)\n  • google-workspace — pruned (stale)\n  • himalaya — pruned (stale)\n  • openhue — pruned (stale)\n  • petdex — pruned (stale)\n  • polymarket — pruned (stale)\nfull report: hermes curator status",
   "last_run_summary_shown_at": "2026-05-31T18:08:51.860827+00:00",
   "paused": false,
-  "run_count": 7
+  "run_count": 8
 }

@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7895
--- Exported: 2026-07-11T03:00:59.815390
+-- Facts count: 7903
+-- Exported: 2026-07-12T03:00:04.939641
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7931,6 +7931,14 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7956,'tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不可用。所有 TTS 走 terminal 三级降级链：win_tts.sh → MeloTTS → edge-tts CLI。voice-message-delivery skill 已同步更新。','general','',0.5,0,0,'2026-05-29 15:59:11','2026-05-29 15:59:11');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7957,'听书音频发送格式：发 MEDIA 音频时不要在同一条消息里混入文字描述，否则音频可能不会作为独立消息投递。用户指出第一回末段就是因此没收到音频。正确做法：MEDIA 独占一条回复，文字标注（如章节进度）要么省略，要么单独再发一条。','general','',0.5,0,0,'2026-05-31 07:49:06','2026-05-31 07:49:06');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7958,'听书音频交付格式：发 MEDIA: 音频文件时，不要在同一条消息里混入文字描述/剧情点评。用户明确指出"文字和语音消息混在一起了"是错误做法。听书场景只发纯音频，文字概要/回目信息省略或极简附在音频前即可，不可喧宾夺主。','general','',0.5,0,0,'2026-05-31 10:03:32','2026-05-31 10:03:32');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7959,'微博文章《卢麒元心法集》(2026-07-09, 阅读27265, ID:2309405318800282616210) 系统整理了卢麒元心学思想体系。已保存至 ~/hermes_data/weibo_data/卢麒元心法集_20260709.md','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:21:58','2026-07-11 08:21:58');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7960,'卢麒元对心学的定义：心学不是心理学，不是哲学，更不是神学，是三者的交叉地带。心学是功夫，是解放的学说，是反抗欺骗与奴役的思想武器。大国崛起，说到底是心灵的解放。眼浅则命苦，心浅则命贱。一人修行易，一国修行难。君子不器，行者无状。国人的主体性复苏，就能超越平庸之恶，构建国家的迷走神经系统。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:04','2026-07-11 08:22:04');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7961,'卢麒元心法·三断：断是非、断远近、断大小。断是非——起点错了，后面的成功毫无意义，是价值观问题；断远近——即缘分判断，决定成功几率，克服本能好恶；断大小——决定人生效率，太多人在重大关头（婚姻、择业）草率决定，小事却忙忙碌碌。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:15','2026-07-11 08:22:15');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7962,'卢麒元心法·君子六忍：忍辱、忍孤、忍穷、忍苦、忍痛、忍隐。六自真言：自省、自律、自主、自生、自慧、自化。性命攸关、明心见性、逆天改命、格革升腾。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:16','2026-07-11 08:22:16');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7963,'卢麒元心法·四句诀：以缺为美——不求全责备，留白方见辽阔；笑纳无常——猜错了就对了，若无危哪来机，曲折中方见筋骨；向死而生——人之将死，何事何人大？放下枷锁牢笼；化阴为阳——黑色东西是最好的燃料，道家功夫，心学至高境界。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:17','2026-07-11 08:22:17');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7964,'卢麒元心法·以无间入有隙（2014年）：心学方法论——"有隙"指任何事物都有缝隙、可被分解；"无间"指密不可分、团结就是力量。无间成了金刚，就可分解一切有隙。困境是好事，考验无间的工夫，要完善自身而非抱怨。伟人的《实践论》是心学著作，《论持久战》是心学运用。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:30','2026-07-11 08:22:30');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7965,'卢麒元心法·正心以中，修身以和：心正了，就找到真理，不会跑偏，"以中"就是符合事物发展的一般规律；身修了，就能团结群众，就有力量，"以和"就是团结一切能团结的力量。心学的真功夫，主体性是基本功：心外无理，心外无物，不迷信不贪恋。正心修身是艰苦痛苦的——将心从名利中拔出，将荣华富贵放下。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:31','2026-07-11 08:22:31');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7966,'卢麒元心学源流观：从《尚书》十六字心法(人心惟危，道心惟微，惟精惟一，允执厥中)→《大学》八目(格致诚正修齐治平)→韩愈(文以载道，不忘初心)→张载横渠四句→陆九渊(宇宙即吾心，吾心即宇宙)→孟子(天降大任，苦其心志)→王阳明(知行合一，致良知)→湖湘学派经世致用→伟人(人之力莫大于心，心学与马列主义结合)。谭嗣同→杨昌济→伟人的心学传承脉络。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:32','2026-07-11 08:22:32');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9130,6 +9138,7 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1195,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1196,'吸收','unknown','','2026-05-29 15:01:17');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1197,'货币沉默','unknown','','2026-05-29 15:01:17');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1198,'文字和语音消息混在一起了','unknown','','2026-05-31 10:03:32');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1199,'以和','unknown','','2026-07-11 08:22:31');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10497,9 +10506,13 @@ INSERT INTO fact_entities VALUES(7954,1194);
 INSERT INTO fact_entities VALUES(7954,1195);
 INSERT INTO fact_entities VALUES(7954,1197);
 INSERT INTO fact_entities VALUES(7958,1198);
+INSERT INTO fact_entities VALUES(7964,1031);
+INSERT INTO fact_entities VALUES(7964,1030);
+INSERT INTO fact_entities VALUES(7965,1023);
+INSERT INTO fact_entities VALUES(7965,1199);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
-INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,38,'2026-05-09 11:17:17');
+INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,46,'2026-07-11 08:22:32');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2802,'cat:daodejing',4096,213,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2807,'cat:software_arch',4096,924,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2815,'cat:test',4096,6,'2026-04-28 21:05:35');

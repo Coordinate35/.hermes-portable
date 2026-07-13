@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260705-193121",
-  "last_run_at": "2026-07-05T19:31:21.848962+00:00",
-  "last_run_duration_seconds": 389.910852,
-  "last_run_summary": "auto: 1 marked stale; llm: The library is now at 92 skills (7 archived). Here's my summary.\n\n## Curator Pass Summary\n\n### What I found\n\nAfter exhaustively reviewing all 67 agent-created skills and many bundled ones, the library is already well-organized with **class-…\narchived 7 skill(s):\n  • ai-gateway-landscape — pruned (stale)\n  • computer-use — pruned (stale)\n  • google-workspace — pruned (stale)\n  • himalaya — pruned (stale)\n  • openhue — pruned (stale)\n  • petdex — pruned (stale)\n  • polymarket — pruned (stale)\nfull report: hermes curator status",
+  "last_report_path": "/home/coordinate35/.hermes/logs/curator/20260712-193205",
+  "last_run_at": "2026-07-12T19:32:05.896606+00:00",
+  "last_run_duration_seconds": 242.719822,
+  "last_run_summary": "auto: 13 marked stale; llm: ---\n\n## Curator Pass — Final Summary\n\n**Clusters analyzed:** 10 clusters examined (github-*, debugging, code-delegation, software-dev, creative/visual, research, audio, media, MLOps, productivity). **Zero consolidations performed** — every …\narchived 9 skill(s):\n  • airtable — pruned (stale)\n  • arxiv — pruned (stale)\n  • huggingface-hub — pruned (stale)\n  • jupyter-live-kernel — pruned (stale)\n  • llama-cpp — pruned (stale)\n  • llm-wiki — pruned (stale)\n  • notion — pruned (stale)\n  • weights-and-biases — pruned (stale)\n  • yuanbao — pruned (stale)\nfull report: hermes curator status",
   "last_run_summary_shown_at": "2026-05-31T18:08:51.860827+00:00",
   "paused": false,
-  "run_count": 8
+  "run_count": 9
 }

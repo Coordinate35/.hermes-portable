@@ -31,7 +31,7 @@ hermes-agent:81eb23370f90fbac07f6c86282d578b7
 hermes-agent-skill-authoring:373715126bca9172a6acd28bdd424f10
 himalaya:d215ffaa3c1aecbc68a326e45d6927c8
 huggingface-hub:da338c5152d72db030bb81d923d1c64d
-humanizer:6645b341862575f452e86139c5c71ce9
+humanizer:b3fa12781b41b4008fba21073632e3d0
 imessage:f545da0f5cc64dd9ee1ffd2b7733a11b
 jupyter-live-kernel:352c43dc28428592abbc8c91cb5ce295
 llama-cpp:0991055ce47146735f0ed02d7658a254
@@ -68,5 +68,5 @@ test-driven-development:a67bd4cb658ed7c123b7440376d9302c
 touchdesigner-mcp:0664ded9138795d5518def4d16037650
 weights-and-biases:8f0e1ee92fdf7b42a1dad448176d7c64
 xurl:51f80e85db29ab86b96f45f0940f884b
-youtube-content:5ff165441acd414c5e1937235bf6cafd
+youtube-content:a100af389f09ea646eee3063daedac80
 yuanbao:7844c287c57b42dccf51127f15e0751b

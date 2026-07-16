@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 23678
+        "completed": 23966
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-07-16T03:05:00+08:00",
-      "last_run_at": "2026-07-16T02:56:52.102204+08:00",
+      "next_run_at": "2026-07-17T03:05:00+08:00",
+      "last_run_at": "2026-07-17T02:57:35.852368+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -57,15 +57,15 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 70
+        "completed": 71
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-07-16T09:00:00+08:00",
-      "last_run_at": "2026-07-15T09:00:26.551607+08:00",
+      "next_run_at": "2026-07-17T09:00:00+08:00",
+      "last_run_at": "2026-07-16T09:00:40.900830+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -75,7 +75,8 @@
         "chat_id": "o9cq80zlp1gh6r8qlnGi43nJ7yio@im.wechat",
         "chat_name": null,
         "thread_id": null
-      }
+      },
+      "fire_claim": null
     },
     {
       "id": "e2c8e830bc70",
@@ -97,22 +98,23 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 63
+        "completed": 64
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-07-17T03:00:00+08:00",
-      "last_run_at": "2026-07-15T03:00:38.012525+08:00",
+      "next_run_at": "2026-07-18T03:00:00+08:00",
+      "last_run_at": "2026-07-16T03:00:45.969437+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
       "deliver": "local",
       "origin": null,
       "enabled_toolsets": null,
-      "workdir": null
+      "workdir": null,
+      "fire_claim": null
     },
     {
       "id": "6853f2d89079",
@@ -134,15 +136,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 55
+        "completed": 56
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-07-17T03:00:00+08:00",
-      "last_run_at": "2026-07-16T03:00:23.927511+08:00",
+      "next_run_at": "2026-07-18T03:00:00+08:00",
+      "last_run_at": "2026-07-17T03:00:52.769597+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -158,5 +160,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-16T03:00:23.927768+08:00"
+  "updated_at": "2026-07-17T03:00:52.770334+08:00"
 }

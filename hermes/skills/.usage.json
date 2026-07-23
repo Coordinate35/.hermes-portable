@@ -966,13 +966,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-07T18:40:39.322147+00:00",
-    "last_used_at": "2026-07-22T14:36:18.810316+00:00",
-    "last_viewed_at": "2026-07-22T14:36:18.808200+00:00",
+    "last_used_at": "2026-07-23T13:15:29.533451+00:00",
+    "last_viewed_at": "2026-07-23T13:15:29.531721+00:00",
     "patch_count": 6,
     "pinned": false,
     "state": "active",
-    "use_count": 674,
-    "view_count": 674
+    "use_count": 679,
+    "view_count": 679
   },
   "weights-and-biases": {
     "archived_at": null,

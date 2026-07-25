@@ -99,6 +99,8 @@ cd ~/.hermes/scripts && PYTHONPATH=. python3 \
 详细字段说明、API 端点、不要踩的坑见
 `references/retweet-and-longtext-extraction.md`。
 
+**如果 `long_text` 返回 `[long fetch failed: ...]`**，说明 `/statuses/extend` API 已被反爬拦截（返回 HTML 而非 JSON）。此时必须降级使用浏览器工具访问 `https://m.weibo.cn/detail/{weibo_id}` 并 `browser_snapshot(full=true)` 提取完整内容。详见 `references/retweet-and-longtext-extraction.md` 的"浏览器降级方案"章节。
+
 **禁止**只把表情符号原样发给用户 — 信息量为零。
 
 ### 4. 无新微博严格静默

@@ -3,14 +3,14 @@
     "archived_at": null,
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
-    "last_patched_at": "2026-07-01T11:43:03.933247+00:00",
-    "last_used_at": "2026-07-21T06:39:08.859894+00:00",
-    "last_viewed_at": "2026-07-21T06:39:08.857153+00:00",
-    "patch_count": 5,
+    "last_patched_at": "2026-07-28T18:08:11.975436+00:00",
+    "last_used_at": "2026-07-28T18:07:46.467762+00:00",
+    "last_viewed_at": "2026-07-28T18:07:46.465311+00:00",
+    "patch_count": 9,
     "pinned": false,
     "state": "active",
-    "use_count": 75,
-    "view_count": 75
+    "use_count": 78,
+    "view_count": 78
   },
   "airtable": {
     "archived_at": null,
@@ -502,7 +502,7 @@
     "last_viewed_at": "2026-06-23T06:49:32.025209+00:00",
     "patch_count": 8,
     "pinned": false,
-    "state": "active",
+    "state": "stale",
     "use_count": 8,
     "view_count": 8
   },
@@ -926,14 +926,14 @@
     "archived_at": null,
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-28T19:39:52.477359+00:00",
-    "last_used_at": "2026-07-25T08:21:52.834780+00:00",
-    "last_viewed_at": "2026-07-25T08:21:52.831944+00:00",
-    "patch_count": 23,
+    "last_patched_at": "2026-07-28T17:08:32.929443+00:00",
+    "last_used_at": "2026-07-28T18:40:39.778211+00:00",
+    "last_viewed_at": "2026-07-28T18:40:39.774366+00:00",
+    "patch_count": 24,
     "pinned": false,
     "state": "active",
-    "use_count": 343,
-    "view_count": 343
+    "use_count": 347,
+    "view_count": 347
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -966,13 +966,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-07-25T07:00:47.801713+00:00",
-    "last_used_at": "2026-07-26T08:20:43.528544+00:00",
-    "last_viewed_at": "2026-07-26T08:20:43.525228+00:00",
+    "last_used_at": "2026-07-28T18:40:39.781413+00:00",
+    "last_viewed_at": "2026-07-28T18:40:39.776372+00:00",
     "patch_count": 9,
     "pinned": false,
     "state": "active",
-    "use_count": 693,
-    "view_count": 693
+    "use_count": 701,
+    "view_count": 701
   },
   "weights-and-biases": {
     "archived_at": null,

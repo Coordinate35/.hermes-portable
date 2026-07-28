@@ -1,7 +1,7 @@
 # WARNING: Secrets redacted. Fill placeholders before use.
 model:
   api_key: __REPLACE_WITH_YOUR_KEY__
-  base_url: https://ark.cn-beijing.volces.com/api/coding/v1
+  base_url: https://api.deepseek.com
   default: deepseek-v4-pro
   provider: custom
   context_length: 1024000
@@ -61,7 +61,7 @@ agent:
     uwu: hewwo! i'm your fwiendwy assistant uwu~ i wiww twy my best to hewp you! *nuzzles
       your code* OwO what's this? wet me take a wook! i pwomise to be vewy hewpful
       >w<
-  reasoning_effort: medium
+  reasoning_effort: max
   verbose: false
   verify_on_stop: false
 terminal:
@@ -255,7 +255,7 @@ display:
   tui_auto_resume_recent: false
   tui_agents_nudge: true
   bell_on_complete: false
-  show_reasoning: false
+  show_reasoning: true
   streaming: true
   timestamps: false
   final_response_markdown: strip
@@ -537,12 +537,12 @@ secrets:
 paste_collapse_threshold: 5
 paste_collapse_threshold_fallback: 5
 paste_collapse_char_threshold: 2000
-_config_version: 32
+_config_version: 33
 custom_providers:
   - api_key: __REPLACE_WITH_YOUR_KEY__
-    base_url: https://ark.cn-beijing.volces.com/api/coding/v1
-    model: kimi-k2.6
-    name: Ark.cn-beijing.volces.com
+    base_url: https://api.deepseek.com
+    model: deepseek-v4-pro
+    name: api.deepseek.com
 group_sessions_per_user: true
 platform_toolsets:
   cli:

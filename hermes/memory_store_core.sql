@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7903
--- Exported: 2026-07-27T03:04:29.850669
+-- Facts count: 7904
+-- Exported: 2026-07-29T03:01:44.007573
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7939,6 +7939,7 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7964,'卢麒元心法·以无间入有隙（2014年）：心学方法论——"有隙"指任何事物都有缝隙、可被分解；"无间"指密不可分、团结就是力量。无间成了金刚，就可分解一切有隙。困境是好事，考验无间的工夫，要完善自身而非抱怨。伟人的《实践论》是心学著作，《论持久战》是心学运用。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:30','2026-07-11 08:22:30');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7965,'卢麒元心法·正心以中，修身以和：心正了，就找到真理，不会跑偏，"以中"就是符合事物发展的一般规律；身修了，就能团结群众，就有力量，"以和"就是团结一切能团结的力量。心学的真功夫，主体性是基本功：心外无理，心外无物，不迷信不贪恋。正心修身是艰苦痛苦的——将心从名利中拔出，将荣华富贵放下。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:31','2026-07-11 08:22:31');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7966,'卢麒元心学源流观：从《尚书》十六字心法(人心惟危，道心惟微，惟精惟一，允执厥中)→《大学》八目(格致诚正修齐治平)→韩愈(文以载道，不忘初心)→张载横渠四句→陆九渊(宇宙即吾心，吾心即宇宙)→孟子(天降大任，苦其心志)→王阳明(知行合一，致良知)→湖湘学派经世致用→伟人(人之力莫大于心，心学与马列主义结合)。谭嗣同→杨昌济→伟人的心学传承脉络。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:32','2026-07-11 08:22:32');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7967,'记账分类：饮料→娱乐·餐饮娱乐，饭菜/买菜→刚性·食。文档阅读须逐字念原文不可概括。','general','',0.5,0,0,'2026-07-28 17:08:09','2026-07-28 17:08:09');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');

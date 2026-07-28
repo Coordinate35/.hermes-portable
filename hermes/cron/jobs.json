@@ -18,17 +18,17 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 26840
+        "completed": 27410
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-07-27T03:05:00+08:00",
-      "last_run_at": "2026-07-27T03:01:13.218404+08:00",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job '\u5fae\u535a\u76d1\u63a7-\u5362\u9e92\u5143\u53ca\u6b63\u5fc3\u4ee5\u4e2d' idle for 601s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
+      "next_run_at": "2026-07-29T03:05:00+08:00",
+      "last_run_at": "2026-07-29T02:55:39.169622+08:00",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "qqbot",
       "origin": {
@@ -57,18 +57,18 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 81
+        "completed": 83
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-07-27T09:00:00+08:00",
-      "last_run_at": "2026-07-26T09:00:23.303011+08:00",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
+      "next_run_at": "2026-07-29T09:00:00+08:00",
+      "last_run_at": "2026-07-28T09:00:09.677386+08:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 400: Your account (2123427061) does not have a valid CodingPlan subscription, or your subscription has expired. Please visit https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?OpenModelVisible=false&tab=CodingPlan to review your subscription status or complete the subscription or ren",
+      "last_delivery_error": "live adapter send failed: iLink sendmessage rate limited; cooldown active for 30.0s; live adapter delivery to weixin:o9cq80zlp1gh6r8qlnGi43nJ7yio@im.wechat failed: iLink sendmessage rate limited; cooldown active for 30.0s; delivery error: Weixin send failed: iLink sendmessage rate limited; cooldown active for 30.0s",
       "deliver": "weixin",
       "origin": {
         "platform": "weixin",
@@ -98,17 +98,17 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 74
+        "completed": 76
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-07-28T03:00:00+08:00",
-      "last_run_at": "2026-07-26T03:00:45.917615+08:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-30T03:00:00+08:00",
+      "last_run_at": "2026-07-28T03:00:02.757108+08:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 400: Your account (2123427061) does not have a valid CodingPlan subscription, or your subscription has expired. Please visit https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?OpenModelVisible=false&tab=CodingPlan to review your subscription status or complete the subscription or ren",
       "last_delivery_error": null,
       "deliver": "local",
       "origin": null,
@@ -136,15 +136,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 66
+        "completed": 68
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-07-28T03:00:00+08:00",
-      "last_run_at": "2026-07-27T03:00:34.928984+08:00",
+      "next_run_at": "2026-07-30T03:00:00+08:00",
+      "last_run_at": "2026-07-29T03:00:28.472733+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -160,5 +160,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-27T03:01:13.218847+08:00"
+  "updated_at": "2026-07-29T03:00:28.473448+08:00"
 }

@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-07-28T18:08:11.975436+00:00",
-    "last_used_at": "2026-07-28T18:07:46.467762+00:00",
-    "last_viewed_at": "2026-07-28T18:07:46.465311+00:00",
+    "last_used_at": "2026-07-29T17:56:54.714679+00:00",
+    "last_viewed_at": "2026-07-29T17:56:54.712953+00:00",
     "patch_count": 9,
     "pinned": false,
     "state": "active",
-    "use_count": 78,
-    "view_count": 78
+    "use_count": 79,
+    "view_count": 79
   },
   "airtable": {
     "archived_at": null,
@@ -147,13 +147,13 @@
     "created_at": "2026-05-28T04:26:37.436060+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-21T18:55:01.329717+00:00",
-    "last_used_at": "2026-07-03T10:39:36.444749+00:00",
-    "last_viewed_at": "2026-07-03T10:39:36.443503+00:00",
+    "last_used_at": "2026-07-29T13:12:28.213421+00:00",
+    "last_viewed_at": "2026-07-29T13:12:28.212031+00:00",
     "patch_count": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 7,
-    "view_count": 7
+    "use_count": 8,
+    "view_count": 8
   },
   "claude-code": {
     "archived_at": null,
@@ -927,13 +927,13 @@
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-07-28T17:08:32.929443+00:00",
-    "last_used_at": "2026-07-28T18:40:39.778211+00:00",
-    "last_viewed_at": "2026-07-28T18:40:39.774366+00:00",
+    "last_used_at": "2026-07-29T17:57:01.753594+00:00",
+    "last_viewed_at": "2026-07-29T17:57:01.751108+00:00",
     "patch_count": 24,
     "pinned": false,
     "state": "active",
-    "use_count": 347,
-    "view_count": 347
+    "use_count": 364,
+    "view_count": 364
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -966,13 +966,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-07-25T07:00:47.801713+00:00",
-    "last_used_at": "2026-07-28T18:40:39.781413+00:00",
-    "last_viewed_at": "2026-07-28T18:40:39.776372+00:00",
+    "last_used_at": "2026-07-29T17:57:24.436560+00:00",
+    "last_viewed_at": "2026-07-29T17:57:24.434813+00:00",
     "patch_count": 9,
     "pinned": false,
     "state": "active",
-    "use_count": 701,
-    "view_count": 701
+    "use_count": 716,
+    "view_count": 716
   },
   "weights-and-biases": {
     "archived_at": null,

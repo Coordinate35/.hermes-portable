@@ -255,7 +255,7 @@ display:
   tui_auto_resume_recent: false
   tui_agents_nudge: true
   bell_on_complete: false
-  show_reasoning: true
+  show_reasoning: false
   streaming: true
   timestamps: false
   final_response_markdown: strip

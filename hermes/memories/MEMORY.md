@@ -15,3 +15,5 @@ User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC 
 tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不可用。所有 TTS 走 terminal 三级降级链：win_tts.sh → MeloTTS → edge-tts CLI。voice-message-delivery skill 已同步更新。
 §
 记账分类：饮料→娱乐·餐饮娱乐，饭菜/买菜→刚性·食。文档阅读须逐字念原文不可概括。
+§
+用户偏好（2026-08 被纠正）：宏观分析/卢麒元框架计算必须展开过程，不能只给结果。格式：公式 → 代入数值 → 中间步骤 → 最终结果 → 判断。反例：直接输出"真实通胀率=4.3%"缺少推导。

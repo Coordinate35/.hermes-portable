@@ -11,7 +11,7 @@ claude-code:94befeace1ca7e6c52d3c4e87e2b2195
 claude-design:c1b63b7651b66fd15d096e57728ec686
 codebase-inspection:29f67c87df868dd08e76c57b86c7a5c6
 codex:8822d280c3de7ad5827937b83afa0a88
-comfyui:a3ce050187bda71e1dbd098447c7f366
+comfyui:3d0c7519e58bb6109736559045c10047
 computer-use:c40a491ce9f5035bb9cdfc141d5f473e
 design-md:91a8976ef5d37db2451721db9c2b93da
 docx:353cd277db9bf6af2c49a7ec2258512a
@@ -26,6 +26,7 @@ github-issues:14370e636ac58355d25066265b0919db
 github-pr-workflow:9639ca779b6cb6c5944ddfd86727ee87
 github-repo-management:c5c05bc85dfcda2b7ac2f2006be9efe0
 google-workspace:95a0ff7299f92be6107d9051ab723e6b
+grounded-citations:8d2d91a1ec89c05339110ad312e2036a
 hermes-agent:81eb23370f90fbac07f6c86282d578b7
 hermes-agent-skill-authoring:373715126bca9172a6acd28bdd424f10
 himalaya:d215ffaa3c1aecbc68a326e45d6927c8
@@ -51,7 +52,7 @@ polymarket:7644c886e028c229bc8c1f54114c3170
 popular-web-designs:b3fd685e8fbcf981755609ce98a4eea9
 powerpoint:27ee456ec69cec98f19a98cfbeed4d55
 pretext:703e9cbe272ee2c13a04b2506963ea0b
-python-debugpy:889278d94c26d30710f4a60e0a888596
+python-debugpy:7deba12a7188f5856e4d7462b9883148
 requesting-code-review:f7e902570802e21f340955384385abda
 research-paper-writing:80610f6480f91bc99dc30f15848f53f5
 serving-llms-vllm:a610c728d704ea074a8c56b180fcd5f4

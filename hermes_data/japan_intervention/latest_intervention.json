@@ -1,8 +1,41 @@
 {
-  "updated_at": "2026-05-12T01:01:46.878263+00:00",
-  "total_records": 383,
-  "new_records_today": 0,
+  "updated_at": "2026-08-07T01:02:52.793341+00:00",
+  "total_records": 386,
+  "new_records_today": 3,
   "latest_interventions": [
+    {
+      "era": "令和8年",
+      "year": 2026,
+      "month": "May",
+      "day": "6",
+      "amount_billion_yen": 46759,
+      "amount_trillion_yen": 4.6759,
+      "operation_jp": "米ドル売り・日本円買い",
+      "direction": "阻止日元贬值",
+      "recorded_at": "2026-08-07T01:02:52.786735+00:00"
+    },
+    {
+      "era": "令和8年",
+      "year": 2026,
+      "month": "May",
+      "day": "4",
+      "amount_billion_yen": 7802,
+      "amount_trillion_yen": 0.7802,
+      "operation_jp": "米ドル売り・日本円買い",
+      "direction": "阻止日元贬值",
+      "recorded_at": "2026-08-07T01:02:52.786732+00:00"
+    },
+    {
+      "era": "令和8年",
+      "year": 2026,
+      "month": "Apr",
+      "day": "30",
+      "amount_billion_yen": 62787,
+      "amount_trillion_yen": 6.2787,
+      "operation_jp": "米ドル売り・日本円買い",
+      "direction": "阻止日元贬值",
+      "recorded_at": "2026-08-07T01:02:52.786727+00:00"
+    },
     {
       "era": "令和6年",
       "year": 2024,
@@ -79,39 +112,6 @@
       "operation_jp": "米ドル売り・日本円買い",
       "direction": "阻止日元贬值",
       "recorded_at": "2026-05-06T07:56:56.618824+00:00"
-    },
-    {
-      "era": "平成23年",
-      "year": 2011,
-      "month": "Oct",
-      "day": "31",
-      "amount_billion_yen": 80722,
-      "amount_trillion_yen": 8.0722,
-      "operation_jp": "米ドル買い・日本円売り",
-      "direction": "阻止日元升值",
-      "recorded_at": "2026-05-06T07:56:56.618784+00:00"
-    },
-    {
-      "era": "平成23年",
-      "year": 2011,
-      "month": "Nov",
-      "day": "1",
-      "amount_billion_yen": 2826,
-      "amount_trillion_yen": 0.2826,
-      "operation_jp": "米ドル買い・日本円売り",
-      "direction": "阻止日元升值",
-      "recorded_at": "2026-05-06T07:56:56.618786+00:00"
-    },
-    {
-      "era": "平成23年",
-      "year": 2011,
-      "month": "Mar",
-      "day": "18",
-      "amount_billion_yen": 6925,
-      "amount_trillion_yen": 0.6925,
-      "operation_jp": "米ドル買い・日本円売り",
-      "direction": "阻止日元升值",
-      "recorded_at": "2026-05-06T07:56:56.618773+00:00"
     }
   ]
 }

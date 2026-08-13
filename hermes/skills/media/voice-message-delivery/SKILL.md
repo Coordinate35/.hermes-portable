@@ -182,6 +182,8 @@ ffmpeg -y -i /tmp/output.mp3 /tmp/output.wav
 
 QQ Bot 回复中，`MEDIA:/path/to/file.wav` **必须是这条回复的全部内容**，前面、后面、同行都不能有任何其他文字（标题、进度、彩蛋说明、剧透提示一律不能加）。原因：MEDIA 和文字共存时 QQ Bot 可能只渲染文字而丢弃音频。
 
+**例外：cron 任务交付**。用户自写的 cron prompt（如微博监控任务）若明确要求"简短总结 + 完整原文 + TTS 级别标注 + MEDIA 末尾"的混合格式，以该任务 prompt 为准，不要用本条规则去删改其输出——那是用户为该渠道定义的交付规范。本条针对交互式 QQ Bot 回复。
+
 正确做法：
 ```
 回复 1（纯 MEDIA，只有这一行）：MEDIA:/tmp/voice.wav

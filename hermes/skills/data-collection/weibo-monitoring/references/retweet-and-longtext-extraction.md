@@ -74,6 +74,30 @@ user.screen_name      # 原作者昵称
 - ❌ 调 `https://m.weibo.cn/statuses/show?id=` 试图救场 — 返回空字节
 - ❌ 用 `curl ... | python3 -c "..."` 解析 — 触发 tirith 安全扫描拦截，必须 `-o file` 再读
 
+## 图片长图正文提取（正文在配图里，2026-08 实战验证）
+
+当转发的原博 `text` 只有一句引言（如"卢麒元谨以此文纪念屈原"）+ 配图，而正文在**图片长图**里时：
+
+1. **下载图片**：sinaimg 直链有防盗链，必须带 Referer：
+   ```bash
+   curl -s -L -o /tmp/img.jpg -H "Referer: https://m.weibo.cn/" -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)" "<pic_url>"
+   ```
+   直接 `vision_analyze` 图片 URL 会 403；下载后本地分析也**不可靠**——本部署的 vision 后端不支持 image_url（400: unknown variant `image_url`）。
+2. **OCR 用 rapidocr-onnxruntime**（中文识别效果好，pip 包内置模型，无需网络）：
+   ```bash
+   uv venv /tmp/ocr_venv && uv pip install --python /tmp/ocr_venv/bin/python rapidocr-onnxruntime
+   /tmp/ocr_venv/bin/python -c "
+   from rapidocr_onnxruntime import RapidOCR
+   ocr = RapidOCR(); result,_ = ocr('/tmp/img.jpg')
+   open('/tmp/ocr.txt','w',encoding='utf-8').write('\n'.join(r[1] for r in result))"
+   ```
+3. **校正 OCR 误差**（第一遍全图 + 二遍切片放大交叉验证，两遍一致才采信）：
+   - 高频误读：`我→币`（如"以币国之大"实为"以中国之大"）、`灭→火`、`韦→书`、`震→宸`、`懵懵→懵借`、`天→大`、`铎→锋`
+   - 2 遍同读「帕尔森」「ZRJ」→ 按印刷原样保留，即使与常识（保尔森）不符，不做擅改
+   - 长图切成 N 片 1.5× 放大重扫交叉验证
+   - 页码数字（如 1374/1375）是截图页码，删除；末尾 `@作者` 署名保留
+4. 结论：正文在图片里的转发，呈现时必须附 OCR 全文，并标注"文字经 OCR 转录"。
+
 ## 浏览器降级方案（当 API 长文提取失败时）
 
 当 `fetch_mblog_full.py` 的 `long_text` 字段返回 `[long fetch failed: ...]` 时，说明 `/statuses/extend` 端点已被反爬拦截。此时应使用浏览器工具作为降级方案：

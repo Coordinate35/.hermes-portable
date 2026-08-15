@@ -38,4 +38,4 @@ category: gaming
 
 ## 参考
 
-- `references/pokemon-hetiyingzhiying.md` — 《漆黑的魅影》已知信息（含未核实标记）+ 已核实的 Gen3 数据：种族值、送神山/狩猎地带道具与遭遇、第三世代招式学习面，含 52poke 抓取与解析技巧。
+- `references/pokemon-hetiyingzhiying.md` — 《漆黑的魅影》已知信息（含未核实标记）+ 已核实的原版数据：种族值（含第四世代个体如雪妖女）、道具（贝壳之铃）、送神山/浅滩洞穴/狩猎地带道具与遭遇、第三世代招式学习面、通用机制速答（卖东西去哪），含 52poke 抓取与解析技巧。

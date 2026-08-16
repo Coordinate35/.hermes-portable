@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-07-28T18:08:11.975436+00:00",
-    "last_used_at": "2026-08-15T09:24:46.439511+00:00",
-    "last_viewed_at": "2026-08-15T09:24:46.437366+00:00",
+    "last_used_at": "2026-08-16T16:37:44.149768+00:00",
+    "last_viewed_at": "2026-08-16T16:37:44.147393+00:00",
     "patch_count": 9,
     "pinned": false,
     "state": "active",
-    "use_count": 92,
-    "view_count": 92
+    "use_count": 93,
+    "view_count": 93
   },
   "airtable": {
     "archived_at": null,
@@ -1005,13 +1005,13 @@
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-08-13T02:36:44.920227+00:00",
-    "last_used_at": "2026-08-15T09:02:07.237914+00:00",
-    "last_viewed_at": "2026-08-15T09:02:07.236378+00:00",
+    "last_used_at": "2026-08-16T04:45:48.652879+00:00",
+    "last_viewed_at": "2026-08-16T04:45:48.649780+00:00",
     "patch_count": 25,
     "pinned": false,
     "state": "active",
-    "use_count": 623,
-    "view_count": 623
+    "use_count": 629,
+    "view_count": 629
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1044,13 +1044,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-08-13T04:26:07.965185+00:00",
-    "last_used_at": "2026-08-15T18:51:10.904056+00:00",
-    "last_viewed_at": "2026-08-15T18:51:10.902839+00:00",
+    "last_used_at": "2026-08-16T18:51:26.603353+00:00",
+    "last_viewed_at": "2026-08-16T18:51:26.601413+00:00",
     "patch_count": 10,
     "pinned": false,
     "state": "active",
-    "use_count": 1229,
-    "view_count": 1229
+    "use_count": 1315,
+    "view_count": 1315
   },
   "weights-and-biases": {
     "archived_at": null,

@@ -2,7 +2,7 @@
 model:
   api_key: __REPLACE_WITH_YOUR_KEY__
   base_url: https://api.deepseek.com
-  default: deepseek-v4-pro
+  default: deepseek-v4-flash-vision-exp
   provider: custom
   context_length: 1024000
 fallback_providers: []
@@ -541,7 +541,7 @@ _config_version: 33
 custom_providers:
   - api_key: __REPLACE_WITH_YOUR_KEY__
     base_url: https://api.deepseek.com
-    model: deepseek-v4-pro
+    model: deepseek-v4-flash-vision-exp
     name: api.deepseek.com
 group_sessions_per_user: true
 platform_toolsets:

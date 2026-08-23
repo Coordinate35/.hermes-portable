@@ -93,6 +93,8 @@ curl -X POST "http://192.168.56.1:9880" \
 **Shell 转义坑**：用 `$(cat file)` 传递含中文标点的文本时，bash 会解析特殊字符。
 建议在 Python 脚本中用 `json.dumps()` 构造请求体（win_tts.sh 已经这么做了）。
 
+**长口播稿传参实测稳定方式（2026-08 验证）**：先把稿子 `write_file` 落盘，再 `bash win_tts.sh "$(cat /tmp/voice_text.txt)" /tmp/out.wav` — `$(cat)` 命令替换传参安全，win_tts.sh 内部 `json.dumps` 兜底；上述转义坑仅针对**裸 curl 的 JSON body**。
+
 #### ⚠️ cron / 无人值守环境必读：tirith 会 BLOCK 裸 curl
 
 Hermes 在 `terminal()` 前置 **tirith** 命令字符串扫描器，对私网 IP + 明文 HTTP 的 curl 调用会触发 3 条告警并 BLOCK：

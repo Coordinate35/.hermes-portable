@@ -76,7 +76,9 @@ Key test: "If purely a technical decision, would other countries deploy at the s
 4. **Honest Conclusion** — "X is primarily driven by [policy/strategic reason], not [technical reason]"
 
 ### Data Access Failure Protocol
-When government/industry reports blocked by anti-crawling/Cloudflare:
-1. Admit explicitly: "未能现场访问X，以下基于行业公开认知"
-2. Tag confidence: distinguish "know" from "believe based on patterns"
-3. Do NOT fabricate numbers, no "approximately X" from memory
+When primary sources are blocked by anti-crawling/Cloudflare/CAPTCHA:
+
+1. **Run the recovery ladder FIRST** (load `blocked-page-recovery` skill, use `scripts/recover_page.py` or its manual routes): Wayback `available` API → archive.today → API/RSS pivot → real browser. Do NOT answer from memory until the ladder is exhausted. Giving a hedged memory-based answer with the ladder untried is the #1 failure mode (2026-08 原油宝 session: Baidu/Sina/Wikipedia all refused, then answered from memory — Wayback/archive.today were never attempted).
+2. **Chinese-source quirks**: Baidu search serves a CAPTCHA interstitial (`wappass.baidu.com`) — don't loop on it, pivot to Sogou/Bing or the Wayback route. If a MediaWiki REST/API endpoint (`/w/api.php`, `/api/rest_v1/`) hangs or returns empty, fetch the plain HTML page directly or Wayback it — don't retry the same endpoint.
+3. **Keep probes short**: every curl needs `--max-time`; keep the whole command well under the terminal timeout or the runtime auto-blocks it ("Command timed out without user response"), wasting the turn and looking like the block is on your side.
+4. Only after the ladder fails: Admit explicitly — "未能现场访问X，以下基于行业公开认知"; tag confidence (know vs believe); do NOT fabricate numbers, no "approximately X" from memory; state which key numbers remain unverified and offer to verify on request.

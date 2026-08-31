@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
 -- Facts count: 7904
--- Exported: 2026-08-31T03:00:40.800498
+-- Exported: 2026-09-01T03:00:07.747387
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (

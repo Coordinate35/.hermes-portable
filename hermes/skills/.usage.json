@@ -4,13 +4,13 @@
     "created_at": "2026-05-13T17:36:52.842635+00:00",
     "created_by": null,
     "last_patched_at": "2026-08-19T06:38:27.037255+00:00",
-    "last_used_at": "2026-08-29T11:35:31.926895+00:00",
-    "last_viewed_at": "2026-08-29T11:35:31.925137+00:00",
+    "last_used_at": "2026-08-31T14:18:47.295390+00:00",
+    "last_viewed_at": "2026-08-31T14:18:47.293688+00:00",
     "patch_count": 10,
     "pinned": false,
     "state": "active",
-    "use_count": 104,
-    "view_count": 104
+    "use_count": 105,
+    "view_count": 105
   },
   "airtable": {
     "archived_at": null,
@@ -554,7 +554,7 @@
     "last_viewed_at": "2026-08-27T17:37:41.202120+00:00",
     "patch_count": 6,
     "pinned": false,
-    "state": "stale",
+    "state": "active",
     "use_count": 12,
     "view_count": 12
   },
@@ -1213,13 +1213,13 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-08-13T04:26:07.965185+00:00",
-    "last_used_at": "2026-08-30T15:06:45.623364+00:00",
-    "last_viewed_at": "2026-08-30T15:06:45.621540+00:00",
+    "last_used_at": "2026-08-31T18:40:58.233085+00:00",
+    "last_viewed_at": "2026-08-31T18:40:58.231628+00:00",
     "patch_count": 10,
     "pinned": false,
     "state": "active",
-    "use_count": 1968,
-    "view_count": 1968
+    "use_count": 1980,
+    "view_count": 1980
   },
   "weights-and-biases": {
     "archived_at": null,

@@ -1,7 +1,5 @@
 User operates within the 卢麒元 (Lu Qiyuan) investment analysis framework: real inflation = CPI + (M2 - GDP), real interest rate = nominal - real inflation. Four-matrix decision grid by growth/inflation quadrant. "Short stocks, long gold" strategy. CPI considered structurally understated. Core tool for macro allocation. See fact_store for full framework details.
 §
-User has large investment doc collection at ~/virtualbox_share/luqiyuan/docs. Prefers systematic extraction + policy+fundamental+technical analysis. Focus on energy sector.
-§
 工作目录：新建/读取→~/hermes_data/，绝不存~/根目录。
 §
 User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC framework with physical Numéraire (Ω = fixed commodity basket). Axioms: (1) global net wealth = sum of physical capital only, financial claims net to zero, (2) replacement-cost valuation makes K immune to currency devaluation, (3) FX endogenous from PPP (B_i/B_j). Also built deviation-detection framework: 4 anchors (cost/yield/monetary/cross-country), RPI priority index (Regression Priority Index = arbitrage × cashflow × funding / institutional protection), linked to 卢麒元 four-matrix decision grid. Prefers rigorous math, layered architecture docs, systematic docs. Latest deliverable: architecture V0.2 at ~/hermes_data/global_economy_model_architecture.md. Open issues: production function, currency creation module, MVP scope.
@@ -17,3 +15,5 @@ tts 工具集已禁用（hermes tools disable tts），text_to_speech 工具不�
 记账分类：饮料→娱乐·餐饮娱乐，饭菜/买菜→刚性·食。文档阅读须逐字念原文不可概括。
 §
 用户偏好（2026-08 被纠正）：宏观分析/卢麒元框架计算必须展开过程，不能只给结果。格式：公式 → 代入数值 → 中间步骤 → 最终结果 → 判断。反例：直接输出"真实通胀率=4.3%"缺少推导。
+§
+用户=魏俊杰（GitHub Coordinate35，1995.03）：2018.07-2023.12 滴滴接入层资深研发D7（DevOps→管控面→转发引擎→接入层技术负责人）；2024.01-至今 抖音服务架构·研发体验与效率2-1。工作史源=~/Documents/summary，简历任务见 skill resume-cv-workflow。投资分析偏好系统提取+政策/基本面/技术面，聚焦能源板块。

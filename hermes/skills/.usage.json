@@ -84,13 +84,15 @@
     "created_at": "2026-05-29T10:39:06.704332+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-01T14:09:35.306274+00:00",
-    "last_used_at": "2026-08-13T04:25:14.429975+00:00",
-    "last_viewed_at": "2026-08-13T04:25:14.428239+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-07T17:08:32.144427+00:00",
+    "last_viewed_at": "2026-09-07T17:08:32.140541+00:00",
     "patch_count": 39,
+    "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 37,
-    "view_count": 37
+    "use_count": 43,
+    "view_count": 43
   },
   "audiocraft-audio-generation": {
     "archived_at": null,
@@ -309,7 +311,7 @@
     "last_viewed_at": null,
     "patch_count": 0,
     "pinned": false,
-    "state": "active",
+    "state": "stale",
     "use_count": 0,
     "view_count": 0
   },
@@ -340,7 +342,7 @@
     "view_count": 0
   },
   "evaluating-llms-harness": {
-    "archived_at": null,
+    "archived_at": "2026-09-06T20:40:48.881180+00:00",
     "created_at": "2026-06-07T18:32:57.811036+00:00",
     "created_by": null,
     "last_patched_at": null,
@@ -348,7 +350,7 @@
     "last_viewed_at": null,
     "patch_count": 0,
     "pinned": false,
-    "state": "stale",
+    "state": "archived",
     "use_count": 0,
     "view_count": 0
   },
@@ -584,7 +586,7 @@
     "last_viewed_at": null,
     "patch_count": 0,
     "pinned": false,
-    "state": "active",
+    "state": "stale",
     "use_count": 0,
     "view_count": 0
   },
@@ -677,7 +679,7 @@
     "last_viewed_at": "2026-08-03T04:36:06.672469+00:00",
     "patch_count": 8,
     "pinned": false,
-    "state": "active",
+    "state": "stale",
     "use_count": 9,
     "view_count": 9
   },
@@ -741,6 +743,21 @@
     "last_used_at": null,
     "last_viewed_at": null,
     "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
+  },
+  "mindmap-rendering": {
+    "archived_at": null,
+    "created_at": "2026-09-07T17:09:21.630695+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-09-07T17:09:30.606070+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 2,
+    "patch_generation": 2,
     "pinned": false,
     "state": "active",
     "use_count": 0,
@@ -820,7 +837,7 @@
     "last_viewed_at": "2026-09-02T13:49:49.193645+00:00",
     "patch_count": 1,
     "pinned": false,
-    "state": "stale",
+    "state": "active",
     "use_count": 3,
     "view_count": 3
   },
@@ -872,7 +889,7 @@
     "last_viewed_at": "2026-08-03T04:47:20.016184+00:00",
     "patch_count": 0,
     "pinned": false,
-    "state": "active",
+    "state": "stale",
     "use_count": 1,
     "view_count": 1
   },
@@ -1048,7 +1065,7 @@
     "view_count": 0
   },
   "serving-llms-vllm": {
-    "archived_at": null,
+    "archived_at": "2026-09-06T20:40:48.909587+00:00",
     "created_at": "2026-06-07T18:32:57.886061+00:00",
     "created_by": null,
     "last_patched_at": null,
@@ -1056,7 +1073,7 @@
     "last_viewed_at": null,
     "patch_count": 0,
     "pinned": false,
-    "state": "stale",
+    "state": "archived",
     "use_count": 0,
     "view_count": 0
   },
@@ -1211,14 +1228,14 @@
     "created_by": "agent",
     "last_patched_at": "2026-08-23T09:44:21.154317+00:00",
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-05T08:35:40.447039+00:00",
-    "last_viewed_at": "2026-09-05T08:35:40.445446+00:00",
+    "last_used_at": "2026-09-07T16:59:14.507344+00:00",
+    "last_viewed_at": "2026-09-07T16:59:14.505711+00:00",
     "patch_count": 26,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 693,
-    "view_count": 693
+    "use_count": 696,
+    "view_count": 696
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1265,14 +1282,14 @@
     "created_by": null,
     "last_patched_at": "2026-08-13T04:26:07.965185+00:00",
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-06T18:51:34.019868+00:00",
-    "last_viewed_at": "2026-09-06T18:51:34.017003+00:00",
+    "last_used_at": "2026-09-07T15:20:50.758845+00:00",
+    "last_viewed_at": "2026-09-07T15:20:50.756496+00:00",
     "patch_count": 10,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 2101,
-    "view_count": 2101
+    "use_count": 2113,
+    "view_count": 2113
   },
   "weights-and-biases": {
     "archived_at": null,
@@ -1309,7 +1326,7 @@
     "last_viewed_at": null,
     "patch_count": 0,
     "pinned": false,
-    "state": "active",
+    "state": "stale",
     "use_count": 0,
     "view_count": 0
   },

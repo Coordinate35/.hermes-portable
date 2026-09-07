@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7904
--- Exported: 2026-09-07T03:00:59.102248
+-- Facts count: 7906
+-- Exported: 2026-09-08T03:00:16.431127
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7940,6 +7940,8 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7965,'卢麒元心法·正心以中，修身以和：心正了，就找到真理，不会跑偏，"以中"就是符合事物发展的一般规律；身修了，就能团结群众，就有力量，"以和"就是团结一切能团结的力量。心学的真功夫，主体性是基本功：心外无理，心外无物，不迷信不贪恋。正心修身是艰苦痛苦的——将心从名利中拔出，将荣华富贵放下。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:31','2026-07-11 08:22:31');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7966,'卢麒元心学源流观：从《尚书》十六字心法(人心惟危，道心惟微，惟精惟一，允执厥中)→《大学》八目(格致诚正修齐治平)→韩愈(文以载道，不忘初心)→张载横渠四句→陆九渊(宇宙即吾心，吾心即宇宙)→孟子(天降大任，苦其心志)→王阳明(知行合一，致良知)→湖湘学派经世致用→伟人(人之力莫大于心，心学与马列主义结合)。谭嗣同→杨昌济→伟人的心学传承脉络。','project','luqiyuan, xinxue, daodejing',0.5,0,0,'2026-07-11 08:22:32','2026-07-11 08:22:32');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7967,'记账分类：饮料→娱乐·餐饮娱乐，饭菜/买菜→刚性·食。文档阅读须逐字念原文不可概括。','general','',0.5,0,0,'2026-07-28 17:08:09','2026-07-28 17:08:09');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7968,"《货币强权：从货币读懂未来世界格局》= [美]本杰明·J.科恩(Benjamin J. Cohen)著，张琦译，中信出版社2020，ISBN 9787508679112，英文原版 Currency Power (Princeton Univ Press, 2015)。2026-09-07 查证：国内无免费直链；人大经济论坛 thread-7307308 有 epub 附件(需登录+2金币)；百度贴吧/知道有网盘求物帖(需登录)；外网(Anna's/Zlib/LibGen)无代理全部不通。",'project','书,货币强权,电子书,下载',0.5,0,0,'2026-09-07 08:56:34','2026-09-07 08:56:34');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7969,'《货币强权》(本杰明·科恩/中信2020) 已导入听书书库 (~/hermes_data/ebooks/货币强权/，74节~24.8万字)，全书读书笔记在 ~/hermes_data/货币强权_读书笔记.md（框架/脉络/结论+核心概念表）。核心：货币金字塔七层、货币实力=避免调整成本(延迟+转移两只手)、货币与国力双向因果、美元未衰减/欧元未实现/人民币触顶。数据截至2014-2015。','project','书,货币强权,读书笔记,书库',0.5,0,0,'2026-09-07 16:51:33','2026-09-07 16:51:33');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9140,6 +9142,8 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1196,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1197,'货币沉默','unknown','','2026-05-29 15:01:17');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1198,'文字和语音消息混在一起了','unknown','','2026-05-31 10:03:32');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1199,'以和','unknown','','2026-07-11 08:22:31');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1200,'Currency Power','unknown','','2026-09-07 08:56:34');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1201,'Princeton Univ Press','unknown','','2026-09-07 08:56:34');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10511,6 +10515,8 @@ INSERT INTO fact_entities VALUES(7964,1031);
 INSERT INTO fact_entities VALUES(7964,1030);
 INSERT INTO fact_entities VALUES(7965,1023);
 INSERT INTO fact_entities VALUES(7965,1199);
+INSERT INTO fact_entities VALUES(7968,1200);
+INSERT INTO fact_entities VALUES(7968,1201);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,46,'2026-07-11 08:22:32');

@@ -1,0 +1,520 @@
+[
+  {
+    "id": 1,
+    "title": "版权信息",
+    "paragraph_count": 2,
+    "char_count": 79,
+    "file": "chapters/001.txt"
+  },
+  {
+    "id": 2,
+    "title": "致谢",
+    "paragraph_count": 3,
+    "char_count": 579,
+    "file": "chapters/002.txt"
+  },
+  {
+    "id": 3,
+    "title": "缩略语和术语表",
+    "paragraph_count": 23,
+    "char_count": 1661,
+    "file": "chapters/003.txt"
+  },
+  {
+    "id": 4,
+    "title": "导言",
+    "paragraph_count": 25,
+    "char_count": 6108,
+    "file": "chapters/004.txt"
+  },
+  {
+    "id": 5,
+    "title": "第一章 国际货币",
+    "paragraph_count": 3,
+    "char_count": 415,
+    "file": "chapters/005.txt"
+  },
+  {
+    "id": 6,
+    "title": "动机",
+    "paragraph_count": 6,
+    "char_count": 1334,
+    "file": "chapters/006.txt"
+  },
+  {
+    "id": 7,
+    "title": "选择",
+    "paragraph_count": 9,
+    "char_count": 2288,
+    "file": "chapters/007.txt"
+  },
+  {
+    "id": 8,
+    "title": "候选货币",
+    "paragraph_count": 9,
+    "char_count": 1742,
+    "file": "chapters/008.txt"
+  },
+  {
+    "id": 9,
+    "title": "货币金字塔",
+    "paragraph_count": 15,
+    "char_count": 3183,
+    "file": "chapters/009.txt"
+  },
+  {
+    "id": 10,
+    "title": "收益与成本",
+    "paragraph_count": 26,
+    "char_count": 4890,
+    "file": "chapters/010.txt"
+  },
+  {
+    "id": 11,
+    "title": "误置具体性",
+    "paragraph_count": 9,
+    "char_count": 1966,
+    "file": "chapters/011.txt"
+  },
+  {
+    "id": 12,
+    "title": "结论",
+    "paragraph_count": 1,
+    "char_count": 278,
+    "file": "chapters/012.txt"
+  },
+  {
+    "id": 13,
+    "title": "第二章 国力分析",
+    "paragraph_count": 9,
+    "char_count": 1539,
+    "file": "chapters/013.txt"
+  },
+  {
+    "id": 14,
+    "title": "含义",
+    "paragraph_count": 14,
+    "char_count": 3213,
+    "file": "chapters/014.txt"
+  },
+  {
+    "id": 15,
+    "title": "来源",
+    "paragraph_count": 45,
+    "char_count": 10593,
+    "file": "chapters/015.txt"
+  },
+  {
+    "id": 16,
+    "title": "运用",
+    "paragraph_count": 11,
+    "char_count": 1781,
+    "file": "chapters/016.txt"
+  },
+  {
+    "id": 17,
+    "title": "界限",
+    "paragraph_count": 5,
+    "char_count": 947,
+    "file": "chapters/017.txt"
+  },
+  {
+    "id": 18,
+    "title": "结论",
+    "paragraph_count": 1,
+    "char_count": 160,
+    "file": "chapters/018.txt"
+  },
+  {
+    "id": 19,
+    "title": "第三章 货币实力",
+    "paragraph_count": 4,
+    "char_count": 629,
+    "file": "chapters/019.txt"
+  },
+  {
+    "id": 20,
+    "title": "先前的讨论",
+    "paragraph_count": 15,
+    "char_count": 2988,
+    "file": "chapters/020.txt"
+  },
+  {
+    "id": 21,
+    "title": "调整成本",
+    "paragraph_count": 18,
+    "char_count": 3409,
+    "file": "chapters/021.txt"
+  },
+  {
+    "id": 22,
+    "title": "持续性调整成本",
+    "paragraph_count": 11,
+    "char_count": 1781,
+    "file": "chapters/022.txt"
+  },
+  {
+    "id": 23,
+    "title": "过渡性调整成本",
+    "paragraph_count": 13,
+    "char_count": 3164,
+    "file": "chapters/023.txt"
+  },
+  {
+    "id": 24,
+    "title": "转移能力",
+    "paragraph_count": 16,
+    "char_count": 3276,
+    "file": "chapters/024.txt"
+  },
+  {
+    "id": 25,
+    "title": "延迟能力",
+    "paragraph_count": 19,
+    "char_count": 4074,
+    "file": "chapters/025.txt"
+  },
+  {
+    "id": 26,
+    "title": "度量",
+    "paragraph_count": 6,
+    "char_count": 1569,
+    "file": "chapters/026.txt"
+  },
+  {
+    "id": 27,
+    "title": "结论",
+    "paragraph_count": 3,
+    "char_count": 628,
+    "file": "chapters/027.txt"
+  },
+  {
+    "id": 28,
+    "title": "第四章 从货币到实力",
+    "paragraph_count": 7,
+    "char_count": 1432,
+    "file": "chapters/028.txt"
+  },
+  {
+    "id": 29,
+    "title": "讨论问题的框架",
+    "paragraph_count": 7,
+    "char_count": 1070,
+    "file": "chapters/029.txt"
+  },
+  {
+    "id": 30,
+    "title": "传统观点",
+    "paragraph_count": 8,
+    "char_count": 1299,
+    "file": "chapters/030.txt"
+  },
+  {
+    "id": 31,
+    "title": "私人层面",
+    "paragraph_count": 21,
+    "char_count": 4934,
+    "file": "chapters/031.txt"
+  },
+  {
+    "id": 32,
+    "title": "官方层面",
+    "paragraph_count": 11,
+    "char_count": 2802,
+    "file": "chapters/032.txt"
+  },
+  {
+    "id": 33,
+    "title": "相互依赖",
+    "paragraph_count": 9,
+    "char_count": 2066,
+    "file": "chapters/033.txt"
+  },
+  {
+    "id": 34,
+    "title": "相对影响和累积影响",
+    "paragraph_count": 5,
+    "char_count": 1362,
+    "file": "chapters/034.txt"
+  },
+  {
+    "id": 35,
+    "title": "时间",
+    "paragraph_count": 18,
+    "char_count": 3707,
+    "file": "chapters/035.txt"
+  },
+  {
+    "id": 36,
+    "title": "结论",
+    "paragraph_count": 5,
+    "char_count": 940,
+    "file": "chapters/036.txt"
+  },
+  {
+    "id": 37,
+    "title": "第五章 从实力到货币",
+    "paragraph_count": 7,
+    "char_count": 1666,
+    "file": "chapters/037.txt"
+  },
+  {
+    "id": 38,
+    "title": "德国马克",
+    "paragraph_count": 26,
+    "char_count": 5572,
+    "file": "chapters/038.txt"
+  },
+  {
+    "id": 39,
+    "title": "日元",
+    "paragraph_count": 25,
+    "char_count": 5706,
+    "file": "chapters/039.txt"
+  },
+  {
+    "id": 40,
+    "title": "欧元",
+    "paragraph_count": 14,
+    "char_count": 2840,
+    "file": "chapters/040.txt"
+  },
+  {
+    "id": 41,
+    "title": "来源与界限",
+    "paragraph_count": 20,
+    "char_count": 4547,
+    "file": "chapters/041.txt"
+  },
+  {
+    "id": 42,
+    "title": "软实力",
+    "paragraph_count": 14,
+    "char_count": 3121,
+    "file": "chapters/042.txt"
+  },
+  {
+    "id": 43,
+    "title": "地缘政治衰落",
+    "paragraph_count": 10,
+    "char_count": 2016,
+    "file": "chapters/043.txt"
+  },
+  {
+    "id": 44,
+    "title": "生命周期",
+    "paragraph_count": 5,
+    "char_count": 851,
+    "file": "chapters/044.txt"
+  },
+  {
+    "id": 45,
+    "title": "结论",
+    "paragraph_count": 6,
+    "char_count": 1073,
+    "file": "chapters/045.txt"
+  },
+  {
+    "id": 46,
+    "title": "第六章 当今世界的货币竞争",
+    "paragraph_count": 11,
+    "char_count": 1601,
+    "file": "chapters/046.txt"
+  },
+  {
+    "id": 47,
+    "title": "先前的成果",
+    "paragraph_count": 17,
+    "char_count": 3248,
+    "file": "chapters/047.txt"
+  },
+  {
+    "id": 48,
+    "title": "集中度",
+    "paragraph_count": 32,
+    "char_count": 5235,
+    "file": "chapters/048.txt"
+  },
+  {
+    "id": 49,
+    "title": "分析",
+    "paragraph_count": 23,
+    "char_count": 4239,
+    "file": "chapters/049.txt"
+  },
+  {
+    "id": 50,
+    "title": "结论",
+    "paragraph_count": 7,
+    "char_count": 1282,
+    "file": "chapters/050.txt"
+  },
+  {
+    "id": 51,
+    "title": "第七章 美元：未衰减的实力",
+    "paragraph_count": 9,
+    "char_count": 1565,
+    "file": "chapters/051.txt"
+  },
+  {
+    "id": 52,
+    "title": "质疑",
+    "paragraph_count": 18,
+    "char_count": 4656,
+    "file": "chapters/052.txt"
+  },
+  {
+    "id": 53,
+    "title": "价值储藏",
+    "paragraph_count": 27,
+    "char_count": 5653,
+    "file": "chapters/053.txt"
+  },
+  {
+    "id": 54,
+    "title": "其他优势",
+    "paragraph_count": 19,
+    "char_count": 4522,
+    "file": "chapters/054.txt"
+  },
+  {
+    "id": 55,
+    "title": "一种协商货币",
+    "paragraph_count": 11,
+    "char_count": 2434,
+    "file": "chapters/055.txt"
+  },
+  {
+    "id": 56,
+    "title": "负面因素",
+    "paragraph_count": 11,
+    "char_count": 2352,
+    "file": "chapters/056.txt"
+  },
+  {
+    "id": 57,
+    "title": "结论",
+    "paragraph_count": 2,
+    "char_count": 436,
+    "file": "chapters/057.txt"
+  },
+  {
+    "id": 58,
+    "title": "第八章 欧元：未实现的实力",
+    "paragraph_count": 8,
+    "char_count": 1754,
+    "file": "chapters/058.txt"
+  },
+  {
+    "id": 59,
+    "title": "不完善的构造",
+    "paragraph_count": 7,
+    "char_count": 1769,
+    "file": "chapters/059.txt"
+  },
+  {
+    "id": 60,
+    "title": "管理失衡",
+    "paragraph_count": 55,
+    "char_count": 12250,
+    "file": "chapters/060.txt"
+  },
+  {
+    "id": 61,
+    "title": "其他弱点",
+    "paragraph_count": 27,
+    "char_count": 6318,
+    "file": "chapters/061.txt"
+  },
+  {
+    "id": 62,
+    "title": "有管理的国际化",
+    "paragraph_count": 8,
+    "char_count": 1703,
+    "file": "chapters/062.txt"
+  },
+  {
+    "id": 63,
+    "title": "结论",
+    "paragraph_count": 2,
+    "char_count": 395,
+    "file": "chapters/063.txt"
+  },
+  {
+    "id": 64,
+    "title": "第九章 人民币：势不可当的实力",
+    "paragraph_count": 10,
+    "char_count": 1762,
+    "file": "chapters/064.txt"
+  },
+  {
+    "id": 65,
+    "title": "战略",
+    "paragraph_count": 18,
+    "char_count": 4327,
+    "file": "chapters/065.txt"
+  },
+  {
+    "id": 66,
+    "title": "战略设计",
+    "paragraph_count": 18,
+    "char_count": 3179,
+    "file": "chapters/066.txt"
+  },
+  {
+    "id": 67,
+    "title": "方法",
+    "paragraph_count": 48,
+    "char_count": 9535,
+    "file": "chapters/067.txt"
+  },
+  {
+    "id": 68,
+    "title": "结论",
+    "paragraph_count": 3,
+    "char_count": 448,
+    "file": "chapters/068.txt"
+  },
+  {
+    "id": 69,
+    "title": "第十章 总结",
+    "paragraph_count": 1,
+    "char_count": 242,
+    "file": "chapters/069.txt"
+  },
+  {
+    "id": 70,
+    "title": "分析方面的贡献",
+    "paragraph_count": 3,
+    "char_count": 592,
+    "file": "chapters/070.txt"
+  },
+  {
+    "id": 71,
+    "title": "理论",
+    "paragraph_count": 15,
+    "char_count": 3205,
+    "file": "chapters/071.txt"
+  },
+  {
+    "id": 72,
+    "title": "实践",
+    "paragraph_count": 6,
+    "char_count": 1370,
+    "file": "chapters/072.txt"
+  },
+  {
+    "id": 73,
+    "title": "参考文献",
+    "paragraph_count": 329,
+    "char_count": 49733,
+    "file": "chapters/073.txt"
+  },
+  {
+    "id": 74,
+    "title": "译后记",
+    "paragraph_count": 9,
+    "char_count": 1319,
+    "file": "chapters/074.txt"
+  }
+]

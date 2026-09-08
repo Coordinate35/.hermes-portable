@@ -84,7 +84,7 @@ if created_at > last_time and weibo_id not in pushed_ids:
 - 旧版 `format_weibo` 曾用 `text[:300]` 截断长微博，**已修复**
 - 必须输出微博的完整 `text` 字段，不做长度限制
 
-### 3. 转发/长文微博必须补抓全文
+### 3. 转发/长文/文章链接微博必须补抓全文
 
 当脚本输出的微博 `text` 在去 HTML 后只剩表情或 <10 字符（如 `[祈祷]`），
 **几乎肯定是转发或长文**，必须调以下脚本补抓原文，再附上完整原作者内容：
@@ -99,9 +99,29 @@ cd ~/.hermes/scripts && PYTHONPATH=. python3 \
 详细字段说明、API 端点、不要踩的坑见
 `references/retweet-and-longtext-extraction.md`。
 
-**如果 `long_text` 返回 `[long fetch failed: ...]`**，说明 `/statuses/extend` API 已被反爬拦截（返回 HTML 而非 JSON）。此时必须降级使用浏览器工具访问 `https://m.weibo.cn/detail/{weibo_id}` 并 `browser_snapshot(full=true)` 提取完整内容。详见 `references/retweet-and-longtext-extraction.md` 的"浏览器降级方案"章节。
+**三种补抓类型的判断**（text 剥离后内容少的微博按此序排查）：
 
-**禁止**只把表情符号原样发给用户 — 信息量为零。
+| 类型 | 特征 | 补抓方式 |
+|---|---|---|
+| 长文 | `is_long_text=true` | `long_text` 字段（脚本已自动拉 `/statuses/extend`） |
+| 转发 | `retweet` 字段存在 | `retweet` 内嵌套对象 |
+| **文章链接型** | `article_url` 字段非空 | 抓 `article_url` 引用的头条文章全文 |
+
+**⚠️ 文章链接型（2026-09 实测坑）**：所谓"微博正文是个超链接"——微博正文本身
+就是一个 `<a href>`（如"论体面"），指向头条文章页。此时 `text` 剥离后只剩标题文字，
+看起来像"内容只有三个字"，**链接信息藏在两处**：
+1. `text` 原始 HTML 里的 `<a href="https://weibo.com/ttarticle/p/show?id=...">`
+2. `page_info.page_url`（`type=article` 时）
+
+`fetch_mblog_full.py` 已内置 `article_url` 字段提取（优先取正文 `<a>`，回退
+`page_info.page_url`，其尾部的 `launchid` 参数可忽略）。拿到 `article_url` 后：
+- PC 版文章页 `https://weibo.com/ttarticle/p/show?id=<id>` / card 版
+  `https://card.weibo.com/article/m/show/id=<id>` 均可用 `web_extract` 直接抓到全文
+  （实测 card.weibo.com 移动端无需登录即可返回正文+评论）。
+- 卡片链接 `card.weibo.com/article/m/show/id/` 与 ttarticle id 相同。
+
+**禁止**只把表情符号原样发给用户 — 信息量为零。**禁止**对着"只有标题文字"的
+text 直接转发给用户并声称是全文——先去抓 `article_url`。
 
 ### 4. 无新微博严格静默
 - 没有新微博时，脚本输出 `[SILENT]`

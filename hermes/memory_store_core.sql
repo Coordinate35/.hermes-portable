@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7906
--- Exported: 2026-09-08T03:00:16.431127
+-- Facts count: 7907
+-- Exported: 2026-09-09T03:00:35.474890
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7942,6 +7942,7 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7967,'记账分类：饮料→娱乐·餐饮娱乐，饭菜/买菜→刚性·食。文档阅读须逐字念原文不可概括。','general','',0.5,0,0,'2026-07-28 17:08:09','2026-07-28 17:08:09');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7968,"《货币强权：从货币读懂未来世界格局》= [美]本杰明·J.科恩(Benjamin J. Cohen)著，张琦译，中信出版社2020，ISBN 9787508679112，英文原版 Currency Power (Princeton Univ Press, 2015)。2026-09-07 查证：国内无免费直链；人大经济论坛 thread-7307308 有 epub 附件(需登录+2金币)；百度贴吧/知道有网盘求物帖(需登录)；外网(Anna's/Zlib/LibGen)无代理全部不通。",'project','书,货币强权,电子书,下载',0.5,0,0,'2026-09-07 08:56:34','2026-09-07 08:56:34');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7969,'《货币强权》(本杰明·科恩/中信2020) 已导入听书书库 (~/hermes_data/ebooks/货币强权/，74节~24.8万字)，全书读书笔记在 ~/hermes_data/货币强权_读书笔记.md（框架/脉络/结论+核心概念表）。核心：货币金字塔七层、货币实力=避免调整成本(延迟+转移两只手)、货币与国力双向因果、美元未衰减/欧元未实现/人民币触顶。数据截至2014-2015。','project','书,货币强权,读书笔记,书库',0.5,0,0,'2026-09-07 16:51:33','2026-09-07 16:51:33');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7970,'卢麒元微博/头条文章归档惯例：抓取后全文+元信息存 markdown 到 ~/hermes_data/weibo_data/articles/<标题>_<日期>.md。示例：《论体面》2026-09-07（文章ID 2309405340697300959303，财经评论：币圈/娱乐圈事件借指体面与赵礼）。','project','微博,归档,卢麒元,惯例',0.5,0,0,'2026-09-07 19:29:52','2026-09-07 19:29:52');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');

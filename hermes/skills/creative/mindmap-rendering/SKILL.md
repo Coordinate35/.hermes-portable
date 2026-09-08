@@ -98,6 +98,12 @@ npx mmdc -i mindmap.mmd -o out.svg -p puppeteer-config.json
 - 尺寸建议 ≥ 4000px 宽（用户需点原图放大），底图无必要留白要 crop 掉。
 - SVG 原件留在 `~/hermes_data/mindmaps/`，用户要"可编辑/高清版"时再给。
 
+## 把图附进文档（用户会要求"附在笔记里"，2026-09 实测）
+
+1. `cp 导出的图 ~/hermes_data/<书名>_思维导图.png`（与笔记同级，避免目录移动后引用失效）。
+2. 在 markdown 笔记顶部插入：`![《书名》思维导图](书名_思维导图.png)`（**相对路径**，非绝对路径）。
+3. 随笔记一起备份/移动即可，无需其他处理。
+
 ## 相关参考
 
 - `references/mermaid-mindmap-pitfalls.md` — mermaid mindmap 语法坑的详细转录与排查过程（二分定位方法）。

@@ -42,6 +42,17 @@ def pic_urls(mb: dict) -> list:
     return out
 
 
+def article_url(mb: dict) -> str:
+    """提取头条文章链接：正文 <a> 中的 ttarticle/card.weibo.com 链接，或 page_info.page_url。"""
+    m = re.search(r'href="([^"]*(?:ttarticle|card\.weibo\.com)[^"]*)"', mb.get("text", "") or "")
+    if m:
+        return m.group(1)
+    pi = mb.get("page_info") or {}
+    if pi.get("type") == "article" and pi.get("page_url"):
+        return pi["page_url"]
+    return ""
+
+
 def shrink_retweet(rs: dict) -> dict:
     out = {
         "user": (rs.get("user") or {}).get("screen_name"),
@@ -76,6 +87,7 @@ def main() -> int:
             "text": strip_html(mb.get("text", "")),
             "raw_text": mb.get("raw_text", ""),
             "is_long_text": bool(mb.get("isLongText")),
+            "article_url": article_url(mb),
             "pic_urls": pic_urls(mb),
         }
         if out["is_long_text"]:

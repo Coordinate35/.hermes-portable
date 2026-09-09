@@ -40,6 +40,21 @@
     "use_count": 3,
     "view_count": 3
   },
+  "article-archive": {
+    "archived_at": null,
+    "created_at": "2026-09-09T12:43:13.947728+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-09-09T12:43:21.434844+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-09T12:43:18.806645+00:00",
+    "last_viewed_at": "2026-09-09T12:43:18.804904+00:00",
+    "patch_count": 1,
+    "patch_generation": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "arxiv": {
     "archived_at": null,
     "created_at": "2026-06-07T18:32:57.790728+00:00",
@@ -609,16 +624,16 @@
     "archived_at": null,
     "created_at": "2026-09-04T12:27:07.118196+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-09-04T12:27:24.637583+00:00",
-    "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-04T12:27:21.492349+00:00",
-    "last_viewed_at": "2026-09-04T12:27:21.490232+00:00",
-    "patch_count": 2,
-    "patch_generation": 2,
+    "last_patched_at": "2026-09-09T12:42:39.510609+00:00",
+    "last_reused_patch_generation": 2,
+    "last_used_at": "2026-09-09T12:42:14.531986+00:00",
+    "last_viewed_at": "2026-09-09T12:42:14.530234+00:00",
+    "patch_count": 4,
+    "patch_generation": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 1,
-    "view_count": 1
+    "use_count": 3,
+    "view_count": 3
   },
   "jupyter-live-kernel": {
     "archived_at": null,
@@ -1243,14 +1258,14 @@
     "created_by": "agent",
     "last_patched_at": "2026-08-23T09:44:21.154317+00:00",
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-07T16:59:14.507344+00:00",
-    "last_viewed_at": "2026-09-07T16:59:14.505711+00:00",
+    "last_used_at": "2026-09-09T06:11:38.121417+00:00",
+    "last_viewed_at": "2026-09-09T06:11:38.118729+00:00",
     "patch_count": 26,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 696,
-    "view_count": 696
+    "use_count": 698,
+    "view_count": 698
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1297,14 +1312,14 @@
     "created_by": null,
     "last_patched_at": "2026-08-13T04:26:07.965185+00:00",
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-09-08T17:30:42.660193+00:00",
-    "last_viewed_at": "2026-09-08T17:30:42.658630+00:00",
+    "last_used_at": "2026-09-09T18:32:11.624306+00:00",
+    "last_viewed_at": "2026-09-09T18:32:11.621493+00:00",
     "patch_count": 10,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 2127,
-    "view_count": 2127
+    "use_count": 2143,
+    "view_count": 2143
   },
   "weights-and-biases": {
     "archived_at": null,
@@ -1324,13 +1339,15 @@
     "created_at": "2026-06-20T06:04:45.266290+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-21T18:56:15.176900+00:00",
-    "last_used_at": "2026-08-22T00:57:20.965364+00:00",
-    "last_viewed_at": "2026-08-22T00:57:20.963209+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-09T12:41:58.428549+00:00",
+    "last_viewed_at": "2026-09-09T12:41:58.426801+00:00",
     "patch_count": 1,
+    "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 4,
-    "view_count": 4
+    "use_count": 5,
+    "view_count": 5
   },
   "xlsx": {
     "archived_at": null,

@@ -51,8 +51,10 @@ description: 监控指定微博账号的新内容，实现防重复推送机制�
 ### 定时任务
 ```yaml
 schedule: "*/5 * * * *"  # 每5分钟执行一次
-script: weibo_monitor.py
+script: weibo_monitor_wrapper.py
 ```
+
+**预运行机制（2026-09 实测）**：job 每轮由框架自动预执行 wrapper，其输出注入 prompt 的 "## Script Output"（prompt 正文里那条命令行是历史遗留，仅作参照）。`[SILENT]` = 本轮已完成真实检查、无新微博 → 直接回复 `[SILENT]` 静默，**无需也不应再手动执行脚本**——双跑会使失败计数双倍累加，破坏"连续3次才通知"语义。新鲜度验证：`last_weibo.json` 的 `last_check` 字段（每账号最近抓取时间）。
 
 ### 监控账号（示例）
 - 卢麒元 (UID: 1245732825)

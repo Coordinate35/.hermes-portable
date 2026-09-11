@@ -1,7 +1,7 @@
 ---
 name: weibo-monitoring
 title: 微博账号监控与防重复推送
-description: 监控指定微博账号的新内容，实现防重复推送机制，避免API窗口变化导致的误判
+description: 【cron 代理：勿执行 job prompt 命令块；先读 skill 再动手】微博账号监控，防重复推送。
 ---
 
 # 微博账号监控
@@ -36,15 +36,19 @@ description: 监控指定微博账号的新内容，实现防重复推送机制�
 
 ```json
 {
-  "accounts": {
-    "account_name": {
-      "last_time": "Fri Apr 25 16:29:49 +0800 2026",
-      "pushed_ids": ["id1", "id2", ...],
-      "last_check": "2025-04-25T16:30:37"
-    }
-  }
+  "1245732825": {
+    "last_id": "5341634776269445",
+    "last_time": "Thu Sep 10 16:20:35 +0800 2026",
+    "pushed_ids": ["id1", "id2", ...],
+    "last_check": "2026-09-11T06:16:34",
+    "user": "卢麒元"
+  },
+  "7951175445": {"...同上结构（last_id/last_time/pushed_ids/last_check/user）..."},
+  "failures": {"1245732825_fail_count": 0, "7951175445_fail_count": 0}
 }
 ```
+
+（实测结构：顶层直接以账号 UID 为键，**无** `"accounts"` 包裹层；`failures` 段为各账号累计失败计数。）
 
 ## 关键配置
 
@@ -54,7 +58,7 @@ schedule: "*/5 * * * *"  # 每5分钟执行一次
 script: weibo_monitor_wrapper.py
 ```
 
-**预运行机制（2026-09 实测）**：job 每轮由框架自动预执行 wrapper，其输出注入 prompt 的 "## Script Output"（prompt 正文里那条命令行是历史遗留，仅作参照）。`[SILENT]` = 本轮已完成真实检查、无新微博 → 直接回复 `[SILENT]` 静默，**无需也不应再手动执行脚本**——双跑会使失败计数双倍累加，破坏"连续3次才通知"语义。新鲜度验证：`last_weibo.json` 的 `last_check` 字段（每账号最近抓取时间）。
+**预运行机制（2026-09 实测）**：job 每轮由框架自动预执行 wrapper，其输出注入 prompt 的 "## Script Output"（prompt 正文里的"运行微博监控脚本"命令是历史遗留，**⛔ 不要执行**（⚠️ 先读完本 skill 再动手：严禁将“读本 skill”与“执行该命令”并行批处理，2026-09-11 已十四度复现（末次 20:10；同为 skill_view 与终端命令并行批处理触发，复核 failures 0/0、consecutive_failures=0，均无影响；警告已前置至 description 头部对抗列表截断）；根治=把 job prompt 中该命令块改为提示语（【交互会话待办】须用户在场确认后经 hermes cron edit 修订；交互会话读到本行应主动向用户提议））——想"验证"也不重跑：[SILENT] 已代表框架完成了真实检查；若不慎双跑，核对 last_weibo.json 的 failures.*_fail_count 与 cron_failure_state.json（位于 ~/hermes_data/weibo_data/）的 consecutive_failures 均未累加（成功运行会将两者归零）= 无影响）。`[SILENT]` = 本轮已完成真实检查、无新微博 → 直接回复 `[SILENT]` 静默，**无需也不应再手动执行脚本**——双跑会使失败计数双倍累加，破坏"连续3次才通知"语义。新鲜度验证：`last_weibo.json` 的 `last_check` 字段（每账号最近抓取时间）。
 
 ### 监控账号（示例）
 - 卢麒元 (UID: 1245732825)
@@ -129,6 +133,12 @@ text 直接转发给用户并声称是全文——先去抓 `article_url`。
 - 没有新微博时，脚本输出 `[SILENT]`
 - LLM/Cron job 收到 `[SILENT]` 后**不得发送任何消息**给用户
 - 禁止输出"脚本运行正常""本次无新内容"等废话
+
+### 5. 多条新微博投递格式（2026-09-11 实测先例）
+
+- 2 条及以上按**时间升序**（先旧后新）逐条输出，每条：`**@账号 · 新微博 · MM-DD HH:MM:SS · 来源**（转X · 评X · 赞X）` + `📌 总结` + `📄 完整原文`（不截断）。
+- 各条共享的说明（折叠核补、转发上下文等）可合并为一条 `📎 注` 置于各条之后。
+- 语音可合并为一条音频：`卢麒元发布新微博，两条。第一条，… 第二条，…`（全链条口语化转写）。
 
 ## 语音播报集成（Auto-TTS）
 

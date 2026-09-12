@@ -44,7 +44,7 @@ cd ~/.hermes/scripts && PYTHONPATH=. python3 \
 ```
 id, mid, bid          # 三种 ID 表达
 text                  # HTML，含表情 <img>；用 re.sub(r'<[^>]+>','',t) 去标签
-raw_text              # 部分情况下有纯文本备份（如 '[祈祷]'）
+raw_text              # 部分情况下有纯文本备份（如 '[祈祷]'）；⚠️ extend 全文会剥离表情图片，呈现时可用 raw_text 补回表情占位（2026-09-12 实测：回复链里 [祈祷] 只在 raw_text 中有；raw_text 本身可能被截断，仅用于补表情）
 isLongText            # True 时需调 /statuses/extend
 pic_num, pics         # pics[*].large.url 是大图直链
 retweeted_status      # 转发时的原微博完整 mblog 对象（递归同结构）

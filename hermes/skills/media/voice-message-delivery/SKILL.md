@@ -48,6 +48,15 @@ category: media
 `curl ... -o /some/dir/file.wav`，若目录不存在，curl 仍返回 HTTP:200 但 size=0。
 **必须先 `mkdir -p` 输出目录，再 curl**，否则 WAV 是空文件，发出去 QQ 会拒收或静音。
 
+### cron 中不要用 `rm` 预清理输出文件（2026-09-12 实测）
+
+cron/无人值守下，TTS 命令链里写 `rm -f /tmp/weibo_voice.wav` 会触发安全扫描审批
+（pattern: `delete in root path`），cron 无人可批准 → 命令**挂起、根本不执行**。
+正确做法：
+- 不要预清理：`curl -o` / MeloTTS / edge-tts 均直接覆盖同一输出路径，无需先删旧文件；
+- 防"旧文件残留被误判为本次成功"：运行前后各跑一次 `stat -c '%y %s' 输出路径`，
+  确认 mtime 是刚刚、size > 10KB，再向用户报告成功。
+
 ## TTS 源优先级（从高到低）
 
 | 优先级 | 名称 | 端点 | 调用方式 | 状态 |

@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7907
--- Exported: 2026-09-12T03:00:11.944818
+-- Facts count: 7908
+-- Exported: 2026-09-13T03:00:43.767444
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7943,6 +7943,7 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7968,"《货币强权：从货币读懂未来世界格局》= [美]本杰明·J.科恩(Benjamin J. Cohen)著，张琦译，中信出版社2020，ISBN 9787508679112，英文原版 Currency Power (Princeton Univ Press, 2015)。2026-09-07 查证：国内无免费直链；人大经济论坛 thread-7307308 有 epub 附件(需登录+2金币)；百度贴吧/知道有网盘求物帖(需登录)；外网(Anna's/Zlib/LibGen)无代理全部不通。",'project','书,货币强权,电子书,下载',0.5,0,0,'2026-09-07 08:56:34','2026-09-07 08:56:34');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7969,'《货币强权》(本杰明·科恩/中信2020) 已导入听书书库 (~/hermes_data/ebooks/货币强权/，74节~24.8万字)，全书读书笔记在 ~/hermes_data/货币强权_读书笔记.md（框架/脉络/结论+核心概念表）。核心：货币金字塔七层、货币实力=避免调整成本(延迟+转移两只手)、货币与国力双向因果、美元未衰减/欧元未实现/人民币触顶。数据截至2014-2015。','project','书,货币强权,读书笔记,书库',0.5,0,0,'2026-09-07 16:51:33','2026-09-07 16:51:33');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7970,'卢麒元微博/头条文章归档惯例：抓取后全文+元信息存 markdown 到 ~/hermes_data/weibo_data/articles/<标题>_<日期>.md。示例：《论体面》2026-09-07（文章ID 2309405340697300959303，财经评论：币圈/娱乐圈事件借指体面与赵礼）。','project','微博,归档,卢麒元,惯例',0.5,0,0,'2026-09-07 19:29:52','2026-09-07 19:29:52');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7971,'《如何快速了解一个行业》(肖璟，人民邮电出版社 2025-08，ISBN 9787115674934，约19.7万字) 电子书溯源（2026-09-13 实测）：kgbook 无此书；鸠摩搜书 API 空响应；Anna\'s Archive/Z-Library/LibGen/Scribd 本机网络不通；Github 可达。电子版流传渠道：pan946.com 论坛帖（夸克网盘 epub 12.3MB，需注册+回复可见）、gying.click/gyingg.com（夸克/阿里云盘 azw3+epub+mobi+pdf，VIP门槛）、Telegram @kaipanshare 打包、简书"咚旭读书"公众号渠道。sohu 流传的百度链接 s/12LrRgKao6E28il8Gu6HQRw 已失效。结论：无免登录直链；按《货币强权》先例，等用户自行下载后发文件再导入书库。','project','书,电子书,下载,如何快速了解一个行业,肖璟',0.5,0,0,'2026-09-12 17:13:06','2026-09-12 17:13:06');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9145,6 +9146,7 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1198,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1199,'以和','unknown','','2026-07-11 08:22:31');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1200,'Currency Power','unknown','','2026-09-07 08:56:34');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1201,'Princeton Univ Press','unknown','','2026-09-07 08:56:34');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1202,'咚旭读书','unknown','','2026-09-12 17:13:06');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10518,6 +10520,7 @@ INSERT INTO fact_entities VALUES(7965,1023);
 INSERT INTO fact_entities VALUES(7965,1199);
 INSERT INTO fact_entities VALUES(7968,1200);
 INSERT INTO fact_entities VALUES(7968,1201);
+INSERT INTO fact_entities VALUES(7971,1202);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,46,'2026-07-11 08:22:32');

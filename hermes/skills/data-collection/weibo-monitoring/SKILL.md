@@ -58,7 +58,7 @@ schedule: "*/5 * * * *"  # 每5分钟执行一次
 script: weibo_monitor_wrapper.py
 ```
 
-**预运行机制（2026-09 实测）**：job 每轮由框架自动预执行 wrapper，其输出注入 prompt 的 "## Script Output"（prompt 正文里的"运行微博监控脚本"命令是历史遗留，**⛔ 不要执行**（⚠️ 先读完本 skill 再动手：严禁将“读本 skill”与“执行该命令”并行批处理，2026-09-11 已十四度复现（末次 20:10；同为 skill_view 与终端命令并行批处理触发，复核 failures 0/0、consecutive_failures=0，均无影响；警告已前置至 description 头部对抗列表截断）；根治=把 job prompt 中该命令块改为提示语（【交互会话待办】须用户在场确认后经 hermes cron edit 修订；交互会话读到本行应主动向用户提议））——想"验证"也不重跑：[SILENT] 已代表框架完成了真实检查；若不慎双跑，核对 last_weibo.json 的 failures.*_fail_count 与 cron_failure_state.json（位于 ~/hermes_data/weibo_data/）的 consecutive_failures 均未累加（成功运行会将两者归零）= 无影响）。`[SILENT]` = 本轮已完成真实检查、无新微博 → 直接回复 `[SILENT]` 静默，**无需也不应再手动执行脚本**——双跑会使失败计数双倍累加，破坏"连续3次才通知"语义。新鲜度验证：`last_weibo.json` 的 `last_check` 字段（每账号最近抓取时间）。
+**预运行机制（2026-09 实测）**：job 每轮由框架自动预执行 wrapper，其输出注入 prompt 的 "## Script Output"（prompt 正文里的"运行微博监控脚本"命令是历史遗留，**⛔ 不要执行**（⚠️ 先读完本 skill 再动手：严禁将“读本 skill”与“执行该命令”并行批处理，2026-09-11 已十四度复现（末次 20:10；同为 skill_view 与终端命令并行批处理触发，复核 failures 0/0、consecutive_failures=0，均无影响；警告已前置至 description 头部对抗列表截断；2026-09-13 04:32 仍复现（同为 skill_view 与终端并行批处理触发，前置警告未能阻止；复核 failures 0/0、consecutive_failures=0，无影响））；根治=把 job prompt 中该命令块改为提示语（【交互会话待办】须用户在场确认后经 hermes cron edit 修订；交互会话读到本行应主动向用户提议））——想"验证"也不重跑：[SILENT] 已代表框架完成了真实检查；若不慎双跑，核对 last_weibo.json 的 failures.*_fail_count 与 cron_failure_state.json（位于 ~/hermes_data/weibo_data/）的 consecutive_failures 均未累加（成功运行会将两者归零）= 无影响）。`[SILENT]` = 本轮已完成真实检查、无新微博 → 直接回复 `[SILENT]` 静默，**无需也不应再手动执行脚本**——双跑会使失败计数双倍累加，破坏"连续3次才通知"语义。新鲜度验证：`last_weibo.json` 的 `last_check` 字段（每账号最近抓取时间）。核对失败计数用 read_file 直读 `last_weibo.json` 与 `cron_failure_state.json`（2026-09-13 实测：cron 模式 execute_code 被安全策略拦截不可用，只读核对一律用 read_file）。
 
 ### 监控账号（示例）
 - 卢麒元 (UID: 1245732825)
@@ -132,6 +132,8 @@ cd ~/.hermes/scripts && PYTHONPATH=. python3 \
 
 **禁止**只把表情符号原样发给用户 — 信息量为零。**禁止**对着"只有标题文字"的
 text 直接转发给用户并声称是全文——先去抓 `article_url`。
+
+**转发型交付（2026-09-13 先例，实例 5342642236031901）**：转发内容（原作者全文）较长时，以 `【转发 @原作者 原文】` 块附于 `📄 完整原文` 之后逐字呈现；较短或此前已推送的转发上下文可仅在 `📎 注` 说明。转发帖的 `long_text` 亦为权威全文，含 `网页链接` 占位符时保留原样。
 
 **回复/引用链 "…全文" 截断（2026-09-12 实测）**：回复类长帖的 `text`/`raw_text` 末尾可能出现 `…全文`，
 且 extend 的 `long_text` 会在引用链中途提前截断（实例 5342287787724344 停在"就不会自"）。补全法：

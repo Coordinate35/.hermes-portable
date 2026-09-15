@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7908
--- Exported: 2026-09-14T03:00:36.858752
+-- Facts count: 7909
+-- Exported: 2026-09-16T03:00:22.640525
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -36,7 +36,7 @@ CREATE TABLE memory_banks (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(1,'大家好，今天是2023年11月11号，双十一，癸卯年九月二十八日，今天是聊天，我们可以轻松一点儿。今天聊天的题目是“纸币过剩的经济危机”，我试一下麦，三点钟我们准时开始。','investment','file:224+纸币过剩的经济危机,para:2,imported',0.5,0,0,'2026-04-28 19:18:53','2026-04-28 19:18:53');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(1,'大家好，今天是2023年11月11号，双十一，癸卯年九月二十八日，今天是聊天，我们可以轻松一点儿。今天聊天的题目是“纸币过剩的经济危机”，我试一下麦，三点钟我们准时开始。','investment','file:224+纸币过剩的经济危机,para:2,imported',0.55,0,1,'2026-04-28 19:18:53','2026-09-14 23:12:02');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(2,'大家好，今天是2023年11月11号，双十一，癸卯年九月二十八日，今天是聊天的日子，我准备了一个专题就是货币过剩的经济危机。准备今天的聊天我其实挺纠结的。因为聊天的大部分内容都是我平时的一些札记，我有记日记和札记的习惯，日记主要是记录一些重要的时点和事情，还有重要的人，札记就是感想。','investment','file:224+纸币过剩的经济危机,para:3,imported',0.5,0,0,'2026-04-28 19:18:53','2026-04-28 19:18:53');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(3,'其中有些札记算是思考的较为成熟，也有些札记实际上并未成熟。特别是涉及到重大的理论问题，有的时候其实并没有想的很透彻，但有时候又不得不拿出来。今天就是这样一个情形，今天我们讨论“纸币过剩的经济危机”，这里边的难度非常高，但其中涉及到的核心的原理你一旦掌握了,对宏观经济形势的判断就会相当的精准。这算是我几十年慢慢积累的一点心得吧。我尝试将其中一部分抽出来给大家。','investment','file:224+纸币过剩的经济危机,para:4,imported',0.5,0,0,'2026-04-28 19:18:53','2026-04-28 19:18:53');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(4,'马克思一直将经济危机定义为生产过剩的危机或者是生产相对过剩的危机，我们是从供给端来思考问题。那么如何从需求端来思考问题呢？其实纸币过剩的危机就是试图从需求端来思考经济危机。纸币过剩必然导致需求与供给的一种不平衡，因为纸币不管通过什么方式进入流通，都会形成购买力，都会构成需求。','investment','file:224+纸币过剩的经济危机,para:5,imported',0.5,0,0,'2026-04-28 19:18:53','2026-04-28 19:18:53');
@@ -7944,6 +7944,7 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7969,'《货币强权》(本杰明·科恩/中信2020) 已导入听书书库 (~/hermes_data/ebooks/货币强权/，74节~24.8万字)，全书读书笔记在 ~/hermes_data/货币强权_读书笔记.md（框架/脉络/结论+核心概念表）。核心：货币金字塔七层、货币实力=避免调整成本(延迟+转移两只手)、货币与国力双向因果、美元未衰减/欧元未实现/人民币触顶。数据截至2014-2015。','project','书,货币强权,读书笔记,书库',0.5,0,0,'2026-09-07 16:51:33','2026-09-07 16:51:33');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7970,'卢麒元微博/头条文章归档惯例：抓取后全文+元信息存 markdown 到 ~/hermes_data/weibo_data/articles/<标题>_<日期>.md。示例：《论体面》2026-09-07（文章ID 2309405340697300959303，财经评论：币圈/娱乐圈事件借指体面与赵礼）。','project','微博,归档,卢麒元,惯例',0.5,0,0,'2026-09-07 19:29:52','2026-09-07 19:29:52');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7971,'《如何快速了解一个行业》(肖璟，人民邮电出版社 2025-08，ISBN 9787115674934，约19.7万字) 电子书溯源（2026-09-13 实测）：kgbook 无此书；鸠摩搜书 API 空响应；Anna\'s Archive/Z-Library/LibGen/Scribd 本机网络不通；Github 可达。电子版流传渠道：pan946.com 论坛帖（夸克网盘 epub 12.3MB，需注册+回复可见）、gying.click/gyingg.com（夸克/阿里云盘 azw3+epub+mobi+pdf，VIP门槛）、Telegram @kaipanshare 打包、简书"咚旭读书"公众号渠道。sohu 流传的百度链接 s/12LrRgKao6E28il8Gu6HQRw 已失效。结论：无免登录直链；按《货币强权》先例，等用户自行下载后发文件再导入书库。','project','书,电子书,下载,如何快速了解一个行业,肖璟',0.5,0,0,'2026-09-12 17:13:06','2026-09-12 17:13:06');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7972,'高标科技（广东高标智能科技）压力情景定量模型已建立：脚本 ~/hermes_data/ipos/gaobiao/scenario_model.py（基准=2025实际，可调参数 m材料涨幅/k提价传导率/fx/q量/ex费用通胀）。核心常量：材料/收入=62.0%、毛利5.04亿、净利1.82亿、有效税率12.45%。关键公式：ΔG=-(1-k)·m·12.72亿；毛利平衡 m*=39.7%/(1-k)；净利平衡 m**=16.3%/(1-k)（仅毛利渠道）。S1温和(油150-200)→净利-71%；S2压力(油200-250)→亏1.56亿；S3恶性(油250-300)→亏3.97亿；k修复到0.8≈打平。招股书: 申报稿2026-06受理，报告期2023-2025。','project','高标科技,情景模型,油价格局,制造业压力测试',0.5,0,0,'2026-09-15 17:24:40','2026-09-15 17:24:40');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');

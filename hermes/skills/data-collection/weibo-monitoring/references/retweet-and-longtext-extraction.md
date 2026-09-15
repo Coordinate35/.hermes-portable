@@ -34,10 +34,10 @@ cd ~/.hermes/scripts && PYTHONPATH=. python3 \
 | 用途 | URL | 来源字段 |
 |:---|:---|:---|
 | 用户时间线 | `https://m.weibo.cn/api/container/getIndex?uid={uid}&type=uid&value={uid}&containerid=107603{uid}` | 已被 `weibo_monitor.fetch_weibo` 使用 |
-| 单条详情 | `https://m.weibo.cn/statuses/show?id={mid}` | **会被反爬返回空** — 别依赖 |
-| 长文全文 | `https://m.weibo.cn/statuses/extend?id={mid}` | **⚠️ 2026-07 实测：已返回 HTML（Sina Visitor System）而非 JSON，`fetch_long()` 会失败。** 若仍返回 JSON，格式为 `{data: {longTextContent: "..."}}` |
+| 单条详情 | `https://m.weibo.cn/statuses/show?id={mid}` | 2026-09-15 实测可用（须带 `X-Requested-With: XMLHttpRequest` + `Referer: https://m.weibo.cn/detail/{mid}`）→ `data.text` / `data.raw_text`，**含表情权威源**；2026-07 曾反爬返空，失败勿纠缠 |
+| 长文全文 | `https://m.weibo.cn/statuses/extend?id={mid}` | 2026-09-15 亦可用：`{data: {longTextContent: "..."}}`；⚠️ 会剥表情、可能在引用链中途提前截断 |
 
-只用时间线 + extend 两个端点；`/statuses/show` 实测在当前 cookie 下返回 0 字节，不要浪费 token 重试。
+端点可用性以实测为准：show / extend 失败时回退时间线 + `https://weibo.com/ajax/statuses/longtext?id={mid}`（Referer 用 weibo.com）交叉核验，勿对单一端点反复重试。
 
 ## mblog 对象关键字段
 
@@ -71,7 +71,7 @@ user.screen_name      # 原作者昵称
 ## 反例（不要这么做）
 
 - ❌ 只发 `[祈祷]` 给用户 — 信息量为零，用户不知道在祈祷什么
-- ❌ 调 `https://m.weibo.cn/statuses/show?id=` 试图救场 — 返回空字节
+- ❌ 裸露调用 show 端点（不带 `X-Requested-With` / `Referer` headers）试图救场 — 易被反爬返空；正确用法见「关键 API 端点」
 - ❌ 用 `curl ... | python3 -c "..."` 解析 — 触发 tirith 安全扫描拦截，必须 `-o file` 再读
 
 ## 图片长图正文提取（正文在配图里，2026-08 实战验证）

@@ -52,6 +52,7 @@ category: media
 
 cron/无人值守下，TTS 命令链里写 `rm -f /tmp/weibo_voice.wav` 会触发安全扫描审批
 （pattern: `delete in root path`），cron 无人可批准 → 命令**挂起、根本不执行**。
+（2026-09-16 补充：交互式 QQ Bot 会话同样会挂起——用户看不到审批框、无法实时批准；**任何场景都不要在 terminal 命令里写 `rm`** 清理临时文件，改用新输出文件名前缀。）
 正确做法：
 - 不要预清理：`curl -o` / MeloTTS / edge-tts 均直接覆盖同一输出路径，无需先删旧文件；
 - 防"旧文件残留被误判为本次成功"：运行前后各跑一次 `stat -c '%y %s' 输出路径`，

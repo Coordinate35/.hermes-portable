@@ -6,7 +6,7 @@ User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC 
 §
 架构分层原则：监控/数据采集脚本只做单一职责（如 weibo_monitor.py 只输出文字），不要在脚本里耦合下游处理逻辑（如 TTS 生成）。降级策略、消息格式化、推送渠道等应在 agent 层（cronjob prompt）处理，保持脚本的可复用性和降级灵活性。
 §
-语音/TTS 全部细节见 skill voice-message-delivery。QQ Bot 渠道：短句语音是默认输出方式，文字是例外（仅长文/复杂结构时用）。认知翻转：不是"要不要加语音"，而是"要不要加文字"。每条回复先判断是否 QQ Bot 短句，是则默认走语音，文字只做补充。
+语音/TTS 全部细节见 skill voice-message-delivery。QQ 发文档默认 PDF（.md 手机端打不开，2026-09 实测）。
 §
 交付铁律：(1) 自报告前先读文件确认全貌，不可只描述新增。(2) 重复任务须封装成 skill，触发条件枚举完整自然口语变体。(3) SOUL.md 和所有 skill 触发条件一律平等，命中即执行，禁止自行排优先级或区分"必做/可做"。QQ Bot 短句默认走语音（见 voice-message-delivery skill），文字仅补充。
 §

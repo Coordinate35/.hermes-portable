@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7909
--- Exported: 2026-09-16T03:00:22.640525
+-- Facts count: 7911
+-- Exported: 2026-09-17T03:00:55.153882
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7944,7 +7944,9 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7969,'《货币强权》(本杰明·科恩/中信2020) 已导入听书书库 (~/hermes_data/ebooks/货币强权/，74节~24.8万字)，全书读书笔记在 ~/hermes_data/货币强权_读书笔记.md（框架/脉络/结论+核心概念表）。核心：货币金字塔七层、货币实力=避免调整成本(延迟+转移两只手)、货币与国力双向因果、美元未衰减/欧元未实现/人民币触顶。数据截至2014-2015。','project','书,货币强权,读书笔记,书库',0.5,0,0,'2026-09-07 16:51:33','2026-09-07 16:51:33');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7970,'卢麒元微博/头条文章归档惯例：抓取后全文+元信息存 markdown 到 ~/hermes_data/weibo_data/articles/<标题>_<日期>.md。示例：《论体面》2026-09-07（文章ID 2309405340697300959303，财经评论：币圈/娱乐圈事件借指体面与赵礼）。','project','微博,归档,卢麒元,惯例',0.5,0,0,'2026-09-07 19:29:52','2026-09-07 19:29:52');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7971,'《如何快速了解一个行业》(肖璟，人民邮电出版社 2025-08，ISBN 9787115674934，约19.7万字) 电子书溯源（2026-09-13 实测）：kgbook 无此书；鸠摩搜书 API 空响应；Anna\'s Archive/Z-Library/LibGen/Scribd 本机网络不通；Github 可达。电子版流传渠道：pan946.com 论坛帖（夸克网盘 epub 12.3MB，需注册+回复可见）、gying.click/gyingg.com（夸克/阿里云盘 azw3+epub+mobi+pdf，VIP门槛）、Telegram @kaipanshare 打包、简书"咚旭读书"公众号渠道。sohu 流传的百度链接 s/12LrRgKao6E28il8Gu6HQRw 已失效。结论：无免登录直链；按《货币强权》先例，等用户自行下载后发文件再导入书库。','project','书,电子书,下载,如何快速了解一个行业,肖璟',0.5,0,0,'2026-09-12 17:13:06','2026-09-12 17:13:06');
-INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7972,'高标科技（广东高标智能科技）压力情景定量模型已建立：脚本 ~/hermes_data/ipos/gaobiao/scenario_model.py（基准=2025实际，可调参数 m材料涨幅/k提价传导率/fx/q量/ex费用通胀）。核心常量：材料/收入=62.0%、毛利5.04亿、净利1.82亿、有效税率12.45%。关键公式：ΔG=-(1-k)·m·12.72亿；毛利平衡 m*=39.7%/(1-k)；净利平衡 m**=16.3%/(1-k)（仅毛利渠道）。S1温和(油150-200)→净利-71%；S2压力(油200-250)→亏1.56亿；S3恶性(油250-300)→亏3.97亿；k修复到0.8≈打平。招股书: 申报稿2026-06受理，报告期2023-2025。','project','高标科技,情景模型,油价格局,制造业压力测试',0.5,0,0,'2026-09-15 17:24:40','2026-09-15 17:24:40');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7972,'高标科技压力情景模型 v2（2026-09-16 修订，S3 汇率改为升 30%≈1:5）：脚本 ~/hermes_data/ipos/gaobiao/scenario_model.py（参数 m/k/汇率/量/费用可调）。核心：材料/收入=62.0%、毛利5.04亿、净利1.82亿、有效税率12.45%；ΔG=-(1-k)·m·12.72亿；m*=39.7%/(1-k)、m**=16.3%/(1-k)。情景：S1温和→0.52亿(-71%)、S2压力→-1.56亿、S3恶性→-4.19亿；S2打平 k*≈0.81、S3 k*≈0.99；汇率每多升10pp≈-0.15亿。招股书申报稿2026-06受理、报告期2023-2025。','project','高标科技,情景模型,油价格局,制造业压力测试',0.5,0,0,'2026-09-15 17:24:40','2026-09-16 04:25:15');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7973,'高标科技压力测试报告 v2（2026-09-16 修订版）已交付：~/hermes_data/ipos/gaobiao/高标科技压力测试报告_20260916_v2.pdf（2页）+ 同名 .md 底稿；v1 同目录保留。修订点：极端情景汇率→升30%（对美元约1:5，锚：现汇≈6.7、2025中枢≈7.2）；补"未含订单增长预期"边界；build_report.py 重算生成。','project','高标科技,压力测试报告,PDF,交付',0.5,0,0,'2026-09-16 03:17:12','2026-09-16 04:25:15');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7974,'文章下载存档（非卢麒元类）存于 ~/hermes_data/articles/；md→PDF 转换脚本 build_article_pdf.py 同目录（reportlab + rl-venv，支持正文嵌图、标题防孤行）。首个存档：潘功胜《深刻认识中国金融结构变迁 提升金融服务实体经济适配性》，《求是》2026年第18期（求是网 2026-09-16 发布），原文链接 https://www.qstheory.cn/20260915/1c41fc49b4b44db4b2550ddd41f40315/c.html；含两张正文配图（images/ 子目录），最终 PDF 4 页带图版已交付 QQ。','general','存档,文章,求是,潘功胜,articles目录',0.5,0,0,'2026-09-16 10:41:21','2026-09-16 17:27:55');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9148,6 +9150,7 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1199,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1200,'Currency Power','unknown','','2026-09-07 08:56:34');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1201,'Princeton Univ Press','unknown','','2026-09-07 08:56:34');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1202,'咚旭读书','unknown','','2026-09-12 17:13:06');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1203,'未含订单增长预期','unknown','','2026-09-16 04:25:15');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10522,6 +10525,7 @@ INSERT INTO fact_entities VALUES(7965,1199);
 INSERT INTO fact_entities VALUES(7968,1200);
 INSERT INTO fact_entities VALUES(7968,1201);
 INSERT INTO fact_entities VALUES(7971,1202);
+INSERT INTO fact_entities VALUES(7973,1203);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,46,'2026-07-11 08:22:32');

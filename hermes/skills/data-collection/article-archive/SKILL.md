@@ -24,6 +24,10 @@ metadata:
 2. **获取全文**：
    - 图片截图 → `vision_analyze`，提示词明确要求"完整、逐字读出全部文字内容，不要概括"；一次没读全就追问"继续"或分块。
    - 网页/链接 → 抓取正文；网络抓取失败的会话里可直接用图片转录。
+     - 官方站点文章（求是网/政府站等，2026-09 首用）：`curl -sSL -o /tmp/page.html "<URL>"` 抓 HTML → Python stdlib 正则剥 script/style 后按标签转行 → 按正文起止标记切片，全文照录（不概括）→ md 加元信息头（作者/来源/发布日期/原文链接）。此法不依赖 web_extract/browser（二者都可能临时故障）。
+     - 非卢麒元的通用文章存 `~/hermes_data/articles/<作者>_<标题>_<来源>_<日期>.md`；页面图注保留并标 `［图注］` 前缀。
+     - **交付到 QQ 默认转 PDF**（手机端打不开 .md）：`~/hermes_data/rl-venv/bin/python ~/hermes_data/articles/build_article_pdf.py "<文章.md>"` → 同目录同名 .pdf（reportlab + wqy 字体，含章节标题 KeepTogether 防孤行，均已实测）；校验链：pdfinfo 页数 + pdftotext 关键句 + pdftoppm→vision 抽页。
+     - **正文配图一并补齐**（2026-09-16 实测）：从源页 HTML 提取 `<img>` 真实地址（排除导航/二维码图标）→ curl 存 `images/` → md 在 `［图注］` 行前加 `![图](images/...)` → PDF 脚本自动嵌图（12cm 宽居中 + 图注紧随，KeepTogether）。图注在 md 里保留 `［图注］` 前缀；压缩版面时图片收宽是防"尾页孤行"的主杠杆。
 3. **写 markdown**（模板，对齐已有文件的元信息格式）：
 
    ```markdown

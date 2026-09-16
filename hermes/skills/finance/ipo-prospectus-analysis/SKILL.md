@@ -76,6 +76,20 @@ grep -n "第[一二三四五六七八九十]节" 招股说明书.txt | head -40
 - 沉淀可重跑脚本：`~/hermes_data/ipos/<公司简称>/scenario_model.py`（纯 python 无依赖，假设参数可调）
 - 输出必须展开过程（公式→代入→中间→结果→判断）+ 假设与数据分离声明 + 观测锚
 
+## 七、报告文件交付（PDF 管线，2026-09 验证）
+
+用户说“整理成报告文件发我”时按此管线（高标案例已跑通）：
+
+1. 生成器：`~/hermes_data/ipos/<简称>/build_report.py` — 单一数据源 blocks（模型常量重算），同时产出 .md + .pdf；`--md-only` 为无 reportlab 兜底。
+2. reportlab 环境：`~/hermes_data/rl-venv`（`uv venv` + `uv pip install reportlab`；PyPI 直连通，清华/阿里镜像备选）。解释器探测顺序：rl-venv → python3 → /usr/bin/python3。
+3. 字体坑（关键）：
+   - Noto CJK ttc/otf 为 CFF 轮廓 → reportlab 报 "postscript outlines are not supported"，**不可用**；选 **wqy-zenhei.ttc**（TrueType 轮廓）。
+   - wqy 缺 '•' → 项目符号动态探测（'•·▪◦▸' 取首个有字形者，实测 '·'）。
+   - 注册字体后做全文缺字扫描（全部 blocks 字符 vs `charToGlyph`），零缺字再构建。
+4. 验证链：`pdftotext` 抽文本（证明文字层）+ `pdftoppm` 转 PNG → vision 检查版面（防方框/溢出）。重复渲染/清理不要用 `rm`（QQ 渠道删除类命令触发审批挂起），用新文件名前缀替代。
+5. QQ 交付：回复内嵌 `MEDIA:<绝对路径>`，文件名带日期；可附一句摘要（文档类可与文字同条消息，音频类才必须独占整条）。
+6. 一致性细节：算式串联统一用显示舍入值（如 5.72），避免 "+2.86-5.73=-2.86" 类显示不自洽；页脚带页码+日期。
+
 ## 案例
 
 高标科技（广东高标智能科技，创业板，2026-06 受理，425页申报稿）完整过程见 `references/gaobiao-case-2026.md`；2026-09 追加宏观情景压力测试（五链条模型 + 双阈值公式 + 可重跑脚本）。

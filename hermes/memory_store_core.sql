@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7911
--- Exported: 2026-09-17T03:00:55.153882
+-- Facts count: 7913
+-- Exported: 2026-09-18T03:00:30.403033
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7947,6 +7947,8 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7972,'高标科技压力情景模型 v2（2026-09-16 修订，S3 汇率改为升 30%≈1:5）：脚本 ~/hermes_data/ipos/gaobiao/scenario_model.py（参数 m/k/汇率/量/费用可调）。核心：材料/收入=62.0%、毛利5.04亿、净利1.82亿、有效税率12.45%；ΔG=-(1-k)·m·12.72亿；m*=39.7%/(1-k)、m**=16.3%/(1-k)。情景：S1温和→0.52亿(-71%)、S2压力→-1.56亿、S3恶性→-4.19亿；S2打平 k*≈0.81、S3 k*≈0.99；汇率每多升10pp≈-0.15亿。招股书申报稿2026-06受理、报告期2023-2025。','project','高标科技,情景模型,油价格局,制造业压力测试',0.5,0,0,'2026-09-15 17:24:40','2026-09-16 04:25:15');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7973,'高标科技压力测试报告 v2（2026-09-16 修订版）已交付：~/hermes_data/ipos/gaobiao/高标科技压力测试报告_20260916_v2.pdf（2页）+ 同名 .md 底稿；v1 同目录保留。修订点：极端情景汇率→升30%（对美元约1:5，锚：现汇≈6.7、2025中枢≈7.2）；补"未含订单增长预期"边界；build_report.py 重算生成。','project','高标科技,压力测试报告,PDF,交付',0.5,0,0,'2026-09-16 03:17:12','2026-09-16 04:25:15');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7974,'文章下载存档（非卢麒元类）存于 ~/hermes_data/articles/；md→PDF 转换脚本 build_article_pdf.py 同目录（reportlab + rl-venv，支持正文嵌图、标题防孤行）。首个存档：潘功胜《深刻认识中国金融结构变迁 提升金融服务实体经济适配性》，《求是》2026年第18期（求是网 2026-09-16 发布），原文链接 https://www.qstheory.cn/20260915/1c41fc49b4b44db4b2550ddd41f40315/c.html；含两张正文配图（images/ 子目录），最终 PDF 4 页带图版已交付 QQ。','general','存档,文章,求是,潘功胜,articles目录',0.5,0,0,'2026-09-16 10:41:21','2026-09-16 17:27:55');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7975,'browser_exec 报 chrome-not-running → 用 skill browser-exec-recovery 恢复。QQ 交互场景禁复合 terminal 命令（写 ~/.config、外网 curl 管道→安全审批挂起弹不出批准框）。','general','',0.5,0,0,'2026-09-17 09:41:45','2026-09-17 09:41:45');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7976,'2026-09-17 月之暗面发布「Kimi 金融行业 AI 解决方案」：10+权威数据源、9项金融技能（机构财务建模/研究报告/PPT/金融动态图表/业绩点评/一致预期地图/组合复盘/持仓早报/HK IPO透镜）、5项合规措施（风险评估网关）。数据源非全免费：万得/S&P/iFinD/财新/聚源/天眼查等多为商业付费源（万得基础终端3.98万/年、iFinD 1.4万/年、Choice 1.8万/年），Kimi 以会员套餐打包（49/99/199/699元/月，专业数据库调用 1000/2000/5000/12000次/月），免费公开源仅 IMF/世行/SEC 等少数。中信建投试点：单份报告30→10分钟(-67%)。材料存 ~/hermes_data/kimi_finance_solution/。','general','kimi,moonshot,金融,AI解决方案,材料',0.5,0,0,'2026-09-17 09:41:52','2026-09-17 09:46:58');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');

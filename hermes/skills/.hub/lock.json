@@ -140,6 +140,26 @@
       },
       "installed_at": "2026-06-05T11:27:49.584286+00:00",
       "updated_at": "2026-06-05T11:27:49.584286+00:00"
+    },
+    "excalidraw": {
+      "source": "official",
+      "identifier": "official/creative/excalidraw",
+      "trust_level": "builtin",
+      "scan_verdict": "backfilled",
+      "content_hash": "sha256:359112274e8262e0",
+      "install_path": "creative/excalidraw",
+      "files": [
+        "SKILL.md",
+        "references/colors.md",
+        "references/dark-mode.md",
+        "references/examples.md",
+        "scripts/upload.py"
+      ],
+      "metadata": {
+        "backfilled_from": "optional-skills"
+      },
+      "installed_at": "2026-09-21T11:18:53.340368+00:00",
+      "updated_at": "2026-09-21T11:18:53.340368+00:00"
     }
   }
 }

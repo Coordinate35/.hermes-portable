@@ -221,6 +221,13 @@ cronjob create "日本财务省外汇干预监控" \
   --command "cd /home/coordinate35/hermes_data && python3 japan_mof_intervention_monitor.py"
 ```
 
+### Cron 运行协议（2026-09-21 实测）
+
+- 实际 job：`00886657f0c4`，schedule `0 9 * * *`，deliver=weixin，`script=null` → **无框架预运行**，prompt 中的命令由 agent 亲手执行（脚本幂等：hash 未变时仅重复写日志，无双跑副作用）。
+- **无更新 → 严格静默**：脚本只输出日志行（`✅ 数据未变化，无新干预记录`）、不打印报告；agent 应回复**恰好 `[SILENT]`**（不得附加任何说明文字）。
+- **有更新 → 交付完整报告**：hash 变化时脚本打印报告（新增记录＋最近20次历史＋统计汇总）；先读 `report_*.txt`、`latest_intervention.json` 核对全貌，再作为回复交付。
+- 边角情形：hash 变化但无新增记录时，输出 `ℹ️ 数据文件有变化，但未发现新的干预操作`，仍打印完整报告——照常交付并注明该情形。
+
 ## 常见问题与解决
 
 ### 问题1: 网络访问超时

@@ -1,0 +1,168 @@
+{
+  "jobs": [
+    {
+      "id": "a27ae1b5f602",
+      "name": "微博监控-卢麒元及正心以中",
+      "prompt": "运行微博监控脚本：\n```\ncd /home/coordinate35/.hermes/scripts && python3 weibo_monitor_wrapper.py\n```\n\n**核心规则：**\n1. 脚本输出为空或 [SILENT] → 无新微博，**什么都不要回复，直接结束**（保持完全沉默）\n2. 脚本输出包含 \"🚀 微博监控\" → 有新微博，继续处理\n3. 对新微博内容做简短总结，但必须附上完整原文\n\n**语音播报降级策略（三级，必须按顺序尝试）：**\n\n**第1级【必须先试】**：Windows 宿主机 TTS（GPT-SoVITS）\n```bash\nbash /home/coordinate35/.hermes/scripts/win_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n**成功判定**：命令 exit code = 0（脚本内部已校验 HTTP=200 且文件 >10KB，无需手动判断）\n**失败处理**：exit code ≠ 0 时降级到第 2 级。脚本会把失败原因打到 stderr，可读取参考但不要继续重试第 1 级。\n\n**第2级【仅当第1级失败才用】**：Linux 本地 MeloTTS\n```bash\ncd /home/coordinate35/hermes_data/melotts && bash melo_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n\n**第3级【仅当前两级都失败】**：Hermes text_to_speech 工具\n\n**必须遵守：**\n- 不要跳过第1级直接用其他方式\n- 每次必须从第1级开始尝试\n- 不要用 curl 或任何直接访问 192.168.56.1 的命令（会被安全扫描拦截），只能通过上面的脚本封装\n- 在回复中**明确写明实际使用了哪一级 TTS**，格式如：\n  - `🎙️ 语音由 Windows TTS 生成（第1级）`\n  - `🎙️ 语音由 MeloTTS 生成（第2级降级）`\n  - `🎙️ 语音由 edge TTS 生成（第3级降级）`\n- 语音文件路径附在回复末尾：`MEDIA:/tmp/weibo_voice.wav`\n- MEDIA: 标记必须原样保留\n- 语音全部失败则只发文字，标注\"⚠️ 语音生成失败\"",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "weibo_monitor_wrapper.py",
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/5 * * * *",
+        "display": "*/5 * * * *"
+      },
+      "schedule_display": "*/5 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 42384
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-23T22:13:23.829000+08:00",
+      "next_run_at": "2026-09-21T05:15:00+08:00",
+      "last_run_at": "2026-09-21T05:10:54.597528+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "qqbot",
+      "origin": {
+        "platform": "weixin",
+        "chat_id": "o9cq80zlp1gh6r8qlnGi43nJ7yio@im.wechat",
+        "chat_name": null,
+        "thread_id": null
+      },
+      "fire_claim": null,
+      "failure_streak": 0
+    },
+    {
+      "id": "00886657f0c4",
+      "name": "日本财务省外汇干预监控",
+      "prompt": "运行以下命令，监控日本财务省外汇干预数据更新：\n\n```bash\ncd /home/coordinate35/hermes_data && python3 japan_mof_intervention_monitor.py\n```\n\n如果有新数据，脚本会输出详细报告。请把脚本的完整输出作为回复内容返回给用户。",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "0 9 * * *"
+      },
+      "schedule_display": "0 9 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 137
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-06T15:57:21.159620+08:00",
+      "next_run_at": "2026-09-21T09:00:00+08:00",
+      "last_run_at": "2026-09-20T09:01:41.094518+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "weixin",
+      "origin": {
+        "platform": "weixin",
+        "chat_id": "o9cq80zlp1gh6r8qlnGi43nJ7yio@im.wechat",
+        "chat_name": null,
+        "thread_id": null
+      },
+      "fire_claim": null,
+      "failure_streak": 0
+    },
+    {
+      "id": "e2c8e830bc70",
+      "name": "Hermes Agent 每日 GitHub 备份",
+      "prompt": "每天自动备份 Hermes Agent 的完整配置到 GitHub。\n\n执行以下命令：\n```bash\ncd /home/coordinate35/.hermes-portable && bash export.sh\n```\n\n如果推送失败，输出错误信息。如果成功，输出提交的 commit hash 和时间。\n\n注意：\n1. export.sh 会自动处理所有备份逻辑（导出配置、脱敏、SQL dump、Git 提交推送）\n2. 如果没有配置远程仓库远程仓库，只会提交到本地，不会推送\n3. 如果当天无变更，会跳过提交",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "display": "0 3 * * *"
+      },
+      "schedule_display": "0 3 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 131
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-13T21:13:51.558118+08:00",
+      "next_run_at": "2026-09-22T03:00:00+08:00",
+      "last_run_at": "2026-09-21T03:01:23.373088+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null,
+      "failure_streak": 0
+    },
+    {
+      "id": "6853f2d89079",
+      "name": "tts-audio-cleanup",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "tts_audio_cleanup.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "display": "0 3 * * *"
+      },
+      "schedule_display": "0 3 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 122
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-22T20:39:58.023143+08:00",
+      "next_run_at": "2026-09-22T03:00:00+08:00",
+      "last_run_at": "2026-09-21T03:00:05.890240+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "qqbot",
+        "chat_id": "4E42EA828928C02FC47FEB6334392F69",
+        "chat_name": null,
+        "thread_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null,
+      "failure_streak": 0
+    }
+  ],
+  "updated_at": "2026-09-21T05:10:54.598166+08:00"
+}

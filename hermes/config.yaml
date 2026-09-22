@@ -450,7 +450,9 @@ plugins:
     db_path: ~/.hermes/memory_store.db
     default_trust: '0.5'
     hrr_dim: '4096'
-  enabled: []
+  enabled:
+    - disk-cleanup
+  disabled: []
 hooks_auto_accept: false
 security:
   allow_private_urls: false

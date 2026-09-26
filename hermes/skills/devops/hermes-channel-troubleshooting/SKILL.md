@@ -1,6 +1,6 @@
 ---
 name: hermes-channel-troubleshooting
-description: "Use when 消息通道异常/不回消息. 先查通道→LLM API→会话，常见根因是内容风控污染会话。"
+description: "Use when 消息通道异常/不回消息/用户说“你报错了”. 先查通道→LLM API→投递正文，常见根因是内容风控污染会话或投递自带框架警示。"
 version: 1.0.0
 author: Hermes Agent
 license: MIT
@@ -14,6 +14,8 @@ metadata:
 ## When to Use
 
 触发条件：用户报告某个平台/频道"聊天异常、发消息没反应、回复很慢、机器人不回话"等。
+
+**同类触发**：用户说“你报错了”/指出收到的消息正文带“报错”警示字样（如 `⚠️ File-mutation verifier ... FAILED`）——多数不是通道故障，先走下文「变体」节。
 
 ## 核心原则
 
@@ -42,6 +44,17 @@ metadata:
    - 删除：`hermes sessions delete --yes <id>`（`--user <qq_id>` 的 archive 会命中全部历史会话，尽量按单个 session_id 精确操作）。
    - 验证：`hermes sessions list --chat-id <chat_id>` 确认旧会话消失；通知用户下一条消息会自动新建干净会话。
    - 若同会话再次触发：换模型（如 deepseek-v4-pro）可绕开该风控词表。
+
+## 变体：用户说「你报错了」——消息正文里的框架警示
+
+用户看到的“报错”可能就在**被投递的消息正文**里（尤其 cron 推送），不是通道故障。典型：响应末尾带 `⚠️ File-mutation verifier: N file edit(s) FAILED ...`——本轮有文件写入失败时框架自动附加（防“口头声称成功”），随投递对用户可见。
+
+1. **取到用户收到的那条消息的完整正文**：
+   - cron 投递：`ls -t ~/.hermes/cron/output/<job_id>/*.md`，各份的 `## Response` 段即投递原文（每 job 仅留最近约 50 份，更早用 session_search 搜关键文本找回）。
+   - 投递记录：`grep -a "delivered to" ~/.hermes/logs/agent.log`（cron.scheduler 行含 message_id）；媒体送达看 gateway.log 的 `chunked_upload ... completing` 行。
+2. **扫历史投递的异常字样（只扫 Response 段）**：`sed -n '/## Response/,$p' <file>.md | grep -c "File-mutation\|⚠️\|FAIL"`。**不要整文件扫**——prompt 模板自带“失败处理/降级”字样，会全员误报。
+3. **查写入失败根因**：`grep -a "Refusing to overwrite" ~/.hermes/logs/errors.log`——`write_file` 拒绝覆盖“本任务未读过全文”的已存在文件；cron 每轮新会话复用上轮遗留的固定文件名（如 scratch 中的验证脚本）即触发。
+4. **判定影响并答复**：该警示只说明“有文件未落盘”，**不等于投递失败**——用 message_id / 上传完成记录单独核实投递；成功则答复用户“样式像报错、实际无影响”，并给出源头修复：辅助脚本一律用**带时间戳/轮次后缀的唯一文件名**（避免撞上轮遗留同名文件；确需覆盖先 `read_file`）。
 
 ## Pitfalls
 

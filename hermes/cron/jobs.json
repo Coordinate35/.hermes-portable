@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 44052
+        "completed": 44340
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-09-27T03:05:00+08:00",
-      "last_run_at": "2026-09-27T02:57:25.902830+08:00",
+      "next_run_at": "2026-09-28T03:05:00+08:00",
+      "last_run_at": "2026-09-28T03:01:55.916442+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -37,14 +37,11 @@
         "chat_name": null,
         "thread_id": null
       },
-      "fire_claim": {
-        "at": "2026-09-27T03:00:42.799515+08:00",
-        "by": "coordinate35-VirtualBox:1468:4ad06ef55a6b478a86ee7cc2ea20bd72"
-      },
+      "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-27T03:00:00+08:00",
-        "dispatched_at": "2026-09-27T03:00:42.503941+08:00",
+        "scheduled_at": "2026-09-28T03:00:00+08:00",
+        "dispatched_at": "2026-09-28T03:00:42.500491+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
@@ -67,18 +64,18 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 143
+        "completed": 144
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-09-27T09:00:00+08:00",
-      "last_run_at": "2026-09-26T09:00:48.142640+08:00",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: Insufficient Balance (request_id: 77bd5afa-83fa-4a0e-883f-bbe4b2af7237)",
-      "last_delivery_error": "live adapter send failed: iLink sendmessage session not ready: ret=-2 errcode=None errmsg=prepare failed — the user must send the bot a message first (or re-pair); live adapter delivery to weixin:o9cq80zlp1gh6r8qlnGi43nJ7yio@im.wechat failed: iLink sendmessage session not ready: ret=-2 errcode=None errmsg=prepare failed — the user must send the bot a message first (or re-pair); delivery error: Weixin send failed: iLink sendmessage session not ready: ret=-2 errcode=None errmsg=prepare failed — the user must send the bot a message first (or re-pair) (target weixin:o9cq80zlp1gh6r8qlnGi43nJ7yio@im.wechat)",
+      "next_run_at": "2026-09-28T09:00:00+08:00",
+      "last_run_at": "2026-09-27T09:01:10.395257+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
       "deliver": "weixin",
       "origin": {
         "platform": "weixin",
@@ -87,10 +84,10 @@
         "thread_id": null
       },
       "fire_claim": null,
-      "failure_streak": 1,
+      "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-26T09:00:00+08:00",
-        "dispatched_at": "2026-09-26T09:00:42.503741+08:00",
+        "scheduled_at": "2026-09-27T09:00:00+08:00",
+        "dispatched_at": "2026-09-27T09:00:42.516951+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
@@ -115,30 +112,30 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 136
+        "completed": 137
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-09-28T03:00:00+08:00",
-      "last_run_at": "2026-09-26T03:00:45.338075+08:00",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: Insufficient Balance (request_id: 706bb545-d577-4cf1-9e05-ef7b443b6912)",
+      "next_run_at": "2026-09-29T03:00:00+08:00",
+      "last_run_at": "2026-09-27T03:02:52.298469+08:00",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "local",
       "origin": null,
       "enabled_toolsets": null,
       "workdir": null,
       "fire_claim": {
-        "at": "2026-09-27T03:00:42.795745+08:00",
-        "by": "coordinate35-VirtualBox:1468:38905c3cae704c0bbf136ad0b9bc36c3"
+        "at": "2026-09-28T03:01:42.814759+08:00",
+        "by": "coordinate35-VirtualBox:1468:41c815981e324e298f8e815c07364b9e"
       },
-      "failure_streak": 1,
+      "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-27T03:00:00+08:00",
-        "dispatched_at": "2026-09-27T03:00:42.503941+08:00",
+        "scheduled_at": "2026-09-28T03:00:00+08:00",
+        "dispatched_at": "2026-09-28T03:00:42.500491+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
@@ -163,15 +160,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 128
+        "completed": 129
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-09-28T03:00:00+08:00",
-      "last_run_at": "2026-09-27T03:00:42.872969+08:00",
+      "next_run_at": "2026-09-29T03:00:00+08:00",
+      "last_run_at": "2026-09-28T03:00:42.956408+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -187,8 +184,8 @@
       "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-27T03:00:00+08:00",
-        "dispatched_at": "2026-09-27T03:00:42.503941+08:00",
+        "scheduled_at": "2026-09-28T03:00:00+08:00",
+        "dispatched_at": "2026-09-28T03:00:42.500491+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
@@ -402,5 +399,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-27T03:00:42.885641+08:00"
+  "updated_at": "2026-09-28T03:01:55.929109+08:00"
 }

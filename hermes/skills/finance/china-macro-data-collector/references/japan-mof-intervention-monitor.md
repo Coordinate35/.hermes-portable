@@ -227,6 +227,7 @@ cronjob create "日本财务省外汇干预监控" \
 - **无更新 → 严格静默**：脚本只输出日志行（`✅ 数据未变化，无新干预记录`）、不打印报告；agent 应回复**恰好 `[SILENT]`**（不得附加任何说明文字）。
 - **有更新 → 交付完整报告**：hash 变化时脚本打印报告（新增记录＋最近20次历史＋统计汇总）；先读 `report_*.txt`、`latest_intervention.json` 核对全貌，再作为回复交付。
 - 边角情形：hash 变化但无新增记录时，输出 `ℹ️ 数据文件有变化，但未发现新的干预操作`，仍打印完整报告——照常交付并注明该情形。
+- **漏跑排查**：`monitor.log` 某日无条目，多为 agent 层 LLM 调用失败（超时 / 402 余额不足等），非脚本故障；检测不丢数据（hash 追齐，下次成功运行自动补齐）。线索：`~/.hermes/cron/output/00886657f0c4/` 标 `(FAILED)` 的当日输出、`sessions/request_dump_cron_00886657f0c4_*`、`cron/executions.db`（sqlite3 CLI 未装，用 python3 sqlite3 模块查 `cron_incidents` / `executions` 表）。
 
 ## 常见问题与解决
 

@@ -3,7 +3,7 @@
     {
       "id": "a27ae1b5f602",
       "name": "微博监控-卢麒元及正心以中",
-      "prompt": "运行微博监控脚本：\n```\ncd /home/coordinate35/.hermes/scripts && python3 weibo_monitor_wrapper.py\n```\n\n**核心规则：**\n1. 脚本输出为空或 [SILENT] → 无新微博，**什么都不要回复，直接结束**（保持完全沉默）\n2. 脚本输出包含 \"🚀 微博监控\" → 有新微博，继续处理\n3. 对新微博内容做简短总结，但必须附上完整原文\n\n**语音播报降级策略（三级，必须按顺序尝试）：**\n\n**第1级【必须先试】**：Windows 宿主机 TTS（GPT-SoVITS）\n```bash\nbash /home/coordinate35/.hermes/scripts/win_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n**成功判定**：命令 exit code = 0（脚本内部已校验 HTTP=200 且文件 >10KB，无需手动判断）\n**失败处理**：exit code ≠ 0 时降级到第 2 级。脚本会把失败原因打到 stderr，可读取参考但不要继续重试第 1 级。\n\n**第2级【仅当第1级失败才用】**：Linux 本地 MeloTTS\n```bash\ncd /home/coordinate35/hermes_data/melotts && bash melo_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n\n**第3级【仅当前两级都失败】**：Hermes text_to_speech 工具\n\n**必须遵守：**\n- 不要跳过第1级直接用其他方式\n- 每次必须从第1级开始尝试\n- 不要用 curl 或任何直接访问 192.168.56.1 的命令（会被安全扫描拦截），只能通过上面的脚本封装\n- 在回复中**明确写明实际使用了哪一级 TTS**，格式如：\n  - `🎙️ 语音由 Windows TTS 生成（第1级）`\n  - `🎙️ 语音由 MeloTTS 生成（第2级降级）`\n  - `🎙️ 语音由 edge TTS 生成（第3级降级）`\n- 语音文件路径附在回复末尾：`MEDIA:/tmp/weibo_voice.wav`\n- MEDIA: 标记必须原样保留\n- 语音全部失败则只发文字，标注\"⚠️ 语音生成失败\"",
+      "prompt": "【预运行】微博监控脚本已由系统在每轮自动预执行，本轮输出见下方 \"## Script Output\"（本任务不需要、也不要再手动运行任何监控脚本）。\n\n**分流规则（必须严格执行）：**\n1. Script Output 为 [SILENT] 或为空、且不含 \"SIGNAL(\" 行 → 无新微博、无待办：**直接回复 [SILENT]（整条回复只有 [SILENT] 这 8 个字符，不得再有其它任何内容）。不要加载任何技能、不要执行任何命令、不要做任何附加检查。**\n2. Script Output 含 \"🚀 微博监控\" → 有新微博：先加载 weibo-monitoring 技能，严格按技能流程处理（链接解析缓存 → 抓取/核验 → 逐字节核验 → 按技能 §5 格式交付并附语音）。\n3. Script Output 含 \"SIGNAL(\" 行（即使同时含 [SILENT]）→ 按信号行动：先加载 weibo-monitoring 技能，按技能对应章节处理（回补检查 / 静默探针）。\n\n**语音播报降级策略（三级，必须按顺序尝试）：**\n\n**第1级【必须先试】**：Windows 宿主机 TTS（GPT-SoVITS）\n```bash\nbash /home/coordinate35/.hermes/scripts/win_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n**成功判定**：命令 exit code = 0（脚本内部已校验 HTTP=200 且文件 >10KB，无需手动判断）\n**失败处理**：exit code ≠ 0 时降级到第 2 级。脚本会把失败原因打到 stderr，可读取参考但不要继续重试第 1 级。\n\n**第2级【仅当第1级失败才用】**：Linux 本地 MeloTTS\n```bash\ncd /home/coordinate35/hermes_data/melotts && bash melo_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n\n**第3级【仅当前两级都失败】**：Hermes text_to_speech 工具\n\n**必须遵守：**\n- 不要跳过第1级直接用其他方式\n- 每次必须从第1级开始尝试\n- 不要用 curl 或任何直接访问 192.168.56.1 的命令（会被安全扫描拦截），只能通过上面的脚本封装\n- 在回复中**明确写明实际使用了哪一级 TTS**，格式如：\n  - `🎙️ 语音由 Windows TTS 生成（第1级）`\n  - `🎙️ 语音由 MeloTTS 生成（第2级降级）`\n  - `🎙️ 语音由 edge TTS 生成（第3级降级）`\n- 语音文件路径附在回复末尾：`MEDIA:/tmp/weibo_voice.wav`\n- MEDIA: 标记必须原样保留\n- 语音全部失败则只发文字，标注\"⚠️ 语音生成失败\"",
       "skills": [],
       "skill": null,
       "model": null,
@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 44340
+        "completed": 44619
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-09-28T03:05:00+08:00",
-      "last_run_at": "2026-09-28T03:01:55.916442+08:00",
+      "next_run_at": "2026-09-29T03:05:00+08:00",
+      "last_run_at": "2026-09-29T02:56:31.800749+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -37,11 +37,14 @@
         "chat_name": null,
         "thread_id": null
       },
-      "fire_claim": null,
+      "fire_claim": {
+        "at": "2026-09-29T03:00:42.847838+08:00",
+        "by": "coordinate35-VirtualBox:1468:18a12365bd8e49929bf0bebec8cb0784"
+      },
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-28T03:00:00+08:00",
-        "dispatched_at": "2026-09-28T03:00:42.500491+08:00",
+        "scheduled_at": "2026-09-29T03:00:00+08:00",
+        "dispatched_at": "2026-09-29T03:00:42.510282+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
@@ -64,15 +67,15 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 144
+        "completed": 145
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-09-28T09:00:00+08:00",
-      "last_run_at": "2026-09-27T09:01:10.395257+08:00",
+      "next_run_at": "2026-09-29T09:00:00+08:00",
+      "last_run_at": "2026-09-28T09:06:42.297739+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -86,8 +89,8 @@
       "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-27T09:00:00+08:00",
-        "dispatched_at": "2026-09-27T09:00:42.516951+08:00",
+        "scheduled_at": "2026-09-28T09:00:00+08:00",
+        "dispatched_at": "2026-09-28T09:00:42.516603+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
@@ -112,15 +115,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 137
+        "completed": 138
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-09-29T03:00:00+08:00",
-      "last_run_at": "2026-09-27T03:02:52.298469+08:00",
+      "next_run_at": "2026-09-30T03:00:00+08:00",
+      "last_run_at": "2026-09-28T03:05:52.922536+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -129,13 +132,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "fire_claim": {
-        "at": "2026-09-28T03:01:42.814759+08:00",
-        "by": "coordinate35-VirtualBox:1468:41c815981e324e298f8e815c07364b9e"
+        "at": "2026-09-29T03:00:42.825306+08:00",
+        "by": "coordinate35-VirtualBox:1468:cbd0280a53ce47f38088a0a297b82229"
       },
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-28T03:00:00+08:00",
-        "dispatched_at": "2026-09-28T03:00:42.500491+08:00",
+        "scheduled_at": "2026-09-29T03:00:00+08:00",
+        "dispatched_at": "2026-09-29T03:00:42.510282+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
@@ -160,15 +163,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 129
+        "completed": 130
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-09-29T03:00:00+08:00",
-      "last_run_at": "2026-09-28T03:00:42.956408+08:00",
+      "next_run_at": "2026-09-30T03:00:00+08:00",
+      "last_run_at": "2026-09-29T03:00:42.877329+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -184,220 +187,12 @@
       "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-09-28T03:00:00+08:00",
-        "dispatched_at": "2026-09-28T03:00:42.500491+08:00",
+        "scheduled_at": "2026-09-29T03:00:00+08:00",
+        "dispatched_at": "2026-09-29T03:00:42.510282+08:00",
         "lateness_seconds": 42.5,
         "kind": "on_time"
       }
-    },
-    {
-      "id": "5bfcfd13849b",
-      "name": "豆包归档语音摘要（一次性）",
-      "prompt": "",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "provider_snapshot": null,
-      "model_snapshot": null,
-      "base_url": null,
-      "script": "doubao_archive_voice_msg.sh",
-      "no_agent": true,
-      "monitor_script": null,
-      "monitor_url": null,
-      "monitor_state": null,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-09-21T11:35:12+08:00",
-        "display": "once at 2026-09-21 11:35"
-      },
-      "schedule_display": "once at 2026-09-21 11:35",
-      "repeat": {
-        "times": 1,
-        "completed": 1
-      },
-      "enabled": false,
-      "state": "completed",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-09-21T11:32:44.303146+08:00",
-      "next_run_at": null,
-      "last_run_at": "2026-09-21T11:35:22.681265+08:00",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
-      "failure_streak": 0,
-      "deliver": "origin",
-      "origin": {
-        "platform": "qqbot",
-        "chat_id": "4E42EA828928C02FC47FEB6334392F69",
-        "chat_name": null,
-        "thread_id": null,
-        "user_id": "4E42EA828928C02FC47FEB6334392F69",
-        "scope_id": null
-      },
-      "enabled_toolsets": null,
-      "workdir": null,
-      "run_claim": null,
-      "fire_claim": null
-    },
-    {
-      "id": "dc3bfb942fe9",
-      "name": "豆包归档语音摘要2（一次性）",
-      "prompt": "",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "provider_snapshot": null,
-      "model_snapshot": null,
-      "base_url": null,
-      "script": "doubao_archive_voice_msg2.sh",
-      "no_agent": true,
-      "monitor_script": null,
-      "monitor_url": null,
-      "monitor_state": null,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-09-21T12:12:02+08:00",
-        "display": "once at 2026-09-21 12:12"
-      },
-      "schedule_display": "once at 2026-09-21 12:12",
-      "repeat": {
-        "times": 1,
-        "completed": 1
-      },
-      "enabled": false,
-      "state": "completed",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-09-21T12:09:34.292214+08:00",
-      "next_run_at": null,
-      "last_run_at": "2026-09-21T12:12:22.240117+08:00",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
-      "failure_streak": 0,
-      "deliver": "origin",
-      "origin": {
-        "platform": "qqbot",
-        "chat_id": "4E42EA828928C02FC47FEB6334392F69",
-        "chat_name": null,
-        "thread_id": null,
-        "user_id": "4E42EA828928C02FC47FEB6334392F69",
-        "scope_id": null
-      },
-      "enabled_toolsets": null,
-      "workdir": null,
-      "run_claim": null,
-      "fire_claim": null
-    },
-    {
-      "id": "d20e864238d2",
-      "name": "豆包归档语音摘要3（一次性）",
-      "prompt": "",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "provider_snapshot": null,
-      "model_snapshot": null,
-      "base_url": null,
-      "script": "doubao_archive_voice_msg3.sh",
-      "no_agent": true,
-      "monitor_script": null,
-      "monitor_url": null,
-      "monitor_state": null,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-09-21T12:28:39+08:00",
-        "display": "once at 2026-09-21 12:28"
-      },
-      "schedule_display": "once at 2026-09-21 12:28",
-      "repeat": {
-        "times": 1,
-        "completed": 1
-      },
-      "enabled": false,
-      "state": "completed",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-09-21T12:26:11.645374+08:00",
-      "next_run_at": null,
-      "last_run_at": "2026-09-21T12:29:22.722682+08:00",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
-      "failure_streak": 0,
-      "deliver": "origin",
-      "origin": {
-        "platform": "qqbot",
-        "chat_id": "4E42EA828928C02FC47FEB6334392F69",
-        "chat_name": null,
-        "thread_id": null,
-        "user_id": "4E42EA828928C02FC47FEB6334392F69",
-        "scope_id": null
-      },
-      "enabled_toolsets": null,
-      "workdir": null,
-      "run_claim": null,
-      "fire_claim": null
-    },
-    {
-      "id": "99c87db7b141",
-      "name": "豆包归档语音摘要4（一次性）",
-      "prompt": "",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "provider_snapshot": null,
-      "model_snapshot": null,
-      "base_url": null,
-      "script": "doubao_archive_voice_msg4.sh",
-      "no_agent": true,
-      "monitor_script": null,
-      "monitor_url": null,
-      "monitor_state": null,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-09-21T13:05:10+08:00",
-        "display": "once at 2026-09-21 13:05"
-      },
-      "schedule_display": "once at 2026-09-21 13:05",
-      "repeat": {
-        "times": 1,
-        "completed": 1
-      },
-      "enabled": false,
-      "state": "completed",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-09-21T13:02:43.536884+08:00",
-      "next_run_at": null,
-      "last_run_at": "2026-09-21T13:05:23.645258+08:00",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
-      "failure_streak": 0,
-      "deliver": "origin",
-      "origin": {
-        "platform": "qqbot",
-        "chat_id": "4E42EA828928C02FC47FEB6334392F69",
-        "chat_name": null,
-        "thread_id": null,
-        "user_id": "4E42EA828928C02FC47FEB6334392F69",
-        "scope_id": null
-      },
-      "enabled_toolsets": null,
-      "workdir": null,
-      "run_claim": null,
-      "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-28T03:01:55.929109+08:00"
+  "updated_at": "2026-09-29T03:00:42.889983+08:00"
 }

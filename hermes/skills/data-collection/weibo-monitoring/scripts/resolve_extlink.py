@@ -7,8 +7,9 @@
 用法:
     cd ~/.hermes/scripts && PYTHONPATH=. python3 <this_script> <weibo_id>
 依赖: weibo_monitor.py 必须在 PYTHONPATH 中（复用 HEADERS / COOKIES）
-输出: HTTP 状态、正文 HTML、raw_text、page_info、全部 hrefs、sinaurl 解码结果
+输出: HTTP 状态、正文 HTML、raw_text、page_info、全部 hrefs、sinaurl 解码结果、链接缓存命中（CACHE_HIT）
 """
+import os
 import sys
 import json
 import re
@@ -47,3 +48,24 @@ for h in hrefs:
     m = re.search(r"[?&]u=([^&]+)", h)
     if m:
         print("DECODED:", unquote(m.group(1)))
+
+# --- 链接解析缓存探测（2026-09-28）：命中即给 CACHE_HIT 行，供 agent 跳过重复抓取 ---
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import link_cache
+
+    _cands = list(hrefs)
+    for _h in hrefs:
+        _m = re.search(r"[?&]u=([^&]+)", _h)
+        if _m:
+            _cands.append(unquote(_m.group(1)))
+    _seen = set()
+    for _c in _cands:
+        if _c in _seen:
+            continue
+        _seen.add(_c)
+        _rec = link_cache.lookup(_c)
+        if _rec:
+            print("CACHE_HIT:", _c, json.dumps(_rec, ensure_ascii=False))
+except Exception as _e:
+    sys.stderr.write(f"resolve_extlink: cache probe skipped ({_e})\n")

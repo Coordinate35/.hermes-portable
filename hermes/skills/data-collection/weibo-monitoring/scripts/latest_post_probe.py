@@ -2,7 +2,7 @@
 """长静默期只读核验探针 —— weibo-monitoring skill 附属脚本（2026-09-28）。
 
 用途：常态日更账号静默 >24h 时，实证"真静默"还是"管线漏抓"。
-原则：只读——不写任何状态文件、不运行监控脚本；仅 2 次 getIndex 抓取。
+原则：不碰监控状态（不写 last_weibo.json、不运行监控脚本）；仅 2 次 getIndex 抓取 ＋ 记录本探针执行时间（probe_state.json，供 wrapper 静默探针信号去重）。
 做法：取各账号卡片 mblog 的 created_at 最大值，与 last_weibo.json 的 last_time 比对：
       相等 → 真静默（照常回 [SILENT]）；探针更大 → 可能漏抓，按 skill 恢复流程处理。
 用法（勿用 python3 -c 内联，会挂起）：
@@ -10,6 +10,7 @@
 """
 import ast
 import json
+import os
 import re
 import sys
 from datetime import datetime
@@ -68,6 +69,16 @@ def main():
             print(f'  结论: {"一致 —— 真静默" if same else "⚠️ 不一致 —— 探针所见更新，需排查是否漏抓"}')
         except Exception as e:
             print(f'=== {name} ({uid}) EXCEPTION: {e}')
+
+    # 记录探针执行时间（2026-09-28）：供 wrapper 静默探针信号去重（12h 阻尼）
+    try:
+        ps_path = '/home/coordinate35/hermes_data/weibo_data/probe_state.json'
+        ps = json.load(open(ps_path, encoding='utf-8')) if os.path.exists(ps_path) else {}
+        ps['last_probe_at'] = datetime.now().astimezone().isoformat()
+        with open(ps_path, 'w', encoding='utf-8') as f:
+            json.dump(ps, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
 
 
 if __name__ == '__main__':

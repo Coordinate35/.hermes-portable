@@ -59,12 +59,56 @@
    "extra": "时长PT4M19S；源帖 5348221124611499",
    "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7689669309216145962%2F%3Fapp%3Dnews_article%26category_new%3D__all__%26module_name%3DiOS_tt_others%26req_id_new%3D20260928202727813F609F5191378FCE9E%26share_did%3DMS4wLjACAAAASYSv1GDzBdv7GHB2IVunbUSnH2gaNDk6ASbDcb2HplBTSAVcx5-U0f2sKxQjkB_r%26share_token%3D574d02d7-bb38-11f1-b695-f4204de47573%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26timestamp%3D1790598608%26tt_from%3Dweixin%26upstream_biz%3DiOS_wechat%26utm_campaign%3Dclient_share%26utm_medium%3Dtoutiao_ios%26utm_source%3Dweixin%26wxshare_count%3D1",
    "hits": 0
+  },
+  "https://mp.weixin.qq.com/s/NvcvZux8QZTatDiQ8SYoeg": {
+   "first_parsed_at": "2026-09-30 09:58:54",
+   "last_parsed_at": "2026-09-30 09:58:54",
+   "url": "https://mp.weixin.qq.com/s/NvcvZux8QZTatDiQ8SYoeg",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FNvcvZux8QZTatDiQ8SYoeg",
+   "hits": 3,
+   "title": "美元价值回归的算法",
+   "author": "ArthurLiang",
+   "date": "2026-09-29",
+   "kind": "wechat_article",
+   "extra": "公众号「硅基生命启示录」；2026-09-29 01:33 发布；源帖 5348784156707580",
+   "last_seen_at": "2026-09-30 09:58:54"
+  },
+  "https://video.weibo.com/show?fid=1034:5348768779010083": {
+   "first_parsed_at": "2026-09-30 10:28:23",
+   "last_parsed_at": "2026-09-30 10:28:23",
+   "url": "https://video.weibo.com/show?fid=1034:5348768779010083",
+   "title": "美欲通过互换释放4000万桶石油储备",
+   "author": "微博美股",
+   "date": "2026-09-30",
+   "kind": "weibo_video",
+   "extra": "视频页标题「微博美股的微博视频」；来自被转帖 @新浪军事 09-30 09:01 帖；解析链 t.cn/AXWXZqFW → video.weibo.com → h5.video.weibo.com（HTTP 200）",
+   "sinaurl": "http://t.cn/AXWXZqFW",
+   "hits": 2,
+   "last_seen_at": "2026-09-30 10:28:23"
+  },
+  "https://weixin.qq.com/sph/Av4phbOX6H": {
+   "first_parsed_at": "2026-09-30 10:46:26",
+   "last_parsed_at": "2026-09-30 10:46:26",
+   "url": "https://weixin.qq.com/sph/Av4phbOX6H",
+   "title": "年少自有凌云志，敢立潮头抒豪情。寒雪漫卷，彰显无畏艰险的气魄。",
+   "author": "星火集社",
+   "date": "2026-09-29",
+   "kind": "wechat_channels",
+   "extra": "话题：#少年合唱#咏蛙#七律冬云#经典诗词#原创音乐#诗词音乐；地点：广州市；互动(2026-09-30抓取)：赞344/转发608/收藏491/评论35",
+   "sinaurl": "https://channels.weixin.qq.com/finder-preview/pages/sph?id=Av4phbOX6H",
+   "hits": 3,
+   "last_seen_at": "2026-09-30 10:46:26"
   }
  },
  "aliases": {
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7690077661552476719%2F%3Fapp%3Dnews_article%26category_new%3D__all__%26module_name%3DiOS_tt_others%26req_id_new%3D20260928200559F44199BC950304E47C97%26share_did%3DMS4wLjACAAAASYSv1GDzBdv7GHB2IVunbUSnH2gaNDk6ASbDcb2HplBTSAVcx5-U0f2sKxQjkB_r%26share_token%3D80bbbdf3-bb35-11f1-a636-a4a64e233ab3%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26timestamp%3D1790597389%26tt_from%3Dweixin%26upstream_biz%3DiOS_wechat%26utm_campaign%3Dclient_share%26utm_medium%3Dtoutiao_ios%26utm_source%3Dweixin%26wxshare_count%3D1": "https://m.toutiao.com/video/7690077661552476719",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7690471173083169308%2F%3Fapp%3Dnews_article%26category_new%3D__all__%26module_name%3DiOS_tt_others%26req_id_new%3D20260928200559F44199BC950304E47C97%26share_did%3DMS4wLjACAAAASYSv1GDzBdv7GHB2IVunbUSnH2gaNDk6ASbDcb2HplBTSAVcx5-U0f2sKxQjkB_r%26share_token%3D1abb9230-bb37-11f1-818e-6c83753d26d6%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26timestamp%3D1790598077%26tt_from%3Dweixin%26upstream_biz%3DiOS_wechat%26utm_campaign%3Dclient_share%26utm_medium%3Dtoutiao_ios%26utm_source%3Dweixin%26wxshare_count%3D1": "https://m.toutiao.com/video/7690471173083169308",
   "http://t.cn/AXWV80iA": "https://photo.weibo.com/h5/comment/compic_id/1022:230597f04468cde11a6b2eff67438697666c4a",
-  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7689669309216145962%2F%3Fapp%3Dnews_article%26category_new%3D__all__%26module_name%3DiOS_tt_others%26req_id_new%3D20260928202727813F609F5191378FCE9E%26share_did%3DMS4wLjACAAAASYSv1GDzBdv7GHB2IVunbUSnH2gaNDk6ASbDcb2HplBTSAVcx5-U0f2sKxQjkB_r%26share_token%3D574d02d7-bb38-11f1-b695-f4204de47573%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26timestamp%3D1790598608%26tt_from%3Dweixin%26upstream_biz%3DiOS_wechat%26utm_campaign%3Dclient_share%26utm_medium%3Dtoutiao_ios%26utm_source%3Dweixin%26wxshare_count%3D1": "https://m.toutiao.com/video/7689669309216145962"
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7689669309216145962%2F%3Fapp%3Dnews_article%26category_new%3D__all__%26module_name%3DiOS_tt_others%26req_id_new%3D20260928202727813F609F5191378FCE9E%26share_did%3DMS4wLjACAAAASYSv1GDzBdv7GHB2IVunbUSnH2gaNDk6ASbDcb2HplBTSAVcx5-U0f2sKxQjkB_r%26share_token%3D574d02d7-bb38-11f1-b695-f4204de47573%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26timestamp%3D1790598608%26tt_from%3Dweixin%26upstream_biz%3DiOS_wechat%26utm_campaign%3Dclient_share%26utm_medium%3Dtoutiao_ios%26utm_source%3Dweixin%26wxshare_count%3D1": "https://m.toutiao.com/video/7689669309216145962",
+  "http://t.cn/AXWfFwdM": "https://mp.weixin.qq.com/s/NvcvZux8QZTatDiQ8SYoeg",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FNvcvZux8QZTatDiQ8SYoeg": "https://mp.weixin.qq.com/s/NvcvZux8QZTatDiQ8SYoeg",
+  "http://t.cn/AXWXZqFW": "https://video.weibo.com/show?fid=1034:5348768779010083",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FAv4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H",
+  "https://channels.weixin.qq.com/finder-preview/pages/sph?id=Av4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H"
  }
 }

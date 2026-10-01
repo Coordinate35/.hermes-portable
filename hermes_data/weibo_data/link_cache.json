@@ -98,6 +98,19 @@
    "sinaurl": "https://channels.weixin.qq.com/finder-preview/pages/sph?id=Av4phbOX6H",
    "hits": 3,
    "last_seen_at": "2026-09-30 10:46:26"
+  },
+  "https://weixin.qq.com/sph/AuyRwl8wO7": {
+   "first_parsed_at": "2026-10-01 12:02:45",
+   "last_parsed_at": "2026-10-01 12:02:45",
+   "url": "https://weixin.qq.com/sph/AuyRwl8wO7",
+   "title": "卢麒元谈工业化：从艰辛到硕果，照见大国重器",
+   "author": "纯叙宏观观点",
+   "date": "2026-09-24",
+   "kind": "wechat_channels",
+   "extra": "地点：濮阳市；互动(2026-10-01 12:00抓取)：大拇指56/转发32/爱心21/评论2",
+   "sinaurl": "https://channels.weixin.qq.com/finder-preview/pages/sph?id=AuyRwl8wO7",
+   "hits": 3,
+   "last_seen_at": "2026-10-01 12:02:45"
   }
  },
  "aliases": {
@@ -109,6 +122,8 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FNvcvZux8QZTatDiQ8SYoeg": "https://mp.weixin.qq.com/s/NvcvZux8QZTatDiQ8SYoeg",
   "http://t.cn/AXWXZqFW": "https://video.weibo.com/show?fid=1034:5348768779010083",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FAv4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H",
-  "https://channels.weixin.qq.com/finder-preview/pages/sph?id=Av4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H"
+  "https://channels.weixin.qq.com/finder-preview/pages/sph?id=Av4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FAuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7",
+  "https://channels.weixin.qq.com/finder-preview/pages/sph?id=AuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7"
  }
 }

@@ -109,8 +109,21 @@
    "kind": "wechat_channels",
    "extra": "地点：濮阳市；互动(2026-10-01 12:00抓取)：大拇指56/转发32/爱心21/评论2",
    "sinaurl": "https://channels.weixin.qq.com/finder-preview/pages/sph?id=AuyRwl8wO7",
-   "hits": 3,
-   "last_seen_at": "2026-10-01 12:02:45"
+   "hits": 5,
+   "last_seen_at": "2026-10-02 19:38:58"
+  },
+  "https://m.toutiao.com/video/7691995638086631951": {
+   "first_parsed_at": "2026-10-02 19:54:29",
+   "last_parsed_at": "2026-10-02 19:54:29",
+   "url": "https://m.toutiao.com/video/7691995638086631951",
+   "title": "卢麒元：我说几句心里话宣泄一下，老哥哥一番话让我一夜未眠",
+   "author": "轻摇纸扇风",
+   "date": "2026-10-02T17:22:41+08:00",
+   "kind": "toutiao_video",
+   "extra": "时长PT10M41S；源帖 5349659245808837",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7691995638086631951%2F%3Fapp%3Dnews_article%26timestamp%3D1790941594%26utm_campaign%3Dclient_share%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610021946348DFE6079D04D0E36C8F2%26category_new%3D__search__%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem",
+   "hits": 1,
+   "last_seen_at": "2026-10-02 19:56:31"
   }
  },
  "aliases": {
@@ -124,6 +137,7 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FAv4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H",
   "https://channels.weixin.qq.com/finder-preview/pages/sph?id=Av4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FAuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7",
-  "https://channels.weixin.qq.com/finder-preview/pages/sph?id=AuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7"
+  "https://channels.weixin.qq.com/finder-preview/pages/sph?id=AuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7691995638086631951%2F%3Fapp%3Dnews_article%26timestamp%3D1790941594%26utm_campaign%3Dclient_share%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610021946348DFE6079D04D0E36C8F2%26category_new%3D__search__%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem": "https://m.toutiao.com/video/7691995638086631951"
  }
 }

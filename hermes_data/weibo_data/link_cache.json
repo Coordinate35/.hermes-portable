@@ -124,6 +124,19 @@
    "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7691995638086631951%2F%3Fapp%3Dnews_article%26timestamp%3D1790941594%26utm_campaign%3Dclient_share%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610021946348DFE6079D04D0E36C8F2%26category_new%3D__search__%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem",
    "hits": 1,
    "last_seen_at": "2026-10-02 19:56:31"
+  },
+  "https://weibo.com/ttarticle/p/show?id=2309405062709074067603": {
+   "first_parsed_at": "2026-10-03 16:25:00",
+   "last_parsed_at": "2026-10-03 16:25:00",
+   "url": "https://weibo.com/ttarticle/p/show?id=2309405062709074067603",
+   "title": "卢麒元：略过弗莱堡",
+   "author": "付士山",
+   "date": "2024-08-01",
+   "kind": "weibo_article",
+   "extra": "阅读20676；源帖5349967138128802（正心以中转@付士山 2024-08-01帖）；正文即卢麒元《掠过佛莱堡》",
+   "sinaurl": "https://weibo.com/ttarticle/p/show?id=2309405062709074067603&launchid=10000360-page_H5",
+   "hits": 2,
+   "last_seen_at": "2026-10-03 16:34:14"
   }
  },
  "aliases": {
@@ -138,6 +151,7 @@
   "https://channels.weixin.qq.com/finder-preview/pages/sph?id=Av4phbOX6H": "https://weixin.qq.com/sph/Av4phbOX6H",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FAuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7",
   "https://channels.weixin.qq.com/finder-preview/pages/sph?id=AuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7",
-  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7691995638086631951%2F%3Fapp%3Dnews_article%26timestamp%3D1790941594%26utm_campaign%3Dclient_share%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610021946348DFE6079D04D0E36C8F2%26category_new%3D__search__%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem": "https://m.toutiao.com/video/7691995638086631951"
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7691995638086631951%2F%3Fapp%3Dnews_article%26timestamp%3D1790941594%26utm_campaign%3Dclient_share%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610021946348DFE6079D04D0E36C8F2%26category_new%3D__search__%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem": "https://m.toutiao.com/video/7691995638086631951",
+  "https://weibo.com/ttarticle/p/show?id=2309405062709074067603&launchid=10000360-page_H5": "https://weibo.com/ttarticle/p/show?id=2309405062709074067603"
  }
 }

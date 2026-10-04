@@ -135,8 +135,34 @@
    "kind": "weibo_article",
    "extra": "阅读20676；源帖5349967138128802（正心以中转@付士山 2024-08-01帖）；正文即卢麒元《掠过佛莱堡》",
    "sinaurl": "https://weibo.com/ttarticle/p/show?id=2309405062709074067603&launchid=10000360-page_H5",
+   "hits": 6,
+   "last_seen_at": "2026-10-04 21:14:55"
+  },
+  "https://mp.weixin.qq.com/s/8HMJ5VZxMpwl2Ka-iCBKuA": {
+   "first_parsed_at": "2026-10-04 13:16:49",
+   "last_parsed_at": "2026-10-04 13:16:49",
+   "url": "https://mp.weixin.qq.com/s/8HMJ5VZxMpwl2Ka-iCBKuA",
+   "title": "卢老的四大时代叩问：当下经济低迷的破局之路！",
+   "author": "正心以中11",
+   "date": "2026-10-02",
+   "kind": "wechat_article",
+   "extra": "公众号「勤思棠」；2026-10-02 21:46 发布；源帖 5350283888820681",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F8HMJ5VZxMpwl2Ka-iCBKuA",
    "hits": 2,
-   "last_seen_at": "2026-10-03 16:34:14"
+   "last_seen_at": "2026-10-04 21:14:55"
+  },
+  "https://m.toutiao.com/video/7692280287175803432": {
+   "first_parsed_at": "2026-10-04 21:39:20",
+   "last_parsed_at": "2026-10-04 22:06:17",
+   "url": "https://m.toutiao.com/video/7692280287175803432",
+   "title": "卢麒元：历史走到了拐点之上，回归新制度经济学会是解药吗？ - 今日头条",
+   "author": "月光下漫步的身影",
+   "date": "2026-10-03T12:17:02+08:00",
+   "kind": "toutiao_video",
+   "extra": "时长PT17M28S",
+   "sinaurl": "http://t.cn/AXWmyyOy",
+   "hits": 3,
+   "last_seen_at": "2026-10-04 22:06:45"
   }
  },
  "aliases": {
@@ -152,6 +178,9 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FAuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7",
   "https://channels.weixin.qq.com/finder-preview/pages/sph?id=AuyRwl8wO7": "https://weixin.qq.com/sph/AuyRwl8wO7",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7691995638086631951%2F%3Fapp%3Dnews_article%26timestamp%3D1790941594%26utm_campaign%3Dclient_share%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610021946348DFE6079D04D0E36C8F2%26category_new%3D__search__%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem": "https://m.toutiao.com/video/7691995638086631951",
-  "https://weibo.com/ttarticle/p/show?id=2309405062709074067603&launchid=10000360-page_H5": "https://weibo.com/ttarticle/p/show?id=2309405062709074067603"
+  "https://weibo.com/ttarticle/p/show?id=2309405062709074067603&launchid=10000360-page_H5": "https://weibo.com/ttarticle/p/show?id=2309405062709074067603",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F8HMJ5VZxMpwl2Ka-iCBKuA": "https://mp.weixin.qq.com/s/8HMJ5VZxMpwl2Ka-iCBKuA",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7692280287175803432%2F%3Fapp%3Dnews_article%26timestamp%3D1791120520%26utm_campaign%3Dclient_share%26is_hit_share_recommend%3D0%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D20261004212839221A6E559B2DA17A5125%26category_new%3Dheadline": "https://m.toutiao.com/video/7692280287175803432",
+  "http://t.cn/AXWmyyOy": "https://m.toutiao.com/video/7692280287175803432"
  }
 }

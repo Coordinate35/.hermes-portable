@@ -161,8 +161,19 @@
    "kind": "toutiao_video",
    "extra": "时长PT17M28S",
    "sinaurl": "http://t.cn/AXWmyyOy",
-   "hits": 3,
-   "last_seen_at": "2026-10-04 22:06:45"
+   "hits": 4,
+   "last_seen_at": "2026-10-06 15:33:22"
+  },
+  "https://mbd.baidu.com/newspage/data/videoshare?nid=sv_15154335271530557416&rawFrom=feed_video_landing&source=&sid_for_share=&ruk=BeiqQzscOTavHKm-u2EpAg": {
+   "first_parsed_at": "2026-10-06 22:48:41",
+   "last_parsed_at": "2026-10-06 22:48:41",
+   "url": "https://mbd.baidu.com/newspage/data/videoshare?nid=sv_15154335271530557416&rawFrom=feed_video_landing&source=&sid_for_share=&ruk=BeiqQzscOTavHKm-u2EpAg",
+   "title": "卢麒元：经济学的初心，应当守护普通人劳动成果，经济学家必须站稳人民立场",
+   "kind": "baidu_video",
+   "extra": "百度App分享；标题与微博正文一致；源帖 5351152757771181",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmbd.baidu.com%2Fnewspage%2Fdata%2Fvideoshare%3Fnid%3Dsv_15154335271530557416%26rawFrom%3Dfeed_video_landing%26source%3D%26sid_for_share%3D%26ruk%3DBeiqQzscOTavHKm-u2EpAg",
+   "hits": 1,
+   "last_seen_at": "2026-10-06 22:57:37"
   }
  },
  "aliases": {
@@ -181,6 +192,7 @@
   "https://weibo.com/ttarticle/p/show?id=2309405062709074067603&launchid=10000360-page_H5": "https://weibo.com/ttarticle/p/show?id=2309405062709074067603",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F8HMJ5VZxMpwl2Ka-iCBKuA": "https://mp.weixin.qq.com/s/8HMJ5VZxMpwl2Ka-iCBKuA",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7692280287175803432%2F%3Fapp%3Dnews_article%26timestamp%3D1791120520%26utm_campaign%3Dclient_share%26is_hit_share_recommend%3D0%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D20261004212839221A6E559B2DA17A5125%26category_new%3Dheadline": "https://m.toutiao.com/video/7692280287175803432",
-  "http://t.cn/AXWmyyOy": "https://m.toutiao.com/video/7692280287175803432"
+  "http://t.cn/AXWmyyOy": "https://m.toutiao.com/video/7692280287175803432",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmbd.baidu.com%2Fnewspage%2Fdata%2Fvideoshare%3Fnid%3Dsv_15154335271530557416%26rawFrom%3Dfeed_video_landing%26source%3D%26sid_for_share%3D%26ruk%3DBeiqQzscOTavHKm-u2EpAg": "https://mbd.baidu.com/newspage/data/videoshare?nid=sv_15154335271530557416&rawFrom=feed_video_landing&source=&sid_for_share=&ruk=BeiqQzscOTavHKm-u2EpAg"
  }
 }

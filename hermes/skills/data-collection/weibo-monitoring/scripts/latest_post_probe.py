@@ -4,7 +4,8 @@
 用途：常态日更账号静默 >24h 时，实证"真静默"还是"管线漏抓"。
 原则：不碰监控状态（不写 last_weibo.json、不运行监控脚本）；仅 2 次 getIndex 抓取 ＋ 记录本探针执行时间（probe_state.json，供 wrapper 静默探针信号去重）。
 做法：取各账号卡片 mblog 的 created_at 最大值，与 last_weibo.json 的 last_time 比对：
-      相等 → 真静默（照常回 [SILENT]）；探针更大 → 可能漏抓，按 skill 恢复流程处理。
+      相等 → 真静默（照常回 [SILENT]）；探针更大 → 可能漏抓，按 skill 恢复流程处理；
+      探针更小 → 高水位帖已删/受限（查 show 端点，见 skill「探针反向不一致判读」）。
 用法（勿用 python3 -c 内联，会挂起）：
       timeout 90 python3 ~/.hermes/skills/data-collection/weibo-monitoring/scripts/latest_post_probe.py
 """
@@ -65,8 +66,15 @@ def main():
             print(f'  探针最新: {top.get("id")} | {top.get("created_at")} | {(top.get("text") or "")[:45]}')
             st = state.get(uid, {})
             print(f'  状态记录: {st.get("last_id")} | {st.get("last_time")}')
-            same = parse_t(top.get('created_at', '')) == parse_t(st.get('last_time') or '')
-            print(f'  结论: {"一致 —— 真静默" if same else "⚠️ 不一致 —— 探针所见更新，需排查是否漏抓"}')
+            probe_t = parse_t(top.get('created_at', ''))
+            state_t = parse_t(st.get('last_time') or '')
+            if probe_t == state_t:
+                verdict = '一致 —— 真静默'
+            elif probe_t > state_t:
+                verdict = '⚠️ 不一致（探针更新）—— 对照 last_check 判读（skill「长静默期核验」）'
+            else:
+                verdict = '⚠️ 不一致（状态记录更新）—— 高水位帖或已删/受限，查 show 端点核实'
+            print(f'  结论: {verdict}')
         except Exception as e:
             print(f'=== {name} ({uid}) EXCEPTION: {e}')
 

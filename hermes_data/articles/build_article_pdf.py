@@ -63,6 +63,17 @@ except Exception as e:  # noqa
     print("REPORTLAB_MISSING:", e)
     sys.exit(2)
 
+# ---- 补齐 ReportLab 中文避头标点集（原生漏掉全角逗号/叹号/问号等；2026-10-08）----
+try:
+    from reportlab.lib import textsplit as _ts
+    from reportlab.platypus import paragraph as _pp
+    _KINSOKU_EXTRA = "\uff0c\uff01\uff1f\uff1b\uff1a\uff0e\u201d\u2019"  # ，！？；：．"'
+    _ts.ALL_CANNOT_START = _ts.ALL_CANNOT_START + _KINSOKU_EXTRA
+    _pp.ALL_CANNOT_START = _pp.ALL_CANNOT_START + _KINSOKU_EXTRA
+    print("[kinsoku] extended:", len(_KINSOKU_EXTRA), "chars")
+except Exception as _e:
+    print("[kinsoku] patch skip:", _e)
+
 all_texts = meta + [t for k, t in blocks if k != "img"]
 TEST_SET = {ord(c) for t in all_texts for c in t if ord(c) > 127}
 print("non-ASCII charset size:", len(TEST_SET))
@@ -102,7 +113,8 @@ META = ParagraphStyle("m", fontName=FONT, fontSize=8.5, leading=13.5,
 HEAD = ParagraphStyle("h", fontName=FONT, fontSize=12.5, leading=19,
                       textColor=colors.HexColor("#1f3b57"), spaceBefore=10, spaceAfter=5)
 BODY = ParagraphStyle("b", fontName=FONT, fontSize=10, leading=16,
-                      textColor=colors.HexColor("#222222"), firstLineIndent=20, spaceAfter=4.5)
+                      textColor=colors.HexColor("#222222"), firstLineIndent=20, spaceAfter=4.5,
+                      wordWrap="CJK")
 SUB = ParagraphStyle("s", parent=BODY, firstLineIndent=0, spaceBefore=3, spaceAfter=3)
 CAP = ParagraphStyle("c", fontName=FONT, fontSize=8.8, leading=13.5,
                      textColor=colors.HexColor("#777777"), alignment=1, spaceAfter=8)
@@ -165,20 +177,34 @@ new_story.extend(story[1:])
 story = new_story
 
 
+# ---- 页脚/标题元信息：从 md 元信息块推导（2026-10-08 改造，原为硬编码单篇文章）----
+AUTHOR = ""
+SOURCE = ""
+DOC_TITLE = blocks[0][1] if blocks and blocks[0][0] == "title" else ""
+for _m in meta:
+    if _m.startswith("作者：") and not AUTHOR:
+        AUTHOR = _m.split("：", 1)[1].split("（")[0].strip()
+    if _m.startswith("发布方：") and not AUTHOR:
+        AUTHOR = _m.split("：", 1)[1].split("（")[0].strip()
+    if _m.startswith("来源：") and not SOURCE:
+        SOURCE = _m.split("：", 1)[1].split("（")[0].split("·")[0].strip()
+FOOTER_TXT = " · ".join(_x for _x in (AUTHOR, SOURCE) if _x) or "Hermes 归档"
+
+
 def footer(canv, doc):
     canv.saveState()
     canv.setFont(FONT, 7.5)
     canv.setFillColor(colors.HexColor("#999999"))
     canv.drawCentredString(A4[0] / 2, 1.0 * cm,
-                           f"潘功胜 · 《求是》2026年第18期 · 第 {doc.page} 页")
+                           f"{FOOTER_TXT} · 第 {doc.page} 页")
     canv.restoreState()
 
 
 doc = SimpleDocTemplate(PDF_PATH, pagesize=A4,
                         leftMargin=2.0 * cm, rightMargin=2.0 * cm,
                         topMargin=1.8 * cm, bottomMargin=1.8 * cm,
-                        title="深刻认识中国金融结构变迁 提升金融服务实体经济适配性",
-                        author="潘功胜")
+                        title=DOC_TITLE,
+                        author=AUTHOR or "Hermes")
 try:
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
 except Exception as e:

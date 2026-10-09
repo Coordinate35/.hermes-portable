@@ -174,6 +174,32 @@
    "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmbd.baidu.com%2Fnewspage%2Fdata%2Fvideoshare%3Fnid%3Dsv_15154335271530557416%26rawFrom%3Dfeed_video_landing%26source%3D%26sid_for_share%3D%26ruk%3DBeiqQzscOTavHKm-u2EpAg",
    "hits": 1,
    "last_seen_at": "2026-10-06 22:57:37"
+  },
+  "https://m.toutiao.com/video/7674166024429961251": {
+   "first_parsed_at": "2026-10-08 18:37:10",
+   "last_parsed_at": "2026-10-08 18:37:10",
+   "url": "https://m.toutiao.com/video/7674166024429961251",
+   "title": "#40年，见证中国崛起的奇迹#",
+   "author": "震海会",
+   "date": "2026-08-15T16:03:35+08:00",
+   "kind": "toutiao_video",
+   "extra": "时长PT1M19S；作者信息：2026-8-15 16:03 · 头条精选作者",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7674166024429961251%2F%3Fapp%3Dnews_article%26timestamp%3D1791455499%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610081831372FB468CFA3F62A121EE9%26chn_id%3D94349560412%26category_new%3Dtt_video_immerse",
+   "hits": 1,
+   "last_seen_at": "2026-10-08 18:37:10"
+  },
+  "https://wap.eastmoney.com/a/202610083889734044.html": {
+   "first_parsed_at": "2026-10-08 18:54:56",
+   "last_parsed_at": "2026-10-08 18:54:56",
+   "url": "https://wap.eastmoney.com/a/202610083889734044.html",
+   "title": "央行阐明人民币汇率政策立场：中国从不搞竞争性货币贬值",
+   "author": "央行网站",
+   "date": "2026-10-08 17:51",
+   "kind": "eastmoney_article",
+   "extra": "东方财富网转载（来源：央行网站）；源帖 5351818974463643",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwap.eastmoney.com%2Fa%2F202610083889734044.html",
+   "hits": 3,
+   "last_seen_at": "2026-10-08 19:12:52"
   }
  },
  "aliases": {
@@ -193,6 +219,8 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F8HMJ5VZxMpwl2Ka-iCBKuA": "https://mp.weixin.qq.com/s/8HMJ5VZxMpwl2Ka-iCBKuA",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7692280287175803432%2F%3Fapp%3Dnews_article%26timestamp%3D1791120520%26utm_campaign%3Dclient_share%26is_hit_share_recommend%3D0%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D20261004212839221A6E559B2DA17A5125%26category_new%3Dheadline": "https://m.toutiao.com/video/7692280287175803432",
   "http://t.cn/AXWmyyOy": "https://m.toutiao.com/video/7692280287175803432",
-  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmbd.baidu.com%2Fnewspage%2Fdata%2Fvideoshare%3Fnid%3Dsv_15154335271530557416%26rawFrom%3Dfeed_video_landing%26source%3D%26sid_for_share%3D%26ruk%3DBeiqQzscOTavHKm-u2EpAg": "https://mbd.baidu.com/newspage/data/videoshare?nid=sv_15154335271530557416&rawFrom=feed_video_landing&source=&sid_for_share=&ruk=BeiqQzscOTavHKm-u2EpAg"
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmbd.baidu.com%2Fnewspage%2Fdata%2Fvideoshare%3Fnid%3Dsv_15154335271530557416%26rawFrom%3Dfeed_video_landing%26source%3D%26sid_for_share%3D%26ruk%3DBeiqQzscOTavHKm-u2EpAg": "https://mbd.baidu.com/newspage/data/videoshare?nid=sv_15154335271530557416&rawFrom=feed_video_landing&source=&sid_for_share=&ruk=BeiqQzscOTavHKm-u2EpAg",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7674166024429961251%2F%3Fapp%3Dnews_article%26timestamp%3D1791455499%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610081831372FB468CFA3F62A121EE9%26chn_id%3D94349560412%26category_new%3Dtt_video_immerse": "https://m.toutiao.com/video/7674166024429961251",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwap.eastmoney.com%2Fa%2F202610083889734044.html": "https://wap.eastmoney.com/a/202610083889734044.html"
  }
 }

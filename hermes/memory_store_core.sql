@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7913
--- Exported: 2026-10-08T03:00:22.504090
+-- Facts count: 7914
+-- Exported: 2026-10-09T09:13:23.288891
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7949,6 +7949,7 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7974,'文章下载存档（非卢麒元类）存于 ~/hermes_data/articles/；md→PDF 转换脚本 build_article_pdf.py 同目录（reportlab + rl-venv，支持正文嵌图、标题防孤行）。首个存档：潘功胜《深刻认识中国金融结构变迁 提升金融服务实体经济适配性》，《求是》2026年第18期（求是网 2026-09-16 发布），原文链接 https://www.qstheory.cn/20260915/1c41fc49b4b44db4b2550ddd41f40315/c.html；含两张正文配图（images/ 子目录），最终 PDF 4 页带图版已交付 QQ。','general','存档,文章,求是,潘功胜,articles目录',0.5,0,0,'2026-09-16 10:41:21','2026-09-16 17:27:55');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7975,'browser_exec 报 chrome-not-running → 用 skill browser-exec-recovery 恢复。QQ 交互场景禁复合 terminal 命令（写 ~/.config、外网 curl 管道→安全审批挂起弹不出批准框）。','general','',0.5,0,0,'2026-09-17 09:41:45','2026-09-17 09:41:45');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7976,'2026-09-17 月之暗面发布「Kimi 金融行业 AI 解决方案」：10+权威数据源、9项金融技能（机构财务建模/研究报告/PPT/金融动态图表/业绩点评/一致预期地图/组合复盘/持仓早报/HK IPO透镜）、5项合规措施（风险评估网关）。数据源非全免费：万得/S&P/iFinD/财新/聚源/天眼查等多为商业付费源（万得基础终端3.98万/年、iFinD 1.4万/年、Choice 1.8万/年），Kimi 以会员套餐打包（49/99/199/699元/月，专业数据库调用 1000/2000/5000/12000次/月），免费公开源仅 IMF/世行/SEC 等少数。中信建投试点：单份报告30→10分钟(-67%)。材料存 ~/hermes_data/kimi_finance_solution/。','general','kimi,moonshot,金融,AI解决方案,材料',0.5,0,0,'2026-09-17 09:41:52','2026-09-17 09:46:58');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7977,'跑非默认 venv 的 python（rl-venv/melotts 等）宜前缀 `PYTHONPATH=`：Hermes 终端注入的 PYTHONPATH 指向其 3.14 包，实测污染 import（rl-venv PIL 报错）。','general','',0.5,0,0,'2026-10-08 11:08:45','2026-10-08 11:08:45');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');

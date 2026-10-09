@@ -4,13 +4,11 @@ User operates within the 卢麒元 (Lu Qiyuan) investment analysis framework: re
 §
 User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC framework with physical Numéraire (Ω = fixed commodity basket). Axioms: (1) global net wealth = sum of physical capital only, financial claims net to zero, (2) replacement-cost valuation makes K immune to currency devaluation, (3) FX endogenous from PPP (B_i/B_j). Also built deviation-detection framework: 4 anchors (cost/yield/monetary/cross-country), RPI priority index (Regression Priority Index = arbitrage × cashflow × funding / institutional protection), linked to 卢麒元 four-matrix decision grid. Prefers rigorous math, layered architecture docs, systematic docs. Latest deliverable: architecture V0.2 at ~/hermes_data/global_economy_model_architecture.md. Open issues: production function, currency creation module, MVP scope.
 §
-架构分层原则：监控/数据采集脚本只做单一职责（如 weibo_monitor.py 只输出文字），不要在脚本里耦合下游处理逻辑（如 TTS 生成）。降级策略、消息格式化、推送渠道等应在 agent 层（cronjob prompt）处理，保持脚本的可复用性和降级灵活性。
+架构分层：监控/采集脚本单一职责（只产文字）；降级/格式化/推送放 agent 层（cron job prompt）。
 §
-语音/TTS 全部细节见 skill voice-message-delivery。QQ 发文档默认 PDF（.md 手机端打不开，2026-09 实测）。
+语音/TTS 细节+三级降级链（win_tts→MeloTTS→edge）见 skill voice-message-delivery；tts 工具集已禁用。QQ 发文档默认 PDF（.md 手机端打不开）。
 §
 交付铁律：(1) 自报告前先读文件确认全貌，不可只描述新增。(2) 重复任务须封装成 skill，触发条件枚举完整自然口语变体。(3) SOUL.md 和所有 skill 触发条件一律平等，命中即执行，禁止自行排优先级或区分"必做/可做"。QQ Bot 短句默认走语音（见 voice-message-delivery skill），文字仅补充。
-§
-tts 工具集已禁用；所有 TTS 走 terminal 三级降级链：win_tts.sh → MeloTTS → edge-tts（详见 voice-message-delivery skill）。
 §
 记账分类：饮料→娱乐·餐饮娱乐，饭菜/买菜→刚性·食。文档阅读须逐字念原文不可概括。
 §
@@ -19,3 +17,5 @@ tts 工具集已禁用；所有 TTS 走 terminal 三级降级链：win_tts.sh �
 用户=魏俊杰（GitHub Coordinate35，1995.03）：2018.07-2023.12 滴滴接入层资深研发D7（DevOps→管控面→转发引擎→接入层技术负责人）；2024.01-至今 抖音服务架构·研发体验与效率2-1。工作史源=~/Documents/summary，简历任务见 skill resume-cv-workflow。投资分析偏好系统提取+政策/基本面/技术面，聚焦能源板块。
 §
 browser_exec 报 chrome-not-running → 用 skill browser-exec-recovery 恢复。QQ 交互场景禁复合 terminal 命令（写 ~/.config、外网 curl 管道→安全审批挂起弹不出批准框）。
+§
+跑非默认 venv 的 python（rl-venv/melotts 等）宜前缀 `PYTHONPATH=`：Hermes 终端注入的 PYTHONPATH 指向其 3.14 包，实测污染 import（rl-venv PIL 报错）。

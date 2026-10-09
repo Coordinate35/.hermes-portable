@@ -200,6 +200,17 @@
    "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwap.eastmoney.com%2Fa%2F202610083889734044.html",
    "hits": 3,
    "last_seen_at": "2026-10-08 19:12:52"
+  },
+  "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151": {
+   "first_parsed_at": "2026-10-09 21:42:57",
+   "last_parsed_at": "2026-10-09 21:42:57",
+   "url": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151",
+   "title": "评论配图页（@中庸之道常驻于心w_b25- 评论附图，共2张）",
+   "kind": "weibo_compic",
+   "extra": "t.cn 302 直达；源帖 5352222980312578",
+   "sinaurl": "https://wx3.sinaimg.cn/large/0063WZjhgy1ihwf5iqgabj30wi1yc1kx.jpg",
+   "hits": 3,
+   "last_seen_at": "2026-10-09 21:42:57"
   }
  },
  "aliases": {
@@ -221,6 +232,9 @@
   "http://t.cn/AXWmyyOy": "https://m.toutiao.com/video/7692280287175803432",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmbd.baidu.com%2Fnewspage%2Fdata%2Fvideoshare%3Fnid%3Dsv_15154335271530557416%26rawFrom%3Dfeed_video_landing%26source%3D%26sid_for_share%3D%26ruk%3DBeiqQzscOTavHKm-u2EpAg": "https://mbd.baidu.com/newspage/data/videoshare?nid=sv_15154335271530557416&rawFrom=feed_video_landing&source=&sid_for_share=&ruk=BeiqQzscOTavHKm-u2EpAg",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7674166024429961251%2F%3Fapp%3Dnews_article%26timestamp%3D1791455499%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D202610081831372FB468CFA3F62A121EE9%26chn_id%3D94349560412%26category_new%3Dtt_video_immerse": "https://m.toutiao.com/video/7674166024429961251",
-  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwap.eastmoney.com%2Fa%2F202610083889734044.html": "https://wap.eastmoney.com/a/202610083889734044.html"
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwap.eastmoney.com%2Fa%2F202610083889734044.html": "https://wap.eastmoney.com/a/202610083889734044.html",
+  "http://t.cn/AXlUveQJ": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx3.sinaimg.cn%2Flarge%2F0063WZjhgy1ihwf5iqgabj30wi1yc1kx.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151",
+  "https://wx3.sinaimg.cn/large/0063WZjhgy1ihwf5iqgabj30wi1yc1kx.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151"
  }
 }

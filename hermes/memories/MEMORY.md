@@ -16,6 +16,6 @@ User is building a Global Multi-Economy Wealth Conservation Model. Combines SFC 
 §
 用户=魏俊杰（GitHub Coordinate35，1995.03）：2018.07-2023.12 滴滴接入层资深研发D7（DevOps→管控面→转发引擎→接入层技术负责人）；2024.01-至今 抖音服务架构·研发体验与效率2-1。工作史源=~/Documents/summary，简历任务见 skill resume-cv-workflow。投资分析偏好系统提取+政策/基本面/技术面，聚焦能源板块。
 §
-browser_exec 报 chrome-not-running → 用 skill browser-exec-recovery 恢复。QQ 交互场景禁复合 terminal 命令（写 ~/.config、外网 curl 管道→安全审批挂起弹不出批准框）。
+browser_exec 报 chrome-not-running/ERR_PROXY（如 Nekoray :2081 未运行）→ skill browser-exec-recovery 恢复。QQ 交互场景禁复合 terminal 命令（写 ~/.config、外网 curl 管道→审批挂起弹不出批准框）。
 §
 跑非默认 venv 的 python（rl-venv/melotts 等）宜前缀 `PYTHONPATH=`：Hermes 终端注入的 PYTHONPATH 指向其 3.14 包，实测污染 import（rl-venv PIL 报错）。

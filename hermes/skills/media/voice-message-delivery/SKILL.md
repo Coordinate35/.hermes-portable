@@ -157,7 +157,7 @@ os.environ["TRANSFORMERS_OFFLINE"] = "1"
 from melo.api import TTS  # import 之后不再设置上述环境变量
 ```
 
-**误区**：在 `main()` 内设置环境变量，但 `from melo.api import TTS` 在文件顶部，导致 `transformers` 在 import 时就尝试连接 huggingface.co 而失败。
+**误区**：在 `main()` 内设置环境变量，但 `from melo.api import TTS` 在文件顶部，导致 `transformers` 在 import 时就尝试连接 huggingface.co 而失败。**（2026-10-11 实测：MeloTTS 无法启动——`melo/text/japanese.py` 在 import 期为日文分词加载 `tohoku-nlp/bert-base-japanese-v3`，缓存缺失且 hf-mirror 不可达 → OSError；待联网补模型缓存/修镜像。当日微博播报该级失败后降级 edge-tts 成功。）**
 
 ### 3. Edge 在线 TTS（最终降级）
 
@@ -227,6 +227,8 @@ QQ Bot 回复中，`MEDIA:/path/to/file.wav` **必须是这条回复的全部内
 **判断流程**：需要发语音 → 这条回复**有且仅有** `MEDIA:<path>` → 如果真的必须补充文字（用户问了具体信息、要发链接/代码），再单独发**下一条**纯文字回复。
 
 **补充（2026-09 实证）**：文字与**非音频**媒体（图片/PDF）混排是**安全的**——实现上文字先发为一条消息，图片/文件随后作为独立消息投递（extract_media 拆分：文字→send、图片→send_multiple_images、文件→send_document）。实证：9-16 潘功胜文章"文字说明+MEDIA:PDF"成功送达。此补充仅限非音频；**音频仍必须独占整条回复**。
+
+**QQ 语音条时长上限（2026-10-11 实证）**：QQ Bot 上传音频有服务端时长上限——530s（8.8min）被拒（`[400] 上传音频时长超过限制`）、266s 通过（上限约 5min）。批量/长文语音必须**拆分 ≤ ~4.5 分钟/段、分段逐条发送**（一条音频一条消息）：`ffmpeg -y -i in.mp3 -ss <起> -t <长> -c copy out.mp3`。拆分段偶发 `音频转换超时，请压缩后发送`（服务端转码超时）——上传组件自动重试、通常成功；连续失败再抬高码率阈值或减短时长。手动补发通道：`hermes send --to qqbot:<chat_id> "MEDIA:<path>"`（CLI 直发、复用 gateway 凭据；`--json` 看回执与 message_id；绕过交互回复的 MEDIA 规则，适合故障后补发）。
 
 **其他平台（Telegram/Discord/微信等）**：可使用 `send_message` 工具带 `MEDIA:` 路径。
 

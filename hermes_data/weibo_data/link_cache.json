@@ -211,6 +211,41 @@
    "sinaurl": "https://wx3.sinaimg.cn/large/0063WZjhgy1ihwf5iqgabj30wi1yc1kx.jpg",
    "hits": 3,
    "last_seen_at": "2026-10-09 21:42:57"
+  },
+  "https://photo.weibo.com/h5/comment/compic_id/1022:230597cf7a1c56523cc88033e101c0c572f13b": {
+   "first_parsed_at": "2026-10-11 13:22:28",
+   "last_parsed_at": "2026-10-11 13:22:28",
+   "url": "https://photo.weibo.com/h5/comment/compic_id/1022:230597cf7a1c56523cc88033e101c0c572f13b",
+   "title": "评论配图页（@用户6282460088 评论附图；原帖 5352468893666628）",
+   "kind": "weibo_compic",
+   "extra": "t.cn 302 直达；源帖 5352468893666628",
+   "sinaurl": "https://wx3.sinaimg.cn/large/006RayRqgy1ihx6vhvetej30v4177wmo.jpg",
+   "hits": 3,
+   "last_seen_at": "2026-10-11 13:22:28"
+  },
+  "https://photo.weibo.com/h5/comment/compic_id/1022:230597d935396ca01760d8d5422f8f0a4131aa": {
+   "first_parsed_at": "2026-10-11 13:22:28",
+   "last_parsed_at": "2026-10-11 13:22:28",
+   "url": "https://photo.weibo.com/h5/comment/compic_id/1022:230597d935396ca01760d8d5422f8f0a4131aa",
+   "title": "评论配图页（@兔兔归来V 评论附图；原帖 5352808568326193）",
+   "kind": "weibo_compic",
+   "extra": "t.cn 302 直达；源帖 5352808568326193",
+   "sinaurl": "https://wx4.sinaimg.cn/large/008qcccYgy1ihyaducp5jj310o1hxqgq.jpg",
+   "hits": 3,
+   "last_seen_at": "2026-10-11 13:22:28"
+  },
+  "https://weixin.qq.com/sph/ARb1OUbDiI": {
+   "first_parsed_at": "2026-10-11 18:48:08",
+   "last_parsed_at": "2026-10-11 18:48:08",
+   "url": "https://weixin.qq.com/sph/ARb1OUbDiI",
+   "title": "王安石该不该变法？",
+   "author": "平原公子",
+   "date": "2026-10-11",
+   "kind": "wechat_channels",
+   "extra": "互动(2026-10-11 18:40抓取)：大拇指459/转发194/爱心204/评论28；视频发布于2026-10-11 11:03（createtime 1791687834）；源帖 5352903149621519；无话题标签、无地点字段",
+   "sinaurl": "https://channels.weixin.qq.com/finder-preview/pages/sph?id=ARb1OUbDiI",
+   "hits": 3,
+   "last_seen_at": "2026-10-11 18:48:37"
   }
  },
  "aliases": {
@@ -235,6 +270,14 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwap.eastmoney.com%2Fa%2F202610083889734044.html": "https://wap.eastmoney.com/a/202610083889734044.html",
   "http://t.cn/AXlUveQJ": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx3.sinaimg.cn%2Flarge%2F0063WZjhgy1ihwf5iqgabj30wi1yc1kx.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151",
-  "https://wx3.sinaimg.cn/large/0063WZjhgy1ihwf5iqgabj30wi1yc1kx.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151"
+  "https://wx3.sinaimg.cn/large/0063WZjhgy1ihwf5iqgabj30wi1yc1kx.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:2329755352220973599151",
+  "http://t.cn/AXlb8wUt": "https://photo.weibo.com/h5/comment/compic_id/1022:230597cf7a1c56523cc88033e101c0c572f13b",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx3.sinaimg.cn%2Flarge%2F006RayRqgy1ihx6vhvetej30v4177wmo.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:230597cf7a1c56523cc88033e101c0c572f13b",
+  "https://wx3.sinaimg.cn/large/006RayRqgy1ihx6vhvetej30v4177wmo.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:230597cf7a1c56523cc88033e101c0c572f13b",
+  "http://t.cn/AXltruhY": "https://photo.weibo.com/h5/comment/compic_id/1022:230597d935396ca01760d8d5422f8f0a4131aa",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx4.sinaimg.cn%2Flarge%2F008qcccYgy1ihyaducp5jj310o1hxqgq.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:230597d935396ca01760d8d5422f8f0a4131aa",
+  "https://wx4.sinaimg.cn/large/008qcccYgy1ihyaducp5jj310o1hxqgq.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:230597d935396ca01760d8d5422f8f0a4131aa",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FARb1OUbDiI": "https://weixin.qq.com/sph/ARb1OUbDiI",
+  "https://channels.weixin.qq.com/finder-preview/pages/sph?id=ARb1OUbDiI": "https://weixin.qq.com/sph/ARb1OUbDiI"
  }
 }

@@ -56,6 +56,14 @@ metadata:
 3. **查写入失败根因**：`grep -a "Refusing to overwrite" ~/.hermes/logs/errors.log`——`write_file` 拒绝覆盖“本任务未读过全文”的已存在文件；cron 每轮新会话复用上轮遗留的固定文件名（如 scratch 中的验证脚本）即触发。
 4. **判定影响并答复**：该警示只说明“有文件未落盘”，**不等于投递失败**——用 message_id / 上传完成记录单独核实投递；成功则答复用户“样式像报错、实际无影响”，并给出源头修复：辅助脚本一律用**带时间戳/轮次后缀的唯一文件名**（避免撞上轮遗留同名文件；确需覆盖先 `read_file`）。
 
+## 变体：所有平台长时间无推送/无响应——gateway 挂死（2026-10-11 实测）
+
+`hermes-gateway.service`（user 级 systemd 服务，`Restart=always`，见 `systemctl --user cat hermes-gateway`）只能感知**进程退出**；进程**挂死**（heartbeat 停、主循环冻结）时 systemd 不会重启 → 全平台静默可达数小时～数天，且无任何失败日志。
+
+判据：① `systemctl --user status hermes-gateway` 看 `Active since`（迟迟未更新的旧时间 = 未重启过）；② agent.log / cron output `.md` 无新行（整个轮次停摆）；③ `journalctl --user -u hermes-gateway` 出现 `Previous gateway life … exited UNCLEANLY … last_heartbeat_at=…`（心跳停摆时刻即挂死时刻）。
+
+恢复：`systemctl --user restart hermes-gateway`（或 stop+start）；重启后 scheduler 自动 catch-up missed jobs（日志 `missed its scheduled time … Running now`）。⚠️ 常见诱因是**磁盘写满**（写爆瞬间进程卡死）——恢复前先 `df -h` 确认空间，不足先清理再重启，否则可能复挂。
+
 ## Pitfalls
 
 - 会话污染是**会话级**的：同 model 其他会话（如微信）可能完全正常，别据此误判整个 provider 挂掉。

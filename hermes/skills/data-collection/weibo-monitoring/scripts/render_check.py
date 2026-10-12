@@ -23,7 +23,7 @@ def main() -> int:
         print("usage: render_check.py <id> [marker ...]", file=sys.stderr)
         return 2
     mid = sys.argv[1]
-    markers = sys.argv[2:] or ["全球穿透式交易的有效", "请新浪不要乱删"]
+    markers = sys.argv[2:]  # 无默认 marker：调用方须显式传本帖止点串
 
     targets = [
         f"https://m.weibo.cn/status/{mid}?_=2",

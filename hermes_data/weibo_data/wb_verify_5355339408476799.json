@@ -1,0 +1,24 @@
+{
+ "id": "5355339408476799",
+ "created_at": "Sun Oct 18 11:57:55 +0800 2026",
+ "source": "iPhone 16e",
+ "repost_type": 3,
+ "isLongText": false,
+ "raw_text": "转发微博",
+ "text_stripped": "转发微博",
+ "hrefs": [],
+ "pic_num": 0,
+ "comments_count": 10,
+ "reposts_count": 5,
+ "attitudes_count": 54,
+ "pc_longtext": "",
+ "retweeted_status": {
+  "id": "5355308819941305",
+  "user": "卢麒元",
+  "created_at": "Sun Oct 18 09:56:22 +0800 2026",
+  "isLongText": false,
+  "raw_text": null,
+  "text_stripped": "分享图片 ",
+  "pic_num": 1
+ }
+}

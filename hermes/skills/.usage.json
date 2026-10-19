@@ -149,7 +149,7 @@
     "view_count": 4
   },
   "blocked-page-recovery": {
-    "archived_at": null,
+    "archived_at": "2026-10-18T23:33:24.632331+00:00",
     "created_at": "2026-08-16T20:21:35.408129+00:00",
     "created_by": null,
     "last_patched_at": null,
@@ -159,7 +159,7 @@
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
-    "state": "stale",
+    "state": "archived",
     "use_count": 3,
     "view_count": 3
   },
@@ -235,7 +235,7 @@
     "view_count": 11
   },
   "china-policy-document-search": {
-    "archived_at": null,
+    "archived_at": "2026-10-18T23:33:24.786984+00:00",
     "created_at": "2026-08-23T05:32:16.757106+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-08-23T05:32:30.207469+00:00",
@@ -245,12 +245,12 @@
     "patch_count": 1,
     "patch_generation": 0,
     "pinned": false,
-    "state": "stale",
+    "state": "archived",
     "use_count": 1,
     "view_count": 1
   },
   "chinese-web-resource-sourcing": {
-    "archived_at": null,
+    "archived_at": "2026-10-18T23:33:24.968859+00:00",
     "created_at": "2026-09-12T17:16:34.193180+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-09-12T17:17:09.303440+00:00",
@@ -260,7 +260,7 @@
     "patch_count": 4,
     "patch_generation": 4,
     "pinned": false,
-    "state": "stale",
+    "state": "archived",
     "use_count": 1,
     "view_count": 1
   },
@@ -371,7 +371,7 @@
     "view_count": 0
   },
   "docx": {
-    "archived_at": null,
+    "archived_at": "2026-10-18T23:33:25.161021+00:00",
     "created_at": "2026-08-02T20:14:08.158566+00:00",
     "created_by": null,
     "last_patched_at": null,
@@ -381,7 +381,7 @@
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
-    "state": "stale",
+    "state": "archived",
     "use_count": 1,
     "view_count": 1
   },
@@ -697,7 +697,7 @@
     "view_count": 0
   },
   "ipo-prospectus-analysis": {
-    "archived_at": null,
+    "archived_at": "2026-10-18T23:33:25.320076+00:00",
     "created_at": "2026-09-04T12:27:07.118196+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-09-16T04:25:21.289228+00:00",
@@ -707,7 +707,7 @@
     "patch_count": 12,
     "patch_generation": 12,
     "pinned": false,
-    "state": "stale",
+    "state": "archived",
     "use_count": 11,
     "view_count": 11
   },
@@ -1392,16 +1392,16 @@
     "archived_at": null,
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
-    "last_patched_at": "2026-10-17T01:31:50.460327+00:00",
-    "last_reused_patch_generation": 204,
-    "last_used_at": "2026-10-18T04:00:52.724391+00:00",
-    "last_viewed_at": "2026-10-18T04:00:52.723158+00:00",
-    "patch_count": 214,
-    "patch_generation": 204,
+    "last_patched_at": "2026-10-19T04:01:54.293400+00:00",
+    "last_reused_patch_generation": 205,
+    "last_used_at": "2026-10-19T04:01:44.904487+00:00",
+    "last_viewed_at": "2026-10-19T04:01:44.902669+00:00",
+    "patch_count": 216,
+    "patch_generation": 206,
     "pinned": false,
     "state": "active",
-    "use_count": 6771,
-    "view_count": 6771
+    "use_count": 6773,
+    "view_count": 6773
   },
   "weights-and-biases": {
     "archived_at": null,

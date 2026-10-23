@@ -5,14 +5,14 @@
     "created_by": null,
     "last_patched_at": "2026-08-19T06:38:27.037255+00:00",
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-10-18T17:38:21.501019+00:00",
-    "last_viewed_at": "2026-10-18T17:38:21.498616+00:00",
+    "last_used_at": "2026-10-23T16:12:51.169224+00:00",
+    "last_viewed_at": "2026-10-23T16:12:51.166681+00:00",
     "patch_count": 10,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 118,
-    "view_count": 118
+    "use_count": 119,
+    "view_count": 119
   },
   "airtable": {
     "archived_at": null,
@@ -44,16 +44,16 @@
     "archived_at": null,
     "created_at": "2026-09-09T12:43:13.947728+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-10-08T11:08:45.289321+00:00",
-    "last_reused_patch_generation": 4,
-    "last_used_at": "2026-10-08T11:02:29.181006+00:00",
-    "last_viewed_at": "2026-10-08T11:02:29.179794+00:00",
-    "patch_count": 5,
-    "patch_generation": 5,
+    "last_patched_at": "2026-10-23T16:13:25.436600+00:00",
+    "last_reused_patch_generation": 5,
+    "last_used_at": "2026-10-23T16:12:51.170684+00:00",
+    "last_viewed_at": "2026-10-23T16:12:51.168182+00:00",
+    "patch_count": 7,
+    "patch_generation": 7,
     "pinned": false,
     "state": "active",
-    "use_count": 4,
-    "view_count": 4
+    "use_count": 5,
+    "view_count": 5
   },
   "arxiv": {
     "archived_at": null,
@@ -1394,14 +1394,14 @@
     "created_by": null,
     "last_patched_at": "2026-10-19T04:01:54.293400+00:00",
     "last_reused_patch_generation": 206,
-    "last_used_at": "2026-10-22T04:41:37.111212+00:00",
-    "last_viewed_at": "2026-10-22T04:41:37.108739+00:00",
+    "last_used_at": "2026-10-23T02:56:35.757414+00:00",
+    "last_viewed_at": "2026-10-23T02:56:35.756268+00:00",
     "patch_count": 216,
     "patch_generation": 206,
     "pinned": false,
     "state": "active",
-    "use_count": 6776,
-    "view_count": 6776
+    "use_count": 6777,
+    "view_count": 6777
   },
   "weights-and-biases": {
     "archived_at": null,

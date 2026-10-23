@@ -28,6 +28,7 @@ metadata:
      - 非卢麒元的通用文章存 `~/hermes_data/articles/<作者>_<标题>_<来源>_<日期>.md`；页面图注保留并标 `［图注］` 前缀。
      - **交付到 QQ 默认转 PDF**（手机端打不开 .md）：`PYTHONPATH= ~/hermes_data/rl-venv/bin/python ~/hermes_data/articles/build_article_pdf.py "<文章.md>"` → 同目录同名 .pdf（reportlab + wqy 字体，含章节标题 KeepTogether 防孤行，均已实测）；校验链：pdfinfo 页数 + pdftotext 关键句 + pdftoppm→vision 抽页。
       - ⚠️ 构建命令必须带 `PYTHONPATH= ` 前缀（2026-10-08 实测：Hermes 会话注入的 PYTHONPATH 指向 3.14 包，污染 rl-venv 的 PIL → 报 `REPORTLAB_MISSING: _imaging`）。
+      - 研究型长报告（案例研究/机制分析，非文章归档）走同一脚本：结构模板、md 方言限制、核验与交付见 `references/long-report-pdf.md`。
       - 脚本 2026-10-08 已通用化：页脚/标题/作者从 md 元信息（作者/发布方/来源）推导；正文 wordWrap='CJK'；内置避头标点补丁（补全全角 ，！？；：等，修复标点落行首）。
      - **正文配图一并补齐**（2026-09-16 实测）：从源页 HTML 提取 `<img>` 真实地址（排除导航/二维码图标）→ curl 存 `images/` → md 在 `［图注］` 行前加 `![图](images/...)` → PDF 脚本自动嵌图（12cm 宽居中 + 图注紧随，KeepTogether）。图注在 md 里保留 `［图注］` 前缀；压缩版面时图片收宽是防"尾页孤行"的主杠杆。
 3. **写 markdown**（模板，对齐已有文件的元信息格式）：

@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 51494
+        "completed": 51782
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-10-25T03:05:00+08:00",
-      "last_run_at": "2026-10-25T02:56:36.154876+08:00",
+      "next_run_at": "2026-10-26T03:05:00+08:00",
+      "last_run_at": "2026-10-26T02:56:37.713200+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -38,14 +38,14 @@
         "thread_id": null
       },
       "fire_claim": {
-        "at": "2026-10-25T03:00:41.373389+08:00",
-        "by": "coordinate35-VirtualBox:635424:4fa78335b06c471abb3d708642b335e2"
+        "at": "2026-10-26T03:00:41.322506+08:00",
+        "by": "coordinate35-VirtualBox:635424:db24860756554aeeac69c35769171432"
       },
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-10-25T03:00:00+08:00",
-        "dispatched_at": "2026-10-25T03:00:40.662233+08:00",
-        "lateness_seconds": 40.7,
+        "scheduled_at": "2026-10-26T03:00:00+08:00",
+        "dispatched_at": "2026-10-26T03:00:40.624160+08:00",
+        "lateness_seconds": 40.6,
         "kind": "on_time"
       },
       "last_failure": {
@@ -71,15 +71,15 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 170
+        "completed": 171
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-10-25T09:00:00+08:00",
-      "last_run_at": "2026-10-24T09:00:48.539716+08:00",
+      "next_run_at": "2026-10-26T09:00:00+08:00",
+      "last_run_at": "2026-10-25T09:00:56.328931+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -93,8 +93,8 @@
       "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-10-24T09:00:00+08:00",
-        "dispatched_at": "2026-10-24T09:00:40.613238+08:00",
+        "scheduled_at": "2026-10-25T09:00:00+08:00",
+        "dispatched_at": "2026-10-25T09:00:40.643137+08:00",
         "lateness_seconds": 40.6,
         "kind": "on_time"
       },
@@ -123,15 +123,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 164
+        "completed": 165
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-10-26T03:00:00+08:00",
-      "last_run_at": "2026-10-24T03:01:10.226555+08:00",
+      "next_run_at": "2026-10-27T03:00:00+08:00",
+      "last_run_at": "2026-10-25T03:01:00.313680+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -140,14 +140,14 @@
       "enabled_toolsets": null,
       "workdir": null,
       "fire_claim": {
-        "at": "2026-10-25T03:00:41.379001+08:00",
-        "by": "coordinate35-VirtualBox:635424:e2dcceee51d54a91b58c36b2dea747f9"
+        "at": "2026-10-26T03:00:41.316896+08:00",
+        "by": "coordinate35-VirtualBox:635424:35889cc615214cec9030a9cec529cbe8"
       },
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-10-25T03:00:00+08:00",
-        "dispatched_at": "2026-10-25T03:00:40.662233+08:00",
-        "lateness_seconds": 40.7,
+        "scheduled_at": "2026-10-26T03:00:00+08:00",
+        "dispatched_at": "2026-10-26T03:00:40.624160+08:00",
+        "lateness_seconds": 40.6,
         "kind": "on_time"
       }
     },
@@ -171,15 +171,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 156
+        "completed": 157
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-10-26T03:00:00+08:00",
-      "last_run_at": "2026-10-25T03:00:41.493184+08:00",
+      "next_run_at": "2026-10-27T03:00:00+08:00",
+      "last_run_at": "2026-10-26T03:00:41.485827+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -195,12 +195,69 @@
       "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-10-25T03:00:00+08:00",
-        "dispatched_at": "2026-10-25T03:00:40.662233+08:00",
-        "lateness_seconds": 40.7,
+        "scheduled_at": "2026-10-26T03:00:00+08:00",
+        "dispatched_at": "2026-10-26T03:00:40.624160+08:00",
+        "lateness_seconds": 40.6,
         "kind": "on_time"
       }
+    },
+    {
+      "id": "da4e04f79ca8",
+      "name": "听书自动连播看门狗",
+      "prompt": "看门狗脚本：读取 ~/hermes_data/ebooks/auto_playback.json，若 enabled=true 且守护进程不在，则拉起 auto_advance.py（no_agent 模式仅执行脚本，本 prompt 不参与）。",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "audiobook_watchdog.py",
+      "no_agent": true,
+      "monitor_script": null,
+      "monitor_url": null,
+      "monitor_state": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 1,
+        "display": "every 1m"
+      },
+      "schedule_display": "every 1m",
+      "repeat": {
+        "times": null,
+        "completed": 368
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-10-25T14:43:59.551979+08:00",
+      "next_run_at": "2026-10-26T03:00:41.439231+08:00",
+      "last_run_at": "2026-10-26T02:59:41.439231+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "last_delivery_unverified": null,
+      "last_failure": null,
+      "failure_streak": 0,
+      "deliver": "local",
+      "origin": {
+        "platform": "qqbot",
+        "chat_id": "4E42EA828928C02FC47FEB6334392F69",
+        "chat_name": null,
+        "thread_id": null,
+        "user_id": "4E42EA828928C02FC47FEB6334392F69",
+        "scope_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "last_dispatch": {
+        "scheduled_at": "2026-10-26T02:58:41.369334+08:00",
+        "dispatched_at": "2026-10-26T02:59:40.675919+08:00",
+        "lateness_seconds": 59.3,
+        "kind": "on_time"
+      },
+      "fire_claim": null
     }
   ],
-  "updated_at": "2026-10-25T03:00:41.506839+08:00"
+  "updated_at": "2026-10-26T03:00:41.497787+08:00"
 }

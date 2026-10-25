@@ -35,6 +35,7 @@ category: media
 - "读XX/朗读XX/念XX/给我读XX/听XX"（XX 是书名或"继续"）
 - "继续读 / 继续读N段 / 接着念 / 接着读 / 再念几段"
 - "跳到第X回 / 从第X回开始 / 重新开始读 / 回到上一段"
+- "自动连播 / 一直念下去 / 不用我说继续 / 自动续播 / 连续播"（走下文「自动连播（守护进程模式）」章节）
 - "这一回讲什么 / 当前章节摘要 / 总结一下这章"
 - → 调 `read.py`，再走 TTS 链路
 
@@ -554,6 +555,47 @@ python3 ~/.hermes/skills/media/audiobook-reader/scripts/synth_batch.py \
 ```
 
 ⚠️ 内部用 `read.py --mode locate` 取段，会把 progress 写到 `[P, P+C)`。多数兜底场景下 progress 已经 ≥ P+C（read.py 已先推进过），调用 synth_batch 等于"回滚再前进"，最终落点不变；但若 progress < P 会造成跳跃，使用前自查。文件名按 `combined_ch{NNN}_p{P}-p{P+C-1}.wav` 闭区间规则写。
+
+## 自动连播（守护进程模式，2026-10 上线）
+
+**目标**：用户不必逐段说"继续"——每段音频按真实时长自动接下一段，直到用户说"停止"。
+
+### 架构
+- 交互层（agent）：只负责启动/停止，不再逐段回 MEDIA。
+- 守护进程 `scripts/auto_advance.py`：read.py continue → 合成（缓存优先）→ `hermes send MEDIA` → ffprobe 测时长 → 可中断 sleep(时长+buffer) → 下一段；每 2 秒检查 enabled。
+- 状态：`/tmp/audiobook_auto_playback.json`（enabled/book/chat/count/buffer_s/pid/last_delivered；与日志同放 /tmp，重启自动清理，不污染 hermes_data 备份）
+- 日志：`/tmp/audiobook_auto_advance.log`（事件流水，>2MB 轮转为 `.1`；重启自动清理，**不写入 hermes_data，避免被每日备份**）；预合成输出在 `/tmp/audiobook_precompose.log`。
+- 看门狗：cron `da4e04f79ca8`（`no_agent`，每分钟跑 `~/.hermes/scripts/audiobook_watchdog.py`；enabled=true 且进程不在时自动拉起，零 token）。
+
+### 启动（用户说"自动连播 / 一直念下去 / 不用我说继续"）
+1. 确认书名（别名解析同上）与当前进度。
+2. 用后台进程启动：
+```bash
+/usr/bin/python3 ~/.hermes/skills/media/audiobook-reader/scripts/auto_advance.py \
+  --book "<书名>" --chat "qqbot:<id>" --count 5 --buffer -8
+```
+（`terminal(background=true, persist_on_release=true)`；buffer=-8 是故意略微提前发送，抵消 hermes send 的 5–10 秒投递延迟）
+3. 启动后**不要再逐段回复 MEDIA**——守护进程自己发；用户收到的每条音频是独立消息。
+
+### 停止（用户说"停止 / 停 / 别念了 / 关掉连播"）
+```bash
+/usr/bin/python3 ~/.hermes/skills/media/audiobook-reader/scripts/auto_advance.py --stop
+```
+停止只写 `enabled=false` 并 TERM 进程；**progress 已推进**，用户之后说"继续"照常从下一段开始（不需要暂停态）。
+
+### 参数与行为
+- `--count`：每段段数，默认 5（约 400–600 字/条）。
+- `--buffer`：睡眠补偿秒数；正数=音频结束后再等，负数=提前发送。默认 -8。
+- 合成：缓存命中直接发；未命中走 win_tts → MeloTTS → edge 三级降级；>2400 字自动分段 + ffmpeg concat。
+- 失败处理：取段/合成连续 3 次失败 → 停并发一条文字提示；全书读完 → 停并发"全书读完"。
+- 单实例：`~/hermes_data/ebooks/.auto_advance.lock` 文件锁，重复启动会直接退出。
+- 章节边界：read.py 自动跨章；三联版章末"金庸"署名段会被过滤（<10 字且在 NOISE_TEXTS 中）。
+
+### 已知边界
+- 守护进程是网关子进程：网关重启会被杀，看门狗在下一分钟拉起；若网关整体停机，恢复后看门狗自动续上。
+- 自动连播期间用户插话：按用户约定先由用户说"停止"，agent 不自动暂停（避免误停）。
+- 发送走 `hermes send`，不经 agent 回复，因此不受"MEDIA 独占整条回复"约束；但仍是独立消息。
+- 2026-10-25 实测：1 段/条模式下，第1条 23.2s → 25s 后第2条（缓存命中）；5 段/条模式下 449 字合成 21s、音频 92.8s，下一批在 100s 处发出。
 
 ## 章节切分规则（txt 格式）
 

@@ -626,7 +626,7 @@
     "patch_count": 6,
     "patch_generation": 6,
     "pinned": false,
-    "state": "active",
+    "state": "stale",
     "use_count": 6,
     "view_count": 6
   },
@@ -1393,15 +1393,15 @@
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
     "last_patched_at": "2026-10-25T09:45:57.397638+00:00",
-    "last_reused_patch_generation": 206,
-    "last_used_at": "2026-10-25T09:45:48.884112+00:00",
-    "last_viewed_at": "2026-10-25T09:45:48.882751+00:00",
+    "last_reused_patch_generation": 207,
+    "last_used_at": "2026-10-26T05:50:58.026624+00:00",
+    "last_viewed_at": "2026-10-26T05:50:58.025462+00:00",
     "patch_count": 217,
     "patch_generation": 207,
     "pinned": false,
     "state": "active",
-    "use_count": 6780,
-    "view_count": 6780
+    "use_count": 6781,
+    "view_count": 6781
   },
   "weights-and-biases": {
     "archived_at": null,

@@ -99,15 +99,15 @@
     "created_at": "2026-05-29T10:39:06.704332+00:00",
     "created_by": null,
     "last_patched_at": "2026-10-25T06:58:51.310432+00:00",
-    "last_reused_patch_generation": 0,
-    "last_used_at": "2026-10-25T06:32:39.705387+00:00",
-    "last_viewed_at": "2026-10-25T06:32:39.703636+00:00",
+    "last_reused_patch_generation": 12,
+    "last_used_at": "2026-10-27T07:35:35.605354+00:00",
+    "last_viewed_at": "2026-10-27T07:35:35.603169+00:00",
     "patch_count": 51,
     "patch_generation": 12,
     "pinned": false,
     "state": "active",
-    "use_count": 50,
-    "view_count": 50
+    "use_count": 52,
+    "view_count": 52
   },
   "audiocraft-audio-generation": {
     "archived_at": null,
@@ -697,19 +697,20 @@
     "view_count": 0
   },
   "ipo-prospectus-analysis": {
-    "archived_at": "2026-10-18T23:33:25.320076+00:00",
-    "created_at": "2026-09-04T12:27:07.118196+00:00",
+    "archived_at": null,
+    "created_at": "2026-10-27T07:36:38.325166+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-09-16T04:25:21.289228+00:00",
-    "last_reused_patch_generation": 10,
-    "last_used_at": "2026-09-16T03:21:34.823846+00:00",
-    "last_viewed_at": "2026-09-16T03:21:34.821623+00:00",
-    "patch_count": 12,
-    "patch_generation": 12,
+    "first_seen_at": null,
+    "last_patched_at": "2026-10-27T07:36:46.233325+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-10-27T07:36:44.311685+00:00",
+    "last_viewed_at": "2026-10-27T07:36:44.310182+00:00",
+    "patch_count": 3,
+    "patch_generation": 3,
     "pinned": false,
-    "state": "archived",
-    "use_count": 11,
-    "view_count": 11
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "jupyter-live-kernel": {
     "archived_at": null,
@@ -1394,14 +1395,14 @@
     "created_by": null,
     "last_patched_at": "2026-10-25T09:45:57.397638+00:00",
     "last_reused_patch_generation": 207,
-    "last_used_at": "2026-10-26T05:50:58.026624+00:00",
-    "last_viewed_at": "2026-10-26T05:50:58.025462+00:00",
+    "last_used_at": "2026-10-27T03:20:56.729133+00:00",
+    "last_viewed_at": "2026-10-27T03:20:56.727880+00:00",
     "patch_count": 217,
     "patch_generation": 207,
     "pinned": false,
     "state": "active",
-    "use_count": 6781,
-    "view_count": 6781
+    "use_count": 6783,
+    "view_count": 6783
   },
   "weights-and-biases": {
     "archived_at": null,

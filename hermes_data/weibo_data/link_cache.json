@@ -268,6 +268,18 @@
    "extra": "h5变体 https://h5.video.weibo.com/show/1034:5351772298870821 ；卡内文案为对卢麒元观点的转述；被卢麒元 10-28 15:25:25 纯转发",
    "sinaurl": "http://t.cn/AXl2B55q",
    "hits": 0
+  },
+  "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d": {
+   "first_parsed_at": "2026-10-31 14:04:40",
+   "last_parsed_at": "2026-10-31 14:04:40",
+   "url": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
+   "title": "评论配图（photo.weibo.com 评论配图页，共 1 张图）",
+   "author": "正心以中and修身以和",
+   "date": "2026-10-31",
+   "kind": "weibo_compic",
+   "extra": "评论配图原图 https://wx4.sinaimg.cn/large/008G6jXfgy1iilhxpapv7j30qo1nb783.jpg；微博 t.cn http://t.cn/AXjmVM2w（302 → compic 页）；微博帖 5360081207559968",
+   "hits": 4,
+   "last_seen_at": "2026-10-31 14:04:40"
   }
  },
  "aliases": {
@@ -302,6 +314,10 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fweixin.qq.com%2Fsph%2FARb1OUbDiI": "https://weixin.qq.com/sph/ARb1OUbDiI",
   "https://channels.weixin.qq.com/finder-preview/pages/sph?id=ARb1OUbDiI": "https://weixin.qq.com/sph/ARb1OUbDiI",
   "http://t.cn/AXjNEY5a": "https://photo.weibo.com/h5/comment/compic_id/1022:230597dd1a30f67550624b4e2eb04dedef2561",
-  "http://t.cn/AXl2B55q": "https://video.weibo.com/show?fid=1034:5351772298870821"
+  "http://t.cn/AXl2B55q": "https://video.weibo.com/show?fid=1034:5351772298870821",
+  "http://t.cn/AXjmVM2w": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
+  "https://t.cn/AXjmVM2w": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx4.sinaimg.cn%2Flarge%2F008G6jXfgy1iilhxpapv7j30qo1nb783.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
+  "https://wx4.sinaimg.cn/large/008G6jXfgy1iilhxpapv7j30qo1nb783.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d"
  }
 }

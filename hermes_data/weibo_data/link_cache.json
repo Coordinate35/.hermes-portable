@@ -280,6 +280,62 @@
    "extra": "评论配图原图 https://wx4.sinaimg.cn/large/008G6jXfgy1iilhxpapv7j30qo1nb783.jpg；微博 t.cn http://t.cn/AXjmVM2w（302 → compic 页）；微博帖 5360081207559968",
    "hits": 4,
    "last_seen_at": "2026-10-31 14:04:40"
+  },
+  "https://weibo.com/ttarticle/p/show?id=2309405360504532500515": {
+   "first_parsed_at": "2026-11-01 18:08:30",
+   "last_parsed_at": "2026-11-01 18:08:30",
+   "url": "https://weibo.com/ttarticle/p/show?id=2309405360504532500515",
+   "title": "关于组建中国资本市场投资基金的建议",
+   "author": "卢麒元",
+   "date": "2026-11-01 18:02:16",
+   "kind": "weibo_article",
+   "extra": {
+    "oid": "2309405360504532500515",
+    "text_len": 2322,
+    "read_count": "5017",
+    "note": "头条文章型微博 5360504528964421；API https://weibo.com/ttarticle/x/m/aj/detail?id=2309405360504532500515 需完整含 230940 前缀的 oid（仅数字段报 100002 不是有效的文章对象Id）",
+    "aliases": [
+     "https://card.weibo.com/article/m/show/id/2309405360504532500515",
+     "https://weibo.com/ttarticle/x/m/show/id/2309405360504532500515",
+     "2309405360504532500515"
+    ]
+   },
+   "hits": 1,
+   "last_seen_at": "2026-11-01 18:08:30"
+  },
+  "https://card.weibo.com/article/m/show/id/2309405360504532500515": {
+   "first_parsed_at": "2026-11-01 18:08:35",
+   "last_parsed_at": "2026-11-01 18:08:35",
+   "url": "https://card.weibo.com/article/m/show/id/2309405360504532500515",
+   "title": "关于组建中国资本市场投资基金的建议",
+   "author": "卢麒元",
+   "date": "2026-11-01 18:02:16",
+   "kind": "weibo_article",
+   "extra": {
+    "oid": "2309405360504532500515",
+    "text_len": 2322,
+    "read_count": "5017",
+    "note": "头条文章型微博 5360504528964421；API https://weibo.com/ttarticle/x/m/aj/detail?id=2309405360504532500515 需完整含 230940 前缀的 oid"
+   },
+   "hits": 1,
+   "last_seen_at": "2026-11-01 18:08:35"
+  },
+  "https://weibo.com/ttarticle/x/m/show/id/2309405360504532500515": {
+   "first_parsed_at": "2026-11-01 18:08:35",
+   "last_parsed_at": "2026-11-01 18:08:35",
+   "url": "https://weibo.com/ttarticle/x/m/show/id/2309405360504532500515",
+   "title": "关于组建中国资本市场投资基金的建议",
+   "author": "卢麒元",
+   "date": "2026-11-01 18:02:16",
+   "kind": "weibo_article",
+   "extra": {
+    "oid": "2309405360504532500515",
+    "text_len": 2322,
+    "read_count": "5017",
+    "note": "头条文章型微博 5360504528964421；API https://weibo.com/ttarticle/x/m/aj/detail?id=2309405360504532500515 需完整含 230940 前缀的 oid"
+   },
+   "hits": 1,
+   "last_seen_at": "2026-11-01 18:08:35"
   }
  },
  "aliases": {

@@ -5,14 +5,14 @@
     "created_by": null,
     "last_patched_at": "2026-08-19T06:38:27.037255+00:00",
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-10-23T16:12:51.169224+00:00",
-    "last_viewed_at": "2026-10-23T16:12:51.166681+00:00",
+    "last_used_at": "2026-11-01T18:54:34.516592+00:00",
+    "last_viewed_at": "2026-11-01T18:54:34.515168+00:00",
     "patch_count": 10,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 119,
-    "view_count": 119
+    "use_count": 121,
+    "view_count": 121
   },
   "airtable": {
     "archived_at": null,
@@ -44,16 +44,16 @@
     "archived_at": null,
     "created_at": "2026-09-09T12:43:13.947728+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-10-23T16:13:25.436600+00:00",
-    "last_reused_patch_generation": 5,
-    "last_used_at": "2026-10-23T16:12:51.170684+00:00",
-    "last_viewed_at": "2026-10-23T16:12:51.168182+00:00",
-    "patch_count": 7,
-    "patch_generation": 7,
+    "last_patched_at": "2026-11-01T11:12:20.608927+00:00",
+    "last_reused_patch_generation": 8,
+    "last_used_at": "2026-11-01T18:55:17.110161+00:00",
+    "last_viewed_at": "2026-11-01T18:55:17.108490+00:00",
+    "patch_count": 8,
+    "patch_generation": 8,
     "pinned": false,
     "state": "active",
-    "use_count": 5,
-    "view_count": 5
+    "use_count": 11,
+    "view_count": 11
   },
   "arxiv": {
     "archived_at": null,
@@ -100,14 +100,14 @@
     "created_by": null,
     "last_patched_at": "2026-10-25T06:58:51.310432+00:00",
     "last_reused_patch_generation": 12,
-    "last_used_at": "2026-10-27T07:35:35.605354+00:00",
-    "last_viewed_at": "2026-10-27T07:35:35.603169+00:00",
+    "last_used_at": "2026-11-01T18:14:11.326259+00:00",
+    "last_viewed_at": "2026-11-01T18:14:11.323616+00:00",
     "patch_count": 51,
     "patch_generation": 12,
     "pinned": false,
     "state": "active",
-    "use_count": 52,
-    "view_count": 52
+    "use_count": 54,
+    "view_count": 54
   },
   "audiocraft-audio-generation": {
     "archived_at": null,
@@ -701,16 +701,16 @@
     "created_at": "2026-10-27T07:36:38.325166+00:00",
     "created_by": "agent",
     "first_seen_at": null,
-    "last_patched_at": "2026-10-27T07:36:46.233325+00:00",
-    "last_reused_patch_generation": 0,
-    "last_used_at": "2026-10-27T07:36:44.311685+00:00",
-    "last_viewed_at": "2026-10-27T07:36:44.310182+00:00",
-    "patch_count": 3,
-    "patch_generation": 3,
+    "last_patched_at": "2026-11-01T18:08:03.583946+00:00",
+    "last_reused_patch_generation": 5,
+    "last_used_at": "2026-11-01T18:54:42.279141+00:00",
+    "last_viewed_at": "2026-11-01T18:54:42.277584+00:00",
+    "patch_count": 5,
+    "patch_generation": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 1,
-    "view_count": 1
+    "use_count": 5,
+    "view_count": 5
   },
   "jupyter-live-kernel": {
     "archived_at": null,
@@ -1007,14 +1007,14 @@
     "created_by": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-10-03T08:21:19.317201+00:00",
-    "last_viewed_at": "2026-10-03T08:21:19.314252+00:00",
+    "last_used_at": "2026-11-01T18:52:03.886612+00:00",
+    "last_viewed_at": "2026-11-01T18:52:03.885280+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 5,
-    "view_count": 5
+    "use_count": 7,
+    "view_count": 7
   },
   "pixel-art": {
     "archived_at": null,
@@ -1041,6 +1041,22 @@
     "state": "active",
     "use_count": 6,
     "view_count": 6
+  },
+  "policy-proposal-assessment": {
+    "archived_at": null,
+    "created_at": "2026-11-01T18:55:03.414535+00:00",
+    "created_by": "agent",
+    "first_seen_at": null,
+    "last_patched_at": "2026-11-01T18:55:11.436136+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-11-01T18:55:04.949200+00:00",
+    "last_viewed_at": "2026-11-01T18:55:04.947435+00:00",
+    "patch_count": 2,
+    "patch_generation": 2,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "popular-web-designs": {
     "archived_at": "2026-09-27T21:48:42.758737+00:00",
@@ -1340,14 +1356,14 @@
     "created_by": "agent",
     "last_patched_at": "2026-10-11T05:33:50.259126+00:00",
     "last_reused_patch_generation": 5,
-    "last_used_at": "2026-10-18T17:38:21.499643+00:00",
-    "last_viewed_at": "2026-10-18T17:38:21.497410+00:00",
+    "last_used_at": "2026-11-01T18:07:08.665732+00:00",
+    "last_viewed_at": "2026-11-01T18:07:08.663133+00:00",
     "patch_count": 31,
     "patch_generation": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 1351,
-    "view_count": 1351
+    "use_count": 1352,
+    "view_count": 1352
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1395,14 +1411,14 @@
     "created_by": null,
     "last_patched_at": "2026-10-25T09:45:57.397638+00:00",
     "last_reused_patch_generation": 207,
-    "last_used_at": "2026-10-31T08:00:55.437906+00:00",
-    "last_viewed_at": "2026-10-31T08:00:55.436191+00:00",
+    "last_used_at": "2026-11-01T18:54:27.798275+00:00",
+    "last_viewed_at": "2026-11-01T18:54:27.796447+00:00",
     "patch_count": 217,
     "patch_generation": 207,
     "pinned": false,
     "state": "active",
-    "use_count": 6793,
-    "view_count": 6793
+    "use_count": 6799,
+    "view_count": 6799
   },
   "weights-and-biases": {
     "archived_at": null,

@@ -25,6 +25,7 @@ metadata:
    - 图片截图 → `vision_analyze`，提示词明确要求"完整、逐字读出全部文字内容，不要概括"；一次没读全就追问"继续"或分块。
    - 网页/链接 → 抓取正文；网络抓取失败的会话里可直接用图片转录。
      - 官方站点文章（求是网/政府站等，2026-09 首用）：`curl -sSL -o /tmp/page.html "<URL>"` 抓 HTML → Python stdlib 正则剥 script/style 后按标签转行 → 按正文起止标记切片，全文照录（不概括）→ md 加元信息头（作者/来源/发布日期/原文链接）。此法不依赖 web_extract/browser（二者都可能临时故障）。
+     - **微博头条文章（ttarticle）**：`GET https://weibo.com/ttarticle/x/m/aj/detail?id=<完整id>`（移动端 UA；id 是 URL 里 `id=` 的整串，含 `230940` 前缀，**只传末尾数字段返回 `code 100002 不是有效的文章对象Id`**）。字段：`data.title`／`data.content`（正文 HTML）／`data.summary`（封面导语，**不在 content 里，必须单独取，否则正文缺开头那句**）／`data.complete_create_at`／`data.read_count`／`data.userinfo.screen_name`。content 首段常是作者署名行（如「卢麒元」），照录勿删。直抓 PC 页 `p/show?id=` 会 302 到 Sina Visitor System、card 页只有壳；`web_extract` 抓 `p/show?id=` 可作旁证（含导语与署名）。md 元信息补 `**阅读数**：N（抓取时点 YYYY-MM-DD HH:MM CST）`；正文段落用落盘脚本从 content 逐段抽取后与 md 回比，避免手抄长文笔误。
      - 非卢麒元的通用文章存 `~/hermes_data/articles/<作者>_<标题>_<来源>_<日期>.md`；页面图注保留并标 `［图注］` 前缀。
      - **交付到 QQ 默认转 PDF**（手机端打不开 .md）：`PYTHONPATH= ~/hermes_data/rl-venv/bin/python ~/hermes_data/articles/build_article_pdf.py "<文章.md>"` → 同目录同名 .pdf（reportlab + wqy 字体，含章节标题 KeepTogether 防孤行，均已实测）；校验链：pdfinfo 页数 + pdftotext 关键句 + pdftoppm→vision 抽页。
       - ⚠️ 构建命令必须带 `PYTHONPATH= ` 前缀（2026-10-08 实测：Hermes 会话注入的 PYTHONPATH 指向 3.14 包，污染 rl-venv 的 PIL → 报 `REPORTLAB_MISSING: _imaging`）。

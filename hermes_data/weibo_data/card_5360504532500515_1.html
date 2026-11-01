@@ -1,0 +1,105 @@
+<!doctype html>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title>头条文章</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <style type="text/css">
+        :root {
+          --m-card-background: #fff;
+          --m-border-color: #e6e6e6;
+          --m-card1-border: #e6e6e6;
+        }
+        :root[data-theme='dark'] {
+            --m-card-background: #1e1e1e;
+            --m-border-color: #151515;
+            --m-card1-border: #3e3e3e;
+          }
+        @media (prefers-color-scheme: dark) {
+            :root[data-theme="dark-scheme"] {
+                --m-card-background: #1e1e1e;
+                --m-border-color: #151515;
+                --m-card1-border: #3e3e3e;
+            }
+        }
+        .m-loading-box-v2 div {
+            margin: 0;
+            padding: 0;
+        }
+        .m-loading-box-v2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--m-card-background);
+            margin: 0;
+            padding: 26px 13px;
+            overflow: hidden;
+        }
+        .m-loading-box-v2 .top {
+            margin: 0 0 51px;
+            padding: 0 0 33px;
+            border-bottom: 1px dashed var(--m-border-color);
+        }
+        .m-loading-box-v2 .line {
+            height: 8px;
+            margin: 0 0 18px;
+            background-color: var(--m-card1-border);
+        }
+        .m-loading-box-v2 .ht1 {
+            height: 12px;
+        }
+        .m-loading-box-v2 .wt1 {
+            width: 56.73%;
+        }
+        .m-loading-box-v2 .wt2 {
+            width: 42.69%;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="m-loading-box-v2">
+        <div class="top">
+            <div class="line ht1"></div>
+            <div class="line ht1 wt1"></div>
+        </div>
+        <div class="con">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line wt2"></div>
+        </div>
+    </div>
+</div>
+<script>
+    window.__FW_CONTROL = Object.freeze({
+        '1000': 1 
+    })
+    function preloadArticle(oid) {
+        try {
+            oid = oid.split(':')[1] || oid
+            var oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", function (res) {
+                const json = JSON.parse(res.target.response)
+                if (json && json.code == 100000) {
+                    localStorage.setItem(`article_detail_${oid}:${new Date().getTime().toString(32)}:${new Date().valueOf() + 600000}`, JSON.stringify(json.data))
+                }
+            })
+            oReq.open("GET", `//weibo.com/ttarticle/x/m/aj/detail?id=${oid}`)
+            oReq.send()
+        } catch (e) {
+        }
+    }
+</script>
+<script>
+    setTimeout(function () {
+        !window.publish_version && window.location.reload()
+    }, 10000)
+</script>
+<link href="//js.t.sinajs.cn/t6/toutiao/article/h5/static/fw.css?v=9382250783bb397db9aaf7a6d79ea5e1" type="text/css" rel="stylesheet" />
+
+<script src="//js.t.sinajs.cn/t6/toutiao/article/h5/fw.js?v=9382250783bb397db9aaf7a6d79ea5e1"></script>
+</body>
+</html>

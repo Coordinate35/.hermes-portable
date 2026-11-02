@@ -336,6 +336,15 @@
    },
    "hits": 1,
    "last_seen_at": "2026-11-01 18:08:35"
+  },
+  "https://vipclub.e.weibo.com/vmember/goldfansopen?F=profile&vuid=7951175445": {
+   "first_parsed_at": "2026-11-02 09:53:35",
+   "last_parsed_at": "2026-11-02 09:53:35",
+   "url": "https://vipclub.e.weibo.com/vmember/goldfansopen?F=profile&vuid=7951175445",
+   "title": "微博 V+ 会员开通页（#订阅财经VPlus有礼# 双十一促销）",
+   "kind": "weibo_vplus_promo",
+   "extra": "正文以「网页链接」占位收尾，指向 V+ 会员开通页；vuid=7951175445；2026-11-02 复核",
+   "hits": 0
   }
  },
  "aliases": {

@@ -3,7 +3,7 @@
     {
       "id": "a27ae1b5f602",
       "name": "微博监控-卢麒元及正心以中",
-      "prompt": "【预运行】微博监控脚本已由系统在每轮自动预执行，本轮输出见下方 \"## Script Output\"（本任务不需要、也不要再手动运行任何监控脚本）。\n\n**分流规则（必须严格执行）：**\n1. Script Output 为 [SILENT] 或为空、且不含 \"SIGNAL(\" 行 → 无新微博、无待办：**直接回复 [SILENT]（整条回复只有 [SILENT] 这 8 个字符，不得再有其它任何内容）。不要加载任何技能、不要执行任何命令、不要做任何附加检查。**\n2. Script Output 含 \"🚀 微博监控\" → 有新微博：先加载 weibo-monitoring 技能，严格按技能流程处理（链接解析缓存 → 抓取/核验 → 逐字节核验 → 按技能 §5 格式交付并附语音）。\n3. Script Output 含 \"SIGNAL(\" 行（即使同时含 [SILENT]）→ 按信号行动：先加载 weibo-monitoring 技能，按技能对应章节处理（回补检查 / 静默探针）。\n\n**语音播报降级策略（三级，必须按顺序尝试）：**\n\n**第1级【必须先试】**：Windows 宿主机 TTS（GPT-SoVITS）\n```bash\nbash /home/coordinate35/.hermes/scripts/win_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n**成功判定**：命令 exit code = 0（脚本内部已校验 HTTP=200 且文件 >10KB，无需手动判断）\n**失败处理**：exit code ≠ 0 时降级到第 2 级。脚本会把失败原因打到 stderr，可读取参考但不要继续重试第 1 级。\n\n**第2级【仅当第1级失败才用】**：Linux 本地 MeloTTS\n```bash\ncd /home/coordinate35/hermes_data/melotts && bash melo_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n\n**第3级【仅当前两级都失败】**：Hermes text_to_speech 工具\n\n**必须遵守：**\n- 不要跳过第1级直接用其他方式\n- 每次必须从第1级开始尝试\n- 不要用 curl 或任何直接访问 192.168.56.1 的命令（会被安全扫描拦截），只能通过上面的脚本封装\n- 在回复中**明确写明实际使用了哪一级 TTS**，格式如：\n  - `🎙️ 语音由 Windows TTS 生成（第1级）`\n  - `🎙️ 语音由 MeloTTS 生成（第2级降级）`\n  - `🎙️ 语音由 edge TTS 生成（第3级降级）`\n- 语音文件路径附在回复末尾：`MEDIA:/tmp/weibo_voice.wav`\n- MEDIA: 标记必须原样保留\n- 语音全部失败则只发文字，标注\"⚠️ 语音生成失败\"",
+      "prompt": "【预运行】微博监控脚本已由系统在每轮自动预执行，本轮输出见下方 \"## Script Output\"（本任务不需要、也不要再手动运行任何监控脚本）。\n\n**分流规则（必须严格执行）：**\n1. Script Output 为 [SILENT] 或为空、且不含 \"SIGNAL(\" 行 → 无新微博、无待办：**直接回复 [SILENT]（整条回复只有 [SILENT] 这 8 个字符，不得再有其它任何内容）。不要加载任何技能、不要执行任何命令、不要做任何附加检查。**\n2. Script Output 含 \"🚀 微博监控\" → 有新微博：先加载 weibo-monitoring 技能，严格按技能流程处理（链接解析缓存 → 抓取/核验 → 逐字节核验 → 按技能 §5 格式交付并附语音）。\n3. Script Output 含 \"SIGNAL(\" 行（即使同时含 [SILENT]）→ 按信号行动：先加载 weibo-monitoring 技能，按技能对应章节处理（回补检查 / 静默探针）。\n\n**语音播报降级策略（三级，必须按顺序尝试）：**\n\n**第1级【必须先试】**：Windows 宿主机 TTS（GPT-SoVITS）\n```bash\nbash /home/coordinate35/.hermes/scripts/win_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n**成功判定**：命令 exit code = 0（脚本内部已校验 HTTP=200 且文件 >10KB，无需手动判断）\n**失败处理**：exit code ≠ 0 时降级到第 2 级。脚本会把失败原因打到 stderr，可读取参考但不要继续重试第 1 级。\n\n**第2级【仅当第1级失败才用】**：Linux 本地 MeloTTS\n```bash\ncd /home/coordinate35/hermes_data/melotts && bash melo_tts.sh \"微博内容\" /tmp/weibo_voice.wav\n```\n\n**第3级【仅当前两级都失败】**：Hermes text_to_speech 工具\n\n**必须遵守：**\n- 不要跳过第1级直接用其他方式\n- 每次必须从第1级开始尝试\n- 不要用 curl 或任何直接访问 192.168.56.1 的命令（会被安全扫描拦截），只能通过上面的脚本封装\n- 在回复中**明确写明实际使用了哪一级 TTS**，格式如：\n  - `🎙️ 语音由 Windows TTS 生成（第1级）`\n  - `🎙️ 语音由 MeloTTS 生成（第2级降级）`\n  - `🎙️ 语音由 edge TTS 生成（第3级降级）`\n- 语音文件路径附在回复末尾：`MEDIA:/tmp/weibo_voice.wav`\n- MEDIA: 标记必须原样保留\n- 语音全部失败则只发文字，标注\"⚠️ 语音生成失败\"\n\n**配图（用户要求，2026-11-03 起）**：配图不进聊天窗口，要放进归档的 md／PDF 且位置与原文一致——先用 `PYTHONPATH= /usr/bin/python3 ~/.hermes/skills/data-collection/weibo-monitoring/scripts/wb_download_pics.py <weibo_id>` 下载原图，md 在原文对应位置插 `![描述](images/<weibo_id>/NN.jpg)` ＋紧跟一行 `［图注］…来源：微博 @账号，时间`，再用 `~/hermes_data/articles/build_article_pdf.py` 重建 PDF；长文 md/PDF 存 `~/hermes_data/weibo_data/articles/`（不只留 /tmp）。区分两类图：文章正文插图原位嵌入；微博帖通用题图（如「最新消息」海报）放文末「附：微博原帖配图（非文章配图）」并注明非文章插图。无配图则跳过。\n",
       "skills": [],
       "skill": null,
       "model": null,
@@ -18,15 +18,15 @@
       "schedule_display": "*/5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 54082
+        "completed": 54365
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-23T22:13:23.829000+08:00",
-      "next_run_at": "2026-11-03T03:05:00+08:00",
-      "last_run_at": "2026-11-03T02:56:31.705094+08:00",
+      "next_run_at": "2026-11-04T03:05:00+08:00",
+      "last_run_at": "2026-11-04T02:56:05.688367+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -38,13 +38,13 @@
         "thread_id": null
       },
       "fire_claim": {
-        "at": "2026-11-03T03:00:41.313182+08:00",
-        "by": "coordinate35-VirtualBox:635424:5389a6d774354fd08f8fdc9cf21b499f"
+        "at": "2026-11-04T03:00:41.421304+08:00",
+        "by": "coordinate35-VirtualBox:635424:294ace22c90741648ddce622530c72b1"
       },
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-11-03T03:00:00+08:00",
-        "dispatched_at": "2026-11-03T03:00:40.610871+08:00",
+        "scheduled_at": "2026-11-04T03:00:00+08:00",
+        "dispatched_at": "2026-11-04T03:00:40.622057+08:00",
         "lateness_seconds": 40.6,
         "kind": "on_time"
       },
@@ -71,15 +71,15 @@
       "schedule_display": "0 9 * * *",
       "repeat": {
         "times": null,
-        "completed": 179
+        "completed": 180
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-06T15:57:21.159620+08:00",
-      "next_run_at": "2026-11-03T09:00:00+08:00",
-      "last_run_at": "2026-11-02T09:01:14.706756+08:00",
+      "next_run_at": "2026-11-04T09:00:00+08:00",
+      "last_run_at": "2026-11-03T09:01:15.241194+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -93,8 +93,8 @@
       "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-11-02T09:00:00+08:00",
-        "dispatched_at": "2026-11-02T09:00:40.620406+08:00",
+        "scheduled_at": "2026-11-03T09:00:00+08:00",
+        "dispatched_at": "2026-11-03T09:00:40.608121+08:00",
         "lateness_seconds": 40.6,
         "kind": "on_time"
       },
@@ -123,15 +123,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 173
+        "completed": 174
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-13T21:13:51.558118+08:00",
-      "next_run_at": "2026-11-04T03:00:00+08:00",
-      "last_run_at": "2026-11-02T03:01:04.662257+08:00",
+      "next_run_at": "2026-11-05T03:00:00+08:00",
+      "last_run_at": "2026-11-03T03:01:01.409040+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -140,13 +140,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "fire_claim": {
-        "at": "2026-11-03T03:00:41.331386+08:00",
-        "by": "coordinate35-VirtualBox:635424:347feddbb03f4c0db2be11be33138c3f"
+        "at": "2026-11-04T03:00:41.861586+08:00",
+        "by": "coordinate35-VirtualBox:635424:a340d091ed5d47fb8f9049b352151daf"
       },
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-11-03T03:00:00+08:00",
-        "dispatched_at": "2026-11-03T03:00:40.610871+08:00",
+        "scheduled_at": "2026-11-04T03:00:00+08:00",
+        "dispatched_at": "2026-11-04T03:00:40.622057+08:00",
         "lateness_seconds": 40.6,
         "kind": "on_time"
       }
@@ -171,15 +171,15 @@
       "schedule_display": "0 3 * * *",
       "repeat": {
         "times": null,
-        "completed": 165
+        "completed": 166
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-22T20:39:58.023143+08:00",
-      "next_run_at": "2026-11-04T03:00:00+08:00",
-      "last_run_at": "2026-11-03T03:00:42.552187+08:00",
+      "next_run_at": "2026-11-05T03:00:00+08:00",
+      "last_run_at": "2026-11-04T03:00:41.773862+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -195,8 +195,8 @@
       "fire_claim": null,
       "failure_streak": 0,
       "last_dispatch": {
-        "scheduled_at": "2026-11-03T03:00:00+08:00",
-        "dispatched_at": "2026-11-03T03:00:40.610871+08:00",
+        "scheduled_at": "2026-11-04T03:00:00+08:00",
+        "dispatched_at": "2026-11-04T03:00:40.622057+08:00",
         "lateness_seconds": 40.6,
         "kind": "on_time"
       }
@@ -224,15 +224,15 @@
       "schedule_display": "every 1m",
       "repeat": {
         "times": null,
-        "completed": 6128
+        "completed": 6849
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-10-25T14:43:59.551979+08:00",
-      "next_run_at": "2026-11-03T03:00:41.427269+08:00",
-      "last_run_at": "2026-11-03T02:59:41.427269+08:00",
+      "next_run_at": "2026-11-04T03:01:41.666528+08:00",
+      "last_run_at": "2026-11-04T03:00:41.666528+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -251,13 +251,13 @@
       "enabled_toolsets": null,
       "workdir": null,
       "last_dispatch": {
-        "scheduled_at": "2026-11-03T02:58:41.347643+08:00",
-        "dispatched_at": "2026-11-03T02:59:40.609016+08:00",
-        "lateness_seconds": 59.3,
+        "scheduled_at": "2026-11-04T02:59:41.434728+08:00",
+        "dispatched_at": "2026-11-04T03:00:40.622057+08:00",
+        "lateness_seconds": 59.2,
         "kind": "on_time"
       },
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-11-03T03:00:42.565379+08:00"
+  "updated_at": "2026-11-04T03:00:41.862099+08:00"
 }

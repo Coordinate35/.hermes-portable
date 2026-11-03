@@ -158,6 +158,19 @@ while _j < len(story):
     _is_head = (isinstance(_el, Paragraph)
                 and getattr(getattr(_el, "style", None), "name", "") == "h")
     _is_img = isinstance(_el, Image)
+    # 标题 + 图 + 图注 三者同页（防标题落页底、图在次页）；跳过图前 Spacer
+    _k = _j + 1
+    while _k < len(story) and isinstance(story[_k], Spacer):
+        _k += 1
+    if _is_head and _k < len(story) and isinstance(story[_k], Image):
+        _grp = story[_j:_k + 1]
+        _j = _k + 1
+        if (_j < len(story) and isinstance(story[_j], Paragraph)
+                and getattr(getattr(story[_j], "style", None), "name", "") == "c"):
+            _grp.append(story[_j])
+            _j += 1
+        _wrapped.append(KeepTogether(_grp))
+        continue
     if (_is_head or _is_img) and _j + 1 < len(story) and isinstance(story[_j + 1], Paragraph):
         _wrapped.append(KeepTogether([_el, story[_j + 1]]))
         _j += 2

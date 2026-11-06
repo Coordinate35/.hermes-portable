@@ -63,3 +63,6 @@ node_modules/
 # Ignore the portable repo's own logs if any
 scripts/*.log
 *.onnx
+
+# ASR model cache (HuggingFace blobs, hundreds of MB — exceeds GitHub limit)
+asr-models/

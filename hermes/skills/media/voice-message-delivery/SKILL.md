@@ -175,7 +175,7 @@ ffmpeg -y -i /tmp/output.mp3 /tmp/output.wav
 
 ## 平台感知消息规则（QQ Bot）
 
-**（2026-11-06 实测·三级全挂）**：win_tts 报 `curl failed (network/timeout)`（宿主机服务不可达）、MeloTTS 报 `bert-base-japanese-v3` 缓存缺失（同 2026-10-11）、edge-tts 与内置 `text_to_speech` 均 403 `WSServerHandshakeError`（`Sec-MS-GEC` 由本地时钟派生，系统时钟与服务端偏差即 403；连试两次同为 403、非瞬时抖动）。此时按 cron 规则只发文字并在回复中标注「⚠️ 语音生成失败（三级均不可用）」＋各级原因；不要伪造成功、不要反复重试同一级。（同日 13:20 轮复核：仍三级全挂——win_tts exit 2 `curl failed (network/timeout)`、MeloTTS 仍 `bert-base-japanese-v3` LocalEntryNotFoundError/OSError、edge-tts 仍 403；宿主机与微软侧均未恢复。）
+**（2026-11-06 实测·三级全挂）**：win_tts 报 `curl failed (network/timeout)`（宿主机服务不可达）、MeloTTS 报 `bert-base-japanese-v3` 缓存缺失（同 2026-10-11）、edge-tts 与内置 `text_to_speech` 均 403 `WSServerHandshakeError`（`Sec-MS-GEC` 由本地时钟派生，系统时钟与服务端偏差即 403；连试两次同为 403、非瞬时抖动）。此时按 cron 规则只发文字并在回复中标注「⚠️ 语音生成失败（三级均不可用）」＋各级原因；不要伪造成功、不要反复重试同一级。（同日 13:20 轮复核：仍三级全挂——win_tts exit 2 `curl failed (network/timeout)`、MeloTTS 仍 `bert-base-japanese-v3` LocalEntryNotFoundError/OSError、edge-tts 仍 403；宿主机与微软侧均未恢复。）（2026-11-07 10:54 轮复核：同一形态持续——win_tts exit 2、MeloTTS 同 OSError（hf-mirror 不可达）、edge-tts 两次均 403 且 `Sec-MS-GEC` 两次完全相同＝时钟派生值未变、非瞬时抖动；直接只发文字并标注三级失败原因。）**（2026-11-07 21:36 微博轮复核：仍三级全挂——win_tts exit 2 `curl failed`、MeloTTS 同 `bert-base-japanese-v3` LocalEntryNotFoundError、edge-tts CLI 与内置 text_to_speech 均 403 同一 `Sec-MS-GEC` 值。只发文字并标注失败即可；另注意 `head -c` 截断中文稿会产生 surrogate、edge-tts 报 UnicodeEncodeError（exit 仍 0）——传长稿一律用 `"$(cat 文件)"`，勿按字节裁切。）**
 
 来源为 QQ Bot 时：
 

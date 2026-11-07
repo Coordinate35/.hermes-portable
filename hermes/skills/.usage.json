@@ -630,6 +630,22 @@
     "use_count": 6,
     "view_count": 6
   },
+  "hermes-portable-backup": {
+    "archived_at": null,
+    "created_at": "2026-11-06T19:05:55.988885+00:00",
+    "created_by": "learn",
+    "first_seen_at": null,
+    "last_patched_at": null,
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-11-07T19:00:45.231789+00:00",
+    "last_viewed_at": "2026-11-07T19:00:45.230443+00:00",
+    "patch_count": 0,
+    "patch_generation": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "huggingface-hub": {
     "archived_at": null,
     "created_at": "2026-06-07T18:32:57.835276+00:00",
@@ -1354,16 +1370,16 @@
     "archived_at": null,
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-11-06T05:24:49.692113+00:00",
-    "last_reused_patch_generation": 7,
-    "last_used_at": "2026-11-06T08:13:44.111705+00:00",
-    "last_viewed_at": "2026-11-06T08:13:44.110484+00:00",
-    "patch_count": 33,
-    "patch_generation": 7,
+    "last_patched_at": "2026-11-07T13:45:16.140417+00:00",
+    "last_reused_patch_generation": 8,
+    "last_used_at": "2026-11-07T13:44:57.147562+00:00",
+    "last_viewed_at": "2026-11-07T13:44:57.146081+00:00",
+    "patch_count": 35,
+    "patch_generation": 9,
     "pinned": false,
     "state": "active",
-    "use_count": 1355,
-    "view_count": 1355
+    "use_count": 1359,
+    "view_count": 1359
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1411,14 +1427,14 @@
     "created_by": null,
     "last_patched_at": "2026-11-06T05:24:49.717614+00:00",
     "last_reused_patch_generation": 214,
-    "last_used_at": "2026-11-06T10:56:20.468722+00:00",
-    "last_viewed_at": "2026-11-06T10:56:20.467241+00:00",
+    "last_used_at": "2026-11-07T13:36:09.100394+00:00",
+    "last_viewed_at": "2026-11-07T13:36:09.098907+00:00",
     "patch_count": 224,
     "patch_generation": 214,
     "pinned": false,
     "state": "active",
-    "use_count": 6812,
-    "view_count": 6812
+    "use_count": 6816,
+    "view_count": 6816
   },
   "weights-and-biases": {
     "archived_at": null,

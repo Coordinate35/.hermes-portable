@@ -4244,5 +4244,38 @@
     "operation_jp": "米ドル売り・日本円買い",
     "direction": "阻止日元贬值",
     "recorded_at": "2026-08-07T01:02:52.786735+00:00"
+  },
+  {
+    "era": "令和8年",
+    "year": 2026,
+    "month": "Jul",
+    "day": "30",
+    "amount_billion_yen": 79756,
+    "amount_trillion_yen": 7.9756,
+    "operation_jp": "米ドル売り・日本円買い",
+    "direction": "阻止日元贬值",
+    "recorded_at": "2026-11-09T01:00:47.034713+00:00"
+  },
+  {
+    "era": "令和8年",
+    "year": 2026,
+    "month": "Jul",
+    "day": "31",
+    "amount_billion_yen": 55523,
+    "amount_trillion_yen": 5.5523,
+    "operation_jp": "米ドル売り・日本円買い",
+    "direction": "阻止日元贬值",
+    "recorded_at": "2026-11-09T01:00:47.034715+00:00"
+  },
+  {
+    "era": "令和8年",
+    "year": 2026,
+    "month": "Aug",
+    "day": "3",
+    "amount_billion_yen": 18714,
+    "amount_trillion_yen": 1.8714,
+    "operation_jp": "米ドル売り・日本円買い",
+    "direction": "阻止日元贬值",
+    "recorded_at": "2026-11-09T01:00:47.034716+00:00"
   }
 ]

@@ -81,6 +81,8 @@ segs, info = model.transcribe(audio, language="zh", beam_size=5, vad_filter=True
 - `/x/web-interface/view/conclusion/get`（B站 AI 总结）：返回 `-403 访问权限不足`。
 
 ## 交付
+- **用户说「把文章发我」时，直接出完整版，不要拿「没有原文文件」挡回去。** 视频既然念了全文，内容就在手上；推说只有公开截断版会被当场质疑（用户原话：「你不是说视频把文章都完整念了吗」）。
+- 完整版固定三段结构：①公开文本能对上的部分——逐字照录；②只有朗读的部分——标注「据朗读转写校订，非原文措辞」；③校订说明——列出已修正的 ASR 误识、听不清标「存疑」的句子、以及与公开事实不一致之处（例：文中称某法案「已通过」，实际是众议院通过、参议院未过门槛）。
 - md + PDF 存 `~/hermes_data/articles/`；PDF 用 `build_article_pdf.py`。
 - 该构建器只认 `**整行**` 作为小标题，不解析 `##`／`###` 和行内 `**`（会原样显示）；正文含 emoji 会 `PDF_FONT_FAIL`，先用文字标记替换。
 - 构建命令带 `PYTHONPATH=` 前缀，用 `~/hermes_data/rl-venv/bin/python`。

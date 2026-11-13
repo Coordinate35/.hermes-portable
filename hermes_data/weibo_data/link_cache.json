@@ -348,6 +348,31 @@
    "last_seen_at": "2026-11-11 11:22:17",
    "author": "微博",
    "date": "2026-11-11"
+  },
+  "https://wx2.sinaimg.cn/large/008YxVRsly1iizlecebikj61400u0qbm08.jpg": {
+   "first_parsed_at": "2026-11-13 12:09:35",
+   "last_parsed_at": "2026-11-13 12:09:35",
+   "url": "https://wx2.sinaimg.cn/large/008YxVRsly1iizlecebikj61400u0qbm08.jpg",
+   "title": "评论配图（书页照片：做大官·做大商·做大家）",
+   "author": "真诚黄金",
+   "date": "2026-11-13",
+   "kind": "weibo_compic",
+   "extra": "微博 5364762670010514 回复链内 @真诚黄金 评论附图；1440x1080 JPEG；t.cn/AXYQbbe7",
+   "sinaurl": "http://t.cn/AXYQbbe7",
+   "hits": 0
+  },
+  "https://mp.weixin.qq.com/s/Sy9bGtnRe8IIgxaIY4_Jqg": {
+   "first_parsed_at": "2026-11-13 19:57:01",
+   "last_parsed_at": "2026-11-13 19:57:01",
+   "url": "https://mp.weixin.qq.com/s/Sy9bGtnRe8IIgxaIY4_Jqg",
+   "title": "卢麒元：悲樗",
+   "author": "卢麒元",
+   "date": "2026-11-01 20:15",
+   "kind": "wechat_article",
+   "extra": "公众号：共想者；微博主帖 5364881245081193（卢麒元 2026-11-13 19:53:46 分享）",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FSy9bGtnRe8IIgxaIY4_Jqg",
+   "hits": 1,
+   "last_seen_at": "2026-11-13 19:57:01"
   }
  },
  "aliases": {
@@ -386,6 +411,9 @@
   "http://t.cn/AXjmVM2w": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
   "https://t.cn/AXjmVM2w": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx4.sinaimg.cn%2Flarge%2F008G6jXfgy1iilhxpapv7j30qo1nb783.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
-  "https://wx4.sinaimg.cn/large/008G6jXfgy1iilhxpapv7j30qo1nb783.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d"
+  "https://wx4.sinaimg.cn/large/008G6jXfgy1iilhxpapv7j30qo1nb783.jpg": "https://photo.weibo.com/h5/comment/compic_id/1022:23059757de9190a3f8f4f468c96a456c97590d",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx2.sinaimg.cn%2Flarge%2F008YxVRsly1iizlecebikj61400u0qbm08.jpg": "https://wx2.sinaimg.cn/large/008YxVRsly1iizlecebikj61400u0qbm08.jpg",
+  "http://t.cn/AXYQbbe7": "https://wx2.sinaimg.cn/large/008YxVRsly1iizlecebikj61400u0qbm08.jpg",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FSy9bGtnRe8IIgxaIY4_Jqg": "https://mp.weixin.qq.com/s/Sy9bGtnRe8IIgxaIY4_Jqg"
  }
 }

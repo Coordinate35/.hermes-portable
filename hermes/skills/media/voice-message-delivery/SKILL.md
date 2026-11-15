@@ -65,6 +65,7 @@ cron/无人值守下，TTS 命令链里写 `rm -f /tmp/weibo_voice.wav` 会触�
 | 1 | Windows 宿主机 TTS | `http://192.168.56.1:9880` | POST JSON `→` WAV | 主力 |
 | 2 | Linux 本地 MeloTTS | `~/hermes_data/melotts/melo_tts.py` | CLI `→` WAV | 备用 |
 | 3 | Edge 在线 TTS | 微软服务器 | `edge-tts` CLI（见下方命令） | 最终降级 |
+| 4 | Piper 本地备份 | 无网络 | `~/hermes_data/piper/.venv/bin/piper`（见下方） | 三级全挂时兜底 |
 
 ### 1. Windows 宿主机本地服务（GPT-SoVITS V2）
 
@@ -172,6 +173,18 @@ edge-tts --text "播报内容" --voice zh-CN-XiaoxiaoNeural --write-media /tmp/o
 edge-tts --text "播报内容" --voice zh-CN-XiaoxiaoNeural --write-media /tmp/output.mp3
 ffmpeg -y -i /tmp/output.mp3 /tmp/output.wav
 ```
+
+### 4. Piper 本地备份（三级全挂时兜底，2026-11-15 实跑成功）
+
+三级全挂但仍要交付语音时用本地 Piper（已装中文模型 `zh_CN-huayan-medium.onnx` / `zh_CN-xiao_ya-medium.onnx`）：
+
+```bash
+cd ~/hermes_data/piper && cat /tmp/voice_text.txt | ./.venv/bin/piper --model models/zh_CN-huayan-medium.onnx --output_file /tmp/weibo_voice.wav
+```
+
+实测 430 字中文约 62s、2.7MB WAV，合成 1s 内完成；交付时须在标注行说明是备用引擎（如「🎙️ 语音由本地 Piper 生成（三级链全挂：…）」），不得冒领第 1/2/3 级。
+
+**第 1 级失败先查网卡而非服务**：`ip -br addr` 若只见 `enp0s3 NAT`、无 `192.168.56.x`，说明 VirtualBox Host-Only 网卡未挂载（非 Windows 服务问题，重启 VM/重配网卡前该级必失败）；此时也无需再用任何方式访问 192.168.56.1（安全扫描会拦）。MeloTTS 报 `outgoing traffic has been disabled`/`bert-base-japanese-v3` 系离线模式＋缺缓存，非网络问题。
 
 ## 平台感知消息规则（QQ Bot）
 

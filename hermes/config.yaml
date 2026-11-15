@@ -412,11 +412,12 @@ approvals:
   mcp_reload_confirm: true
   destructive_slash_confirm: false
 command_allowlist:
+  - execute_code
   - find -delete
-  - script execution via heredoc
-  - script execution via -e/-c flag
-  - stop/restart hermes gateway (kills running agents)
   - recursive delete
+  - script execution via -e/-c flag
+  - script execution via heredoc
+  - stop/restart hermes gateway (kills running agents)
 plugins:
   hermes-memory-store:
     auto_extract: 'false'

@@ -236,19 +236,36 @@
     "use_count": 6,
     "view_count": 6
   },
+  "capital-flow-modeling": {
+    "archived_at": null,
+    "created_at": "2026-11-15T08:10:50.606527+00:00",
+    "created_by": "agent",
+    "first_seen_at": null,
+    "last_patched_at": "2026-11-15T08:10:54.653110+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-11-15T08:10:52.544217+00:00",
+    "last_viewed_at": "2026-11-15T08:10:52.539672+00:00",
+    "patch_count": 2,
+    "patch_generation": 2,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "china-macro-data-collector": {
     "archived_at": null,
     "created_at": "2026-05-28T04:26:37.436060+00:00",
     "created_by": null,
     "last_patched_at": "2026-09-28T01:06:40.333813+00:00",
-    "last_used_at": "2026-08-03T04:52:14.055947+00:00",
-    "last_viewed_at": "2026-08-03T04:52:14.051190+00:00",
+    "last_reused_patch_generation": 2,
+    "last_used_at": "2026-11-15T08:10:15.728247+00:00",
+    "last_viewed_at": "2026-11-15T08:10:15.726816+00:00",
     "patch_count": 6,
     "patch_generation": 2,
     "pinned": false,
     "state": "active",
-    "use_count": 11,
-    "view_count": 11
+    "use_count": 12,
+    "view_count": 12
   },
   "china-policy-document-search": {
     "archived_at": "2026-10-18T23:33:24.786984+00:00",
@@ -352,14 +369,14 @@
     "first_seen_at": null,
     "last_patched_at": "2026-11-11T18:02:34.648924+00:00",
     "last_reused_patch_generation": 10,
-    "last_used_at": "2026-11-11T18:44:13.296941+00:00",
-    "last_viewed_at": "2026-11-11T18:44:13.295101+00:00",
+    "last_used_at": "2026-11-15T08:09:57.567065+00:00",
+    "last_viewed_at": "2026-11-15T08:09:57.565723+00:00",
     "patch_count": 10,
     "patch_generation": 10,
     "pinned": false,
     "state": "active",
-    "use_count": 4,
-    "view_count": 4
+    "use_count": 5,
+    "view_count": 5
   },
   "competitor-news-monitor": {
     "archived_at": "2026-11-02T00:30:39.670998+00:00",
@@ -669,14 +686,14 @@
     "first_seen_at": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-11-14T19:00:49.218936+00:00",
-    "last_viewed_at": "2026-11-14T19:00:49.216923+00:00",
+    "last_used_at": "2026-11-15T19:00:45.471948+00:00",
+    "last_viewed_at": "2026-11-15T19:00:45.470793+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 8,
-    "view_count": 8
+    "use_count": 9,
+    "view_count": 9
   },
   "huggingface-hub": {
     "archived_at": null,
@@ -1434,16 +1451,16 @@
     "archived_at": null,
     "created_at": "2026-05-21T04:21:57.629065+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-11-07T13:45:16.140417+00:00",
+    "last_patched_at": "2026-11-15T04:58:33.381885+00:00",
     "last_reused_patch_generation": 9,
-    "last_used_at": "2026-11-11T18:24:41.860583+00:00",
-    "last_viewed_at": "2026-11-11T18:24:41.859259+00:00",
-    "patch_count": 35,
-    "patch_generation": 9,
+    "last_used_at": "2026-11-15T04:57:38.979856+00:00",
+    "last_viewed_at": "2026-11-15T04:57:38.976309+00:00",
+    "patch_count": 38,
+    "patch_generation": 12,
     "pinned": false,
     "state": "active",
-    "use_count": 1362,
-    "view_count": 1362
+    "use_count": 1363,
+    "view_count": 1363
   },
   "wallstreetcn-news": {
     "archived_at": null,
@@ -1491,14 +1508,14 @@
     "created_by": null,
     "last_patched_at": "2026-11-11T09:51:33.954602+00:00",
     "last_reused_patch_generation": 217,
-    "last_used_at": "2026-11-14T04:06:33.958218+00:00",
-    "last_viewed_at": "2026-11-14T04:06:33.956861+00:00",
+    "last_used_at": "2026-11-15T04:51:13.787360+00:00",
+    "last_viewed_at": "2026-11-15T04:51:13.784525+00:00",
     "patch_count": 227,
     "patch_generation": 217,
     "pinned": false,
     "state": "active",
-    "use_count": 6833,
-    "view_count": 6833
+    "use_count": 6835,
+    "view_count": 6835
   },
   "weights-and-biases": {
     "archived_at": null,

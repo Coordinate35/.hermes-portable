@@ -1,6 +1,6 @@
 -- Hermes Holographic Memory Export (text-only)
--- Facts count: 7914
--- Exported: 2026-11-15T03:00:50.922383
+-- Facts count: 7919
+-- Exported: 2026-11-16T03:00:46.857758
 BEGIN TRANSACTION;
 
 CREATE TABLE entities (
@@ -7950,6 +7950,11 @@ INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7975,'browser_exec 报 chrome-not-running → 用 skill browser-exec-recovery 恢复。QQ 交互场景禁复合 terminal 命令（写 ~/.config、外网 curl 管道→安全审批挂起弹不出批准框）。','general','',0.5,0,0,'2026-09-17 09:41:45','2026-09-17 09:41:45');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7976,'2026-09-17 月之暗面发布「Kimi 金融行业 AI 解决方案」：10+权威数据源、9项金融技能（机构财务建模/研究报告/PPT/金融动态图表/业绩点评/一致预期地图/组合复盘/持仓早报/HK IPO透镜）、5项合规措施（风险评估网关）。数据源非全免费：万得/S&P/iFinD/财新/聚源/天眼查等多为商业付费源（万得基础终端3.98万/年、iFinD 1.4万/年、Choice 1.8万/年），Kimi 以会员套餐打包（49/99/199/699元/月，专业数据库调用 1000/2000/5000/12000次/月），免费公开源仅 IMF/世行/SEC 等少数。中信建投试点：单份报告30→10分钟(-67%)。材料存 ~/hermes_data/kimi_finance_solution/。','general','kimi,moonshot,金融,AI解决方案,材料',0.5,0,0,'2026-09-17 09:41:52','2026-09-17 09:46:58');
 INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7977,'跑非默认 venv 的 python（rl-venv/melotts 等）宜前缀 `PYTHONPATH=`：Hermes 终端注入的 PYTHONPATH 指向其 3.14 包，实测污染 import（rl-venv PIL 报错）。','general','',0.5,0,0,'2026-10-08 11:08:45','2026-10-08 11:08:45');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7978,'《美、内地、香港资本市场对比（2026，PPT精简汇报版）》：统一口径＝股票总市值＋债券存量。三地股债总规模（2026Q3）：美国130.1万亿美元（全球第一）、中国内地43.8万亿美元（全球第二）、中国香港7.17万亿美元（离岸枢纽市场）。关键特点：美国股债结构均衡、全球资金聚集地；内地债券远大于股票、以境内融资为主；香港小型开放市场、中资资产占主体、外资资金占主导。数据未标注原始出处（用户PPT口径，未独立核验）。','general','资本市场,美国,中国内地,香港,股债规模,2026Q3,PPT,未核验',0.5,0,0,'2026-11-15 08:04:52','2026-11-15 08:04:52');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7979,'三地资本市场参与者结构对比（PPT口径）：美国＝完全机构化，养老金/ETF/共同基金为压舱石，散户极少直接交易、家庭资金全部机构化配置，外资长期稳定配置，定价理性波动小；A股＝产业资本主导＋散户高换手，产业大股东持股占56%，机构占比低、长期资金不足，散户交易活跃、短期波动大，外资仅占5.6%、对外开放有限；港股＝典型"两头在外"，资产端77%为中资企业、资金端60%以上为海外机构，散户占比极低、完全国际化定价。数据未经独立核验。','general','资本市场,投资者结构,机构化,散户,外资,产业资本,港股,PPT,未核验',0.5,0,0,'2026-11-15 08:04:52','2026-11-15 08:04:52');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7980,'三地交易基础设施对比（PPT口径）：美国＝竞争型交易＋垄断型清算，多交易所竞争、暗池体系发达、做市商成熟，清算存管高度集中（DTCC体系），T+2交收；内地＝统一规范、风控优先，交易所集中竞价、无暗池与竞争性交易场所，股票与银行间债券两套清算体系严格隔离，T+1交易、T+1交收；香港＝离岸跨境型，股票单一交易所、债券场外OTC，股票CCASS与债券CMU双系统独立运行，T+0交易、T+2交收，互联互通机制成熟。数据未经独立核验。','general','资本市场,交易基础设施,清算,DTCC,CCASS,CMU,T+1,T+2,PPT,未核验',0.5,0,0,'2026-11-15 08:04:52','2026-11-15 08:04:52');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7981,'三地资本市场功能分工（PPT结论页）：规模层级美国>>内地>>香港；市场属性美国全球成熟、内地在岸稳健、香港离岸开放；投资者结构美股机构化、A股产业资本+散户、港股外资定价。功能错位互补——美国＝全球金融定价中心、科技企业融资中心；内地＝国内实体经济融资与产业升级核心；香港＝中国资本市场对外开放的唯一离岸枢纽（中资海外上市、离岸人民币、跨境投融资核心平台）。数据未经独立核验。','general','资本市场,功能分工,定价中心,离岸枢纽,在岸融资,PPT,未核验',0.5,0,0,'2026-11-15 08:04:52','2026-11-15 08:04:54');
+INSERT INTO facts(fact_id, content, category, tags, trust_score, retrieval_count, helpful_count, created_at, updated_at) VALUES(7982,'《美、内地、香港资本市场对比（2026）》PPT 的全部量化数据（130.1／43.8／7.17万亿美元、56%、5.6%、77%、60%＋等）均未标注原始出处，属2026Q3口径的用户自撰汇报材料；引用或对外发布前须核对世界交易所联合会（WFE）、IMF、BIS、SIFMA、HKMA/CMU 等原始统计口径。','general','资本市场,数据来源,核验,WFE,IMF,BIS,SIFMA,PPT',0.5,0,0,'2026-11-15 08:04:52','2026-11-15 08:04:52');
 
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1,'非杨即墨','unknown','','2026-04-28 19:19:12');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(2,'见龙在野','unknown','','2026-04-28 19:37:32');
@@ -9154,6 +9159,7 @@ INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1200,
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1201,'Princeton Univ Press','unknown','','2026-09-07 08:56:34');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1202,'咚旭读书','unknown','','2026-09-12 17:13:06');
 INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1203,'未含订单增长预期','unknown','','2026-09-16 04:25:15');
+INSERT INTO entities(entity_id,name,entity_type,aliases,created_at) VALUES(1204,'两头在外','unknown','','2026-11-15 08:04:52');
 
 INSERT INTO fact_entities VALUES(294,1);
 INSERT INTO fact_entities VALUES(5882,2);
@@ -10529,6 +10535,7 @@ INSERT INTO fact_entities VALUES(7968,1200);
 INSERT INTO fact_entities VALUES(7968,1201);
 INSERT INTO fact_entities VALUES(7971,1202);
 INSERT INTO fact_entities VALUES(7973,1203);
+INSERT INTO fact_entities VALUES(7979,1204);
 
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(1,'cat:investment',4096,63,'2026-04-28 20:46:23');
 INSERT INTO memory_banks(bank_id, bank_name, dim, fact_count, updated_at) VALUES(2765,'cat:project',4096,46,'2026-07-11 08:22:32');

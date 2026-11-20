@@ -386,6 +386,19 @@
    "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F4zuW-eDDL1plBag1GOw-sw",
    "hits": 2,
    "last_seen_at": "2026-11-15 12:55:49"
+  },
+  "https://m.toutiao.com/video/7707761098446979645": {
+   "first_parsed_at": "2026-11-20 13:37:48",
+   "last_parsed_at": "2026-11-20 13:37:48",
+   "url": "https://m.toutiao.com/video/7707761098446979645",
+   "title": "#震惊！卢麒元震撼论断！# - 今日头条",
+   "author": "王力",
+   "date": "2026-11-14T04:51:32+08:00",
+   "kind": "toutiao_video",
+   "extra": "时长PT9M16S；标题与微博正文逐字一致；分享者@卢麒元 2026-11-20 13:35:18；完整分享URL:https://m.toutiao.com/video/7707761098446979645/?app=news_article&timestamp=1795152562&utm_campaign=client_share&is_hit_share_recommend=0&share_did=MS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp&share_uid=MS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L&req_id_new=2026112013292026DE67B58459533B4408&category_new=headline&upstream_biz=harmony_share_os&origin=system",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7707761098446979645%2F%3Fapp%3Dnews_article%26timestamp%3D1795152562%26utm_campaign%3Dclient_share%26is_hit_share_recommend%3D0%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D2026112013292026DE67B58459533B4408%26category_new%3Dheadline%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem",
+   "hits": 4,
+   "last_seen_at": "2026-11-20 14:22:29"
   }
  },
  "aliases": {
@@ -428,6 +441,8 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx2.sinaimg.cn%2Flarge%2F008YxVRsly1iizlecebikj61400u0qbm08.jpg": "https://wx2.sinaimg.cn/large/008YxVRsly1iizlecebikj61400u0qbm08.jpg",
   "http://t.cn/AXYQbbe7": "https://wx2.sinaimg.cn/large/008YxVRsly1iizlecebikj61400u0qbm08.jpg",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FSy9bGtnRe8IIgxaIY4_Jqg": "https://mp.weixin.qq.com/s/Sy9bGtnRe8IIgxaIY4_Jqg",
-  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F4zuW-eDDL1plBag1GOw-sw": "https://mp.weixin.qq.com/s/4zuW-eDDL1plBag1GOw-sw"
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F4zuW-eDDL1plBag1GOw-sw": "https://mp.weixin.qq.com/s/4zuW-eDDL1plBag1GOw-sw",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7707761098446979645%2F%3Fapp%3Dnews_article%26timestamp%3D1795152562%26utm_campaign%3Dclient_share%26is_hit_share_recommend%3D0%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D2026112013292026DE67B58459533B4408%26category_new%3Dheadline%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem": "https://m.toutiao.com/video/7707761098446979645",
+  "https://m.toutiao.com/video/7707761098446979645?app=news_article&timestamp=1795152562&utm_campaign=client_share&is_hit_share_recommend=0&share_did=MS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp&share_uid=MS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L&req_id_new=2026112013292026DE67B58459533B4408&category_new=headline&upstream_biz=harmony_share_os&origin=system": "https://m.toutiao.com/video/7707761098446979645"
  }
 }

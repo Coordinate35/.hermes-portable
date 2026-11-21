@@ -399,6 +399,31 @@
    "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7707761098446979645%2F%3Fapp%3Dnews_article%26timestamp%3D1795152562%26utm_campaign%3Dclient_share%26is_hit_share_recommend%3D0%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D2026112013292026DE67B58459533B4408%26category_new%3Dheadline%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem",
    "hits": 4,
    "last_seen_at": "2026-11-20 14:22:29"
+  },
+  "https://wx4.sinaimg.cn/large/00a1F1r6gy1ij9n18l4ohj310k1jv4ge.jpg": {
+   "first_parsed_at": "2026-11-21 11:24:30",
+   "last_parsed_at": "2026-11-21 11:24:30",
+   "url": "https://wx4.sinaimg.cn/large/00a1F1r6gy1ij9n18l4ohj310k1jv4ge.jpg",
+   "title": "评论配图：远明-正心以中整理的王企操盘阶段（10.24）",
+   "author": "远明-正心以中",
+   "date": "2026-11-21",
+   "kind": "weibo_compic",
+   "extra": "t.cn/AXTMAm1Y → photo.weibo.com/h5/comment/compic_id/1022:23059772ae9ef9317e77f69211589ae0a42ade；1316x2011",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx4.sinaimg.cn%2Flarge%2F00a1F1r6gy1ij9n18l4ohj310k1jv4ge.jpg",
+   "hits": 3,
+   "last_seen_at": "2026-11-21 11:26:22"
+  },
+  "http://t.cn/AXTMrZ8T": {
+   "first_parsed_at": "2026-11-21 17:03:52",
+   "last_parsed_at": "2026-11-21 17:03:52",
+   "url": "http://t.cn/AXTMrZ8T",
+   "title": "评论配图（对方评论所附，1张）",
+   "author": "@至诚不息-为物不贰",
+   "date": "2026-11-21",
+   "kind": "weibo_compic",
+   "extra": "wx2.sinaimg.cn/large/008EnPTfgy1ij9wuy56k9j30r1cmye83.jpg",
+   "sinaurl": "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx2.sinaimg.cn%2Flarge%2F008EnPTfgy1ij9wuy56k9j30r1cmye83.jpg",
+   "hits": 0
   }
  },
  "aliases": {
@@ -443,6 +468,9 @@
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FSy9bGtnRe8IIgxaIY4_Jqg": "https://mp.weixin.qq.com/s/Sy9bGtnRe8IIgxaIY4_Jqg",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2F4zuW-eDDL1plBag1GOw-sw": "https://mp.weixin.qq.com/s/4zuW-eDDL1plBag1GOw-sw",
   "https://weibo.cn/sinaurl?u=https%3A%2F%2Fm.toutiao.com%2Fvideo%2F7707761098446979645%2F%3Fapp%3Dnews_article%26timestamp%3D1795152562%26utm_campaign%3Dclient_share%26is_hit_share_recommend%3D0%26share_did%3DMS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp%26share_uid%3DMS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L%26req_id_new%3D2026112013292026DE67B58459533B4408%26category_new%3Dheadline%26upstream_biz%3Dharmony_share_os%26origin%3Dsystem": "https://m.toutiao.com/video/7707761098446979645",
-  "https://m.toutiao.com/video/7707761098446979645?app=news_article&timestamp=1795152562&utm_campaign=client_share&is_hit_share_recommend=0&share_did=MS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp&share_uid=MS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L&req_id_new=2026112013292026DE67B58459533B4408&category_new=headline&upstream_biz=harmony_share_os&origin=system": "https://m.toutiao.com/video/7707761098446979645"
+  "https://m.toutiao.com/video/7707761098446979645?app=news_article&timestamp=1795152562&utm_campaign=client_share&is_hit_share_recommend=0&share_did=MS4wLjACAAAAahYpwdw4ZyPhOc4essjyiNqIEGBrulKkzhLr7yAceGr0Hljc1fJTeA2BW8D6D7gp&share_uid=MS4wLjABAAAAoWyD6uQCuroE-OroTONhnwUChTK5VCE6jkpoTPvynkinCPCJDZD6MYJ8QKLmpg8L&req_id_new=2026112013292026DE67B58459533B4408&category_new=headline&upstream_biz=harmony_share_os&origin=system": "https://m.toutiao.com/video/7707761098446979645",
+  "http://t.cn/AXTMAm1Y": "https://wx4.sinaimg.cn/large/00a1F1r6gy1ij9n18l4ohj310k1jv4ge.jpg",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx4.sinaimg.cn%2Flarge%2F00a1F1r6gy1ij9n18l4ohj310k1jv4ge.jpg": "https://wx4.sinaimg.cn/large/00a1F1r6gy1ij9n18l4ohj310k1jv4ge.jpg",
+  "https://weibo.cn/sinaurl?u=https%3A%2F%2Fwx2.sinaimg.cn%2Flarge%2F008EnPTfgy1ij9wuy56k9j30r1cmye83.jpg": "http://t.cn/AXTMrZ8T"
  }
 }

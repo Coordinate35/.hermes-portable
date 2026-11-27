@@ -100,14 +100,14 @@
     "created_by": null,
     "last_patched_at": "2026-10-25T06:58:51.310432+00:00",
     "last_reused_patch_generation": 12,
-    "last_used_at": "2026-11-09T13:57:11.281635+00:00",
-    "last_viewed_at": "2026-11-09T13:57:11.280086+00:00",
+    "last_used_at": "2026-11-27T15:45:00.615974+00:00",
+    "last_viewed_at": "2026-11-27T15:45:00.614290+00:00",
     "patch_count": 51,
     "patch_generation": 12,
     "pinned": false,
     "state": "active",
-    "use_count": 55,
-    "view_count": 55
+    "use_count": 56,
+    "view_count": 56
   },
   "audiocraft-audio-generation": {
     "archived_at": null,
@@ -686,14 +686,14 @@
     "first_seen_at": null,
     "last_patched_at": null,
     "last_reused_patch_generation": 0,
-    "last_used_at": "2026-11-26T19:00:04.508083+00:00",
-    "last_viewed_at": "2026-11-26T19:00:04.506224+00:00",
+    "last_used_at": "2026-11-27T19:00:04.464785+00:00",
+    "last_viewed_at": "2026-11-27T19:00:04.462901+00:00",
     "patch_count": 0,
     "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 19,
-    "view_count": 19
+    "use_count": 20,
+    "view_count": 20
   },
   "huggingface-hub": {
     "archived_at": null,
@@ -1506,16 +1506,16 @@
     "archived_at": null,
     "created_at": "2026-05-19T17:11:22.633496+00:00",
     "created_by": null,
-    "last_patched_at": "2026-11-25T05:41:19.285168+00:00",
+    "last_patched_at": "2026-11-27T06:05:46.210568+00:00",
     "last_reused_patch_generation": 222,
-    "last_used_at": "2026-11-26T06:05:56.881520+00:00",
-    "last_viewed_at": "2026-11-26T06:05:56.875033+00:00",
-    "patch_count": 232,
-    "patch_generation": 222,
+    "last_used_at": "2026-11-27T06:05:28.730621+00:00",
+    "last_viewed_at": "2026-11-27T06:05:28.729020+00:00",
+    "patch_count": 233,
+    "patch_generation": 223,
     "pinned": false,
     "state": "active",
-    "use_count": 6865,
-    "view_count": 6865
+    "use_count": 6867,
+    "view_count": 6867
   },
   "weights-and-biases": {
     "archived_at": null,
